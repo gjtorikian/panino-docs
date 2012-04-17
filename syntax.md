@@ -1,6 +1,8 @@
 Syntax
 ======
 
+This document describes the various syntax rules for code files, as well as Markdown files.
+
 Comments
 --------
 
@@ -300,4 +302,4 @@ Difference from PDoc
 1. Descriptions should be ALWAYS separated by empty line from the upper string (signature, section, tags...).
 2. `deprecated` can have options.
 3. Additional tags - read-only, internal, chainable.
-4. Events support.
+4. Support for events

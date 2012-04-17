@@ -1,6 +1,6 @@
 {
   "name"            : "panino",
-  "version"         : "0.0.2",
+  "version"         : "1.0.0",
   "description"     : "API documentation generator with a strict grammar",
   "keywords"        : [
                         "api", "doc", "apidoc", "documentation", "pdoc"
