@@ -1,0 +1,130 @@
+<!DOCTYPE html><!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><title>Prototype</title><meta name="generator" content="panino-doc-build"/><meta name="author" content="Garen J. Torikian"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="stylesheet" href="./resources/csses/bootstrap.css"/><link rel="stylesheet" href="./resources/csses/prettify.css"/><link rel="stylesheet" href="./resources/csses/refguide_overrides.css"/><link href="./resources/images/favicon.ico" rel="icon" type="image/x-icon"/><link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/vs.min.css"/><script src="./resources/javascripts/jquery.js"></script><script src="./resources/javascripts/clicker.js"></script><script src="./resources/javascripts/jquery.collapse.js"></script><script src="./resources/javascripts/jquery.cookie.js"></script><script src="./resources/javascripts/bootstrap-dropdown.js"></script><body onload="styleCode()"><div class="topbar"><div class="fill"><div id="topSection" class="container"><ul class="nav leftnav"></ul><ul class="nav"></ul><form id="searchbox" action="" class="pull-right"><input name="query" type="text" placeholder="Search Documentation" title="Search across all the documentation types" class="span3"/></form></div></div></div><header id="overview" class="jumbotron masthead"><div class="inner"><div class="container"><h1>Node.js Manual</h1><p class="lead"></p></div></div></header><div class="container"><div class="content"><div class="row container"><div class="span5 offset4 sidebarContainer"><div id="sidebar"><div id="well"><h3>Modules</h3><ul class="menu"><li><div class="menu-item"><a href="assert.html" class="menuLink namespace">assert</a></div></li><li><div class="menu-item"><a href="child.process.html" class="menuLink namespace">child_process</a></div></li><li><div class="menu-item"><a href="cluster.html" class="menuLink namespace">cluster    </a></div></li><li><div class="menu-item"><a href="crypto.html" class="menuLink namespace">crypto</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="cipher.html" class="menuLink class">Cipher</a></div></li><li><div class="menu-item"><a href="decipher.html" class="menuLink class">Decipher   </a></div></li><li><div class="menu-item"><a href="diffieHellman.html" class="menuLink class">Diffie-Hellman</a></div></li><li><div class="menu-item"><a href="hash.html" class="menuLink class">Hash    </a></div></li><li><div class="menu-item"><a href="hmac.html" class="menuLink class">HMAC</a></div></li><li><div class="menu-item"><a href="signer.html" class="menuLink class">Signer  </a></div></li><li><div class="menu-item"><a href="verifier.html" class="menuLink class">Verifier                                                          </a></div></li></ul></li><li><div class="menu-item"><a href="dgram.html" class="menuLink namespace">dgram</a></div></li><li><div class="menu-item"><a href="dns.html" class="menuLink namespace">dns</a></div></li><li><div class="menu-item"><a href="eventemitter.html" class="menuLink namespace">EventEmitter</a></div></li><li><div class="menu-item"><a href="fs.html" class="menuLink namespace">fs</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="fs.FSWatcher.html" class="menuLink class">FSWatcher   </a></div></li><li><div class="menu-item"><a href="fs.ReadStream.html" class="menuLink class">Readstream                          </a></div></li><li><div class="menu-item"><a href="fs.Stats.html" class="menuLink class">Stats  </a></div></li><li><div class="menu-item"><a href="fs.WriteStream.html" class="menuLink class">Writestream                            </a></div></li></ul></li><li><div class="menu-item"><a href="http.html" class="menuLink namespace">http</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="http.Agent.html" class="menuLink class">Agent   </a></div></li><li><div class="menu-item"><a href="http.ClientRequest.html" class="menuLink class">ClientRequest   </a></div></li><li><div class="menu-item"><a href="http.ClientResponse.html" class="menuLink class">ClientResponse        </a></div></li><li><div class="menu-item"><a href="http.Server.html" class="menuLink class">Server</a></div></li><li><div class="menu-item"><a href="http.ServerRequest.html" class="menuLink class">ServerRequest</a></div></li><li><div class="menu-item"><a href="http.ServerResponse.html" class="menuLink class">ServerResponse   </a></div></li></ul></li><li><div class="menu-item"><a href="https.html" class="menuLink namespace">https</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="https.Agent.html" class="menuLink class">Agent    </a></div></li><li><div class="menu-item"><a href="https.Server.html" class="menuLink class">Server                             </a></div></li></ul></li><li><div class="menu-item"><a href="net.html" class="menuLink namespace">net</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="net.Server.html" class="menuLink class">Server   </a></div></li><li><div class="menu-item"><a href="net.Socket.html" class="menuLink class">Socket              </a></div></li></ul></li><li><div class="menu-item"><a href="os.html" class="menuLink namespace">os</a></div></li><li><div class="menu-item"><a href="path.html" class="menuLink namespace">path</a></div></li><li><div class="menu-item"><a href="querystring.html" class="menuLink namespace">querystring</a></div></li><li><div class="menu-item"><a href="readline.html" class="menuLink namespace">readline</a></div></li><li><div class="menu-item"><a href="tls.html" class="menuLink namespace">tls</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="tls.SecurePair.html" class="menuLink class">SecurePair  </a></div></li><li><div class="menu-item"><a href="tls.Server.html" class="menuLink class">Server   </a></div></li><li><div class="menu-item"><a href="tls.CleartextStream.html" class="menuLink class">CleartextStream              </a></div></li></ul></li><li><div class="menu-item"><a href="tty.html" class="menuLink namespace">tty</a></div></li><li><div class="menu-item"><a href="url.html" class="menuLink namespace">url</a></div></li><li><div class="menu-item"><a href="util.html" class="menuLink namespace">util</a></div></li><li><div class="menu-item"><a href="vm.html" class="menuLink namespace">vm</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="vm.Script.html" class="menuLink class">Script      </a></div></li></ul></li><li><div class="menu-item"><a href="zlib.html" class="menuLink namespace">zlib                                                                       </a></div></li></ul><h3>Globals</h3><ul class="menu"><li><div class="menu-item"><a href="buffer.html" class="menuLink class">Buffers</a></div></li><li><div class="menu-item"><a href="process.html" class="menuLink class">Process</a></div></li><li><div class="menu-item"><a href="console.html" class="menuLink class">STDIO</a></div></li><li><div class="menu-item"><a href="streams.html" class="menuLink class">Streams</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="streams.ReadableStream.html" class="menuLink class">Readable Streams</a></div></li><li><div class="menu-item"><a href="streams.WritableStream.html" class="menuLink class">Writable Streams</a></div></li></ul></li><li><div class="menu-item"><a href="timer.html" class="menuLink class">Timers</a></div></li></ul><h3>Concepts</h3><ul class="menu"><li><div class="menu-item"><a href="addons.html" class="menuLink namespace">Addons</a></div></li><li><div class="menu-item"><a href="debugging.node.js.html" class="menuLink namespace">Debugging Node.js</a></div></li><li><div class="menu-item"><a href="global.objects.html" class="menuLink namespace">Global Objects    </a></div></li><li><div class="menu-item"><a href="modules.html" class="menuLink namespace">Modules</a></div></li><li><div class="menu-item"><a href="repl.html" class="menuLink namespace">REPL    </a></div></li></ul></div></div></div><div class="span11"><div id="content"><div class="membersBackground"></div><div class="members"><div class="membersContent"><h1 class="memberHeader"><span class="name">$R</span><span class="backToMDN"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/$R" target="_blank">(View original on MDN)</a></span></h1><ul data-tabs="tabs" class="tabs"></ul></div></div><article id="$R" data-title="$R (utility)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="$R" class="member-name methodClicker">$R</span>(start, end[, exclusive = false])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="ObjectRange.html"" class="link-short" title="ObjectRange (class)">ObjectRange</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_$R" class="ellipsis_description"><p>Creates a new <a href="ObjectRange.html" id="ObjectRange" class="link-short clicker" title="ObjectRange (class)" data-id="ObjectRange">ObjectRange</a> object. This method is a convenience wrapper
+around the <a href="ObjectRange.html" id="ObjectRange" class="link-short clicker" title="ObjectRange (class)" data-id="ObjectRange">ObjectRange</a> constructor, b...</p>
+</div><div id="short_$R" class="short_description hiddenSpan"><p>Creates a new <a href="ObjectRange.html" id="ObjectRange" class="link-short clicker" title="ObjectRange (class)" data-id="ObjectRange">ObjectRange</a> object. This method is a convenience wrapper
+around the <a href="ObjectRange.html" id="ObjectRange" class="link-short clicker" title="ObjectRange (class)" data-id="ObjectRange">ObjectRange</a> constructor, but <a href="$R.html" id="$R" class="link-short clicker" title="$R (utility)" data-id="$R">$R</a> is the preferred alias.
+</p>
+</div><h3 id="$R" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p><a href="ObjectRange.html" id="ObjectRange" class="link-short clicker" title="ObjectRange (class)" data-id="ObjectRange">ObjectRange</a> instances represent a range of consecutive values, be they
+numerical, textual, or of another type that semantically supports value
+ranges. See the type&#39;s documentation for further details, and to discover
+how your own objects can support value ranges.
+
+</p>
+<p>The <a href="$R.html" id="$R" class="link-short clicker" title="$R (utility)" data-id="$R">$R</a> function takes exactly the same arguments as the original
+constructor: the <strong>lower and upper bounds</strong> (value of the same, proper
+type), and <strong>whether the upper bound is exclusive</strong> or not. By default, the
+upper bound is inclusive.
+
+</p>
+<h5>Examples</h5>
+<pre><code>$R(0, 10).include(10)
+// -&gt; true
+
+$A($R(0, 5)).join(&#39;, &#39;)
+// -&gt; &#39;0, 1, 2, 3, 4, 5&#39;
+
+$A($R(&#39;aa&#39;, &#39;ah&#39;)).join(&#39;, &#39;)
+// -&gt; &#39;aa, ab, ac, ad, ae, af, ag, ah&#39;
+
+$R(0, 10, true).include(10)
+// -&gt; false
+
+$R(0, 10, true).each(function(value) {
+  // invoked 10 times for value = 0 to 9
+});</code></pre>
+<p>Note that <a href="ObjectRange.html" id="ObjectRange" class="link-short clicker" title="ObjectRange (class)" data-id="ObjectRange">ObjectRange</a> mixes in the <a href="Enumerable.html"></a> module: this makes it
+easy to convert a range to an <a href="http://www.nodemanual.org/latest/js_doc/Array.html"></a> (<a href="Enumerable.html"></a> provides the
+<a href="Enumerable#toArray.html"></a> method, which makes the <a href="$A.html"></a> conversion
+straightforward), or to iterate through values. (Note, however, that getting
+the bounds back will be more efficiently done using the
+<a href="ObjectRange#start.html" id="ObjectRange#start" class="link-short clicker" title="ObjectRange#start (instance property)" data-id="ObjectRange#start">ObjectRange#start</a> and <a href="ObjectRange#end.html" id="ObjectRange#end" class="link-short clicker" title="ObjectRange#end (instance property)" data-id="ObjectRange#end">ObjectRange#end</a> properties than calling the
+<a href="Enumerable#min.html"></a> and <a href="Enumerable#max.html"></a> methods).
+
+</p>
+<h5>Warning</h5>
+<p><strong>Be careful with <a href="http://www.nodemanual.org/latest/js_doc/String.html"></a> ranges</strong>: as described in its <a href="String#succ.html"></a>
+method, it does not use alphabetical boundaries, but goes all the way
+through the character table:
+
+</p>
+<pre><code>$A($R(&#39;a&#39;, &#39;e&#39;))
+// -&gt; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;], no surprise there
+
+$A($R(&#39;ax&#39;, &#39;ba&#39;))
+// -&gt; Ouch! Humongous array, starting as [&#39;ax&#39;, &#39;ay&#39;, &#39;az&#39;, &#39;a{&#39;, &#39;a|&#39;, &#39;a}&#39;, &#39;a~&#39;...]</code></pre>
+<p>See <a href="ObjectRange.html" id="ObjectRange" class="link-short clicker" title="ObjectRange (class)" data-id="ObjectRange">ObjectRange</a> for more information.</p>
+</div></div></div></div></article><div class="membersBackground"></div><div class="members"><div class="membersContent"><h1 class="memberHeader"><span class="name">ObjectRange</span><span class="backToMDN"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/ObjectRange" target="_blank">(View original on MDN)</a></span></h1><ul data-tabs="tabs" class="tabs"><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"><a href="#" class="dropdown-toggle"><span>Constructors (1)</span></a><ul class="dropdown-menu"><li data-id="new ObjectRange" class="memberLink"><a href="range.html#ObjectRange.new" class="" title="new ObjectRange (constructor)" data-id="new ObjectRange">new</a>                                 
+</li></ul></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"><a href="#" class="dropdown-toggle"><span>Functions (1)</span></a><ul class="dropdown-menu"><li data-id="ObjectRange#include" class="memberLink"><a href="ObjectRange#include.html" id="ObjectRange#include" class=" clicker" title="ObjectRange#include (instance method)" data-id="ObjectRange#include">include</a>                                 
+</li></ul></li><li data-dropdown="dropdown" class="dropdown"><a href="#" class="dropdown-toggle"><span>Properties (2)   </span></a><ul class="dropdown-menu"><li data-id="ObjectRange#end" class="memberLink"><a href="ObjectRange#end.html" id="ObjectRange#end" class=" clicker" title="ObjectRange#end (instance property)" data-id="ObjectRange#end">end</a>                                 
+</li><li data-id="ObjectRange#start" class="memberLink"><a href="ObjectRange#start.html" id="ObjectRange#start" class=" clicker" title="ObjectRange#start (instance property)" data-id="ObjectRange#start">start</a>                                 
+</li></ul></li><li data-dropdown="dropdown" class="dropdown"></li></ul></div></div><article id="ObjectRange" data-title="ObjectRange (class)" class="article"><div class="section description"><div class="memberContent"><p>A succession of values.
+
+</p>
+<p>An <a href="ObjectRange.html" id="ObjectRange" class="link-short clicker" title="ObjectRange (class)" data-id="ObjectRange">ObjectRange</a> can model a range of any value that implements a <code>succ</code>
+method (which links that value to its &quot;successor&quot;).
+
+</p>
+<p>Prototype provides such a method for <a href="http://www.nodemanual.org/latest/js_doc/Number.html"></a> and <a href="http://www.nodemanual.org/latest/js_doc/String.html"></a>, but you
+are (of course) welcome to implement useful semantics in your own objects,
+in order to enable ranges based on them.
+
+</p>
+<p><a href="ObjectRange.html" id="ObjectRange" class="link-short clicker" title="ObjectRange (class)" data-id="ObjectRange">ObjectRange</a> mixes in <a href="Enumerable.html"></a>, which makes ranges very versatile.
+It takes care, however, to override the default code for <code>include</code>, to
+achieve better efficiency.
+
+</p>
+<p>While <a href="ObjectRange.html" id="ObjectRange" class="link-short clicker" title="ObjectRange (class)" data-id="ObjectRange">ObjectRange</a> does provide a constructor, the preferred way to obtain
+a range is to use the <a href="$R.html" id="$R" class="link-short clicker" title="$R (utility)" data-id="$R">$R</a> utility function, which is strictly equivalent
+(only way more concise to use).
+
+</p>
+<p>See <a href="$R.html" id="$R" class="link-short clicker" title="$R (utility)" data-id="$R">$R</a> for more information.</p>
+</div></div><div class="section mixins"><!-- h3 <Includes></Includes><div class="memberContent"><ul class="method-list"><li><a href="Enumerable.html" id="Enumerable" class=" clicker" title="Enumerable" data-id="Enumerable">Enumerable</a></li></ul></div>--></div></article><h3 class="sectionHeader">Constructors</h3><article id="ObjectRange.new" data-title="new ObjectRange (constructor)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call">new <span id="new ObjectRange" class="member-name methodClicker">ObjectRange</span>(start, end[, exclusive = false])</li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_new ObjectRange" class="ellipsis_description"><p>Creates a new <a href="ObjectRange.html" id="ObjectRange" class="link-short clicker" title="ObjectRange (class)" data-id="ObjectRange">ObjectRange</a>.
+ ...</p>
+</div><div id="short_new ObjectRange" class="short_description hiddenSpan"><p>Creates a new <a href="ObjectRange.html" id="ObjectRange" class="link-short clicker" title="ObjectRange (class)" data-id="ObjectRange">ObjectRange</a>.
+</p>
+</div><h3 id="new ObjectRange" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>The <code>exclusive</code> argument specifies whether <code>end</code> itself is a part of the
+range.</p>
+</div></div></div></div></article><article id="ObjectRange.prototype.include" data-title="ObjectRange#include (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="ObjectRange#include" class="member-name methodClicker">ObjectRange#include</span>(value)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_ObjectRange#include" class="ellipsis_description"><p>Determines whether the value is included in the range.
+ ...</p>
+</div><div id="short_ObjectRange#include" class="short_description hiddenSpan"><p>Determines whether the value is included in the range.
+</p>
+</div><h3 id="ObjectRange#include" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>This assumes the values in the range have a valid strict weak ordering
+(have valid semantics for the <code>&lt;</code> operator). While <a href="ObjectRange.html" id="ObjectRange" class="link-short clicker" title="ObjectRange (class)" data-id="ObjectRange">ObjectRange</a> mixes
+in <a href="Enumerable.html"></a>, this method overrides the default version of
+<a href="Enumerable#include.html"></a>, and is much more efficient (it uses a maximum of
+two comparisons).
+
+</p>
+<h5>Examples</h5>
+<pre><code>$R(1, 10).include(5);
+// -&gt; true
+
+$R(&#39;a&#39;, &#39;h&#39;).include(&#39;x&#39;);
+// -&gt; false
+
+$R(1, 10).include(10);
+// -&gt; true
+
+$R(1, 10, true).include(10);
+// -&gt; false</code></pre>
+</div></div></div></div></article><article id="ObjectRange.prototype.end" data-title="ObjectRange#end (instance property)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="ObjectRange#end" class="member-name methodClicker">ObjectRange#end</span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="?.html"" class="link-short" title="?">?</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_ObjectRange#end" class="ellipsis_description"><p>The upper bounding value of the range. ...</p>
+</div><div id="short_ObjectRange#end" class="short_description hiddenSpan"><p>The upper bounding value of the range.</p>
+</div><h3 id="ObjectRange#end" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"></div></div></div></div></article><article id="ObjectRange.prototype.start" data-title="ObjectRange#start (instance property)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="ObjectRange#start" class="member-name methodClicker">ObjectRange#start</span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="?.html"" class="link-short" title="?">?</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_ObjectRange#start" class="ellipsis_description"><p>The lower bounding value of the range. ...</p>
+</div><div id="short_ObjectRange#start" class="short_description hiddenSpan"><p>The lower bounding value of the range.</p>
+</div><h3 id="ObjectRange#start" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"></div></div></div></div></article><div id="disqus_thread"></div></div></div></div></div><footer id="footer"><div class="container"><div class="footer-text">&#169; 2012:</div></div></footer></div><!-- scripts concatenated and minified via ant build script--><script defer src="./resources/javascripts/plugins.js"></script>
+<script defer src="./resources/javascripts/prettify.js"></script>
+<script defer src="./resources/javascripts/prettify-extension.js"></script>
+<script defer src="./resources/javascripts/ux.js"></script>
+<!-- end scripts--><!--[if lt IE 7]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script><script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})
+
+</script><![endif]--></body>

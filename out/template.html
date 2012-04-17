@@ -1,0 +1,139 @@
+<!DOCTYPE html><!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><title>Prototype</title><meta name="generator" content="panino-doc-build"/><meta name="author" content="Garen J. Torikian"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="stylesheet" href="./resources/csses/bootstrap.css"/><link rel="stylesheet" href="./resources/csses/prettify.css"/><link rel="stylesheet" href="./resources/csses/refguide_overrides.css"/><link href="./resources/images/favicon.ico" rel="icon" type="image/x-icon"/><link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/vs.min.css"/><script src="./resources/javascripts/jquery.js"></script><script src="./resources/javascripts/clicker.js"></script><script src="./resources/javascripts/jquery.collapse.js"></script><script src="./resources/javascripts/jquery.cookie.js"></script><script src="./resources/javascripts/bootstrap-dropdown.js"></script><body onload="styleCode()"><div class="topbar"><div class="fill"><div id="topSection" class="container"><ul class="nav leftnav"></ul><ul class="nav"></ul><form id="searchbox" action="" class="pull-right"><input name="query" type="text" placeholder="Search Documentation" title="Search across all the documentation types" class="span3"/></form></div></div></div><header id="overview" class="jumbotron masthead"><div class="inner"><div class="container"><h1>Node.js Manual</h1><p class="lead"></p></div></div></header><div class="container"><div class="content"><div class="row container"><div class="span5 offset4 sidebarContainer"><div id="sidebar"><div id="well"><h3>Modules</h3><ul class="menu"><li><div class="menu-item"><a href="assert.html" class="menuLink namespace">assert</a></div></li><li><div class="menu-item"><a href="child.process.html" class="menuLink namespace">child_process</a></div></li><li><div class="menu-item"><a href="cluster.html" class="menuLink namespace">cluster    </a></div></li><li><div class="menu-item"><a href="crypto.html" class="menuLink namespace">crypto</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="cipher.html" class="menuLink class">Cipher</a></div></li><li><div class="menu-item"><a href="decipher.html" class="menuLink class">Decipher   </a></div></li><li><div class="menu-item"><a href="diffieHellman.html" class="menuLink class">Diffie-Hellman</a></div></li><li><div class="menu-item"><a href="hash.html" class="menuLink class">Hash    </a></div></li><li><div class="menu-item"><a href="hmac.html" class="menuLink class">HMAC</a></div></li><li><div class="menu-item"><a href="signer.html" class="menuLink class">Signer  </a></div></li><li><div class="menu-item"><a href="verifier.html" class="menuLink class">Verifier                                                          </a></div></li></ul></li><li><div class="menu-item"><a href="dgram.html" class="menuLink namespace">dgram</a></div></li><li><div class="menu-item"><a href="dns.html" class="menuLink namespace">dns</a></div></li><li><div class="menu-item"><a href="eventemitter.html" class="menuLink namespace">EventEmitter</a></div></li><li><div class="menu-item"><a href="fs.html" class="menuLink namespace">fs</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="fs.FSWatcher.html" class="menuLink class">FSWatcher   </a></div></li><li><div class="menu-item"><a href="fs.ReadStream.html" class="menuLink class">Readstream                          </a></div></li><li><div class="menu-item"><a href="fs.Stats.html" class="menuLink class">Stats  </a></div></li><li><div class="menu-item"><a href="fs.WriteStream.html" class="menuLink class">Writestream                            </a></div></li></ul></li><li><div class="menu-item"><a href="http.html" class="menuLink namespace">http</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="http.Agent.html" class="menuLink class">Agent   </a></div></li><li><div class="menu-item"><a href="http.ClientRequest.html" class="menuLink class">ClientRequest   </a></div></li><li><div class="menu-item"><a href="http.ClientResponse.html" class="menuLink class">ClientResponse        </a></div></li><li><div class="menu-item"><a href="http.Server.html" class="menuLink class">Server</a></div></li><li><div class="menu-item"><a href="http.ServerRequest.html" class="menuLink class">ServerRequest</a></div></li><li><div class="menu-item"><a href="http.ServerResponse.html" class="menuLink class">ServerResponse   </a></div></li></ul></li><li><div class="menu-item"><a href="https.html" class="menuLink namespace">https</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="https.Agent.html" class="menuLink class">Agent    </a></div></li><li><div class="menu-item"><a href="https.Server.html" class="menuLink class">Server                             </a></div></li></ul></li><li><div class="menu-item"><a href="net.html" class="menuLink namespace">net</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="net.Server.html" class="menuLink class">Server   </a></div></li><li><div class="menu-item"><a href="net.Socket.html" class="menuLink class">Socket              </a></div></li></ul></li><li><div class="menu-item"><a href="os.html" class="menuLink namespace">os</a></div></li><li><div class="menu-item"><a href="path.html" class="menuLink namespace">path</a></div></li><li><div class="menu-item"><a href="querystring.html" class="menuLink namespace">querystring</a></div></li><li><div class="menu-item"><a href="readline.html" class="menuLink namespace">readline</a></div></li><li><div class="menu-item"><a href="tls.html" class="menuLink namespace">tls</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="tls.SecurePair.html" class="menuLink class">SecurePair  </a></div></li><li><div class="menu-item"><a href="tls.Server.html" class="menuLink class">Server   </a></div></li><li><div class="menu-item"><a href="tls.CleartextStream.html" class="menuLink class">CleartextStream              </a></div></li></ul></li><li><div class="menu-item"><a href="tty.html" class="menuLink namespace">tty</a></div></li><li><div class="menu-item"><a href="url.html" class="menuLink namespace">url</a></div></li><li><div class="menu-item"><a href="util.html" class="menuLink namespace">util</a></div></li><li><div class="menu-item"><a href="vm.html" class="menuLink namespace">vm</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="vm.Script.html" class="menuLink class">Script      </a></div></li></ul></li><li><div class="menu-item"><a href="zlib.html" class="menuLink namespace">zlib                                                                       </a></div></li></ul><h3>Globals</h3><ul class="menu"><li><div class="menu-item"><a href="buffer.html" class="menuLink class">Buffers</a></div></li><li><div class="menu-item"><a href="process.html" class="menuLink class">Process</a></div></li><li><div class="menu-item"><a href="console.html" class="menuLink class">STDIO</a></div></li><li><div class="menu-item"><a href="streams.html" class="menuLink class">Streams</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="streams.ReadableStream.html" class="menuLink class">Readable Streams</a></div></li><li><div class="menu-item"><a href="streams.WritableStream.html" class="menuLink class">Writable Streams</a></div></li></ul></li><li><div class="menu-item"><a href="timer.html" class="menuLink class">Timers</a></div></li></ul><h3>Concepts</h3><ul class="menu"><li><div class="menu-item"><a href="addons.html" class="menuLink namespace">Addons</a></div></li><li><div class="menu-item"><a href="debugging.node.js.html" class="menuLink namespace">Debugging Node.js</a></div></li><li><div class="menu-item"><a href="global.objects.html" class="menuLink namespace">Global Objects    </a></div></li><li><div class="menu-item"><a href="modules.html" class="menuLink namespace">Modules</a></div></li><li><div class="menu-item"><a href="repl.html" class="menuLink namespace">REPL    </a></div></li></ul></div></div></div><div class="span11"><div id="content"><div class="membersBackground"></div><div class="members"><div class="membersContent"><h1 class="memberHeader"><span class="name">Template</span><span class="backToMDN"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Template" target="_blank">(View original on MDN)</a></span></h1><ul data-tabs="tabs" class="tabs"><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"><a href="#" class="dropdown-toggle"><span>Constructors (1)</span></a><ul class="dropdown-menu"><li data-id="new Template" class="memberLink"><a href="template.html#Template.new" class="" title="new Template (constructor)" data-id="new Template">new</a>                                 
+</li></ul></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"><a href="#" class="dropdown-toggle"><span>Functions (1)</span></a><ul class="dropdown-menu"><li data-id="Template#evaluate" class="memberLink"><a href="Template#evaluate.html" id="Template#evaluate" class=" clicker" title="Template#evaluate (instance method)" data-id="Template#evaluate">evaluate</a>                                 
+</li></ul></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li></ul></div></div><article id="Template" data-title="Template (class)" class="article"><div class="section description"><div class="memberContent"><p>A class for sophisticated string interpolation.
+
+</p>
+<p>Any time you have a group of similar objects and you need to produce
+formatted output for these objects, maybe inside a loop, you typically
+resort to concatenating string literals with the object&#39;s fields:
+
+</p>
+<pre><code>&quot;The TV show &quot; + title + &quot; was created by &quot; + author + &quot;.&quot;;</code></pre>
+<p>There&#39;s nothing wrong with this approach, except that it is hard to
+visualize the output immediately just by glancing at the concatenation
+expression. The <a href="Template.html" id="Template" class="link-short clicker" title="Template (class)" data-id="Template">Template</a> class provides a much nicer and clearer way of
+achieving this formatting.
+
+</p>
+<h5>Straightforward templates</h5>
+<p>The <a href="Template.html" id="Template" class="link-short clicker" title="Template (class)" data-id="Template">Template</a> class uses a basic formatting syntax, similar to what is
+used in Ruby. The templates are created from strings that have embedded
+symbols in the form (e.g., <code>#{fieldName}</code>) that will be replaced by
+actual values when the template is applied (evaluated) to an object.
+
+</p>
+<pre><code>// the template (our formatting expression)
+var myTemplate = new Template(
+ &#39;The TV show #{title} was created by #{author}.&#39;);
+
+// our data to be formatted by the template
+var show = {
+  title: &#39;The Simpsons&#39;,
+  author: &#39;Matt Groening&#39;,
+  network: &#39;FOX&#39;
+};
+
+// let&#39;s format our data
+myTemplate.evaluate(show);
+// -&gt; &quot;The TV show The Simpsons was created by Matt Groening.&quot;</code></pre>
+<h5>Templates are meant to be reused</h5>
+<p>As the example illustrates, <a href="Template.html" id="Template" class="link-short clicker" title="Template (class)" data-id="Template">Template</a> objects are not tied to specific
+data. The data is bound to the template only during the evaluation of the
+template, without affecting the template itself. The next example shows the
+same template being used with a handful of distinct objects.
+
+</p>
+<pre><code>// creating a few similar objects
+var conversion1 = { from: &#39;meters&#39;, to: &#39;feet&#39;, factor: 3.28 };
+var conversion2 = { from: &#39;kilojoules&#39;, to: &#39;BTUs&#39;, factor: 0.9478 };
+var conversion3 = { from: &#39;megabytes&#39;, to: &#39;gigabytes&#39;, factor: 1024 };
+
+// the template
+var templ = new Template(
+ &#39;Multiply by #{factor} to convert from #{from} to #{to}.&#39;);
+
+// let&#39;s format each object
+[conversion1, conversion2, conversion3].each( function(conv){
+    templ.evaluate(conv);
+});
+// -&gt; Multiply by 3.28 to convert from meters to feet.
+// -&gt; Multiply by 0.9478 to convert from kilojoules to BTUs.
+// -&gt; Multiply by 1024 to convert from megabytes to gigabytes.</code></pre>
+<h5>Escape sequence</h5>
+<p>There&#39;s always the chance that one day you&#39;ll need to have a literal in your
+template that looks like a symbol, but is not supposed to be replaced. For
+these situations there&#39;s an escape character: the backslash (<code>\\</code>).
+
+</p>
+<pre><code>// NOTE: you&#39;re seeing two backslashes here because the backslash
+// is also an escape character in JavaScript strings, so a literal
+// backslash is represented by two backslashes.
+var t = new Template(
+ &#39;in #{lang} we also use the \\#{variable} syntax for templates.&#39;);
+var data = { lang:&#39;Ruby&#39;, variable: &#39;(not used)&#39; };
+t.evaluate(data);
+// -&gt; in Ruby we also use the #{variable} syntax for templates.</code></pre>
+<h5>Custom syntaxes</h5>
+<p>The default syntax of the template strings will probably be enough for most
+scenarios. In the rare occasion where the default Ruby-like syntax is
+inadequate, there&#39;s a provision for customization. <a href="Template.html" id="Template" class="link-short clicker" title="Template (class)" data-id="Template">Template</a>&#39;s
+constructor accepts an optional second argument that is a regular expression
+object to match the replaceable symbols in the template string. Let&#39;s put
+together a template that uses a syntax similar to the now ubiquitous <code>{{ }}</code>
+constructs:
+
+</p>
+<pre><code>// matches symbols like &#39;{{ field }}&#39;
+var syntax = /(^|.|\r|\n)(\{{\s*(\w+)\s*}})/;
+
+var t = new Template(
+ &#39;&lt;div&gt;Name: &lt;b&gt;{{ name }}&lt;/b&gt;, Age: &lt;b&gt;{{ age }}&lt;/b&gt;&lt;/div&gt;&#39;,
+ syntax);
+t.evaluate( {name: &#39;John Smith&#39;, age: 26} );
+// -&gt; &lt;div&gt;Name: &lt;b&gt;John Smith&lt;/b&gt;, Age: &lt;b&gt;26&lt;/b&gt;&lt;/div&gt;</code></pre>
+<p>There are important constraints to any custom syntax. Any syntax must
+provide at least three groupings in the regular expression. The first
+grouping is to capture what comes before the symbol, to detect the backslash
+escape character (no, you cannot use a different character). The second
+grouping captures the entire symbol and will be completely replaced upon
+evaluation. Lastly, the third required grouping captures the name of the
+field inside the symbol.</p>
+</div></div></article><h3 class="sectionHeader">Constructors</h3><article id="Template.new" data-title="new Template (constructor)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call">new <span id="new Template" class="member-name methodClicker">Template</span>(template[, pattern = "Template.Pattern"])</li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_new Template" class="ellipsis_description"><p>Creates a Template object.
+ ...</p>
+</div><div id="short_new Template" class="short_description hiddenSpan"><p>Creates a Template object.
+</p>
+</div><h3 id="new Template" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>The optional <code>pattern</code> argument expects a <code>RegExp</code> that defines a custom
+syntax for the replaceable symbols in <code>template</code>.</p>
+</div></div></div></div></article><article id="Template.prototype.evaluate" data-title="Template#evaluate (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Template#evaluate" class="member-name methodClicker">Template#evaluate</span>(object)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Template#evaluate" class="ellipsis_description"><p>Applies the template to <code>object</code>&#39;s data, producing a formatted string
+with symbols replaced by <code>object</code>&#39;s correspond...</p>
+</div><div id="short_Template#evaluate" class="short_description hiddenSpan"><p>Applies the template to <code>object</code>&#39;s data, producing a formatted string
+with symbols replaced by <code>object</code>&#39;s corresponding properties.
+</p>
+</div><h3 id="Template#evaluate" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Examples</h5>
+<pre><code>var hrefTemplate = new Template(&#39;/dir/showAll?lang=#{language}&amp;amp;categ=#{category}&amp;amp;lv=#{levels}&#39;);
+var selection = {category: &#39;books&#39; , language: &#39;en-US&#39;};
+
+hrefTemplate.evaluate(selection);
+// -&gt; &#39;/dir/showAll?lang=en-US&amp;amp;categ=books&amp;amp;lv=&#39;
+
+hrefTemplate.evaluate({language: &#39;jp&#39;, levels: 3, created: &#39;10/12/2005&#39;});
+// -&gt; &#39;/dir/showAll?lang=jp&amp;amp;categ=&amp;amp;lv=3&#39;
+
+hrefTemplate.evaluate({});
+// -&gt; &#39;/dir/showAll?lang=&amp;amp;categ=&amp;amp;lv=&#39;
+
+hrefTemplate.evaluate(null);
+// -&gt; error !</code></pre>
+</div></div></div></div></article><div id="disqus_thread"></div></div></div></div></div><footer id="footer"><div class="container"><div class="footer-text">&#169; 2012:</div></div></footer></div><!-- scripts concatenated and minified via ant build script--><script defer src="./resources/javascripts/plugins.js"></script>
+<script defer src="./resources/javascripts/prettify.js"></script>
+<script defer src="./resources/javascripts/prettify-extension.js"></script>
+<script defer src="./resources/javascripts/ux.js"></script>
+<!-- end scripts--><!--[if lt IE 7]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script><script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})
+
+</script><![endif]--></body>

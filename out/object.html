@@ -1,0 +1,425 @@
+<!DOCTYPE html><!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><title>Prototype</title><meta name="generator" content="panino-doc-build"/><meta name="author" content="Garen J. Torikian"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="stylesheet" href="./resources/csses/bootstrap.css"/><link rel="stylesheet" href="./resources/csses/prettify.css"/><link rel="stylesheet" href="./resources/csses/refguide_overrides.css"/><link href="./resources/images/favicon.ico" rel="icon" type="image/x-icon"/><link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/vs.min.css"/><script src="./resources/javascripts/jquery.js"></script><script src="./resources/javascripts/clicker.js"></script><script src="./resources/javascripts/jquery.collapse.js"></script><script src="./resources/javascripts/jquery.cookie.js"></script><script src="./resources/javascripts/bootstrap-dropdown.js"></script><body onload="styleCode()"><div class="topbar"><div class="fill"><div id="topSection" class="container"><ul class="nav leftnav"></ul><ul class="nav"></ul><form id="searchbox" action="" class="pull-right"><input name="query" type="text" placeholder="Search Documentation" title="Search across all the documentation types" class="span3"/></form></div></div></div><header id="overview" class="jumbotron masthead"><div class="inner"><div class="container"><h1>Node.js Manual</h1><p class="lead"></p></div></div></header><div class="container"><div class="content"><div class="row container"><div class="span5 offset4 sidebarContainer"><div id="sidebar"><div id="well"><h3>Modules</h3><ul class="menu"><li><div class="menu-item"><a href="assert.html" class="menuLink namespace">assert</a></div></li><li><div class="menu-item"><a href="child.process.html" class="menuLink namespace">child_process</a></div></li><li><div class="menu-item"><a href="cluster.html" class="menuLink namespace">cluster    </a></div></li><li><div class="menu-item"><a href="crypto.html" class="menuLink namespace">crypto</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="cipher.html" class="menuLink class">Cipher</a></div></li><li><div class="menu-item"><a href="decipher.html" class="menuLink class">Decipher   </a></div></li><li><div class="menu-item"><a href="diffieHellman.html" class="menuLink class">Diffie-Hellman</a></div></li><li><div class="menu-item"><a href="hash.html" class="menuLink class">Hash    </a></div></li><li><div class="menu-item"><a href="hmac.html" class="menuLink class">HMAC</a></div></li><li><div class="menu-item"><a href="signer.html" class="menuLink class">Signer  </a></div></li><li><div class="menu-item"><a href="verifier.html" class="menuLink class">Verifier                                                          </a></div></li></ul></li><li><div class="menu-item"><a href="dgram.html" class="menuLink namespace">dgram</a></div></li><li><div class="menu-item"><a href="dns.html" class="menuLink namespace">dns</a></div></li><li><div class="menu-item"><a href="eventemitter.html" class="menuLink namespace">EventEmitter</a></div></li><li><div class="menu-item"><a href="fs.html" class="menuLink namespace">fs</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="fs.FSWatcher.html" class="menuLink class">FSWatcher   </a></div></li><li><div class="menu-item"><a href="fs.ReadStream.html" class="menuLink class">Readstream                          </a></div></li><li><div class="menu-item"><a href="fs.Stats.html" class="menuLink class">Stats  </a></div></li><li><div class="menu-item"><a href="fs.WriteStream.html" class="menuLink class">Writestream                            </a></div></li></ul></li><li><div class="menu-item"><a href="http.html" class="menuLink namespace">http</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="http.Agent.html" class="menuLink class">Agent   </a></div></li><li><div class="menu-item"><a href="http.ClientRequest.html" class="menuLink class">ClientRequest   </a></div></li><li><div class="menu-item"><a href="http.ClientResponse.html" class="menuLink class">ClientResponse        </a></div></li><li><div class="menu-item"><a href="http.Server.html" class="menuLink class">Server</a></div></li><li><div class="menu-item"><a href="http.ServerRequest.html" class="menuLink class">ServerRequest</a></div></li><li><div class="menu-item"><a href="http.ServerResponse.html" class="menuLink class">ServerResponse   </a></div></li></ul></li><li><div class="menu-item"><a href="https.html" class="menuLink namespace">https</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="https.Agent.html" class="menuLink class">Agent    </a></div></li><li><div class="menu-item"><a href="https.Server.html" class="menuLink class">Server                             </a></div></li></ul></li><li><div class="menu-item"><a href="net.html" class="menuLink namespace">net</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="net.Server.html" class="menuLink class">Server   </a></div></li><li><div class="menu-item"><a href="net.Socket.html" class="menuLink class">Socket              </a></div></li></ul></li><li><div class="menu-item"><a href="os.html" class="menuLink namespace">os</a></div></li><li><div class="menu-item"><a href="path.html" class="menuLink namespace">path</a></div></li><li><div class="menu-item"><a href="querystring.html" class="menuLink namespace">querystring</a></div></li><li><div class="menu-item"><a href="readline.html" class="menuLink namespace">readline</a></div></li><li><div class="menu-item"><a href="tls.html" class="menuLink namespace">tls</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="tls.SecurePair.html" class="menuLink class">SecurePair  </a></div></li><li><div class="menu-item"><a href="tls.Server.html" class="menuLink class">Server   </a></div></li><li><div class="menu-item"><a href="tls.CleartextStream.html" class="menuLink class">CleartextStream              </a></div></li></ul></li><li><div class="menu-item"><a href="tty.html" class="menuLink namespace">tty</a></div></li><li><div class="menu-item"><a href="url.html" class="menuLink namespace">url</a></div></li><li><div class="menu-item"><a href="util.html" class="menuLink namespace">util</a></div></li><li><div class="menu-item"><a href="vm.html" class="menuLink namespace">vm</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="vm.Script.html" class="menuLink class">Script      </a></div></li></ul></li><li><div class="menu-item"><a href="zlib.html" class="menuLink namespace">zlib                                                                       </a></div></li></ul><h3>Globals</h3><ul class="menu"><li><div class="menu-item"><a href="buffer.html" class="menuLink class">Buffers</a></div></li><li><div class="menu-item"><a href="process.html" class="menuLink class">Process</a></div></li><li><div class="menu-item"><a href="console.html" class="menuLink class">STDIO</a></div></li><li><div class="menu-item"><a href="streams.html" class="menuLink class">Streams</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="streams.ReadableStream.html" class="menuLink class">Readable Streams</a></div></li><li><div class="menu-item"><a href="streams.WritableStream.html" class="menuLink class">Writable Streams</a></div></li></ul></li><li><div class="menu-item"><a href="timer.html" class="menuLink class">Timers</a></div></li></ul><h3>Concepts</h3><ul class="menu"><li><div class="menu-item"><a href="addons.html" class="menuLink namespace">Addons</a></div></li><li><div class="menu-item"><a href="debugging.node.js.html" class="menuLink namespace">Debugging Node.js</a></div></li><li><div class="menu-item"><a href="global.objects.html" class="menuLink namespace">Global Objects    </a></div></li><li><div class="menu-item"><a href="modules.html" class="menuLink namespace">Modules</a></div></li><li><div class="menu-item"><a href="repl.html" class="menuLink namespace">REPL    </a></div></li></ul></div></div></div><div class="span11"><div id="content"><div class="membersBackground"></div><div class="members"><div class="membersContent"><h1 class="memberHeader"><span class="name">Object</span><span class="backToMDN"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" target="_blank">(View original on MDN)</a></span></h1><ul data-tabs="tabs" class="tabs"><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"><a href="#" class="dropdown-toggle"><span>Functions (16)</span></a><ul class="dropdown-menu"><li data-id="Object.clone" class="memberLink"><a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.clone" class="" title="Object.clone (class method)" data-id="Object.clone">clone</a>                                 
+</li><li data-id="Object.extend" class="memberLink"><a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.extend" class="" title="Object.extend (class method)" data-id="Object.extend">extend</a>                                 
+</li><li data-id="Object.inspect" class="memberLink"><a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.inspect" class="" title="Object.inspect (class method)" data-id="Object.inspect">inspect</a>                                 
+</li><li data-id="Object.isArray" class="memberLink"><a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.isArray" class="" title="Object.isArray (class method)" data-id="Object.isArray">isArray</a>                                 
+</li><li data-id="Object.isDate" class="memberLink"><a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.isDate" class="" title="Object.isDate (class method)" data-id="Object.isDate">isDate</a>                                 
+</li><li data-id="Object.isElement" class="memberLink"><a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.isElement" class="" title="Object.isElement (class method)" data-id="Object.isElement">isElement</a>                                 
+</li><li data-id="Object.isFunction" class="memberLink"><a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.isFunction" class="" title="Object.isFunction (class method)" data-id="Object.isFunction">isFunction</a>                                 
+</li><li data-id="Object.isHash" class="memberLink"><a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.isHash" class="" title="Object.isHash (class method)" data-id="Object.isHash">isHash</a>                                 
+</li><li data-id="Object.isNumber" class="memberLink"><a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.isNumber" class="" title="Object.isNumber (class method)" data-id="Object.isNumber">isNumber</a>                                 
+</li><li data-id="Object.isString" class="memberLink"><a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.isString" class="" title="Object.isString (class method)" data-id="Object.isString">isString</a>                                 
+</li><li data-id="Object.isUndefined" class="memberLink"><a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.isUndefined" class="" title="Object.isUndefined (class method)" data-id="Object.isUndefined">isUndefined</a>                                 
+</li><li data-id="Object.keys" class="memberLink"><a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.keys" class="" title="Object.keys (class method)" data-id="Object.keys">keys</a>                                 
+</li><li data-id="Object.toHTML" class="memberLink"><a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.toHTML" class="" title="Object.toHTML (class method)" data-id="Object.toHTML">toHTML</a>                                 
+</li><li data-id="Object.toJSON" class="memberLink"><a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.toJSON" class="" title="Object.toJSON (class method)" data-id="Object.toJSON">toJSON</a>                                 
+</li><li data-id="Object.toQueryString" class="memberLink"><a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.toQueryString" class="" title="Object.toQueryString (class method)" data-id="Object.toQueryString">toQueryString</a>                                 
+</li><li data-id="Object.values" class="memberLink"><a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.values" class="" title="Object.values (class method)" data-id="Object.values">values</a>                                 
+</li></ul></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li></ul></div></div><article id="Object" data-title="Object (class)" class="article"><div class="section description"><div class="memberContent"><p>Extensions to the built-in <a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class="link-short clicker" title="Object (class)" data-id="Object">Object</a> object.
+
+</p>
+<p>Because it is dangerous and invasive to augment <code>Object.prototype</code> (i.e.,
+add instance methods to objects), all these methods are static methods that
+take an <a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class="link-short clicker" title="Object (class)" data-id="Object">Object</a> as their first parameter.
+
+</p>
+<p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class="link-short clicker" title="Object (class)" data-id="Object">Object</a> is used by Prototype as a namespace; that is, it just keeps a few
+new methods together, which are intended for namespaced access (i.e. starting
+with &quot;<code>Object.</code>&quot;).
+
+</p>
+<p>For the regular developer (who simply uses Prototype without tweaking it), the
+most commonly used methods are probably <a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.inspect" class="link-short" title="Object.inspect (class method)" data-id="Object.inspect">Object.inspect</a> and, to a lesser degree,
+<a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.clone" class="link-short" title="Object.clone (class method)" data-id="Object.clone">Object.clone</a>.
+
+</p>
+<p>Advanced users, who wish to create their own objects like Prototype does, or
+explore objects as if they were hashes, will turn to <a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.extend" class="link-short" title="Object.extend (class method)" data-id="Object.extend">Object.extend</a>,
+<a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.keys" class="link-short" title="Object.keys (class method)" data-id="Object.keys">Object.keys</a>, and <a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.values" class="link-short" title="Object.values (class method)" data-id="Object.values">Object.values</a>.</p>
+</div></div></article><h3 class="sectionHeader">Methods</h3><article id="Object.clone" data-title="Object.clone (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Object.clone" class="member-name methodClicker">clone</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> object)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Object.html"" class="link-short" title="Object (class)">Object</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Object.clone" class="ellipsis_description"><p>Creates and returns a shallow duplicate of the passed object by copying
+all of the original&#39;s key/value pairs onto a...</p>
+</div><div id="short_Object.clone" class="short_description hiddenSpan"><p>Creates and returns a shallow duplicate of the passed object by copying
+all of the original&#39;s key/value pairs onto an empty object.
+</p>
+</div><h3 id="Object.clone" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>object
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object (class)" data-id="Object">Object</a></p></td><td><p>Required. The object to clone.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>Do note that this is a <em>shallow</em> copy, not a <em>deep</em> copy. Nested objects
+will retain their references.
+
+</p>
+<h5>Examples</h5>
+<pre><code>var original = {name: &#39;primaryColors&#39;, values: [&#39;red&#39;, &#39;green&#39;, &#39;blue&#39;]};
+var copy = Object.clone(original);
+
+original.name;
+// -&gt; &quot;primaryColors&quot;
+original.values[0];
+// -&gt; &quot;red&quot;
+copy.name;
+// -&gt; &quot;primaryColors&quot;
+
+copy.name = &quot;secondaryColors&quot;;
+original.name;
+// -&gt; &quot;primaryColors&quot;
+copy.name;
+// -&gt; &quot;secondaryColors&quot;
+
+copy.values[0] = &#39;magenta&#39;;
+copy.values[1] = &#39;cyan&#39;;
+copy.values[2] = &#39;yellow&#39;;
+original.values[0];
+// -&gt; &quot;magenta&quot; (it&#39;s a shallow copy, so they share the array)</code></pre>
+</div></div></div></div></article><article id="Object.extend" data-title="Object.extend (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Object.extend" class="member-name methodClicker">extend</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> destination, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> source)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Object.html"" class="link-short" title="Object (class)">Object</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Object.extend" class="ellipsis_description"><p>Copies all properties from the source to the destination object. Used by Prototype
+to simulate inheritance (rather s...</p>
+</div><div id="short_Object.extend" class="short_description hiddenSpan"><p>Copies all properties from the source to the destination object. Used by Prototype
+to simulate inheritance (rather statically) by copying to prototypes.
+</p>
+</div><h3 id="Object.extend" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>destination
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object (class)" data-id="Object">Object</a></p></td><td><p>Required. The object to receive the new properties.</p>
+</td>  
+</tr><tr><td><p><i>source
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object (class)" data-id="Object">Object</a></p></td><td><p>Required. The object whose properties will be duplicated.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>Documentation should soon become available that describes how Prototype implements
+OOP, where you will find further details on how Prototype uses <a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.extend" class="link-short" title="Object.extend (class method)" data-id="Object.extend">Object.extend</a> and
+<a href="Class.html#Class.create"></a> (something that may well change in version 2.0). It will be linked
+from here.
+
+</p>
+<p>Do not mistake this method with its quasi-namesake <a href="Element.html#Element.extend"></a>,
+which implements Prototype&#39;s (much more complex) DOM extension mechanism.</p>
+</div></div></div></div></article><article id="Object.inspect" data-title="Object.inspect (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Object.inspect" class="member-name methodClicker">inspect</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> obj)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Object.inspect" class="ellipsis_description"><p>Returns the debug-oriented string representation of the object.
+ ...</p>
+</div><div id="short_Object.inspect" class="short_description hiddenSpan"><p>Returns the debug-oriented string representation of the object.
+</p>
+</div><h3 id="Object.inspect" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>object
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object (class)" data-id="Object">Object</a></p></td><td><p>Required. The item to be inspected.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><ul>
+<li><code>undefined</code> and <code>null</code> are represented as such.</li>
+<li>Other types are looked up for a <code>inspect</code> method: if there is one, it is used, otherwise,
+it reverts to the <code>toString</code> method.</li>
+</ul>
+<p>Prototype provides <code>inspect</code> methods for many types, both built-in and library-defined,
+such as in <a href="String#inspect.html"></a>, <a href="Array#inspect.html"></a>, <a href="Enumerable#inspect.html"></a> and <a href="Hash#inspect.html"></a>,
+which attempt to provide most-useful string representations (from a developer&#39;s standpoint)
+for their respective types.
+
+</p>
+<h5>Examples</h5>
+<pre><code>Object.inspect();
+// -&gt; &#39;undefined&#39;
+
+Object.inspect(null);
+// -&gt; &#39;null&#39;
+
+Object.inspect(false);
+// -&gt; &#39;false&#39;
+
+Object.inspect([1, 2, 3]);
+// -&gt; &#39;[1, 2, 3]&#39;
+
+Object.inspect(&#39;hello&#39;);
+// -&gt; &quot;&#39;hello&#39;&quot;</code></pre>
+</div></div></div></div></article><article id="Object.isArray" data-title="Object.isArray (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Object.isArray" class="member-name methodClicker">isArray</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> object)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Object.isArray" class="ellipsis_description"><p>Returns <code>true</code> if <code>object</code> is an <a href="http://www.nodemanual.org/latest/js_doc/Array.html"></a>; <code>false</code> otherwise.
+ ...</p>
+</div><div id="short_Object.isArray" class="short_description hiddenSpan"><p>Returns <code>true</code> if <code>object</code> is an <a href="http://www.nodemanual.org/latest/js_doc/Array.html"></a>; <code>false</code> otherwise.
+</p>
+</div><h3 id="Object.isArray" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>object
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object (class)" data-id="Object">Object</a></p></td><td><p>Required. The object to test.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Examples</h5>
+<pre><code>Object.isArray([]);
+//-&gt; true
+
+Object.isArray($w());
+//-&gt; true
+
+Object.isArray({ });
+//-&gt; false</code></pre>
+</div></div></div></div></article><article id="Object.isDate" data-title="Object.isDate (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Object.isDate" class="member-name methodClicker">isDate</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> object)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Object.isDate" class="ellipsis_description"><p>Returns <code>true</code> if <code>object</code> is of type <a href="http://www.nodemanual.org/latest/js_doc/Date.html"></a>; <code>false</code> otherwise.
+ ...</p>
+</div><div id="short_Object.isDate" class="short_description hiddenSpan"><p>Returns <code>true</code> if <code>object</code> is of type <a href="http://www.nodemanual.org/latest/js_doc/Date.html"></a>; <code>false</code> otherwise.
+</p>
+</div><h3 id="Object.isDate" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>object
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object (class)" data-id="Object">Object</a></p></td><td><p>Required. The object to test.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Examples</h5>
+<pre><code>Object.isDate(new Date);
+//-&gt; true
+
+Object.isDate(&quot;Dec 25, 1995&quot;);
+//-&gt; false
+
+Object.isDate(new Date(&quot;Dec 25, 1995&quot;));
+//-&gt; true</code></pre>
+</div></div></div></div></article><article id="Object.isElement" data-title="Object.isElement (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Object.isElement" class="member-name methodClicker">isElement</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> object)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Object.isElement" class="ellipsis_description"><p>Returns <code>true</code> if <code>object</code> is a DOM node of type 1; <code>false</code> otherwise.
+ ...</p>
+</div><div id="short_Object.isElement" class="short_description hiddenSpan"><p>Returns <code>true</code> if <code>object</code> is a DOM node of type 1; <code>false</code> otherwise.
+</p>
+</div><h3 id="Object.isElement" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>object
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object (class)" data-id="Object">Object</a></p></td><td><p>Required. The object to test.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Examples</h5>
+<pre><code>Object.isElement(new Element(&#39;div&#39;));
+//-&gt; true
+
+Object.isElement(document.createElement(&#39;div&#39;));
+//-&gt; true
+
+Object.isElement($(&#39;id_of_an_exiting_element&#39;));
+//-&gt; true
+
+Object.isElement(document.createTextNode(&#39;foo&#39;));
+//-&gt; false</code></pre>
+</div></div></div></div></article><article id="Object.isFunction" data-title="Object.isFunction (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Object.isFunction" class="member-name methodClicker">isFunction</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> object)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Object.isFunction" class="ellipsis_description"><p>Returns <code>true</code> if <code>object</code> is of type <a href="http://www.nodemanual.org/latest/js_doc/Function.html"></a>; <code>false</code> otherwise.
+ ...</p>
+</div><div id="short_Object.isFunction" class="short_description hiddenSpan"><p>Returns <code>true</code> if <code>object</code> is of type <a href="http://www.nodemanual.org/latest/js_doc/Function.html"></a>; <code>false</code> otherwise.
+</p>
+</div><h3 id="Object.isFunction" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>object
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object (class)" data-id="Object">Object</a></p></td><td><p>Required. The object to test.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Examples</h5>
+<pre><code>Object.isFunction($);
+//-&gt; true
+
+Object.isFunction(123);
+//-&gt; false</code></pre>
+</div></div></div></div></article><article id="Object.isHash" data-title="Object.isHash (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Object.isHash" class="member-name methodClicker">isHash</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> object)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Object.isHash" class="ellipsis_description"><p>Returns <code>true</code> if <code>object</code> is an instance of the <a href="Hash.html"></a> class; <code>false</code>
+otherwise.
+ ...</p>
+</div><div id="short_Object.isHash" class="short_description hiddenSpan"><p>Returns <code>true</code> if <code>object</code> is an instance of the <a href="Hash.html"></a> class; <code>false</code>
+otherwise.
+</p>
+</div><h3 id="Object.isHash" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>object
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object (class)" data-id="Object">Object</a></p></td><td><p>Required. The object to test.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Examples</h5>
+<pre><code>Object.isHash(new Hash({ }));
+//-&gt; true
+
+Object.isHash($H({ }));
+//-&gt; true
+
+Object.isHash({ });
+//-&gt; false</code></pre>
+</div></div></div></div></article><article id="Object.isNumber" data-title="Object.isNumber (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Object.isNumber" class="member-name methodClicker">isNumber</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> object)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Object.isNumber" class="ellipsis_description"><p>Returns <code>true</code> if <code>object</code> is of type <a href="http://www.nodemanual.org/latest/js_doc/Number.html"></a>; <code>false</code> otherwise.
+ ...</p>
+</div><div id="short_Object.isNumber" class="short_description hiddenSpan"><p>Returns <code>true</code> if <code>object</code> is of type <a href="http://www.nodemanual.org/latest/js_doc/Number.html"></a>; <code>false</code> otherwise.
+</p>
+</div><h3 id="Object.isNumber" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>object
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object (class)" data-id="Object">Object</a></p></td><td><p>Required. The object to test.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Examples</h5>
+<pre><code>Object.isNumber(0);
+//-&gt; true
+
+Object.isNumber(1.2);
+//-&gt; true
+
+Object.isNumber(&quot;foo&quot;);
+//-&gt; false</code></pre>
+</div></div></div></div></article><article id="Object.isString" data-title="Object.isString (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Object.isString" class="member-name methodClicker">isString</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> object)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Object.isString" class="ellipsis_description"><p>Returns <code>true</code> if <code>object</code> is of type <a href="http://www.nodemanual.org/latest/js_doc/String.html"></a>; <code>false</code> otherwise.
+ ...</p>
+</div><div id="short_Object.isString" class="short_description hiddenSpan"><p>Returns <code>true</code> if <code>object</code> is of type <a href="http://www.nodemanual.org/latest/js_doc/String.html"></a>; <code>false</code> otherwise.
+</p>
+</div><h3 id="Object.isString" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>object
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object (class)" data-id="Object">Object</a></p></td><td><p>Required. The object to test.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Examples</h5>
+<pre><code>Object.isString(&quot;foo&quot;);
+//-&gt; true
+
+Object.isString(&quot;&quot;);
+//-&gt; true
+
+Object.isString(123);
+//-&gt; false</code></pre>
+</div></div></div></div></article><article id="Object.isUndefined" data-title="Object.isUndefined (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Object.isUndefined" class="member-name methodClicker">isUndefined</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> object)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Object.isUndefined" class="ellipsis_description"><p>Returns <code>true</code> if <code>object</code> is of type <code>undefined</code>; <code>false</code> otherwise.
+ ...</p>
+</div><div id="short_Object.isUndefined" class="short_description hiddenSpan"><p>Returns <code>true</code> if <code>object</code> is of type <code>undefined</code>; <code>false</code> otherwise.
+</p>
+</div><h3 id="Object.isUndefined" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>object
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object (class)" data-id="Object">Object</a></p></td><td><p>Required. The object to test.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Examples</h5>
+<pre><code>Object.isUndefined();
+//-&gt; true
+
+Object.isUndefined(undefined);
+//-&gt; true
+
+Object.isUndefined(null);
+//-&gt; false
+
+Object.isUndefined(0);
+//-&gt; false
+
+Object.isUndefined(&quot;&quot;);
+//-&gt; false</code></pre>
+</div></div></div></div></article><article id="Object.keys" data-title="Object.keys (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Object.keys" class="member-name methodClicker">keys</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> object)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Object.keys" class="ellipsis_description"><p>Returns an array of the object&#39;s property names.
+ ...</p>
+</div><div id="short_Object.keys" class="short_description hiddenSpan"><p>Returns an array of the object&#39;s property names.
+</p>
+</div><h3 id="Object.keys" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>object
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object (class)" data-id="Object">Object</a></p></td><td><p>Required. The object to pull keys from.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>Note that the order of the resulting array is browser-dependent &mdash; it
+relies on the <code>for...in</code> loop, for which the ECMAScript spec does not
+prescribe an enumeration order. Sort the resulting array if you wish to
+normalize the order of the object keys.
+
+</p>
+<h5>Examples</h5>
+<pre><code>Object.keys();
+// -&gt; []
+
+Object.keys({ name: &#39;Prototype&#39;, version: &#39;1.6.1&#39; }).sort();
+// -&gt; [&#39;name&#39;, &#39;version&#39;]</code></pre>
+</div></div></div></div></article><article id="Object.toHTML" data-title="Object.toHTML (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Object.toHTML" class="member-name methodClicker">toHTML</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> object)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Object.toHTML" class="ellipsis_description"><p>Converts the object to its HTML representation.
+ ...</p>
+</div><div id="short_Object.toHTML" class="short_description hiddenSpan"><p>Converts the object to its HTML representation.
+</p>
+</div><h3 id="Object.toHTML" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>object
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object (class)" data-id="Object">Object</a></p></td><td><p>Required. The object to convert to HTML.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>Returns the return value of <code>object</code>&#39;s <code>toHTML</code> method if it exists; else
+runs <code>object</code> through <a href="http://www.nodemanual.org/latest/js_doc/String.html#String.interpret"></a>.
+
+</p>
+<h5>Examples</h5>
+<pre><code>var Bookmark = Class.create({
+  initialize: function(name, url) {
+    this.name = name;
+    this.url = url;
+  },
+
+  toHTML: function() {
+    return &#39;&lt;a href=&quot;#{url}&quot;&gt;#{name}&lt;/a&gt;&#39;.interpolate(this);
+  }
+});
+
+var api = new Bookmark(&#39;Prototype API&#39;, &#39;http://prototypejs.org/api&#39;);
+
+Object.toHTML(api);
+//-&gt; &#39;&lt;a href=&quot;http://prototypejs.org/api&quot;&gt;Prototype API&lt;/a&gt;&#39;
+
+Object.toHTML(&quot;Hello world!&quot;);
+//-&gt; &quot;Hello world!&quot;
+
+Object.toHTML();
+//-&gt; &quot;&quot;
+
+Object.toHTML(null);
+//-&gt; &quot;&quot;
+
+Object.toHTML(undefined);
+//-&gt; &quot;&quot;
+
+Object.toHTML(true);
+//-&gt; &quot;true&quot;
+
+Object.toHTML(false);
+//-&gt; &quot;false&quot;
+
+Object.toHTML(123);
+//-&gt; &quot;123&quot;</code></pre>
+</div></div></div></div></article><article id="Object.toJSON" data-title="Object.toJSON (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Object.toJSON" class="member-name methodClicker">toJSON</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> object)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Object.toJSON" class="ellipsis_description"><p>Returns a JSON string.
+ ...</p>
+</div><div id="short_Object.toJSON" class="short_description hiddenSpan"><p>Returns a JSON string.
+</p>
+</div><h3 id="Object.toJSON" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>object
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object (class)" data-id="Object">Object</a></p></td><td><p>Required. The object to be serialized.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p><code>undefined</code> and <code>function</code> types have no JSON representation. <code>boolean</code>
+and <code>null</code> are coerced to strings.
+
+</p>
+<p>For other types, <a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.toJSON" class="link-short" title="Object.toJSON (class method)" data-id="Object.toJSON">Object.toJSON</a> looks for a <code>toJSON</code> method on <code>object</code>.
+If there is one, it is used; otherwise the object is treated like a
+generic <a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class="link-short clicker" title="Object (class)" data-id="Object">Object</a>.
+
+</p>
+<p>For more information on Prototype&#39;s JSON encoder, hop to our
+<a href="http://prototypejs.org/learn/json">tutorial</a>.
+
+</p>
+<h5>Example</h5>
+<pre><code>var data = {name: &#39;Violet&#39;, occupation: &#39;character&#39;, age: 25, pets: [&#39;frog&#39;, &#39;rabbit&#39;]};
+Object.toJSON(data);
+//-&gt; &#39;{&quot;name&quot;: &quot;Violet&quot;, &quot;occupation&quot;: &quot;character&quot;, &quot;age&quot;: 25, &quot;pets&quot;: [&quot;frog&quot;,&quot;rabbit&quot;]}&#39;</code></pre>
+</div></div></div></div></article><article id="Object.toQueryString" data-title="Object.toQueryString (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Object.toQueryString" class="member-name methodClicker">toQueryString</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> object)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Object.toQueryString" class="ellipsis_description"><p>Turns an object into its URL-encoded query string representation.
+ ...</p>
+</div><div id="short_Object.toQueryString" class="short_description hiddenSpan"><p>Turns an object into its URL-encoded query string representation.
+</p>
+</div><h3 id="Object.toQueryString" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>object
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object (class)" data-id="Object">Object</a></p></td><td><p>Required. The object whose property/value pairs will be converted.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>This is a form of serialization, and is mostly useful to provide complex
+parameter sets for stuff such as objects in the <a href="Ajax.html"></a> namespace (e.g.
+<a href="Ajax.html#Ajax.Request"></a>).
+
+</p>
+<p>Undefined-value pairs will be serialized as if empty-valued. Array-valued
+pairs will get serialized with one name/value pair per array element. All
+values get URI-encoded using JavaScript&#39;s native <code>encodeURIComponent</code>
+function.
+
+</p>
+<p>The order of pairs in the serialized form is not guaranteed (and mostly
+irrelevant anyway) &mdash; except for array-based parts, which are serialized
+in array order.
+
+</p>
+<h5>Examples</h5>
+<pre><code>Object.toQueryString({ action: &#39;ship&#39;, order_id: 123, fees: [&#39;f1&#39;, &#39;f2&#39;], &#39;label&#39;: &#39;a demo&#39; })
+// -&gt; &#39;action=ship&amp;order_id=123&amp;fees=f1&amp;fees=f2&amp;label=a%20demo&#39;</code></pre>
+</div></div></div></div></article><article id="Object.values" data-title="Object.values (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Object.values" class="member-name methodClicker">values</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> object)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Object.values" class="ellipsis_description"><p>Returns an array of the object&#39;s property values.
+ ...</p>
+</div><div id="short_Object.values" class="short_description hiddenSpan"><p>Returns an array of the object&#39;s property values.
+</p>
+</div><h3 id="Object.values" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>object
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object (class)" data-id="Object">Object</a></p></td><td><p>Required. The object to pull values from.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>Note that the order of the resulting array is browser-dependent &mdash; it
+relies on the <code>for...in</code> loop, for which the ECMAScript spec does not
+prescribe an enumeration order.
+
+</p>
+<p>Also, remember that while property <em>names</em> are unique, property <em>values</em>
+have no such constraint.
+
+</p>
+<h5>Examples</h5>
+<pre><code>Object.values();
+// -&gt; []
+
+Object.values({ name: &#39;Prototype&#39;, version: &#39;1.6.1&#39; }).sort();
+// -&gt; [&#39;1.6.1&#39;, &#39;Prototype&#39;]</code></pre>
+</div></div></div></div></article><div id="disqus_thread"></div></div></div></div></div><footer id="footer"><div class="container"><div class="footer-text">&#169; 2012:</div></div></footer></div><!-- scripts concatenated and minified via ant build script--><script defer src="./resources/javascripts/plugins.js"></script>
+<script defer src="./resources/javascripts/prettify.js"></script>
+<script defer src="./resources/javascripts/prettify-extension.js"></script>
+<script defer src="./resources/javascripts/ux.js"></script>
+<!-- end scripts--><!--[if lt IE 7]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script><script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})
+
+</script><![endif]--></body>

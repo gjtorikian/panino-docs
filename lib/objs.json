@@ -1,0 +1,23 @@
+{
+	"javascript" : [
+					"Array", 
+					"Boolean", 
+					"Date", 
+					"Error", 
+					"EvalError", 
+					"RangeError", 
+					"ReferenceError", 
+					"SyntaxError", 
+					"TypeError", 
+					"URIError", 
+					"Function", 
+					"Infinity", 
+					"JSON", 
+					"Math", 
+					"NaN", 
+					"Number", 
+					"Object", 
+					"RegExp", 
+					"String"
+					]
+}

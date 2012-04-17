@@ -1,0 +1,626 @@
+<!DOCTYPE html><!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><title>Prototype</title><meta name="generator" content="panino-doc-build"/><meta name="author" content="Garen J. Torikian"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="stylesheet" href="./resources/csses/bootstrap.css"/><link rel="stylesheet" href="./resources/csses/prettify.css"/><link rel="stylesheet" href="./resources/csses/refguide_overrides.css"/><link href="./resources/images/favicon.ico" rel="icon" type="image/x-icon"/><link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/vs.min.css"/><script src="./resources/javascripts/jquery.js"></script><script src="./resources/javascripts/clicker.js"></script><script src="./resources/javascripts/jquery.collapse.js"></script><script src="./resources/javascripts/jquery.cookie.js"></script><script src="./resources/javascripts/bootstrap-dropdown.js"></script><body onload="styleCode()"><div class="topbar"><div class="fill"><div id="topSection" class="container"><ul class="nav leftnav"></ul><ul class="nav"></ul><form id="searchbox" action="" class="pull-right"><input name="query" type="text" placeholder="Search Documentation" title="Search across all the documentation types" class="span3"/></form></div></div></div><header id="overview" class="jumbotron masthead"><div class="inner"><div class="container"><h1>Node.js Manual</h1><p class="lead"></p></div></div></header><div class="container"><div class="content"><div class="row container"><div class="span5 offset4 sidebarContainer"><div id="sidebar"><div id="well"><h3>Modules</h3><ul class="menu"><li><div class="menu-item"><a href="assert.html" class="menuLink namespace">assert</a></div></li><li><div class="menu-item"><a href="child.process.html" class="menuLink namespace">child_process</a></div></li><li><div class="menu-item"><a href="cluster.html" class="menuLink namespace">cluster    </a></div></li><li><div class="menu-item"><a href="crypto.html" class="menuLink namespace">crypto</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="cipher.html" class="menuLink class">Cipher</a></div></li><li><div class="menu-item"><a href="decipher.html" class="menuLink class">Decipher   </a></div></li><li><div class="menu-item"><a href="diffieHellman.html" class="menuLink class">Diffie-Hellman</a></div></li><li><div class="menu-item"><a href="hash.html" class="menuLink class">Hash    </a></div></li><li><div class="menu-item"><a href="hmac.html" class="menuLink class">HMAC</a></div></li><li><div class="menu-item"><a href="signer.html" class="menuLink class">Signer  </a></div></li><li><div class="menu-item"><a href="verifier.html" class="menuLink class">Verifier                                                          </a></div></li></ul></li><li><div class="menu-item"><a href="dgram.html" class="menuLink namespace">dgram</a></div></li><li><div class="menu-item"><a href="dns.html" class="menuLink namespace">dns</a></div></li><li><div class="menu-item"><a href="eventemitter.html" class="menuLink namespace">EventEmitter</a></div></li><li><div class="menu-item"><a href="fs.html" class="menuLink namespace">fs</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="fs.FSWatcher.html" class="menuLink class">FSWatcher   </a></div></li><li><div class="menu-item"><a href="fs.ReadStream.html" class="menuLink class">Readstream                          </a></div></li><li><div class="menu-item"><a href="fs.Stats.html" class="menuLink class">Stats  </a></div></li><li><div class="menu-item"><a href="fs.WriteStream.html" class="menuLink class">Writestream                            </a></div></li></ul></li><li><div class="menu-item"><a href="http.html" class="menuLink namespace">http</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="http.Agent.html" class="menuLink class">Agent   </a></div></li><li><div class="menu-item"><a href="http.ClientRequest.html" class="menuLink class">ClientRequest   </a></div></li><li><div class="menu-item"><a href="http.ClientResponse.html" class="menuLink class">ClientResponse        </a></div></li><li><div class="menu-item"><a href="http.Server.html" class="menuLink class">Server</a></div></li><li><div class="menu-item"><a href="http.ServerRequest.html" class="menuLink class">ServerRequest</a></div></li><li><div class="menu-item"><a href="http.ServerResponse.html" class="menuLink class">ServerResponse   </a></div></li></ul></li><li><div class="menu-item"><a href="https.html" class="menuLink namespace">https</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="https.Agent.html" class="menuLink class">Agent    </a></div></li><li><div class="menu-item"><a href="https.Server.html" class="menuLink class">Server                             </a></div></li></ul></li><li><div class="menu-item"><a href="net.html" class="menuLink namespace">net</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="net.Server.html" class="menuLink class">Server   </a></div></li><li><div class="menu-item"><a href="net.Socket.html" class="menuLink class">Socket              </a></div></li></ul></li><li><div class="menu-item"><a href="os.html" class="menuLink namespace">os</a></div></li><li><div class="menu-item"><a href="path.html" class="menuLink namespace">path</a></div></li><li><div class="menu-item"><a href="querystring.html" class="menuLink namespace">querystring</a></div></li><li><div class="menu-item"><a href="readline.html" class="menuLink namespace">readline</a></div></li><li><div class="menu-item"><a href="tls.html" class="menuLink namespace">tls</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="tls.SecurePair.html" class="menuLink class">SecurePair  </a></div></li><li><div class="menu-item"><a href="tls.Server.html" class="menuLink class">Server   </a></div></li><li><div class="menu-item"><a href="tls.CleartextStream.html" class="menuLink class">CleartextStream              </a></div></li></ul></li><li><div class="menu-item"><a href="tty.html" class="menuLink namespace">tty</a></div></li><li><div class="menu-item"><a href="url.html" class="menuLink namespace">url</a></div></li><li><div class="menu-item"><a href="util.html" class="menuLink namespace">util</a></div></li><li><div class="menu-item"><a href="vm.html" class="menuLink namespace">vm</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="vm.Script.html" class="menuLink class">Script      </a></div></li></ul></li><li><div class="menu-item"><a href="zlib.html" class="menuLink namespace">zlib                                                                       </a></div></li></ul><h3>Globals</h3><ul class="menu"><li><div class="menu-item"><a href="buffer.html" class="menuLink class">Buffers</a></div></li><li><div class="menu-item"><a href="process.html" class="menuLink class">Process</a></div></li><li><div class="menu-item"><a href="console.html" class="menuLink class">STDIO</a></div></li><li><div class="menu-item"><a href="streams.html" class="menuLink class">Streams</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="streams.ReadableStream.html" class="menuLink class">Readable Streams</a></div></li><li><div class="menu-item"><a href="streams.WritableStream.html" class="menuLink class">Writable Streams</a></div></li></ul></li><li><div class="menu-item"><a href="timer.html" class="menuLink class">Timers</a></div></li></ul><h3>Concepts</h3><ul class="menu"><li><div class="menu-item"><a href="addons.html" class="menuLink namespace">Addons</a></div></li><li><div class="menu-item"><a href="debugging.node.js.html" class="menuLink namespace">Debugging Node.js</a></div></li><li><div class="menu-item"><a href="global.objects.html" class="menuLink namespace">Global Objects    </a></div></li><li><div class="menu-item"><a href="modules.html" class="menuLink namespace">Modules</a></div></li><li><div class="menu-item"><a href="repl.html" class="menuLink namespace">REPL    </a></div></li></ul></div></div></div><div class="span11"><div id="content"><div class="membersBackground"></div><div class="members"><div class="membersContent"><h1 class="memberHeader"><span class="name">String</span><span class="backToMDN"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" target="_blank">(View original on MDN)</a></span></h1><ul data-tabs="tabs" class="tabs"><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"><a href="#" class="dropdown-toggle"><span>Functions (1)</span></a><ul class="dropdown-menu"><li data-id="String.interpret" class="memberLink"><a href="http://www.nodemanual.org/latest/js_doc/String.html#String.interpret" class="" title="String.interpret (class method)" data-id="String.interpret">interpret</a>                                 
+</li></ul></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"><a href="#" class="dropdown-toggle"><span>Functions (30)</span></a><ul class="dropdown-menu"><li data-id="String#blank" class="memberLink"><a href="String#blank.html" id="String#blank" class=" clicker" title="String#blank (instance method)" data-id="String#blank">blank</a>                                 
+</li><li data-id="String#camelize" class="memberLink"><a href="String#camelize.html" id="String#camelize" class=" clicker" title="String#camelize (instance method)" data-id="String#camelize">camelize</a>                                 
+</li><li data-id="String#capitalize" class="memberLink"><a href="String#capitalize.html" id="String#capitalize" class=" clicker" title="String#capitalize (instance method)" data-id="String#capitalize">capitalize</a>                                 
+</li><li data-id="String#dasherize" class="memberLink"><a href="String#dasherize.html" id="String#dasherize" class=" clicker" title="String#dasherize (instance method)" data-id="String#dasherize">dasherize</a>                                 
+</li><li data-id="String#empty" class="memberLink"><a href="String#empty.html" id="String#empty" class=" clicker" title="String#empty (instance method)" data-id="String#empty">empty</a>                                 
+</li><li data-id="String#endsWith" class="memberLink"><a href="String#endsWith.html" id="String#endsWith" class=" clicker" title="String#endsWith (instance method)" data-id="String#endsWith">endsWith</a>                                 
+</li><li data-id="String#escapeHTML" class="memberLink"><a href="String#escapeHTML.html" id="String#escapeHTML" class=" clicker" title="String#escapeHTML (instance method)" data-id="String#escapeHTML">escapeHTML</a>                                 
+</li><li data-id="String#evalJSON" class="memberLink"><a href="String#evalJSON.html" id="String#evalJSON" class=" clicker" title="String#evalJSON (instance method)" data-id="String#evalJSON">evalJSON</a>                                 
+</li><li data-id="String#evalScripts" class="memberLink"><a href="String#evalScripts.html" id="String#evalScripts" class=" clicker" title="String#evalScripts (instance method)" data-id="String#evalScripts">evalScripts</a>                                 
+</li><li data-id="String#extractScripts" class="memberLink"><a href="String#extractScripts.html" id="String#extractScripts" class=" clicker" title="String#extractScripts (instance method)" data-id="String#extractScripts">extractScripts</a>                                 
+</li><li data-id="String#gsub" class="memberLink"><a href="String#gsub.html" id="String#gsub" class=" clicker" title="String#gsub (instance method)" data-id="String#gsub">gsub</a>                                 
+</li><li data-id="String#include" class="memberLink"><a href="String#include.html" id="String#include" class=" clicker" title="String#include (instance method)" data-id="String#include">include</a>                                 
+</li><li data-id="String#inspect" class="memberLink"><a href="String#inspect.html" id="String#inspect" class=" clicker" title="String#inspect (instance method)" data-id="String#inspect">inspect</a>                                 
+</li><li data-id="String#interpolate" class="memberLink"><a href="String#interpolate.html" id="String#interpolate" class=" clicker" title="String#interpolate (instance method)" data-id="String#interpolate">interpolate</a>                                 
+</li><li data-id="String#isJSON" class="memberLink"><a href="String#isJSON.html" id="String#isJSON" class=" clicker" title="String#isJSON (instance method)" data-id="String#isJSON">isJSON</a>                                 
+</li><li data-id="String#parseQuery" class="memberLink"><a href="String#parseQuery.html" id="String#parseQuery" class=" clicker" title="String#parseQuery (instance method)" data-id="String#parseQuery">parseQuery</a>                                 
+</li><li data-id="String#scan" class="memberLink"><a href="String#scan.html" id="String#scan" class=" clicker" title="String#scan (instance method)" data-id="String#scan">scan</a>                                 
+</li><li data-id="String#startsWith" class="memberLink"><a href="String#startsWith.html" id="String#startsWith" class=" clicker" title="String#startsWith (instance method)" data-id="String#startsWith">startsWith</a>                                 
+</li><li data-id="String#strip" class="memberLink"><a href="String#strip.html" id="String#strip" class=" clicker" title="String#strip (instance method)" data-id="String#strip">strip</a>                                 
+</li><li data-id="String#stripScripts" class="memberLink"><a href="String#stripScripts.html" id="String#stripScripts" class=" clicker" title="String#stripScripts (instance method)" data-id="String#stripScripts">stripScripts</a>                                 
+</li><li data-id="String#stripTags" class="memberLink"><a href="String#stripTags.html" id="String#stripTags" class=" clicker" title="String#stripTags (instance method)" data-id="String#stripTags">stripTags</a>                                 
+</li><li data-id="String#sub" class="memberLink"><a href="String#sub.html" id="String#sub" class=" clicker" title="String#sub (instance method)" data-id="String#sub">sub</a>                                 
+</li><li data-id="String#succ" class="memberLink"><a href="String#succ.html" id="String#succ" class=" clicker" title="String#succ (instance method)" data-id="String#succ">succ</a>                                 
+</li><li data-id="String#times" class="memberLink"><a href="String#times.html" id="String#times" class=" clicker" title="String#times (instance method)" data-id="String#times">times</a>                                 
+</li><li data-id="String#toArray" class="memberLink"><a href="String#toArray.html" id="String#toArray" class=" clicker" title="String#toArray (instance method)" data-id="String#toArray">toArray</a>                                 
+</li><li data-id="String#toQueryParams" class="memberLink"><a href="String#toQueryParams.html" id="String#toQueryParams" class=" clicker" title="String#toQueryParams (instance method)" data-id="String#toQueryParams">toQueryParams</a>                                 
+</li><li data-id="String#truncate" class="memberLink"><a href="String#truncate.html" id="String#truncate" class=" clicker" title="String#truncate (instance method)" data-id="String#truncate">truncate</a>                                 
+</li><li data-id="String#underscore" class="memberLink"><a href="String#underscore.html" id="String#underscore" class=" clicker" title="String#underscore (instance method)" data-id="String#underscore">underscore</a>                                 
+</li><li data-id="String#unescapeHTML" class="memberLink"><a href="String#unescapeHTML.html" id="String#unescapeHTML" class=" clicker" title="String#unescapeHTML (instance method)" data-id="String#unescapeHTML">unescapeHTML</a>                                 
+</li><li data-id="String#unfilterJSON" class="memberLink"><a href="String#unfilterJSON.html" id="String#unfilterJSON" class=" clicker" title="String#unfilterJSON (instance method)" data-id="String#unfilterJSON">unfilterJSON</a>                                 
+</li></ul></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li></ul></div></div><article id="String" data-title="String (class)" class="article"><div class="section description"><div class="memberContent"><p>Extensions to the built-in <code>String</code> class.
+
+</p>
+<p>Prototype enhances the <a href="http://www.nodemanual.org/latest/js_doc/String.html" id="String" class="link-short clicker" title="String (class)" data-id="String">String</a> object with a series of useful methods for
+ranging from the trivial to the complex. Tired of stripping trailing
+whitespace? Try <a href="String#strip.html" id="String#strip" class="link-short clicker" title="String#strip (instance method)" data-id="String#strip">String#strip</a>. Want to replace <code>replace</code>? Have a look at
+<a href="String#sub.html" id="String#sub" class="link-short clicker" title="String#sub (instance method)" data-id="String#sub">String#sub</a> and <a href="String#gsub.html" id="String#gsub" class="link-short clicker" title="String#gsub (instance method)" data-id="String#gsub">String#gsub</a>. Need to parse a query string? We have
+<a href="String#toQueryParams.html" id="String#toQueryParams" class="link-short clicker" title="String#toQueryParams (instance method)" data-id="String#toQueryParams">what you need</a>.</p>
+</div></div></article><h3 class="sectionHeader">Methods</h3><article id="String.interpret" data-title="String.interpret (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String.interpret" class="member-name methodClicker">interpret</span>(value)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String.interpret" class="ellipsis_description"><p>Coerces <code>value</code> into a string. Returns an empty string for <code>null</code>. ...</p>
+</div><div id="short_String.interpret" class="short_description hiddenSpan"><p>Coerces <code>value</code> into a string. Returns an empty string for <code>null</code>.</p>
+</div><h3 id="String.interpret" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"></div></div></div></div></article><article id="String.prototype.blank" data-title="String#blank (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#blank" class="member-name methodClicker">String#blank</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#blank" class="ellipsis_description"><p>Check if the string is &quot;blank&quot; &mdash; either empty (length of <code>0</code>) or
+containing only whitespace.
+ ...</p>
+</div><div id="short_String#blank" class="short_description hiddenSpan"><p>Check if the string is &quot;blank&quot; &mdash; either empty (length of <code>0</code>) or
+containing only whitespace.
+</p>
+</div><h3 id="String#blank" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<pre><code>&#39;&#39;.blank();
+//-&gt; true
+
+&#39;  &#39;.blank();
+//-&gt; true
+
+&#39; a &#39;.blank();
+//-&gt; false</code></pre>
+</div></div></div></div></article><article id="String.prototype.camelize" data-title="String#camelize (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#camelize" class="member-name methodClicker">String#camelize</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#camelize" class="ellipsis_description"><p>Converts a string separated by dashes into a camelCase equivalent. For
+instance, <code>&#39;foo-bar&#39;</code> would be converted to `...</p>
+</div><div id="short_String#camelize" class="short_description hiddenSpan"><p>Converts a string separated by dashes into a camelCase equivalent. For
+instance, <code>&#39;foo-bar&#39;</code> would be converted to <code>&#39;fooBar&#39;</code>.
+</p>
+</div><h3 id="String#camelize" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>Prototype uses this internally for translating CSS properties into their
+DOM <code>style</code> property equivalents.
+
+</p>
+<h5>Examples</h5>
+<pre><code>&#39;background-color&#39;.camelize();
+// -&gt; &#39;backgroundColor&#39;
+
+&#39;-moz-binding&#39;.camelize();
+// -&gt; &#39;MozBinding&#39;</code></pre>
+</div></div></div></div></article><article id="String.prototype.capitalize" data-title="String#capitalize (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#capitalize" class="member-name methodClicker">String#capitalize</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#capitalize" class="ellipsis_description"><p>Capitalizes the first letter of a string and downcases all the others.
+ ...</p>
+</div><div id="short_String#capitalize" class="short_description hiddenSpan"><p>Capitalizes the first letter of a string and downcases all the others.
+</p>
+</div><h3 id="String#capitalize" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Examples</h5>
+<pre><code>&#39;hello&#39;.capitalize();
+// -&gt; &#39;Hello&#39;
+
+&#39;HELLO WORLD!&#39;.capitalize();
+// -&gt; &#39;Hello world!&#39;</code></pre>
+</div></div></div></div></article><article id="String.prototype.dasherize" data-title="String#dasherize (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#dasherize" class="member-name methodClicker">String#dasherize</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#dasherize" class="ellipsis_description"><p>Replaces every instance of the underscore character <code>&quot;_&quot;</code> by a dash <code>&quot;-&quot;</code>.
+ ...</p>
+</div><div id="short_String#dasherize" class="short_description hiddenSpan"><p>Replaces every instance of the underscore character <code>&quot;_&quot;</code> by a dash <code>&quot;-&quot;</code>.
+</p>
+</div><h3 id="String#dasherize" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<pre><code>&#39;border_bottom_width&#39;.dasherize();
+// -&gt; &#39;border-bottom-width&#39;</code></pre>
+<h5>Note</h5>
+<p>Used in conjunction with <a href="String#underscore.html" id="String#underscore" class="link-short clicker" title="String#underscore (instance method)" data-id="String#underscore">String#underscore</a>, <a href="String#dasherize.html" id="String#dasherize" class="link-short clicker" title="String#dasherize (instance method)" data-id="String#dasherize">String#dasherize</a>
+converts a DOM style into its CSS equivalent.
+
+</p>
+<pre><code>&#39;borderBottomWidth&#39;.underscore().dasherize();
+// -&gt; &#39;border-bottom-width&#39;</code></pre>
+</div></div></div></div></article><article id="String.prototype.empty" data-title="String#empty (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#empty" class="member-name methodClicker">String#empty</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#empty" class="ellipsis_description"><p>Checks if the string is empty.
+ ...</p>
+</div><div id="short_String#empty" class="short_description hiddenSpan"><p>Checks if the string is empty.
+</p>
+</div><h3 id="String#empty" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<pre><code>&#39;&#39;.empty();
+//-&gt; true
+
+&#39;  &#39;.empty();
+//-&gt; false</code></pre>
+</div></div></div></div></article><article id="String.prototype.endsWith" data-title="String#endsWith (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#endsWith" class="member-name methodClicker">String#endsWith</span>(substring)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#endsWith" class="ellipsis_description"><p>Checks if the string ends with <code>substring</code>.
+ ...</p>
+</div><div id="short_String#endsWith" class="short_description hiddenSpan"><p>Checks if the string ends with <code>substring</code>.
+</p>
+</div><h3 id="String#endsWith" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<pre><code>&#39;slaughter&#39;.endsWith(&#39;laughter&#39;)
+// -&gt; true</code></pre>
+</div></div></div></div></article><article id="String.prototype.escapeHTML" data-title="String#escapeHTML (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#escapeHTML" class="member-name methodClicker">String#escapeHTML</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label related-to">Related to
+<a href="String#unescapeHTML.html" id="String#unescapeHTML" class=" clicker" title="String#unescapeHTML (instance method)" data-id="String#unescapeHTML">String#unescapeHTML</a>  
+</span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#escapeHTML" class="ellipsis_description"><p>Converts HTML special characters to their entity equivalents.
+ ...</p>
+</div><div id="short_String#escapeHTML" class="short_description hiddenSpan"><p>Converts HTML special characters to their entity equivalents.
+</p>
+</div><h3 id="String#escapeHTML" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<pre><code>&#39;&lt;div class=&quot;article&quot;&gt;This is an article&lt;/div&gt;&#39;.escapeHTML();
+// -&gt; &quot;&amp;lt;div class=&quot;article&quot;&amp;gt;This is an article&amp;lt;/div&amp;gt;&quot;</code></pre>
+</div></div></div></div></article><article id="String.prototype.evalJSON" data-title="String#evalJSON (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#evalJSON" class="member-name methodClicker">String#evalJSON</span>([sanitize = false])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Object.html"" class="link-short" title="object">object</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#evalJSON" class="ellipsis_description"><p>Evaluates the JSON in the string and returns the resulting object.
+ ...</p>
+</div><div id="short_String#evalJSON" class="short_description hiddenSpan"><p>Evaluates the JSON in the string and returns the resulting object.
+</p>
+</div><h3 id="String#evalJSON" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>If the optional <code>sanitize</code> parameter is set to <code>true</code>, the string is
+checked for possible malicious attempts; if one is detected, <code>eval</code>
+is <em>not called</em>.
+
+</p>
+<h5>Warning</h5>
+<p>If the JSON string is not well formated or if a malicious attempt is
+detected a <code>SyntaxError</code> is thrown.
+
+</p>
+<h5>Examples</h5>
+<pre><code>var person = &#39;{ &quot;name&quot;: &quot;Violet&quot;, &quot;occupation&quot;: &quot;character&quot; }&#39;.evalJSON();
+person.name;
+//-&gt; &quot;Violet&quot;
+
+person = &#39;grabUserPassword()&#39;.evalJSON(true);
+//-&gt; SyntaxError: Badly formed JSON string: &#39;grabUserPassword()&#39;
+
+person = &#39;/*-secure-\n{&quot;name&quot;: &quot;Violet&quot;, &quot;occupation&quot;: &quot;character&quot;}\n*\/&#39;.evalJSON()
+person.name;
+//-&gt; &quot;Violet&quot;</code></pre>
+<h5>Note</h5>
+<p>Always set the <code>sanitize</code> parameter to <code>true</code> for data coming from
+externals sources to prevent XSS attacks.
+
+</p>
+<p>As <a href="String#evalJSON.html" id="String#evalJSON" class="link-short clicker" title="String#evalJSON (instance method)" data-id="String#evalJSON">String#evalJSON</a> internally calls <a href="String#unfilterJSON.html" id="String#unfilterJSON" class="link-short clicker" title="String#unfilterJSON (instance method)" data-id="String#unfilterJSON">String#unfilterJSON</a>, optional
+security comment delimiters (defined in <a href="Prototype.html#Prototype.JSONFilter"></a>) are
+automatically removed.</p>
+</div></div></div></div></article><article id="String.prototype.evalScripts" data-title="String#evalScripts (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#evalScripts" class="member-name methodClicker">String#evalScripts</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#evalScripts" class="ellipsis_description"><p>Evaluates the content of any inline <code>&lt;script&gt;</code> block present in the string.
+Returns an array containing the value re...</p>
+</div><div id="short_String#evalScripts" class="short_description hiddenSpan"><p>Evaluates the content of any inline <code>&lt;script&gt;</code> block present in the string.
+Returns an array containing the value returned by each script.
+<code>&lt;script&gt;</code>  blocks referencing external files will be treated as though
+they were empty (the result for that position in the array will be <code>undefined</code>);
+external files are <em>not</em> loaded and processed by <a href="String#evalScripts.html" id="String#evalScripts" class="link-short clicker" title="String#evalScripts (instance method)" data-id="String#evalScripts">String#evalScripts</a>.
+</p>
+</div><h3 id="String#evalScripts" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Examples</h5>
+<pre><code>&#39;lorem... &lt;script&gt;2 + 2&lt;/script&gt;&#39;.evalScripts();
+// -&gt; [4]
+
+&#39;&lt;script&gt;2 + 2&lt;script&gt;&lt;script&gt;alert(&quot;hello world!&quot;)&lt;/script&gt;&#39;.evalScripts();
+// -&gt; [4, undefined] (and displays &#39;hello world!&#39; in the alert dialog)</code></pre>
+<h5>About <code>evalScripts</code>, <code>var</code>s, and defining functions</h5>
+<p><a href="String#evalScripts.html" id="String#evalScripts" class="link-short clicker" title="String#evalScripts (instance method)" data-id="String#evalScripts">String#evalScripts</a> evaluates script blocks, but this <strong>does not</strong> mean
+they are evaluated in the global scope. They aren&#39;t, they&#39;re evaluated in
+the scope of the <a href="String#evalScripts.html" id="String#evalScripts" class="link-short clicker" title="String#evalScripts (instance method)" data-id="String#evalScripts">String#evalScripts</a> method. This has important
+ramifications for your scripts:
+
+</p>
+<ul>
+<li>Anything in your script declared with the <code>var</code> keyword will be
+discarded momentarily after evaluation, and will be invisible to any
+other scope.</li>
+<li>If any <code>&lt;script&gt;</code> blocks <em>define functions</em>, they will need to be
+assigned to properties of the <code>window</code> object.</li>
+</ul>
+<p>For example, this won&#39;t work:
+
+</p>
+<pre><code>// This kind of script won&#39;t work if processed by evalScripts:
+function coolFunc() {
+  // Amazing stuff!
+}</code></pre>
+<p>Instead, use the following syntax:
+
+</p>
+<pre><code>// This kind of script WILL work if processed by evalScripts:
+window.coolFunc = function() {
+  // Amazing stuff!
+}</code></pre>
+<p>(You can leave off the <code>window.</code> part of that, but it&#39;s bad form.)
+Evaluates the content of any <code>script</code> block present in the string. Returns
+an array containing the value returned by each script.</p>
+</div></div></div></div></article><article id="String.prototype.extractScripts" data-title="String#extractScripts (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#extractScripts" class="member-name methodClicker">String#extractScripts</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#extractScripts" class="ellipsis_description"><p>Extracts the content of any <code>&lt;script&gt;</code> blocks present in the string and
+returns them as an array of strings.
+ ...</p>
+</div><div id="short_String#extractScripts" class="short_description hiddenSpan"><p>Extracts the content of any <code>&lt;script&gt;</code> blocks present in the string and
+returns them as an array of strings.
+</p>
+</div><h3 id="String#extractScripts" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>This method is used internally by <a href="String#evalScripts.html" id="String#evalScripts" class="link-short clicker" title="String#evalScripts (instance method)" data-id="String#evalScripts">String#evalScripts</a>. It does <em>not</em>
+evaluate the scripts (use <a href="String#evalScripts.html" id="String#evalScripts" class="link-short clicker" title="String#evalScripts (instance method)" data-id="String#evalScripts">String#evalScripts</a> to do that), but can be
+usefull if you need to evaluate the scripts at a later date.
+
+</p>
+<h5>Examples</h5>
+<pre><code>&#39;lorem... &lt;script&gt;2 + 2&lt;/script&gt;&#39;.extractScripts();
+// -&gt; [&#39;2 + 2&#39;]
+
+&#39;&lt;script&gt;2 + 2&lt;/script&gt;&lt;script&gt;alert(&quot;hello world!&quot;)&lt;/script&gt;&#39;.extractScripts();
+// -&gt; [&#39;2 + 2&#39;, &#39;alert(&quot;hello world!&quot;)&#39;]</code></pre>
+<h5>Notes</h5>
+<p>To evaluate the scripts later on, you can use the following:
+
+</p>
+<pre><code>var myScripts = &#39;&lt;script&gt;2 + 2&lt;/script&gt;&lt;script&gt;alert(&quot;hello world!&quot;)&lt;/script&gt;&#39;.extractScripts();
+// -&gt; [&#39;2 + 2&#39;, &#39;alert(&quot;hello world!&quot;)&#39;]
+
+var myReturnedValues = myScripts.map(function(script) {
+  return eval(script);
+});
+// -&gt; [4, undefined] (and displays &#39;hello world!&#39; in the alert dialog)</code></pre>
+</div></div></div></div></article><article id="String.prototype.gsub" data-title="String#gsub (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#gsub" class="member-name methodClicker">String#gsub</span>(pattern, replacement)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#gsub" class="ellipsis_description"><p>Returns the string with <em>every</em> occurence of a given pattern replaced by either a
+regular string, the returned value...</p>
+</div><div id="short_String#gsub" class="short_description hiddenSpan"><p>Returns the string with <em>every</em> occurence of a given pattern replaced by either a
+regular string, the returned value of a function or a <a href="Template.html"></a> string.
+The pattern can be a string or a regular expression.
+</p>
+</div><h3 id="String#gsub" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>If its second argument is a string <a href="String#gsub.html" id="String#gsub" class="link-short clicker" title="String#gsub (instance method)" data-id="String#gsub">String#gsub</a> works just like the native JavaScript
+method <code>replace()</code> set to global match.
+
+</p>
+<pre><code>var mouseEvents = &#39;click dblclick mousedown mouseup mouseover mousemove mouseout&#39;;
+
+mouseEvents.gsub(&#39; &#39;, &#39;, &#39;);
+// -&gt; &#39;click, dblclick, mousedown, mouseup, mouseover, mousemove, mouseout&#39;
+
+mouseEvents.gsub(/\s+/, &#39;, &#39;);
+// -&gt; &#39;click, dblclick, mousedown, mouseup, mouseover, mousemove, mouseout&#39;</code></pre>
+<p>If you pass it a function, it will be invoked for every occurrence of the pattern
+with the match of the current pattern as its unique argument. Note that this argument
+is the returned value of the <code>match()</code> method called on the current pattern. It is
+in the form of an array where the first element is the entire match and every subsequent
+one corresponds to a parenthesis group in the regex.
+
+</p>
+<pre><code>mouseEvents.gsub(/\w+/, function(match){ return &#39;on&#39; + match[0].capitalize() });
+// -&gt; &#39;onClick onDblclick onMousedown onMouseup onMouseover onMousemove onMouseout&#39;
+
+var markdown = &#39;![a pear](/img/pear.jpg) ![an orange](/img/orange.jpg)&#39;;
+
+markdown.gsub(/!\[(.*?)\]\((.*?)\)/, function(match) {
+  return &#39;&lt;img alt=&quot;&#39; + match[1] + &#39;&quot; src=&quot;&#39; + match[2] + &#39;&quot; /&gt;&#39;;
+});
+// -&gt; &#39;&lt;img alt=&quot;a pear&quot; src=&quot;/img/pear.jpg&quot; /&gt; &lt;img alt=&quot;an orange&quot; src=&quot;/img/orange.jpg&quot; /&gt;&#39;</code></pre>
+<p>Lastly, you can pass <a href="String#gsub.html" id="String#gsub" class="link-short clicker" title="String#gsub (instance method)" data-id="String#gsub">String#gsub</a> a <a href="Template.html"></a> string in which you can also access
+the returned value of the <code>match()</code> method using the ruby inspired notation: <code>#{0}</code>
+for the first element of the array, <code>#{1}</code> for the second one, and so on.
+So our last example could be easily re-written as:
+
+</p>
+<pre><code>markdown.gsub(/!\[(.*?)\]\((.*?)\)/, &#39;&lt;img alt=&quot;#{1}&quot; src=&quot;#{2}&quot; /&gt;&#39;);
+// -&gt; &#39;&lt;img alt=&quot;a pear&quot; src=&quot;/img/pear.jpg&quot; /&gt; &lt;img alt=&quot;an orange&quot; src=&quot;/img/orange.jpg&quot; /&gt;&#39;</code></pre>
+<p>If you need an equivalent to <a href="String#gsub.html" id="String#gsub" class="link-short clicker" title="String#gsub (instance method)" data-id="String#gsub">String#gsub</a> but without global match set on, try <a href="String#sub.html" id="String#sub" class="link-short clicker" title="String#sub (instance method)" data-id="String#sub">String#sub</a>.
+
+</p>
+<h5>Note</h5>
+<p>Do <em>not</em> use the <code>&quot;g&quot;</code> flag on the regex as this will create an infinite loop.</p>
+</div></div></div></div></article><article id="String.prototype.include" data-title="String#include (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#include" class="member-name methodClicker">String#include</span>(substring)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#include" class="ellipsis_description"><p>Checks if the string contains <code>substring</code>.
+ ...</p>
+</div><div id="short_String#include" class="short_description hiddenSpan"><p>Checks if the string contains <code>substring</code>.
+</p>
+</div><h3 id="String#include" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<pre><code>&#39;Prototype framework&#39;.include(&#39;frame&#39;);
+//-&gt; true
+&#39;Prototype framework&#39;.include(&#39;frameset&#39;);
+//-&gt; false</code></pre>
+</div></div></div></div></article><article id="String.prototype.inspect" data-title="String#inspect (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#inspect" class="member-name methodClicker">String#inspect</span>([useDoubleQuotes = false])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label related-to">Related to
+<a href="http://www.nodemanual.org/latest/js_doc/Object.html#" class="" title="Object.inspect" data-id="Object.inspect">Object.inspect</a>  
+</span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#inspect" class="ellipsis_description"><p>Returns a debug-oriented version of the string (i.e. wrapped in single or
+double quotes, with backslashes and quotes...</p>
+</div><div id="short_String#inspect" class="short_description hiddenSpan"><p>Returns a debug-oriented version of the string (i.e. wrapped in single or
+double quotes, with backslashes and quotes escaped).
+</p>
+</div><h3 id="String#inspect" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>For more information on <code>inspect</code> methods, see <a href="http://www.nodemanual.org/latest/js_doc/Object.html#Object.inspect"></a>.
+</p>
+<h4>Examples</h4>
+<pre><code>&#39;I\&#39;m so happy.&#39;.inspect();
+// -&gt; &#39;\&#39;I\\\&#39;m so happy.\&#39;&#39;
+// (displayed as &#39;I\&#39;m so happy.&#39; in an alert dialog or the console)
+
+&#39;I\&#39;m so happy.&#39;.inspect(true);
+// -&gt; &#39;&quot;I&#39;m so happy.&quot;&#39;
+// (displayed as &quot;I&#39;m so happy.&quot; in an alert dialog or the console)</code></pre>
+      
+</div></div></div></div></article><article id="String.prototype.interpolate" data-title="String#interpolate (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#interpolate" class="member-name methodClicker">String#interpolate</span>(object[, pattern])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#interpolate" class="ellipsis_description"><p>Treats the string as a <a href="Template.html"></a> and fills it with <code>object</code>&#39;s
+properties. ...</p>
+</div><div id="short_String#interpolate" class="short_description hiddenSpan"><p>Treats the string as a <a href="Template.html"></a> and fills it with <code>object</code>&#39;s
+properties.</p>
+</div><h3 id="String#interpolate" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"></div></div></div></div></article><article id="String.prototype.isJSON" data-title="String#isJSON (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#isJSON" class="member-name methodClicker">String#isJSON</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#isJSON" class="ellipsis_description"><p>Check if the string is valid JSON by the use of regular expressions.
+This security method is called internally.
+ ...</p>
+</div><div id="short_String#isJSON" class="short_description hiddenSpan"><p>Check if the string is valid JSON by the use of regular expressions.
+This security method is called internally.
+</p>
+</div><h3 id="String#isJSON" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Examples</h5>
+<pre><code>&quot;something&quot;.isJSON();
+// -&gt; false
+&quot;\&quot;something\&quot;&quot;.isJSON();
+// -&gt; true
+&quot;{ foo: 42 }&quot;.isJSON();
+// -&gt; false
+&quot;{ \&quot;foo\&quot;: 42 }&quot;.isJSON();
+// -&gt; true</code></pre>
+</div></div></div></div></article><article id="String.prototype.parseQuery" data-title="String#parseQuery (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#parseQuery" class="member-name methodClicker">String#parseQuery</span>([separator = "&"])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Object.html"" class="link-short" title="Object">Object</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias multiple">Aliased as:
+<ul class="alias"><li><a href="String#toQueryParams.html" id="String#toQueryParams" class=" clicker" title="String#toQueryParams (instance method)" data-id="String#toQueryParams">String#toQueryParams</a></li></ul></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#parseQuery" class="ellipsis_description"><p> ...</p>
+</div><div id="short_String#parseQuery" class="short_description hiddenSpan"></div><h3 id="String#parseQuery" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"></div></div></div></div></article><article id="String.prototype.scan" data-title="String#scan (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#scan" class="member-name methodClicker">String#scan</span>(pattern, iterator)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label related-to">Related to
+<a href="String#gsub.html" id="String#gsub" class=" clicker" title="String#gsub (instance method)" data-id="String#gsub">String#gsub</a>  
+</span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#scan" class="ellipsis_description"><p>Allows iterating over every occurrence of the given pattern (which can be a
+string or a regular expression).
+Returns...</p>
+</div><div id="short_String#scan" class="short_description hiddenSpan"><p>Allows iterating over every occurrence of the given pattern (which can be a
+string or a regular expression).
+Returns the original string.
+</p>
+</div><h3 id="String#scan" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>Internally just calls <a href="String#gsub.html" id="String#gsub" class="link-short clicker" title="String#gsub (instance method)" data-id="String#gsub">String#gsub</a> passing it <code>pattern</code> and <code>iterator</code> as arguments.
+
+</p>
+<h5>Examples</h5>
+<pre><code>&#39;apple, pear &amp; orange&#39;.scan(/\w+/, alert);
+// -&gt; &#39;apple pear orange&#39; (and displays &#39;apple&#39;, &#39;pear&#39; and &#39;orange&#39; in three successive alert dialogs)</code></pre>
+<p>Can be used to populate an array:
+
+</p>
+<pre><code>var fruits = [];
+&#39;apple, pear &amp; orange&#39;.scan(/\w+/, function(match) { fruits.push(match[0]) });
+fruits.inspect()
+// -&gt; [&#39;apple&#39;, &#39;pear&#39;, &#39;orange&#39;]</code></pre>
+<p>or even to work on the DOM:
+
+</p>
+<pre><code>&#39;failure-message, success-message &amp; spinner&#39;.scan(/(\w|-)+/, Element.toggle)
+// -&gt; &#39;failure-message, success-message &amp; spinner&#39; (and toggles the visibility of each DOM element)</code></pre>
+<h5>Note</h5>
+<p>Do <em>not</em> use the <code>&quot;g&quot;</code> flag on the regex as this will create an infinite loop.</p>
+</div></div></div></div></article><article id="String.prototype.startsWith" data-title="String#startsWith (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#startsWith" class="member-name methodClicker">String#startsWith</span>(substring)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#startsWith" class="ellipsis_description"><p>Checks if the string starts with <code>substring</code>.
+ ...</p>
+</div><div id="short_String#startsWith" class="short_description hiddenSpan"><p>Checks if the string starts with <code>substring</code>.
+</p>
+</div><h3 id="String#startsWith" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<pre><code>&#39;Prototype JavaScript&#39;.startsWith(&#39;Pro&#39;);
+//-&gt; true</code></pre>
+</div></div></div></div></article><article id="String.prototype.strip" data-title="String#strip (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#strip" class="member-name methodClicker">String#strip</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#strip" class="ellipsis_description"><p>Strips all leading and trailing whitespace from a string.
+ ...</p>
+</div><div id="short_String#strip" class="short_description hiddenSpan"><p>Strips all leading and trailing whitespace from a string.
+</p>
+</div><h3 id="String#strip" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<pre><code>&#39;    hello world!    &#39;.strip();
+// -&gt; &#39;hello world!&#39;</code></pre>
+</div></div></div></div></article><article id="String.prototype.stripScripts" data-title="String#stripScripts (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#stripScripts" class="member-name methodClicker">String#stripScripts</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#stripScripts" class="ellipsis_description"><p>Strips a string of things that look like an HTML script blocks.
+ ...</p>
+</div><div id="short_String#stripScripts" class="short_description hiddenSpan"><p>Strips a string of things that look like an HTML script blocks.
+</p>
+</div><h3 id="String#stripScripts" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<pre><code>&quot;&lt;p&gt;This is a test.&lt;script&gt;alert(&quot;Look, a test!&quot;);&lt;/script&gt;End of test&lt;/p&gt;&quot;.stripScripts();
+// =&gt; &quot;&lt;p&gt;This is a test.End of test&lt;/p&gt;&quot;</code></pre>
+<h5>Caveat User</h5>
+<p>Note that the processing <a href="String#stripScripts.html" id="String#stripScripts" class="link-short clicker" title="String#stripScripts (instance method)" data-id="String#stripScripts">String#stripScripts</a> does is good enough for
+most purposes, but you cannot rely on it for security purposes. If you&#39;re
+processing end-user-supplied content, <a href="String#stripScripts.html" id="String#stripScripts" class="link-short clicker" title="String#stripScripts (instance method)" data-id="String#stripScripts">String#stripScripts</a> is probably
+not sufficiently robust to prevent hack attacks.</p>
+</div></div></div></div></article><article id="String.prototype.stripTags" data-title="String#stripTags (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#stripTags" class="member-name methodClicker">String#stripTags</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#stripTags" class="ellipsis_description"><p>Strips a string of any HTML tags.
+ ...</p>
+</div><div id="short_String#stripTags" class="short_description hiddenSpan"><p>Strips a string of any HTML tags.
+</p>
+</div><h3 id="String#stripTags" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>Note that <a href="String#stripTags.html" id="String#stripTags" class="link-short clicker" title="String#stripTags (instance method)" data-id="String#stripTags">String#stripTags</a> will only strip HTML 4.01 tags &mdash; like
+<code>div</code>, <code>span</code>, and <code>abbr</code>. It <em>will not</em> strip namespace-prefixed tags
+such as <code>h:table</code> or <code>xsl:template</code>.
+
+</p>
+<p>Watch out for <code>&lt;script&gt;</code> tags in your string, as <a href="String#stripTags.html" id="String#stripTags" class="link-short clicker" title="String#stripTags (instance method)" data-id="String#stripTags">String#stripTags</a> will
+<em>not</em> remove their content. Use <a href="String#stripScripts.html" id="String#stripScripts" class="link-short clicker" title="String#stripScripts (instance method)" data-id="String#stripScripts">String#stripScripts</a> to do so.
+
+</p>
+<h5>Caveat User</h5>
+<p>Note that the processing <a href="String#stripTags.html" id="String#stripTags" class="link-short clicker" title="String#stripTags (instance method)" data-id="String#stripTags">String#stripTags</a> does is good enough for most
+purposes, but you cannot rely on it for security purposes. If you&#39;re
+processing end-user-supplied content, <a href="String#stripTags.html" id="String#stripTags" class="link-short clicker" title="String#stripTags (instance method)" data-id="String#stripTags">String#stripTags</a> is <em>not</em>
+sufficiently robust to ensure that the content is completely devoid of
+HTML tags in the case of a user intentionally trying to circumvent tag
+restrictions. But then, you&#39;ll be running them through
+<a href="String#escapeHTML.html" id="String#escapeHTML" class="link-short clicker" title="String#escapeHTML (instance method)" data-id="String#escapeHTML">String#escapeHTML</a> anyway, won&#39;t you?
+
+</p>
+<h5>Examples</h5>
+<pre><code>&#39;a &lt;a href=&quot;#&quot;&gt;link&lt;/a&gt;&#39;.stripTags();
+ // -&gt; &#39;a link&#39;
+
+&#39;a &lt;a href=&quot;#&quot;&gt;link&lt;/a&gt;&lt;script&gt;alert(&quot;hello world!&quot;);&lt;/script&gt;&#39;.stripTags();
+// -&gt; &#39;a linkalert(&quot;hello world!&quot;);&#39;
+
+&#39;a &lt;a href=&quot;#&quot;&gt;link&lt;/a&gt;&lt;script&gt;alert(&quot;hello world!&quot;);&lt;/script&gt;&#39;.stripScripts().stripTags();
+// -&gt; &#39;a link&#39;</code></pre>
+</div></div></div></div></article><article id="String.prototype.sub" data-title="String#sub (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#sub" class="member-name methodClicker">String#sub</span>(pattern, replacement[, count = 1])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#sub" class="ellipsis_description"><p>Returns a string with the <em>first</em> <code>count</code> occurrences of <code>pattern</code> replaced by either
+a regular string, the returned...</p>
+</div><div id="short_String#sub" class="short_description hiddenSpan"><p>Returns a string with the <em>first</em> <code>count</code> occurrences of <code>pattern</code> replaced by either
+a regular string, the returned value of a function or a <a href="Template.html"></a> string.
+<code>pattern</code> can be a string or a regular expression.
+</p>
+</div><h3 id="String#sub" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>Unlike <a href="String#gsub.html" id="String#gsub" class="link-short clicker" title="String#gsub (instance method)" data-id="String#gsub">String#gsub</a>, <a href="String#sub.html" id="String#sub" class="link-short clicker" title="String#sub (instance method)" data-id="String#sub">String#sub</a> takes a third optional parameter which specifies
+the number of occurrences of the pattern which will be replaced.
+If not specified, it will default to 1.
+
+</p>
+<p>Apart from that, <a href="String#sub.html" id="String#sub" class="link-short clicker" title="String#sub (instance method)" data-id="String#sub">String#sub</a> works just like <a href="String#gsub.html" id="String#gsub" class="link-short clicker" title="String#gsub (instance method)" data-id="String#gsub">String#gsub</a>.
+Please refer to it for a complete explanation.
+
+</p>
+<h5>Examples</h5>
+<pre><code>var fruits = &#39;apple pear orange&#39;;
+
+fruits.sub(&#39; &#39;, &#39;, &#39;);
+// -&gt; &#39;apple, pear orange&#39;
+
+fruits.sub(&#39; &#39;, &#39;, &#39;, 1);
+// -&gt; &#39;apple, pear orange&#39;
+
+fruits.sub(&#39; &#39;, &#39;, &#39;, 2);
+// -&gt; &#39;apple, pear, orange&#39;
+
+fruits.sub(/\w+/, function(match){ return match[0].capitalize() + &#39;,&#39; }, 2);
+// -&gt; &#39;Apple, Pear, orange&#39;
+
+var markdown = &#39;![a pear](/img/pear.jpg) ![an orange](/img/orange.jpg)&#39;;
+
+markdown.sub(/!\[(.*?)\]\((.*?)\)/, function(match) {
+  return &#39;&lt;img alt=&quot;&#39; + match[1] + &#39;&quot; src=&quot;&#39; + match[2] + &#39;&quot; /&gt;&#39;;
+});
+// -&gt; &#39;&lt;img alt=&quot;a pear&quot; src=&quot;/img/pear.jpg&quot; /&gt; ![an orange](/img/orange.jpg)&#39;
+
+markdown.sub(/!\[(.*?)\]\((.*?)\)/, &#39;&lt;img alt=&quot;#{1}&quot; src=&quot;#{2}&quot; /&gt;&#39;);
+// -&gt; &#39;&lt;img alt=&quot;a pear&quot; src=&quot;/img/pear.jpg&quot; /&gt; ![an orange](/img/orange.jpg)&#39;</code></pre>
+<h5>Note</h5>
+<p>Do <em>not</em> use the <code>&quot;g&quot;</code> flag on the regex as this will create an infinite loop.</p>
+</div></div></div></div></article><article id="String.prototype.succ" data-title="String#succ (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#succ" class="member-name methodClicker">String#succ</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#succ" class="ellipsis_description"><p>Used internally by ObjectRange.
+ ...</p>
+</div><div id="short_String#succ" class="short_description hiddenSpan"><p>Used internally by ObjectRange.
+</p>
+</div><h3 id="String#succ" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>Converts the last character of the string to the following character in
+the Unicode alphabet.
+
+</p>
+<h5>Examples</h5>
+<pre><code>&#39;a&#39;.succ();
+// -&gt; &#39;b&#39;
+
+&#39;aaaa&#39;.succ();
+// -&gt; &#39;aaab&#39;</code></pre>
+</div></div></div></div></article><article id="String.prototype.times" data-title="String#times (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#times" class="member-name methodClicker">String#times</span>(count)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#times" class="ellipsis_description"><p>Concatenates the string <code>count</code> times.
+ ...</p>
+</div><div id="short_String#times" class="short_description hiddenSpan"><p>Concatenates the string <code>count</code> times.
+</p>
+</div><h3 id="String#times" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<pre><code>&quot;echo &quot;.times(3);
+// -&gt; &quot;echo echo echo &quot;</code></pre>
+</div></div></div></div></article><article id="String.prototype.toArray" data-title="String#toArray (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#toArray" class="member-name methodClicker">String#toArray</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#toArray" class="ellipsis_description"><p>Splits the string character-by-character and returns an array with
+the result.
+ ...</p>
+</div><div id="short_String#toArray" class="short_description hiddenSpan"><p>Splits the string character-by-character and returns an array with
+the result.
+</p>
+</div><h3 id="String#toArray" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Examples</h5>
+<pre><code>&#39;a&#39;.toArray();
+// -&gt; [&#39;a&#39;]
+
+&#39;hello world!&#39;.toArray();
+// -&gt; [&#39;h&#39;, &#39;e&#39;, &#39;l&#39;, &#39;l&#39;, &#39;o&#39;, &#39; &#39;, &#39;w&#39;, &#39;o&#39;, &#39;r&#39;, &#39;l&#39;, &#39;d&#39;, &#39;!&#39;]</code></pre>
+</div></div></div></div></article><article id="String.prototype.toQueryParams" data-title="String#toQueryParams (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#toQueryParams" class="member-name methodClicker">String#toQueryParams</span>([separator = "&"])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Object.html"" class="link-short" title="Object">Object</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias single">Aliased as: 
+<a href="String#parseQuery.html" id="String#parseQuery" class=" clicker" title="String#parseQuery (instance method)" data-id="String#parseQuery">String#parseQuery</a></span></li><li><span class="label related-to">Related to
+<a href="Hash#toQueryString.html" id="Hash#toQueryString" class=" clicker" title="Hash#toQueryString" data-id="Hash#toQueryString">Hash#toQueryString</a>  
+</span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#toQueryParams" class="ellipsis_description"><p>Parses a URI-like query string and returns an object composed of
+parameter/value pairs.
+ ...</p>
+</div><div id="short_String#toQueryParams" class="short_description hiddenSpan"><p>Parses a URI-like query string and returns an object composed of
+parameter/value pairs.
+</p>
+</div><h3 id="String#toQueryParams" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>This method is realy targeted at parsing query strings (hence the default
+value of<code>&quot;&amp;&quot;</code> for the <code>separator</code> argument).
+
+</p>
+<p>For this reason, it does <em>not</em> consider anything that is either before a
+question  mark (which signals the beginning of a query string) or beyond
+the hash symbol (<code>&quot;#&quot;</code>), and runs <code>decodeURIComponent()</code> on each
+parameter/value pair.
+
+</p>
+<p><a href="String#toQueryParams.html" id="String#toQueryParams" class="link-short clicker" title="String#toQueryParams (instance method)" data-id="String#toQueryParams">String#toQueryParams</a> also aggregates the values of identical keys into
+an array of values.
+
+</p>
+<p>Note that parameters which do not have a specified value will be set to
+<code>undefined</code>.
+
+</p>
+<h5>Examples</h5>
+<pre><code>&#39;section=blog&amp;id=45&#39;.toQueryParams();
+// -&gt; {section: &#39;blog&#39;, id: &#39;45&#39;}
+
+&#39;section=blog;id=45&#39;.toQueryParams();
+// -&gt; {section: &#39;blog&#39;, id: &#39;45&#39;}
+
+&#39;http://www.example.com?section=blog&amp;id=45#comments&#39;.toQueryParams();
+// -&gt; {section: &#39;blog&#39;, id: &#39;45&#39;}
+
+&#39;section=blog&amp;tag=javascript&amp;tag=prototype&amp;tag=doc&#39;.toQueryParams();
+// -&gt; {section: &#39;blog&#39;, tag: [&#39;javascript&#39;, &#39;prototype&#39;, &#39;doc&#39;]}
+
+&#39;tag=ruby%20on%20rails&#39;.toQueryParams();
+// -&gt; {tag: &#39;ruby on rails&#39;}
+
+&#39;id=45&amp;raw&#39;.toQueryParams();
+// -&gt; {id: &#39;45&#39;, raw: undefined}</code></pre>
+</div></div></div></div></article><article id="String.prototype.truncate" data-title="String#truncate (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#truncate" class="member-name methodClicker">String#truncate</span>([length = 30][, suffix = "..."])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#truncate" class="ellipsis_description"><p>Truncates a string to given <code>length</code> and appends <code>suffix</code> to it (indicating
+that it is only an excerpt).
+ ...</p>
+</div><div id="short_String#truncate" class="short_description hiddenSpan"><p>Truncates a string to given <code>length</code> and appends <code>suffix</code> to it (indicating
+that it is only an excerpt).
+</p>
+</div><h3 id="String#truncate" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Examples</h5>
+<pre><code>&#39;A random sentence whose length exceeds 30 characters.&#39;.truncate();
+// -&gt; &#39;A random sentence whose len...&#39;
+
+&#39;Some random text&#39;.truncate();
+// -&gt; &#39;Some random text.&#39;
+
+&#39;Some random text&#39;.truncate(10);
+// -&gt; &#39;Some ra...&#39;
+
+&#39;Some random text&#39;.truncate(10, &#39; [...]&#39;);
+// -&gt; &#39;Some [...]&#39;</code></pre>
+</div></div></div></div></article><article id="String.prototype.underscore" data-title="String#underscore (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#underscore" class="member-name methodClicker">String#underscore</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#underscore" class="ellipsis_description"><p>Converts a camelized string into a series of words separated by an
+underscore (<code>_</code>).
+ ...</p>
+</div><div id="short_String#underscore" class="short_description hiddenSpan"><p>Converts a camelized string into a series of words separated by an
+underscore (<code>_</code>).
+</p>
+</div><h3 id="String#underscore" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<pre><code>&#39;borderBottomWidth&#39;.underscore();
+// -&gt; &#39;border_bottom_width&#39;</code></pre>
+<h5>Note</h5>
+<p>Used in conjunction with <a href="String#dasherize.html" id="String#dasherize" class="link-short clicker" title="String#dasherize (instance method)" data-id="String#dasherize">String#dasherize</a>, <a href="String#underscore.html" id="String#underscore" class="link-short clicker" title="String#underscore (instance method)" data-id="String#underscore">String#underscore</a>
+converts a DOM style into its CSS equivalent.
+
+</p>
+<pre><code>&#39;borderBottomWidth&#39;.underscore().dasherize();
+// -&gt; &#39;border-bottom-width&#39;</code></pre>
+</div></div></div></div></article><article id="String.prototype.unescapeHTML" data-title="String#unescapeHTML (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#unescapeHTML" class="member-name methodClicker">String#unescapeHTML</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label related-to">Related to
+<a href="String#escapeHTML.html" id="String#escapeHTML" class=" clicker" title="String#escapeHTML (instance method)" data-id="String#escapeHTML">String#escapeHTML</a>  
+</span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#unescapeHTML" class="ellipsis_description"><p>Strips tags and converts the entity forms of special HTML characters
+to their normal form.
+ ...</p>
+</div><div id="short_String#unescapeHTML" class="short_description hiddenSpan"><p>Strips tags and converts the entity forms of special HTML characters
+to their normal form.
+</p>
+</div><h3 id="String#unescapeHTML" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Examples</h5>
+<pre><code>&#39;x &amp;gt; 10&#39;.unescapeHTML()
+// -&gt; &#39;x &gt; 10&#39;
+
+&#39;&lt;h1&gt;Pride &amp;amp; Prejudice&lt;/h1&gt;;&#39;.unescapeHTML()
+// -&gt; &#39;&lt;h1&gt;Pride &amp; Prejudice&lt;/h1&gt;&#39;</code></pre>
+</div></div></div></div></article><article id="String.prototype.unfilterJSON" data-title="String#unfilterJSON (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="String#unfilterJSON" class="member-name methodClicker">String#unfilterJSON</span>([filter = "Prototype.JSONFilter"])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String (class)">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_String#unfilterJSON" class="ellipsis_description"><p>Strips comment delimiters around Ajax JSON or JavaScript responses.
+This security method is called internally.
+ ...</p>
+</div><div id="short_String#unfilterJSON" class="short_description hiddenSpan"><p>Strips comment delimiters around Ajax JSON or JavaScript responses.
+This security method is called internally.
+</p>
+</div><h3 id="String#unfilterJSON" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<pre><code>&#39;/*-secure-\n{&quot;name&quot;: &quot;Violet&quot;, &quot;occupation&quot;: &quot;character&quot;, &quot;age&quot;: 25}\n*\/&#39;.unfilterJSON()
+// -&gt; &#39;{&quot;name&quot;: &quot;Violet&quot;, &quot;occupation&quot;: &quot;character&quot;, &quot;age&quot;: 25}&#39;</code></pre>
+</div></div></div></div></article><div id="disqus_thread"></div></div></div></div></div><footer id="footer"><div class="container"><div class="footer-text">&#169; 2012:</div></div></footer></div><!-- scripts concatenated and minified via ant build script--><script defer src="./resources/javascripts/plugins.js"></script>
+<script defer src="./resources/javascripts/prettify.js"></script>
+<script defer src="./resources/javascripts/prettify-extension.js"></script>
+<script defer src="./resources/javascripts/ux.js"></script>
+<!-- end scripts--><!--[if lt IE 7]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script><script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})
+
+</script><![endif]--></body>

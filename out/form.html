@@ -1,0 +1,1201 @@
+<!DOCTYPE html><!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><title>Prototype</title><meta name="generator" content="panino-doc-build"/><meta name="author" content="Garen J. Torikian"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="stylesheet" href="./resources/csses/bootstrap.css"/><link rel="stylesheet" href="./resources/csses/prettify.css"/><link rel="stylesheet" href="./resources/csses/refguide_overrides.css"/><link href="./resources/images/favicon.ico" rel="icon" type="image/x-icon"/><link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/vs.min.css"/><script src="./resources/javascripts/jquery.js"></script><script src="./resources/javascripts/clicker.js"></script><script src="./resources/javascripts/jquery.collapse.js"></script><script src="./resources/javascripts/jquery.cookie.js"></script><script src="./resources/javascripts/bootstrap-dropdown.js"></script><body onload="styleCode()"><div class="topbar"><div class="fill"><div id="topSection" class="container"><ul class="nav leftnav"></ul><ul class="nav"></ul><form id="searchbox" action="" class="pull-right"><input name="query" type="text" placeholder="Search Documentation" title="Search across all the documentation types" class="span3"/></form></div></div></div><header id="overview" class="jumbotron masthead"><div class="inner"><div class="container"><h1>Node.js Manual</h1><p class="lead"></p></div></div></header><div class="container"><div class="content"><div class="row container"><div class="span5 offset4 sidebarContainer"><div id="sidebar"><div id="well"><h3>Modules</h3><ul class="menu"><li><div class="menu-item"><a href="assert.html" class="menuLink namespace">assert</a></div></li><li><div class="menu-item"><a href="child.process.html" class="menuLink namespace">child_process</a></div></li><li><div class="menu-item"><a href="cluster.html" class="menuLink namespace">cluster    </a></div></li><li><div class="menu-item"><a href="crypto.html" class="menuLink namespace">crypto</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="cipher.html" class="menuLink class">Cipher</a></div></li><li><div class="menu-item"><a href="decipher.html" class="menuLink class">Decipher   </a></div></li><li><div class="menu-item"><a href="diffieHellman.html" class="menuLink class">Diffie-Hellman</a></div></li><li><div class="menu-item"><a href="hash.html" class="menuLink class">Hash    </a></div></li><li><div class="menu-item"><a href="hmac.html" class="menuLink class">HMAC</a></div></li><li><div class="menu-item"><a href="signer.html" class="menuLink class">Signer  </a></div></li><li><div class="menu-item"><a href="verifier.html" class="menuLink class">Verifier                                                          </a></div></li></ul></li><li><div class="menu-item"><a href="dgram.html" class="menuLink namespace">dgram</a></div></li><li><div class="menu-item"><a href="dns.html" class="menuLink namespace">dns</a></div></li><li><div class="menu-item"><a href="eventemitter.html" class="menuLink namespace">EventEmitter</a></div></li><li><div class="menu-item"><a href="fs.html" class="menuLink namespace">fs</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="fs.FSWatcher.html" class="menuLink class">FSWatcher   </a></div></li><li><div class="menu-item"><a href="fs.ReadStream.html" class="menuLink class">Readstream                          </a></div></li><li><div class="menu-item"><a href="fs.Stats.html" class="menuLink class">Stats  </a></div></li><li><div class="menu-item"><a href="fs.WriteStream.html" class="menuLink class">Writestream                            </a></div></li></ul></li><li><div class="menu-item"><a href="http.html" class="menuLink namespace">http</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="http.Agent.html" class="menuLink class">Agent   </a></div></li><li><div class="menu-item"><a href="http.ClientRequest.html" class="menuLink class">ClientRequest   </a></div></li><li><div class="menu-item"><a href="http.ClientResponse.html" class="menuLink class">ClientResponse        </a></div></li><li><div class="menu-item"><a href="http.Server.html" class="menuLink class">Server</a></div></li><li><div class="menu-item"><a href="http.ServerRequest.html" class="menuLink class">ServerRequest</a></div></li><li><div class="menu-item"><a href="http.ServerResponse.html" class="menuLink class">ServerResponse   </a></div></li></ul></li><li><div class="menu-item"><a href="https.html" class="menuLink namespace">https</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="https.Agent.html" class="menuLink class">Agent    </a></div></li><li><div class="menu-item"><a href="https.Server.html" class="menuLink class">Server                             </a></div></li></ul></li><li><div class="menu-item"><a href="net.html" class="menuLink namespace">net</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="net.Server.html" class="menuLink class">Server   </a></div></li><li><div class="menu-item"><a href="net.Socket.html" class="menuLink class">Socket              </a></div></li></ul></li><li><div class="menu-item"><a href="os.html" class="menuLink namespace">os</a></div></li><li><div class="menu-item"><a href="path.html" class="menuLink namespace">path</a></div></li><li><div class="menu-item"><a href="querystring.html" class="menuLink namespace">querystring</a></div></li><li><div class="menu-item"><a href="readline.html" class="menuLink namespace">readline</a></div></li><li><div class="menu-item"><a href="tls.html" class="menuLink namespace">tls</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="tls.SecurePair.html" class="menuLink class">SecurePair  </a></div></li><li><div class="menu-item"><a href="tls.Server.html" class="menuLink class">Server   </a></div></li><li><div class="menu-item"><a href="tls.CleartextStream.html" class="menuLink class">CleartextStream              </a></div></li></ul></li><li><div class="menu-item"><a href="tty.html" class="menuLink namespace">tty</a></div></li><li><div class="menu-item"><a href="url.html" class="menuLink namespace">url</a></div></li><li><div class="menu-item"><a href="util.html" class="menuLink namespace">util</a></div></li><li><div class="menu-item"><a href="vm.html" class="menuLink namespace">vm</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="vm.Script.html" class="menuLink class">Script      </a></div></li></ul></li><li><div class="menu-item"><a href="zlib.html" class="menuLink namespace">zlib                                                                       </a></div></li></ul><h3>Globals</h3><ul class="menu"><li><div class="menu-item"><a href="buffer.html" class="menuLink class">Buffers</a></div></li><li><div class="menu-item"><a href="process.html" class="menuLink class">Process</a></div></li><li><div class="menu-item"><a href="console.html" class="menuLink class">STDIO</a></div></li><li><div class="menu-item"><a href="streams.html" class="menuLink class">Streams</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="streams.ReadableStream.html" class="menuLink class">Readable Streams</a></div></li><li><div class="menu-item"><a href="streams.WritableStream.html" class="menuLink class">Writable Streams</a></div></li></ul></li><li><div class="menu-item"><a href="timer.html" class="menuLink class">Timers</a></div></li></ul><h3>Concepts</h3><ul class="menu"><li><div class="menu-item"><a href="addons.html" class="menuLink namespace">Addons</a></div></li><li><div class="menu-item"><a href="debugging.node.js.html" class="menuLink namespace">Debugging Node.js</a></div></li><li><div class="menu-item"><a href="global.objects.html" class="menuLink namespace">Global Objects    </a></div></li><li><div class="menu-item"><a href="modules.html" class="menuLink namespace">Modules</a></div></li><li><div class="menu-item"><a href="repl.html" class="menuLink namespace">REPL    </a></div></li></ul></div></div></div><div class="span11"><div id="content"><div class="membersBackground"></div><div class="members"><div class="membersContent"><h1 class="memberHeader"><span class="name">$F</span><span class="backToMDN"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/$F" target="_blank">(View original on MDN)</a></span></h1><ul data-tabs="tabs" class="tabs"></ul></div></div><article id="$F" data-title="$F (utility)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="$F" class="member-name methodClicker">$F</span>(element)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String">String</a></li><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias multiple">Aliased as:
+<ul class="alias"><li><a href="form.html#Form.Element.prototype.getValue" class="" title="Form.Element#getValue (instance method)" data-id="Form.Element#getValue">Form.Element#getValue</a></li><li><a href="Form.Element.html#Form.Element.getValue" class="" title="Form.Element.getValue (class method)" data-id="Form.Element.getValue">Form.Element.getValue</a></li></ul></span></li><li><span class="label related-to">Related to
+<a href="Form.html" id="Form" class=" clicker" title="Form (namespace)" data-id="Form">Form</a>  
+</span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_$F" class="ellipsis_description"><p>Returns the value of a form control. This is a convenience alias of
+<a href="Form.Element.html#Form.Element.getValue" class="link-short" title="Form.Element.getValue (class method)" data-id="Form.Element.getValue">Form.Element.getValue</a>. Refer to it for full ...</p>
+</div><div id="short_$F" class="short_description hiddenSpan"><p>Returns the value of a form control. This is a convenience alias of
+<a href="Form.Element.html#Form.Element.getValue" class="link-short" title="Form.Element.getValue (class method)" data-id="Form.Element.getValue">Form.Element.getValue</a>. Refer to it for full details.</p>
+</div><h3 id="$F" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"></div></div></div></div></article><div class="membersBackground"></div><div class="members"><div class="membersContent"><h1 class="memberHeader"><span class="name">Abstract</span><span class="backToMDN"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Abstract" target="_blank">(View original on MDN)</a></span></h1><ul data-tabs="tabs" class="tabs"><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li></ul></div></div><article id="Abstract" data-title="Abstract (namespace)" class="article"></article><article id="Abstract.EventObserver" data-title="Abstract.EventObserver (class)" class="article"><div class="section subclasses"><!-- h3 <Subclasses></Subclasses><div class="memberContent"><ul class="method-list"><li><a href="Form.Element.html#Form.Element.EventObserver" class="" title="Form.Element.EventObserver (class)" data-id="Form.Element.EventObserver">Form.Element.EventObserver</a></li><li><a href="form.html#Form.EventObserver" class="" title="Form.EventObserver (class)" data-id="Form.EventObserver">Form.EventObserver</a></li><li><a href="Form.Element.html#Form.Element.EventObserver" class="" title="Form.Element.EventObserver (class)" data-id="Form.Element.EventObserver">Form.Element.EventObserver</a></li><li><a href="form.html#Form.EventObserver" class="" title="Form.EventObserver (class)" data-id="Form.EventObserver">Form.EventObserver</a></li></ul></div>--></div></article><article id="Abstract.TimedObserver" data-title="Abstract.TimedObserver (class)" class="article"><div class="section description"><div class="memberContent"><p>An abstract DOM element observer class, subclasses of which can be used to
+periodically check a value and trigger a callback when the value has changed.
+
+</p>
+<p>A <code>TimedObserver</code> object will try to check a value using the <code>getValue()</code>
+instance method which must be defined by the subclass. There are two
+out-of-the-box subclasses:
+<a href="form.html#Form.Observer" class="link-short" title="Form.Observer (class)" data-id="Form.Observer">Form.Observer</a>, which serializes a form and triggers when the result has
+changed; and <a href="Form.Element.html#Form.Element.Observer" class="link-short" title="Form.Element.Observer (class)" data-id="Form.Element.Observer">Form.Element.Observer</a>, which triggers when the value of a
+given form field changes.
+
+
+</p>
+<p>Using <code>TimedObserver</code> implementations is straightforward; simply instantiate
+them with appropriate arguments. For example:
+
+</p>
+<pre><code>new Form.Element.Observer(
+  &#39;myelement&#39;,
+  0.2,  // 200 milliseconds
+  function(el, value){
+    alert(&#39;The form control has changed value to: &#39; + value)
+  }
+)</code></pre>
+<p>Now that we have instantiated an object, it will check the value of the form
+control every 0.2 seconds and alert us of any change. While it is useless to
+alert the user of his own input (like in the example), we could be doing
+something useful like updating a certain part of the UI or informing the
+application on server of stuff happening (over Ajax).
+
+</p>
+<p>The callback function is always called with 2 arguments: the element given
+when the observer instance was made and the actual value that has changed
+and caused the callback to be triggered in the first place.
+
+</p>
+<h5>Creating Your Own TimedObserver Implementations</h5>
+<p>It&#39;s easy to create your own <code>TimedObserver</code> implementations: Simply subclass
+<code>TimedObserver</code> and provide the <code>getValue()</code> method. For example, this is the
+complete source code for <a href="Form.Element.html#Form.Element.Observer" class="link-short" title="Form.Element.Observer (class)" data-id="Form.Element.Observer">Form.Element.Observer</a>:
+
+</p>
+<pre><code>Form.Element.Observer = Class.create(Abstract.TimedObserver, {
+  getValue: function() {
+    return Form.Element.getValue(this.element);
+  }
+});</code></pre>
+</div></div><div class="section subclasses"><!-- h3 <Subclasses></Subclasses><div class="memberContent"><ul class="method-list"><li><a href="Form.Element.html#Form.Element.Observer" class="" title="Form.Element.Observer (class)" data-id="Form.Element.Observer">Form.Element.Observer</a></li><li><a href="form.html#Form.Observer" class="" title="Form.Observer (class)" data-id="Form.Observer">Form.Observer</a></li><li><a href="Form.Element.html#Form.Element.Observer" class="" title="Form.Element.Observer (class)" data-id="Form.Element.Observer">Form.Element.Observer</a></li><li><a href="form.html#Form.Observer" class="" title="Form.Observer (class)" data-id="Form.Observer">Form.Observer</a></li></ul></div>--></div></article><h3 class="sectionHeader">Constructors</h3><article id="Abstract.TimedObserver.new" data-title="new Abstract.TimedObserver (constructor)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call">new <span id="new Abstract.TimedObserver" class="member-name methodClicker">Abstract.TimedObserver</span>(<a href="http://www.nodemanual.org/latest/js_doc/String.html">String</a> | <a href="Element.html">Element</a> element, <a href="http://www.nodemanual.org/latest/js_doc/Number.html">Number</a> frequency, <a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> callback)</li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_new Abstract.TimedObserver" class="ellipsis_description"><p>Initializes an <a href="form.html#Abstract.TimedObserver" class="link-short" title="Abstract.TimedObserver (class)" data-id="Abstract.TimedObserver">Abstract.TimedObserver</a>; used by subclasses. ...</p>
+</div><div id="short_new Abstract.TimedObserver" class="short_description hiddenSpan"><p>Initializes an <a href="form.html#Abstract.TimedObserver" class="link-short" title="Abstract.TimedObserver (class)" data-id="Abstract.TimedObserver">Abstract.TimedObserver</a>; used by subclasses.</p>
+</div><h3 id="new Abstract.TimedObserver" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>element
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/String.html" id="String" class=" clicker" title="String" data-id="String">String</a> |
+<a href="Element.html" id="Element" class=" clicker" title="Element" data-id="Element">Element</a></p></td><td><p>Required. The DOM element to watch. Can be an element instance or an ID.</p>
+</td>  
+</tr><tr><td><p><i>frequency
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Number.html" id="Number" class=" clicker" title="Number" data-id="Number">Number</a></p></td><td><p>Required. The frequency, in seconds&nbsp;&mdash; e.g., 0.33 to check for changes every third of a second.</p>
+</td>  
+</tr><tr><td><p><i>callback
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Required. The callback to trigger when the value changes.</p>
+</td>  
+</tr></tbody></table></div></div></div></div></article><div class="membersBackground"></div><div class="members"><div class="membersContent"><h1 class="memberHeader"><span class="name">Form</span><span class="backToMDN"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Form" target="_blank">(View original on MDN)</a></span></h1><ul data-tabs="tabs" class="tabs"><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"><a href="#" class="dropdown-toggle"><span>Functions (10)</span></a><ul class="dropdown-menu"><li data-id="Form.disable" class="memberLink"><a href="form.html#Form.disable" class="" title="Form.disable (class method)" data-id="Form.disable">disable</a>                                 
+</li><li data-id="Form.enable" class="memberLink"><a href="form.html#Form.enable" class="" title="Form.enable (class method)" data-id="Form.enable">enable</a>                                 
+</li><li data-id="Form.findFirstElement" class="memberLink"><a href="form.html#Form.findFirstElement" class="" title="Form.findFirstElement (class method)" data-id="Form.findFirstElement">findFirstElement</a>                                 
+</li><li data-id="Form.focusFirstElement" class="memberLink"><a href="form.html#Form.focusFirstElement" class="" title="Form.focusFirstElement (class method)" data-id="Form.focusFirstElement">focusFirstElement</a>                                 
+</li><li data-id="Form.getElements" class="memberLink"><a href="form.html#Form.getElements" class="" title="Form.getElements (class method)" data-id="Form.getElements">getElements</a>                                 
+</li><li data-id="Form.getInputs" class="memberLink"><a href="form.html#Form.getInputs" class="" title="Form.getInputs (class method)" data-id="Form.getInputs">getInputs</a>                                 
+</li><li data-id="Form.request" class="memberLink"><a href="form.html#Form.request" class="" title="Form.request (class method)" data-id="Form.request">request</a>                                 
+</li><li data-id="Form.reset" class="memberLink"><a href="form.html#Form.reset" class="" title="Form.reset (class method)" data-id="Form.reset">reset</a>                                 
+</li><li data-id="Form.serialize" class="memberLink"><a href="form.html#Form.serialize" class="" title="Form.serialize (class method)" data-id="Form.serialize">serialize</a>                                 
+</li><li data-id="Form.serializeElements" class="memberLink"><a href="form.html#Form.serializeElements" class="" title="Form.serializeElements (class method)" data-id="Form.serializeElements">serializeElements</a>                                 
+</li></ul></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"><a href="#" class="dropdown-toggle"><span>Functions (9)</span></a><ul class="dropdown-menu"><li data-id="Form#disable" class="memberLink"><a href="Form#disable.html" id="Form#disable" class=" clicker" title="Form#disable (instance method)" data-id="Form#disable">disable</a>                                 
+</li><li data-id="Form#enable" class="memberLink"><a href="Form#enable.html" id="Form#enable" class=" clicker" title="Form#enable (instance method)" data-id="Form#enable">enable</a>                                 
+</li><li data-id="Form#findFirstElement" class="memberLink"><a href="Form#findFirstElement.html" id="Form#findFirstElement" class=" clicker" title="Form#findFirstElement (instance method)" data-id="Form#findFirstElement">findFirstElement</a>                                 
+</li><li data-id="Form#focusFirstElement" class="memberLink"><a href="Form#focusFirstElement.html" id="Form#focusFirstElement" class=" clicker" title="Form#focusFirstElement (instance method)" data-id="Form#focusFirstElement">focusFirstElement</a>                                 
+</li><li data-id="Form#getElements" class="memberLink"><a href="Form#getElements.html" id="Form#getElements" class=" clicker" title="Form#getElements (instance method)" data-id="Form#getElements">getElements</a>                                 
+</li><li data-id="Form#getInputs" class="memberLink"><a href="Form#getInputs.html" id="Form#getInputs" class=" clicker" title="Form#getInputs (instance method)" data-id="Form#getInputs">getInputs</a>                                 
+</li><li data-id="Form#request" class="memberLink"><a href="Form#request.html" id="Form#request" class=" clicker" title="Form#request (instance method)" data-id="Form#request">request</a>                                 
+</li><li data-id="Form#reset" class="memberLink"><a href="Form#reset.html" id="Form#reset" class=" clicker" title="Form#reset (instance method)" data-id="Form#reset">reset</a>                                 
+</li><li data-id="Form#serialize" class="memberLink"><a href="Form#serialize.html" id="Form#serialize" class=" clicker" title="Form#serialize (instance method)" data-id="Form#serialize">serialize</a>                                 
+</li></ul></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li></ul></div></div><article id="Form" data-title="Form (namespace)" class="article"><div class="section description"><div class="memberContent"><p>Utilities for dealing with forms in the DOM.
+
+</p>
+<p><a href="Form.html" id="Form" class="link-short clicker" title="Form (namespace)" data-id="Form">Form</a> is a namespace for all things form-related, packed with form
+manipulation and serialization goodness. While it holds methods dealing
+with forms as a whole, its submodule <a href="form.html#Form.Element" class="link-short" title="Form.Element (namespace)" data-id="Form.Element">Form.Element</a> deals with specific
+form controls.
+
+</p>
+<p>Many of these methods are also available directly on <code>form</code> elements.</p>
+</div></div><div class="section namespaces"><!-- <h3>Namespaces</h3><div class="memberContent"><ul class="method-details-list"><li class="method-description"><h4><a href="form.html#Form.Element" class="" title="Form.Element (namespace)" data-id="Form.Element">Form.Element</a></h4><p>Utilities for dealing with form controls in the DOM.
+</p>
+</li></ul></div>--></div></article><article id="Form.Element" data-title="Form.Element (namespace)" class="article"><div class="section description"><div class="memberContent"><p>Utilities for dealing with form controls in the DOM.
+
+</p>
+<p>This is a collection of methods that assist in dealing with form controls.
+They provide ways to <a href="Form.Element.html#Form.Element.focus" class="link-short" title="Form.Element.focus (class method)" data-id="Form.Element.focus">focus</a>, <a href="Form.Element.html#Form.Element.serialize" class="link-short" title="Form.Element.serialize (class method)" data-id="Form.Element.serialize">serialize</a>, <a href="Form.Element.html#Form.Element.disable" class="link-short" title="Form.Element.disable (class method)" data-id="Form.Element.disable">disable</a>/<a href="Form.Element.html#Form.Element.enable" class="link-short" title="Form.Element.enable (class method)" data-id="Form.Element.enable">enable</a>
+or extract current value from a specific control.
+
+</p>
+<p>Note that nearly all these methods are available directly on <code>input</code>,
+<code>select</code>, and <code>textarea</code> elements. Therefore, these are equivalent:
+
+</p>
+<pre><code>Form.Element.activate(&#39;myfield&#39;);
+$(&#39;myfield&#39;).activate();</code></pre>
+<p>Naturally, you should always prefer the shortest form suitable in a
+situation. Most of these methods also return the element itself (as
+indicated by the return type) for chainability.</p>
+</div></div></article><article id="Form.Element.EventObserver" data-title="Form.Element.EventObserver (class)" class="article"><div class="section superclass"><!-- h3 <Superclass></Superclass><div class="memberContent"><a href="form.html#Abstract.EventObserver" class="" title="Abstract.EventObserver (class)" data-id="Abstract.EventObserver">Abstract.EventObserver</a></div>--></div></article><article id="Form.Element.Observer" data-title="Form.Element.Observer (class)" class="article"><div class="section description"><div class="memberContent"><p>An <a href="form.html#Abstract.TimedObserver" class="link-short" title="Abstract.TimedObserver (class)" data-id="Abstract.TimedObserver">Abstract.TimedObserver</a> subclass that watches for changes to a form
+field&#39;s value. This triggers the callback when the form field&#39;s value
+(according to <a href="Form.Element.html#Form.Element.getValue" class="link-short" title="Form.Element.getValue (class method)" data-id="Form.Element.getValue">Form.Element.getValue</a>) changes. (Note that when the value
+actually changes can vary from browser to browser, particularly with
+<code>select</code> boxes.)
+
+</p>
+<p>Form.Element observer implements the <code>getValue()</code> method using
+<a href="Form.Element.html#Form.Element.getValue" class="link-short" title="Form.Element.getValue (class method)" data-id="Form.Element.getValue">Form.Element.getValue</a> on the given element. See <a href="form.html#Abstract.TimedObserver" class="link-short" title="Abstract.TimedObserver (class)" data-id="Abstract.TimedObserver">Abstract.TimedObserver</a>
+for general documentation on timed observers.</p>
+</div></div><div class="section superclass"><!-- h3 <Superclass></Superclass><div class="memberContent"><a href="form.html#Abstract.TimedObserver" class="" title="Abstract.TimedObserver (class)" data-id="Abstract.TimedObserver">Abstract.TimedObserver</a></div>--></div></article><article id="Form.Element.Observer.new" data-title="new Form.Element.Observer (constructor)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call">new <span id="new Form.Element.Observer" class="member-name methodClicker">Form.Element.Observer</span>(<a href="http://www.nodemanual.org/latest/js_doc/String.html">String</a> | <a href="Element.html">Element</a> element, <a href="http://www.nodemanual.org/latest/js_doc/Number.html">Number</a> frequency, <a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> callback)</li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_new Form.Element.Observer" class="ellipsis_description"><p>Creates a <a href="Form.Element.html#Form.Element.Observer" class="link-short" title="Form.Element.Observer (class)" data-id="Form.Element.Observer">Form.Element.Observer</a>. ...</p>
+</div><div id="short_new Form.Element.Observer" class="short_description hiddenSpan"><p>Creates a <a href="Form.Element.html#Form.Element.Observer" class="link-short" title="Form.Element.Observer (class)" data-id="Form.Element.Observer">Form.Element.Observer</a>.</p>
+</div><h3 id="new Form.Element.Observer" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>element
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/String.html" id="String" class=" clicker" title="String" data-id="String">String</a> |
+<a href="Element.html" id="Element" class=" clicker" title="Element" data-id="Element">Element</a></p></td><td><p>Required. The form element to watch. Can be an element instance or an ID.</p>
+</td>  
+</tr><tr><td><p><i>frequency
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Number.html" id="Number" class=" clicker" title="Number" data-id="Number">Number</a></p></td><td><p>Required. The frequency, in seconds&nbsp;&mdash; e.g., 0.33 to check for changes every third of a second.</p>
+</td>  
+</tr><tr><td><p><i>callback
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Required. The callback to trigger when the value changes.</p>
+</td>  
+</tr></tbody></table></div></div></div></div></article><h3 class="sectionHeader">Methods</h3><article id="Form.Element.activate" data-title="Form.Element.activate (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element.activate" class="member-name methodClicker">activate</span>(element)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element.activate" class="ellipsis_description"><p>Gives focus to a form control and selects its contents if it is a text
+input.
+ ...</p>
+</div><div id="short_Form.Element.activate" class="short_description hiddenSpan"><p>Gives focus to a form control and selects its contents if it is a text
+input.
+</p>
+</div><h3 id="Form.Element.activate" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>This method is just a shortcut for focusing and selecting; therefore,
+these are equivalent (aside from the fact that the former one will <strong>not</strong>
+return the field) :
+
+</p>
+<pre><code>Form.Element.focus(&#39;myelement&#39;).select()
+$(&#39;myelement&#39;).activate()</code></pre>
+<p>Guess which call is the nicest? ;)</p>
+<p class="note methodized">This method can be called <em>either</em> as an 
+<a href="form.html#Form.Element.prototype.activate" class="link-short" title="Form.Element#activate (instance method)" data-id="Form.Element#activate">instance method</a> <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.Element.clear" data-title="Form.Element.clear (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element.clear" class="member-name methodClicker">clear</span>(element)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element.clear" class="ellipsis_description"><p>Clears the contents of a text input. Returns the element.
+ ...</p>
+</div><div id="short_Form.Element.clear" class="short_description hiddenSpan"><p>Clears the contents of a text input. Returns the element.
+</p>
+</div><h3 id="Form.Element.clear" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<p>This code sets up a text field in a way that it clears its contents the
+first time it receives focus:
+
+</p>
+<pre><code>  $(&#39;some_field&#39;).onfocus = function() {
+    // if already cleared, do nothing
+    if (this._cleared) return
+
+    // when this code is executed, &quot;this&quot; keyword will in fact be the field itself
+    this.clear()
+    this._cleared = true
+  }</code></pre>
+<p class="note methodized">This method can be called <em>either</em> as an 
+<a href="form.html#Form.Element.prototype.clear" class="link-short" title="Form.Element#clear (instance method)" data-id="Form.Element#clear">instance method</a> <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.Element.disable" data-title="Form.Element.disable (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element.disable" class="member-name methodClicker">disable</span>(element)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element.disable" class="ellipsis_description"><p>Disables a form control, effectively preventing its value from changing
+until it is enabled again.
+ ...</p>
+</div><div id="short_Form.Element.disable" class="short_description hiddenSpan"><p>Disables a form control, effectively preventing its value from changing
+until it is enabled again.
+</p>
+</div><h3 id="Form.Element.disable" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>This method sets the native <code>disabled</code> property of an element to <code>true</code>.
+You can use this property to check the state of a control.
+
+</p>
+<h5>Notes</h5>
+<p>Disabled form controls are never serialized.
+
+</p>
+<p>Never disable a form control as a security measure without having
+validation for it server-side. A user with minimal experience of
+JavaScript can enable these fields on your site easily using any browser.
+Instead, use disabling as a usability enhancement - with it you can
+indicate that a specific value should not be changed at the time being.</p>
+<p class="note methodized">This method can be called <em>either</em> as an 
+<a href="form.html#Form.Element.prototype.disable" class="link-short" title="Form.Element#disable (instance method)" data-id="Form.Element#disable">instance method</a> <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.Element.enable" data-title="Form.Element.enable (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element.enable" class="member-name methodClicker">enable</span>(element)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element.enable" class="ellipsis_description"><p>Enables a previously disabled form control. ...</p>
+</div><div id="short_Form.Element.enable" class="short_description hiddenSpan"><p>Enables a previously disabled form control.</p>
+</div><h3 id="Form.Element.enable" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><p class="note methodized">This method can be called <em>either</em> as an 
+<a href="form.html#Form.Element.prototype.enable" class="link-short" title="Form.Element#enable (instance method)" data-id="Form.Element#enable">instance method</a> <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.Element.focus" data-title="Form.Element.focus (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element.focus" class="member-name methodClicker">focus</span>(element)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element.focus" class="ellipsis_description"><p>Gives keyboard focus to an element. Returns the element.
+ ...</p>
+</div><div id="short_Form.Element.focus" class="short_description hiddenSpan"><p>Gives keyboard focus to an element. Returns the element.
+</p>
+</div><h3 id="Form.Element.focus" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<pre><code>Form.Element.focus(&#39;searchbox&#39;)
+
+// Almost equivalent, but does NOT return the form element (uses the native focus() method):
+$(&#39;searchbox&#39;).focus()</code></pre>
+</div></div></div></div></article><article id="Form.Element.getValue" data-title="Form.Element.getValue (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element.getValue" class="member-name methodClicker">getValue</span>(element)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String">String</a></li><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias single">Aliased as: 
+<a href="$F.html" id="$F" class=" clicker" title="$F (utility)" data-id="$F">$F</a></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element.getValue" class="ellipsis_description"><p>Returns the current value of a form control.
+ ...</p>
+</div><div id="short_Form.Element.getValue" class="short_description hiddenSpan"><p>Returns the current value of a form control.
+</p>
+</div><h3 id="Form.Element.getValue" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>A string is returned for most controls; only multiple <code>select</code> boxes
+return an array of values.
+
+</p>
+<p>The global shortcut for this method is <a href="$F.html" id="$F" class="link-short clicker" title="$F (utility)" data-id="$F">$F</a>.
+
+</p>
+<h5>How to reference form controls by their <em>name</em></h5>
+<p>This method is consistent with other DOM extensions in that it requires an
+element <strong>ID</strong> as the string argument, not the name of the
+form control (as some might think). If you want to reference controls by
+their names, first find the control the regular JavaScript way and use the
+node itself instead of an ID as the argument.
+
+</p>
+<p>For example, if you have an <code>input</code> named &quot;company&quot; in a <code>form</code> with an
+ID &quot;contact&quot;:
+
+</p>
+<pre><code>var form = $(&#39;contact&#39;);
+var input = form[&#39;company&#39;];
+
+Form.Element.getValue(input);
+
+// but, the preferred call is:
+$(input).getValue(); // we used the $() method so the node gets extended
+
+// you can also use the shortcut
+$F(input);</code></pre>
+<h5>Note</h5>
+<p>An error is thrown (&quot;element has no properties&quot;) if the <code>element</code> argument
+is an unknown ID.</p>
+<p class="note methodized">This method can be called <em>either</em> as an 
+<a href="form.html#Form.Element.prototype.getValue" class="link-short" title="Form.Element#getValue (instance method)" data-id="Form.Element#getValue">instance method</a> <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.Element.present" data-title="Form.Element.present (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element.present" class="member-name methodClicker">present</span>(element)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element.present" class="ellipsis_description"><p>Returns <code>true</code> if a text input has contents, <code>false</code> otherwise.
+ ...</p>
+</div><div id="short_Form.Element.present" class="short_description hiddenSpan"><p>Returns <code>true</code> if a text input has contents, <code>false</code> otherwise.
+</p>
+</div><h3 id="Form.Element.present" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<p>This method is very handy in a generic form validation routine.
+On the following form&#39;s submit event, the presence of each text input is
+checked and lets the user know if they left a text input blank.
+
+</p>
+<pre><code>language: html
+&lt;form id=&quot;example&quot; class=&quot;example&quot; action=&quot;#&quot;&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;User Details&lt;/legend&gt;
+    &lt;p id=&quot;msg&quot; class=&quot;message&quot;&gt;Please fill out the following fields:&lt;/p&gt;
+    &lt;p&gt;
+      &lt;label for=&quot;username&quot;&gt;Username&lt;/label&gt;
+      &lt;input id=&quot;username&quot; type=&quot;text&quot; name=&quot;username&quot; /&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;label for=&quot;email&quot;&gt;Email Address&lt;/label&gt;
+      &lt;input id=&quot;email&quot; type=&quot;text&quot; name=&quot;email&quot; /&gt;
+    &lt;/p&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;submit&quot; /&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  $(&#39;example&#39;).onsubmit = function(){
+    var valid, msg = $(&#39;msg&#39;)
+
+    // are both fields present?
+    valid = $(this.username).present() &amp;&amp; $(this.email).present()
+
+    if (valid) {
+      // in the real world we would return true here to allow the form to be submitted
+      // return true
+      msg.update(&#39;Passed validation!&#39;).style.color = &#39;green&#39;
+    } else {
+      msg.update(&#39;Please fill out &lt;em&gt;all&lt;/em&gt; the fields.&#39;).style.color = &#39;red&#39;
+    }
+    return false
+  }
+&lt;/script&gt;</code></pre>
+<p class="note methodized">This method can be called <em>either</em> as an 
+<a href="form.html#Form.Element.prototype.present" class="link-short" title="Form.Element#present (instance method)" data-id="Form.Element#present">instance method</a> <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.Element.select" data-title="Form.Element.select (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element.select" class="member-name methodClicker">select</span>(element)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element.select" class="ellipsis_description"><p>Selects the current text in a text input. Returns the element.
+ ...</p>
+</div><div id="short_Form.Element.select" class="short_description hiddenSpan"><p>Selects the current text in a text input. Returns the element.
+</p>
+</div><h3 id="Form.Element.select" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<p>Some search boxes are set up so that they auto-select their content when they receive focus.
+
+</p>
+<pre><code>  $(&#39;searchbox&#39;).onfocus = function() {
+    Form.Element.select(this)
+
+    // You can also rely on the native method, but this will NOT return the element!
+    this.select()
+  }</code></pre>
+<h5>Focusing + selecting: use <a href="Form.Element.html#Form.Element.activate" class="link-short" title="Form.Element.activate (class method)" data-id="Form.Element.activate">Form.Element.activate</a>!</h5>
+<p>The <a href="Form.Element.html#Form.Element.activate" class="link-short" title="Form.Element.activate (class method)" data-id="Form.Element.activate">Form.Element.activate</a> method is a nifty way to both focus a form
+field and select its current text, all in one portable JavaScript call.</p>
+</div></div></div></div></article><article id="Form.Element.serialize" data-title="Form.Element.serialize (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element.serialize" class="member-name methodClicker">serialize</span>(element)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element.serialize" class="ellipsis_description"><p>Returns a URL-encoded string representation of a form control in the
+<code>name=value</code> format.
+ ...</p>
+</div><div id="short_Form.Element.serialize" class="short_description hiddenSpan"><p>Returns a URL-encoded string representation of a form control in the
+<code>name=value</code> format.
+</p>
+</div><h3 id="Form.Element.serialize" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>The result of this method is a string suitable for Ajax requests. However,
+it serializes only a single element - if you need to serialize the whole
+form use <a href="form.html#Form.serialize" class="link-short" title="Form.serialize (class method)" data-id="Form.serialize">Form.serialize</a> instead.
+
+</p>
+<h5>Notes</h5>
+<p>Serializing a disabled control or a one without a name will always result
+in an empty string.
+
+</p>
+<p>If you simply need an element&#39;s value for reasons other than Ajax
+requests, use <a href="Form.Element.html#Form.Element.getValue" class="link-short" title="Form.Element.getValue (class method)" data-id="Form.Element.getValue">Form.Element.getValue</a> instead.</p>
+<p class="note methodized">This method can be called <em>either</em> as an 
+<a href="form.html#Form.Element.prototype.serialize" class="link-short" title="Form.Element#serialize (instance method)" data-id="Form.Element#serialize">instance method</a> <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.Element.setValue" data-title="Form.Element.setValue (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element.setValue" class="member-name methodClicker">setValue</span>(element, value)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element.setValue" class="ellipsis_description"><p>Sets <code>value</code> to be the value of the form control. Returns the element. ...</p>
+</div><div id="short_Form.Element.setValue" class="short_description hiddenSpan"><p>Sets <code>value</code> to be the value of the form control. Returns the element.</p>
+</div><h3 id="Form.Element.setValue" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><p class="note methodized">This method can be called <em>either</em> as an 
+<a href="form.html#Form.Element.prototype.setValue" class="link-short" title="Form.Element#setValue (instance method)" data-id="Form.Element#setValue">instance method</a> <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.Element.prototype.activate" data-title="Form.Element#activate (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element#activate" class="member-name methodClicker">Element#activate</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element#activate" class="ellipsis_description"><p>Gives focus to a form control and selects its contents if it is a text
+input.
+ ...</p>
+</div><div id="short_Form.Element#activate" class="short_description hiddenSpan"><p>Gives focus to a form control and selects its contents if it is a text
+input.
+</p>
+</div><h3 id="Form.Element#activate" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>This method is just a shortcut for focusing and selecting; therefore,
+these are equivalent (aside from the fact that the former one will <strong>not</strong>
+return the field) :
+
+</p>
+<pre><code>Form.Element.focus(&#39;myelement&#39;).select()
+$(&#39;myelement&#39;).activate()</code></pre>
+<p>Guess which call is the nicest? ;)</p>
+<p class="note functionalized">This method can be called <em>either</em> as an instance method <em>or</em> as a 
+<a href="Form.Element.html#Form.Element.activate" class="link-short" title="Form.Element.activate (class method)" data-id="Form.Element.activate">generic method</a>. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.Element.prototype.clear" data-title="Form.Element#clear (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element#clear" class="member-name methodClicker">Element#clear</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element#clear" class="ellipsis_description"><p>Clears the contents of a text input. Returns the element.
+ ...</p>
+</div><div id="short_Form.Element#clear" class="short_description hiddenSpan"><p>Clears the contents of a text input. Returns the element.
+</p>
+</div><h3 id="Form.Element#clear" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<p>This code sets up a text field in a way that it clears its contents the
+first time it receives focus:
+
+</p>
+<pre><code>  $(&#39;some_field&#39;).onfocus = function() {
+    // if already cleared, do nothing
+    if (this._cleared) return
+
+    // when this code is executed, &quot;this&quot; keyword will in fact be the field itself
+    this.clear()
+    this._cleared = true
+  }</code></pre>
+<p class="note functionalized">This method can be called <em>either</em> as an instance method <em>or</em> as a 
+<a href="Form.Element.html#Form.Element.clear" class="link-short" title="Form.Element.clear (class method)" data-id="Form.Element.clear">generic method</a>. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.Element.prototype.disable" data-title="Form.Element#disable (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element#disable" class="member-name methodClicker">Element#disable</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element#disable" class="ellipsis_description"><p>Disables a form control, effectively preventing its value from changing
+until it is enabled again.
+ ...</p>
+</div><div id="short_Form.Element#disable" class="short_description hiddenSpan"><p>Disables a form control, effectively preventing its value from changing
+until it is enabled again.
+</p>
+</div><h3 id="Form.Element#disable" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>This method sets the native <code>disabled</code> property of an element to <code>true</code>.
+You can use this property to check the state of a control.
+
+</p>
+<h5>Notes</h5>
+<p>Disabled form controls are never serialized.
+
+</p>
+<p>Never disable a form control as a security measure without having
+validation for it server-side. A user with minimal experience of
+JavaScript can enable these fields on your site easily using any browser.
+Instead, use disabling as a usability enhancement - with it you can
+indicate that a specific value should not be changed at the time being.</p>
+<p class="note functionalized">This method can be called <em>either</em> as an instance method <em>or</em> as a 
+<a href="Form.Element.html#Form.Element.disable" class="link-short" title="Form.Element.disable (class method)" data-id="Form.Element.disable">generic method</a>. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.Element.prototype.enable" data-title="Form.Element#enable (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element#enable" class="member-name methodClicker">Element#enable</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element#enable" class="ellipsis_description"><p>Enables a previously disabled form control. ...</p>
+</div><div id="short_Form.Element#enable" class="short_description hiddenSpan"><p>Enables a previously disabled form control.</p>
+</div><h3 id="Form.Element#enable" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><p class="note functionalized">This method can be called <em>either</em> as an instance method <em>or</em> as a 
+<a href="Form.Element.html#Form.Element.enable" class="link-short" title="Form.Element.enable (class method)" data-id="Form.Element.enable">generic method</a>. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.Element.prototype.getValue" data-title="Form.Element#getValue (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element#getValue" class="member-name methodClicker">Element#getValue</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String">String</a></li><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias single">Aliased as: 
+<a href="$F.html" id="$F" class=" clicker" title="$F (utility)" data-id="$F">$F</a></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element#getValue" class="ellipsis_description"><p>Returns the current value of a form control.
+ ...</p>
+</div><div id="short_Form.Element#getValue" class="short_description hiddenSpan"><p>Returns the current value of a form control.
+</p>
+</div><h3 id="Form.Element#getValue" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>A string is returned for most controls; only multiple <code>select</code> boxes
+return an array of values.
+
+</p>
+<p>The global shortcut for this method is <a href="$F.html" id="$F" class="link-short clicker" title="$F (utility)" data-id="$F">$F</a>.
+
+</p>
+<h5>How to reference form controls by their <em>name</em></h5>
+<p>This method is consistent with other DOM extensions in that it requires an
+element <strong>ID</strong> as the string argument, not the name of the
+form control (as some might think). If you want to reference controls by
+their names, first find the control the regular JavaScript way and use the
+node itself instead of an ID as the argument.
+
+</p>
+<p>For example, if you have an <code>input</code> named &quot;company&quot; in a <code>form</code> with an
+ID &quot;contact&quot;:
+
+</p>
+<pre><code>var form = $(&#39;contact&#39;);
+var input = form[&#39;company&#39;];
+
+Form.Element.getValue(input);
+
+// but, the preferred call is:
+$(input).getValue(); // we used the $() method so the node gets extended
+
+// you can also use the shortcut
+$F(input);</code></pre>
+<h5>Note</h5>
+<p>An error is thrown (&quot;element has no properties&quot;) if the <code>element</code> argument
+is an unknown ID.</p>
+<p class="note functionalized">This method can be called <em>either</em> as an instance method <em>or</em> as a 
+<a href="Form.Element.html#Form.Element.getValue" class="link-short" title="Form.Element.getValue (class method)" data-id="Form.Element.getValue">generic method</a>. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.Element.prototype.present" data-title="Form.Element#present (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element#present" class="member-name methodClicker">Element#present</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element#present" class="ellipsis_description"><p>Returns <code>true</code> if a text input has contents, <code>false</code> otherwise.
+ ...</p>
+</div><div id="short_Form.Element#present" class="short_description hiddenSpan"><p>Returns <code>true</code> if a text input has contents, <code>false</code> otherwise.
+</p>
+</div><h3 id="Form.Element#present" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<p>This method is very handy in a generic form validation routine.
+On the following form&#39;s submit event, the presence of each text input is
+checked and lets the user know if they left a text input blank.
+
+</p>
+<pre><code>language: html
+&lt;form id=&quot;example&quot; class=&quot;example&quot; action=&quot;#&quot;&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;User Details&lt;/legend&gt;
+    &lt;p id=&quot;msg&quot; class=&quot;message&quot;&gt;Please fill out the following fields:&lt;/p&gt;
+    &lt;p&gt;
+      &lt;label for=&quot;username&quot;&gt;Username&lt;/label&gt;
+      &lt;input id=&quot;username&quot; type=&quot;text&quot; name=&quot;username&quot; /&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;label for=&quot;email&quot;&gt;Email Address&lt;/label&gt;
+      &lt;input id=&quot;email&quot; type=&quot;text&quot; name=&quot;email&quot; /&gt;
+    &lt;/p&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;submit&quot; /&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  $(&#39;example&#39;).onsubmit = function(){
+    var valid, msg = $(&#39;msg&#39;)
+
+    // are both fields present?
+    valid = $(this.username).present() &amp;&amp; $(this.email).present()
+
+    if (valid) {
+      // in the real world we would return true here to allow the form to be submitted
+      // return true
+      msg.update(&#39;Passed validation!&#39;).style.color = &#39;green&#39;
+    } else {
+      msg.update(&#39;Please fill out &lt;em&gt;all&lt;/em&gt; the fields.&#39;).style.color = &#39;red&#39;
+    }
+    return false
+  }
+&lt;/script&gt;</code></pre>
+<p class="note functionalized">This method can be called <em>either</em> as an instance method <em>or</em> as a 
+<a href="Form.Element.html#Form.Element.present" class="link-short" title="Form.Element.present (class method)" data-id="Form.Element.present">generic method</a>. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.Element.prototype.serialize" data-title="Form.Element#serialize (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element#serialize" class="member-name methodClicker">Element#serialize</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element#serialize" class="ellipsis_description"><p>Returns a URL-encoded string representation of a form control in the
+<code>name=value</code> format.
+ ...</p>
+</div><div id="short_Form.Element#serialize" class="short_description hiddenSpan"><p>Returns a URL-encoded string representation of a form control in the
+<code>name=value</code> format.
+</p>
+</div><h3 id="Form.Element#serialize" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>The result of this method is a string suitable for Ajax requests. However,
+it serializes only a single element - if you need to serialize the whole
+form use <a href="form.html#Form.serialize" class="link-short" title="Form.serialize (class method)" data-id="Form.serialize">Form.serialize</a> instead.
+
+</p>
+<h5>Notes</h5>
+<p>Serializing a disabled control or a one without a name will always result
+in an empty string.
+
+</p>
+<p>If you simply need an element&#39;s value for reasons other than Ajax
+requests, use <a href="Form.Element.html#Form.Element.getValue" class="link-short" title="Form.Element.getValue (class method)" data-id="Form.Element.getValue">Form.Element.getValue</a> instead.</p>
+<p class="note functionalized">This method can be called <em>either</em> as an instance method <em>or</em> as a 
+<a href="Form.Element.html#Form.Element.serialize" class="link-short" title="Form.Element.serialize (class method)" data-id="Form.Element.serialize">generic method</a>. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.Element.prototype.setValue" data-title="Form.Element#setValue (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.Element#setValue" class="member-name methodClicker">Element#setValue</span>(value)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.Element#setValue" class="ellipsis_description"><p>Sets <code>value</code> to be the value of the form control. Returns the element. ...</p>
+</div><div id="short_Form.Element#setValue" class="short_description hiddenSpan"><p>Sets <code>value</code> to be the value of the form control. Returns the element.</p>
+</div><h3 id="Form.Element#setValue" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><p class="note functionalized">This method can be called <em>either</em> as an instance method <em>or</em> as a 
+<a href="Form.Element.html#Form.Element.setValue" class="link-short" title="Form.Element.setValue (class method)" data-id="Form.Element.setValue">generic method</a>. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.EventObserver" data-title="Form.EventObserver (class)" class="article"><div class="section superclass"><!-- h3 <Superclass></Superclass><div class="memberContent"><a href="form.html#Abstract.EventObserver" class="" title="Abstract.EventObserver (class)" data-id="Abstract.EventObserver">Abstract.EventObserver</a></div>--></div></article><article id="Form.Observer" data-title="Form.Observer (class)" class="article"><div class="section description"><div class="memberContent"><p>An <a href="form.html#Abstract.TimedObserver" class="link-short" title="Abstract.TimedObserver (class)" data-id="Abstract.TimedObserver">Abstract.TimedObserver</a> subclass that watches for changes to a form.
+The callback is triggered when the form changes&nbsp;&mdash; e.g., when any
+of its fields&#39; values changes, when fields are added/removed, etc.; anything
+that affects the serialized form of the form (see <a href="Form#serialize.html" id="Form#serialize" class="link-short clicker" title="Form#serialize (instance method)" data-id="Form#serialize">Form#serialize</a>).
+
+</p>
+<h5>Example</h5>
+<p>In this example an <code>observer</code> is used to change the appearance of the form
+if any of the values had been changed. It returns to its initial state when
+the data is submitted (saved).
+
+</p>
+<pre><code>language: html
+&lt;form id=&quot;example&quot; action=&quot;#&quot;&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Login Preferences&lt;/legend&gt;
+    &lt;p id=&quot;msg&quot; class=&quot;message&quot;&gt;Current settings:&lt;/p&gt;
+    &lt;p&gt;
+      &lt;label for=&quot;greeting&quot;&gt;Greeting message&lt;/label&gt;
+      &lt;input id=&quot;greeting&quot; type=&quot;text&quot; name=&quot;greeting&quot; value=&quot;Hello world!&quot; /&gt;
+    &lt;/p&gt;
+    &lt;h4&gt;Login options&lt;/h4&gt;
+    &lt;p&gt;
+        &lt;input id=&quot;login-visible&quot; type=&quot;checkbox&quot; name=&quot;login-visible&quot; checked=&quot;checked&quot; /&gt;
+        &lt;label for=&quot;login-visible&quot;&gt;allow others to see my last login date&lt;/label&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;input id=&quot;land-recent&quot; type=&quot;checkbox&quot; name=&quot;land-recent&quot; /&gt;
+        &lt;label for=&quot;land-recent&quot;&gt;land on recent changes overview instead of the Dashboard&lt;/label&gt;
+    &lt;/p&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;save&quot; /&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  new Form.Observer(&#39;example&#39;, 0.3, function(form, value){
+    $(&#39;msg&#39;).update(&#39;Your preferences have changed. Resubmit to save&#39;).style.color = &#39;red&#39;
+    form.down().setStyle({ background:&#39;lemonchiffon&#39;, borderColor:&#39;red&#39; })
+  })
+
+  $(&#39;example&#39;).onsubmit = function() {
+    $(&#39;msg&#39;).update(&#39;Preferences saved!&#39;).style.color = &#39;green&#39;
+    this.down().setStyle({ background:null, borderColor:null })
+    return false
+  }
+&lt;/script&gt;</code></pre>
+</div></div><div class="section superclass"><!-- h3 <Superclass></Superclass><div class="memberContent"><a href="form.html#Abstract.TimedObserver" class="" title="Abstract.TimedObserver (class)" data-id="Abstract.TimedObserver">Abstract.TimedObserver</a></div>--></div></article><article id="Form.Observer.new" data-title="new Form.Observer (constructor)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call">new <span id="new Form.Observer" class="member-name methodClicker">Form.Observer</span>(<a href="http://www.nodemanual.org/latest/js_doc/String.html">String</a> | <a href="Element.html">Element</a> element, <a href="http://www.nodemanual.org/latest/js_doc/Number.html">Number</a> frequency, <a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> callback)</li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_new Form.Observer" class="ellipsis_description"><p>Creates a <a href="form.html#Form.Observer" class="link-short" title="Form.Observer (class)" data-id="Form.Observer">Form.Observer</a>. ...</p>
+</div><div id="short_new Form.Observer" class="short_description hiddenSpan"><p>Creates a <a href="form.html#Form.Observer" class="link-short" title="Form.Observer (class)" data-id="Form.Observer">Form.Observer</a>.</p>
+</div><h3 id="new Form.Observer" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>element
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/String.html" id="String" class=" clicker" title="String" data-id="String">String</a> |
+<a href="Element.html" id="Element" class=" clicker" title="Element" data-id="Element">Element</a></p></td><td><p>Required. The element of the form to watch. Can be an element instance or an ID.</p>
+</td>  
+</tr><tr><td><p><i>frequency
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Number.html" id="Number" class=" clicker" title="Number" data-id="Number">Number</a></p></td><td><p>Required. The frequency, in seconds -- e.g., 0.33 to check for changes every third of a second.</p>
+</td>  
+</tr><tr><td><p><i>callback
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Required. The callback to trigger when the form changes.</p>
+</td>  
+</tr></tbody></table></div></div></div></div></article><article id="Form.disable" data-title="Form.disable (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.disable" class="member-name methodClicker">disable</span>(form)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.disable" class="ellipsis_description"><p>Disables the form as a whole. Form controls will be visible but
+uneditable.
+ ...</p>
+</div><div id="short_Form.disable" class="short_description hiddenSpan"><p>Disables the form as a whole. Form controls will be visible but
+uneditable.
+</p>
+</div><h3 id="Form.disable" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>Disabling the form is done by iterating over form elements and calling
+<a href="Form.Element.html#Form.Element.disable" class="link-short" title="Form.Element.disable (class method)" data-id="Form.Element.disable">Form.Element.disable</a> on them.
+
+</p>
+<h5>Note</h5>
+<p>Keep in mind that <em>disabled elements are skipped</em> by serialization
+methods! You cannot serialize a disabled form.</p>
+<p class="note methodized">This method can be called <em>either</em> as an 
+<a href="Form#disable.html" id="Form#disable" class="link-short clicker" title="Form#disable (instance method)" data-id="Form#disable">instance method</a> <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.enable" data-title="Form.enable (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.enable" class="member-name methodClicker">enable</span>(form)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.enable" class="ellipsis_description"><p>Enables a fully- or partially-disabled form.
+ ...</p>
+</div><div id="short_Form.enable" class="short_description hiddenSpan"><p>Enables a fully- or partially-disabled form.
+</p>
+</div><h3 id="Form.enable" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>Enabling the form is done by iterating over form elements and calling
+<a href="Form.Element.html#Form.Element.enable" class="link-short" title="Form.Element.enable (class method)" data-id="Form.Element.enable">Form.Element.enable</a> on them.
+
+</p>
+<h5>Note</h5>
+<p>This will enable all form controls regardless of how they were disabled
+(by scripting or by HTML attributes).</p>
+<p class="note methodized">This method can be called <em>either</em> as an 
+<a href="Form#enable.html" id="Form#enable" class="link-short clicker" title="Form#enable (instance method)" data-id="Form#enable">instance method</a> <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.findFirstElement" data-title="Form.findFirstElement (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.findFirstElement" class="member-name methodClicker">findFirstElement</span>(form)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.findFirstElement" class="ellipsis_description"><p>Finds the first non-hidden, non-disabled control within the form.
+ ...</p>
+</div><div id="short_Form.findFirstElement" class="short_description hiddenSpan"><p>Finds the first non-hidden, non-disabled control within the form.
+</p>
+</div><h3 id="Form.findFirstElement" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>The returned object is either an INPUT, SELECT or TEXTAREA element. This
+method is used by the <a href="form.html#Form.focusFirstElement" class="link-short" title="Form.focusFirstElement (class method)" data-id="Form.focusFirstElement">Form.focusFirstElement</a> method.
+
+</p>
+<h5>Note</h5>
+<p>The result of this method is the element that comes first in the
+<em>document</em> order, not the
+<a href="http://www.w3.org/TR/html4/interact/forms.html#h-17.11.1">tabindex order</a>.</p>
+<p class="note methodized">This method can be called <em>either</em> as an 
+<a href="Form#findFirstElement.html" id="Form#findFirstElement" class="link-short clicker" title="Form#findFirstElement (instance method)" data-id="Form#findFirstElement">instance method</a> <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.focusFirstElement" data-title="Form.focusFirstElement (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.focusFirstElement" class="member-name methodClicker">focusFirstElement</span>(form)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.focusFirstElement" class="ellipsis_description"><p>Gives keyboard focus to the first element of the form. Returns the form.
+ ...</p>
+</div><div id="short_Form.focusFirstElement" class="short_description hiddenSpan"><p>Gives keyboard focus to the first element of the form. Returns the form.
+</p>
+</div><h3 id="Form.focusFirstElement" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>Uses <a href="form.html#Form.findFirstElement" class="link-short" title="Form.findFirstElement (class method)" data-id="Form.findFirstElement">Form.findFirstElement</a> to get the first element and calls
+<a href="Form.Element.html#Form.Element.activate" class="link-short" title="Form.Element.activate (class method)" data-id="Form.Element.activate">Form.Element.activate</a> on it. This is useful for enhancing usability on
+your site by bringing focus on page load to forms such as search forms or
+contact forms where a user is ready to start typing right away.</p>
+<p class="note methodized">This method can be called <em>either</em> as an 
+<a href="Form#focusFirstElement.html" id="Form#focusFirstElement" class="link-short clicker" title="Form#focusFirstElement (instance method)" data-id="Form#focusFirstElement">instance method</a> <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.getElements" data-title="Form.getElements (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.getElements" class="member-name methodClicker">getElements</span>(form)<li class="signature-returns"><ul class="argument-types"><li class="argument-type">[ <a href="Element.html" id="Element" class="link-short clicker" title="Element" data-id="Element">Element</a>... ]</li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.getElements" class="ellipsis_description"><p>Returns a collection of all controls within a form.
+ ...</p>
+</div><div id="short_Form.getElements" class="short_description hiddenSpan"><p>Returns a collection of all controls within a form.
+</p>
+</div><h3 id="Form.getElements" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Note</h5>
+<p>OPTION elements are not included in the result; only their parent
+SELECT control is.</p>
+<p class="note methodized">This method can be called <em>either</em> as an 
+<a href="Form#getElements.html" id="Form#getElements" class="link-short clicker" title="Form#getElements (instance method)" data-id="Form#getElements">instance method</a> <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.getInputs" data-title="Form.getInputs (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.getInputs" class="member-name methodClicker">getInputs</span>(<a href="http://www.nodemanual.org/latest/js_doc/String.html">String</a> form[, <a href="http://www.nodemanual.org/latest/js_doc/String.html">String</a> type][, name])<li class="signature-returns"><ul class="argument-types"><li class="argument-type">[ <a href="Element.html" id="Element" class="link-short clicker" title="Element" data-id="Element">Element</a>... ]</li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.getInputs" class="ellipsis_description"><p>Returns a collection of all INPUT elements in a form.
+ ...</p>
+</div><div id="short_Form.getInputs" class="short_description hiddenSpan"><p>Returns a collection of all INPUT elements in a form.
+</p>
+</div><h3 id="Form.getInputs" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>type
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/String.html" id="String" class=" clicker" title="String" data-id="String">String</a></p></td><td><p>Optional. A value for the <code>type</code> attribute against which to filter.</p>
+</td>  
+</tr><tr><td><p><i>name
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/String.html" id="String" class=" clicker" title="String" data-id="String">String</a></p></td><td><p>Optional. A value for the <code>name</code> attribute against which to filter.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>Use optional <code>type</code> and <code>name</code> arguments to restrict the search on
+these attributes.
+
+</p>
+<h5>Example</h5>
+<pre><code>var form = $(&#39;myform&#39;);
+
+form.getInputs();       // -&gt; all INPUT elements
+form.getInputs(&#39;text&#39;); // -&gt; only text inputs
+
+var buttons = form.getInputs(&#39;radio&#39;, &#39;education&#39;);
+// -&gt; only radio buttons of name &quot;education&quot;
+
+// now disable these radio buttons:
+buttons.invoke(&#39;disable&#39;);</code></pre>
+<h5>Note</h5>
+<p>Elements are returned in the <em>document</em> order, not the
+<a href="http://www.w3.org/TR/html4/interact/forms.html#h-17.11.1">tabindex order</a>.</p>
+<p class="note methodized">This method can be called <em>either</em> as an 
+<a href="Form#getInputs.html" id="Form#getInputs" class="link-short clicker" title="Form#getInputs (instance method)" data-id="Form#getInputs">instance method</a> <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.request" data-title="Form.request (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.request" class="member-name methodClicker">request</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> form[, options])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Ajax.html#" class="link-short" title="Ajax.Request" data-id="Ajax.Request">Ajax.Request</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.request" class="ellipsis_description"><p>A convenience method for serializing and submitting the form via an
+<a href="Ajax.html#Ajax.Request"></a> to the URL of the form&#39;s `actio...</p>
+</div><div id="short_Form.request" class="short_description hiddenSpan"><p>A convenience method for serializing and submitting the form via an
+<a href="Ajax.html#Ajax.Request"></a> to the URL of the form&#39;s <code>action</code> attribute.
+</p>
+</div><h3 id="Form.request" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>options
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. Options to pass along to the <a href="Ajax.html#Ajax.Request"></a> constructor.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>The <code>options</code> parameter is passed to the <a href="Ajax.html#Ajax.Request"></a> instance,
+allowing one to override the HTTP method and/or specify additional
+parameters and callbacks.
+
+</p>
+<ul>
+<li><p>If the form has a method attribute, its value is used for the
+<a href="Ajax.html#Ajax.Request"></a> <code>method</code> option. If a method option is passed to
+<code>request()</code>, it takes precedence over the form&#39;s method attribute. If
+neither is specified, method defaults to &quot;POST&quot;.</p>
+</li>
+<li><p>Key-value pairs specified in the <code>parameters</code> option (either as a hash
+or a query string) will be merged with (and <em>take precedence</em> over) the
+serialized form parameters.</p>
+</li>
+</ul>
+<h5>Example</h5>
+<p>Suppose you have this HTML form:
+
+</p>
+<pre><code>language: html
+&lt;form id=&quot;person-example&quot; method=&quot;POST&quot; action=&quot;/user/info&quot;&gt;
+  &lt;fieldset&gt;&lt;legend&gt;User info&lt;/legend&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;label for=&quot;username&quot;&gt;Username:&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; value=&quot;&quot; /&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;label for=&quot;age&quot;&gt;Age:&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;age&quot; id=&quot;age&quot; value=&quot;&quot; size=&quot;3&quot; /&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;label for=&quot;hobbies&quot;&gt;Your hobbies are:&lt;/label&gt;
+        &lt;select name=&quot;hobbies[]&quot; id=&quot;hobbies&quot; multiple=&quot;multiple&quot;&gt;
+          &lt;option&gt;coding&lt;/option&gt;
+          &lt;option&gt;swimming&lt;/option&gt;
+          &lt;option&gt;biking&lt;/option&gt;
+          &lt;option&gt;hiking&lt;/option&gt;
+          &lt;option&gt;drawing&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;serialize!&quot; /&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+<p>You can easily post it with Ajax like this:
+
+</p>
+<pre><code>$(&#39;person-example&#39;).request(); //done - it&#39;s posted
+
+// do the same with a callback:
+$(&#39;person-example&#39;).request({
+  onComplete: function(){ alert(&#39;Form data saved!&#39;) }
+})</code></pre>
+<p>To override the HTTP method and add some parameters, simply use <code>method</code>
+and <code>parameters</code> in the options. In this example we set the method to GET
+and set two fixed parameters:
+<code>interests</code> and <code>hobbies</code>. The latter already exists in the form but this
+value will take precedence.
+
+</p>
+<pre><code>$(&#39;person-example&#39;).request({
+  method: &#39;get&#39;,
+  parameters: { interests:&#39;JavaScript&#39;, &#39;hobbies[]&#39;:[&#39;programming&#39;, &#39;music&#39;] },
+  onComplete: function(){ alert(&#39;Form data saved!&#39;) }
+})</code></pre>
+<p class="note methodized">This method can be called <em>either</em> as an 
+<a href="Form#request.html" id="Form#request" class="link-short clicker" title="Form#request (instance method)" data-id="Form#request">instance method</a> <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.reset" data-title="Form.reset (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.reset" class="member-name methodClicker">reset</span>(form)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.reset" class="ellipsis_description"><p>Resets a form to its default values.
+ ...</p>
+</div><div id="short_Form.reset" class="short_description hiddenSpan"><p>Resets a form to its default values.
+</p>
+</div><h3 id="Form.reset" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>Example usage:
+
+</p>
+<pre><code>Form.reset(&#39;contact&#39;)
+
+// equivalent:
+$(&#39;contact&#39;).reset()
+
+// both have the same effect as pressing the reset button</code></pre>
+<p>This method allows you to programatically reset a form. It is a wrapper
+for the <code>reset()</code> method native to <code>HTMLFormElement</code>.</p>
+<p class="note methodized">This method can be called <em>either</em> as an 
+<a href="Form#reset.html" id="Form#reset" class="link-short clicker" title="Form#reset (instance method)" data-id="Form#reset">instance method</a> <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.serialize" data-title="Form.serialize (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.serialize" class="member-name methodClicker">serialize</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> form[, options])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String">String</a></li><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Object.html"" class="link-short" title="Object">Object</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.serialize" class="ellipsis_description"><p>Serializes form data to a string suitable for <a href="Ajax.html"></a> requests (default
+behavior) or, if the <code>hash</code> option evaluate...</p>
+</div><div id="short_Form.serialize" class="short_description hiddenSpan"><p>Serializes form data to a string suitable for <a href="Ajax.html"></a> requests (default
+behavior) or, if the <code>hash</code> option evaluates to <code>true</code>, an object hash
+where keys are form control names and values are data.
+</p>
+</div><h3 id="Form.serialize" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>options
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. A list of options that affect the return value of the method.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>Depending of whether or not the <code>hash</code> option evaluates to <code>true</code>, the
+result is either an object of the form <code>{name: &quot;johnny&quot;, color: &quot;blue&quot;}</code>
+or a <a href="http://www.nodemanual.org/latest/js_doc/String.html"></a> of the form <code>&quot;name=johnny&amp;color=blue&quot;</code>, suitable for
+parameters in an <a href="Ajax.html"></a> request. This method mimics the way browsers
+serialize forms natively so that form data can be sent without refreshing
+the page.
+
+</p>
+<p>See <a href="form.html#Form.serializeElements" class="link-short" title="Form.serializeElements (class method)" data-id="Form.serializeElements">Form.serializeElements</a> for more details on the options.
+
+</p>
+<h5>Examples</h5>
+<pre><code>$(&#39;person-example&#39;).serialize()
+// -&gt; &#39;username=sulien&amp;age=22&amp;hobbies=coding&amp;hobbies=hiking&#39;
+
+$(&#39;person-example&#39;).serialize(true)
+// -&gt; {username: &#39;sulien&#39;, age: &#39;22&#39;, hobbies: [&#39;coding&#39;, &#39;hiking&#39;]}</code></pre>
+<h5>Notes</h5>
+<p>Disabled form elements are not serialized (as per W3C HTML recommendation).
+Also, file inputs are skipped as they cannot be serialized and sent using
+only JavaScript.</p>
+<p class="note methodized">This method can be called <em>either</em> as an 
+<a href="Form#serialize.html" id="Form#serialize" class="link-short clicker" title="Form#serialize (instance method)" data-id="Form#serialize">instance method</a> <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.serializeElements" data-title="Form.serializeElements (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form.serializeElements" class="member-name methodClicker">serializeElements</span>(<a href="http://www.nodemanual.org/latest/js_doc/Array.html">Array</a> elements[, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> options])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String">String</a></li><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Object.html"" class="link-short" title="Object">Object</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form.serializeElements" class="ellipsis_description"><p>Serialize an array of form elements to an object or string suitable
+for <a href="Ajax.html"></a> requests.
+ ...</p>
+</div><div id="short_Form.serializeElements" class="short_description hiddenSpan"><p>Serialize an array of form elements to an object or string suitable
+for <a href="Ajax.html"></a> requests.
+</p>
+</div><h3 id="Form.serializeElements" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>elements
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Array.html" id="Array" class=" clicker" title="Array" data-id="Array">Array</a></p></td><td><p>Required. A collection of elements to include in the serialization.</p>
+</td>  
+</tr><tr><td><p><i>options
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. <em>(Optional)</em> A set of options that affect the return value of the method.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>As per the HTML spec, disabled fields are not included.
+
+</p>
+<p>If multiple elements have the same name and we&#39;re returning an object,
+the value for that key in the object will be an array of the field values
+in the order they appeared on the array of elements.
+
+</p>
+<p>The preferred method to serialize a form is <a href="form.html#Form.serialize" class="link-short" title="Form.serialize (class method)" data-id="Form.serialize">Form.serialize</a>. Refer to
+it for further information and examples on the <code>hash</code> option. However,
+with <a href="form.html#Form.serializeElements" class="link-short" title="Form.serializeElements (class method)" data-id="Form.serializeElements">Form.serializeElements</a> you can serialize <em>specific</em> input
+elements of your choice, allowing you to specify a subset of form elements
+that you want to serialize data from.
+
+</p>
+<h5>The Options</h5>
+<p>The options allow you to control two things: What kind of return
+value you get (an object or a string), and whether and which <code>submit</code>
+fields are included in that object or string.
+
+</p>
+<p>If you do not supply an <code>options</code> object <em>at all</em>, the options
+<code>{ hash: false }</code> are used.
+
+</p>
+<p>If you supply an <code>options</code> object, it may have the following options:
+
+</p>
+<ul>
+<li><p><code>hash</code> (<a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"></a>): <code>true</code> to return a plain object with keys and
+values (not a <a href="Hash.html"></a>; see below), <code>false</code> to return a String in query
+string format. If you supply an <code>options</code> object with no <code>hash</code> member,
+<code>hash</code> defaults to <code>true</code>. Note that this is <strong>not</strong> the same as leaving
+off the <code>options</code> object entirely (see above).</p>
+</li>
+<li><p><code>submit</code> (<a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"></a> | <a href="http://www.nodemanual.org/latest/js_doc/String.html"></a>): In essence: If you omit this option
+the first submit button in the form is included; if you supply <code>false</code>,
+no submit buttons are included; if you supply the name of a submit
+button, the first button with that name is included. Note that the
+<code>false</code> value <strong>must</strong> really be <code>false</code>, not <em>falsey</em>;
+falsey-but-not-false is like omitting the option.</p>
+</li>
+</ul>
+<p><em>(Deprecated)</em> If you pass in a <a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"></a> instead of an object for
+<code>options</code>, it is used as the <code>hash</code> option and all other options are
+defaulted.
+
+</p>
+<h5>A <em>hash</em>, not a <a href="Hash.html"></a></h5>
+<p>If you opt to receive an object, it is a plain JavaScript object with keys
+and values, <strong>not</strong> a <a href="Hash.html"></a>. All JavaScript objects are hashes in the
+lower-case sense of the word, which is why the option has that
+somewhat-confusing name.
+
+</p>
+<h5>Examples</h5>
+<p>To serialize all input elements of type &quot;text&quot;:
+
+</p>
+<pre><code>Form.serializeElements( $(&#39;myform&#39;).getInputs(&#39;text&#39;) )
+// -&gt; serialized data</code></pre>
+</div></div></div></div></article><article id="Form.prototype.disable" data-title="Form#disable (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form#disable" class="member-name methodClicker">Form#disable</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form#disable" class="ellipsis_description"><p>Disables the form as a whole. Form controls will be visible but
+uneditable.
+ ...</p>
+</div><div id="short_Form#disable" class="short_description hiddenSpan"><p>Disables the form as a whole. Form controls will be visible but
+uneditable.
+</p>
+</div><h3 id="Form#disable" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>Disabling the form is done by iterating over form elements and calling
+<a href="Form.Element.html#Form.Element.disable" class="link-short" title="Form.Element.disable (class method)" data-id="Form.Element.disable">Form.Element.disable</a> on them.
+
+</p>
+<h5>Note</h5>
+<p>Keep in mind that <em>disabled elements are skipped</em> by serialization
+methods! You cannot serialize a disabled form.</p>
+<p class="note functionalized">This method can be called <em>either</em> as an instance method <em>or</em> as a 
+<a href="form.html#Form.disable" class="link-short" title="Form.disable (class method)" data-id="Form.disable">generic method</a>. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.prototype.enable" data-title="Form#enable (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form#enable" class="member-name methodClicker">Form#enable</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form#enable" class="ellipsis_description"><p>Enables a fully- or partially-disabled form.
+ ...</p>
+</div><div id="short_Form#enable" class="short_description hiddenSpan"><p>Enables a fully- or partially-disabled form.
+</p>
+</div><h3 id="Form#enable" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>Enabling the form is done by iterating over form elements and calling
+<a href="Form.Element.html#Form.Element.enable" class="link-short" title="Form.Element.enable (class method)" data-id="Form.Element.enable">Form.Element.enable</a> on them.
+
+</p>
+<h5>Note</h5>
+<p>This will enable all form controls regardless of how they were disabled
+(by scripting or by HTML attributes).</p>
+<p class="note functionalized">This method can be called <em>either</em> as an instance method <em>or</em> as a 
+<a href="form.html#Form.enable" class="link-short" title="Form.enable (class method)" data-id="Form.enable">generic method</a>. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.prototype.findFirstElement" data-title="Form#findFirstElement (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form#findFirstElement" class="member-name methodClicker">Form#findFirstElement</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form#findFirstElement" class="ellipsis_description"><p>Finds the first non-hidden, non-disabled control within the form.
+ ...</p>
+</div><div id="short_Form#findFirstElement" class="short_description hiddenSpan"><p>Finds the first non-hidden, non-disabled control within the form.
+</p>
+</div><h3 id="Form#findFirstElement" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>The returned object is either an INPUT, SELECT or TEXTAREA element. This
+method is used by the <a href="form.html#Form.focusFirstElement" class="link-short" title="Form.focusFirstElement (class method)" data-id="Form.focusFirstElement">Form.focusFirstElement</a> method.
+
+</p>
+<h5>Note</h5>
+<p>The result of this method is the element that comes first in the
+<em>document</em> order, not the
+<a href="http://www.w3.org/TR/html4/interact/forms.html#h-17.11.1">tabindex order</a>.</p>
+<p class="note functionalized">This method can be called <em>either</em> as an instance method <em>or</em> as a 
+<a href="form.html#Form.findFirstElement" class="link-short" title="Form.findFirstElement (class method)" data-id="Form.findFirstElement">generic method</a>. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.prototype.focusFirstElement" data-title="Form#focusFirstElement (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form#focusFirstElement" class="member-name methodClicker">Form#focusFirstElement</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form#focusFirstElement" class="ellipsis_description"><p>Gives keyboard focus to the first element of the form. Returns the form.
+ ...</p>
+</div><div id="short_Form#focusFirstElement" class="short_description hiddenSpan"><p>Gives keyboard focus to the first element of the form. Returns the form.
+</p>
+</div><h3 id="Form#focusFirstElement" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>Uses <a href="form.html#Form.findFirstElement" class="link-short" title="Form.findFirstElement (class method)" data-id="Form.findFirstElement">Form.findFirstElement</a> to get the first element and calls
+<a href="Form.Element.html#Form.Element.activate" class="link-short" title="Form.Element.activate (class method)" data-id="Form.Element.activate">Form.Element.activate</a> on it. This is useful for enhancing usability on
+your site by bringing focus on page load to forms such as search forms or
+contact forms where a user is ready to start typing right away.</p>
+<p class="note functionalized">This method can be called <em>either</em> as an instance method <em>or</em> as a 
+<a href="form.html#Form.focusFirstElement" class="link-short" title="Form.focusFirstElement (class method)" data-id="Form.focusFirstElement">generic method</a>. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.prototype.getElements" data-title="Form#getElements (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form#getElements" class="member-name methodClicker">Form#getElements</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type">[ <a href="Element.html" id="Element" class="link-short clicker" title="Element" data-id="Element">Element</a>... ]</li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form#getElements" class="ellipsis_description"><p>Returns a collection of all controls within a form.
+ ...</p>
+</div><div id="short_Form#getElements" class="short_description hiddenSpan"><p>Returns a collection of all controls within a form.
+</p>
+</div><h3 id="Form#getElements" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Note</h5>
+<p>OPTION elements are not included in the result; only their parent
+SELECT control is.</p>
+<p class="note functionalized">This method can be called <em>either</em> as an instance method <em>or</em> as a 
+<a href="form.html#Form.getElements" class="link-short" title="Form.getElements (class method)" data-id="Form.getElements">generic method</a>. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.prototype.getInputs" data-title="Form#getInputs (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form#getInputs" class="member-name methodClicker">Form#getInputs</span>([<a href="http://www.nodemanual.org/latest/js_doc/String.html">String</a> type][, name])<li class="signature-returns"><ul class="argument-types"><li class="argument-type">[ <a href="Element.html" id="Element" class="link-short clicker" title="Element" data-id="Element">Element</a>... ]</li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form#getInputs" class="ellipsis_description"><p>Returns a collection of all INPUT elements in a form.
+ ...</p>
+</div><div id="short_Form#getInputs" class="short_description hiddenSpan"><p>Returns a collection of all INPUT elements in a form.
+</p>
+</div><h3 id="Form#getInputs" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>type
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/String.html" id="String" class=" clicker" title="String" data-id="String">String</a></p></td><td><p>Optional. A value for the <code>type</code> attribute against which to filter.</p>
+</td>  
+</tr><tr><td><p><i>name
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/String.html" id="String" class=" clicker" title="String" data-id="String">String</a></p></td><td><p>Optional. A value for the <code>name</code> attribute against which to filter.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>Use optional <code>type</code> and <code>name</code> arguments to restrict the search on
+these attributes.
+
+</p>
+<h5>Example</h5>
+<pre><code>var form = $(&#39;myform&#39;);
+
+form.getInputs();       // -&gt; all INPUT elements
+form.getInputs(&#39;text&#39;); // -&gt; only text inputs
+
+var buttons = form.getInputs(&#39;radio&#39;, &#39;education&#39;);
+// -&gt; only radio buttons of name &quot;education&quot;
+
+// now disable these radio buttons:
+buttons.invoke(&#39;disable&#39;);</code></pre>
+<h5>Note</h5>
+<p>Elements are returned in the <em>document</em> order, not the
+<a href="http://www.w3.org/TR/html4/interact/forms.html#h-17.11.1">tabindex order</a>.</p>
+<p class="note functionalized">This method can be called <em>either</em> as an instance method <em>or</em> as a 
+<a href="form.html#Form.getInputs" class="link-short" title="Form.getInputs (class method)" data-id="Form.getInputs">generic method</a>. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.prototype.request" data-title="Form#request (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form#request" class="member-name methodClicker">Form#request</span>([options])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Ajax.html#" class="link-short" title="Ajax.Request" data-id="Ajax.Request">Ajax.Request</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form#request" class="ellipsis_description"><p>A convenience method for serializing and submitting the form via an
+<a href="Ajax.html#Ajax.Request"></a> to the URL of the form&#39;s `actio...</p>
+</div><div id="short_Form#request" class="short_description hiddenSpan"><p>A convenience method for serializing and submitting the form via an
+<a href="Ajax.html#Ajax.Request"></a> to the URL of the form&#39;s <code>action</code> attribute.
+</p>
+</div><h3 id="Form#request" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>options
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. Options to pass along to the <a href="Ajax.html#Ajax.Request"></a> constructor.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>The <code>options</code> parameter is passed to the <a href="Ajax.html#Ajax.Request"></a> instance,
+allowing one to override the HTTP method and/or specify additional
+parameters and callbacks.
+
+</p>
+<ul>
+<li><p>If the form has a method attribute, its value is used for the
+<a href="Ajax.html#Ajax.Request"></a> <code>method</code> option. If a method option is passed to
+<code>request()</code>, it takes precedence over the form&#39;s method attribute. If
+neither is specified, method defaults to &quot;POST&quot;.</p>
+</li>
+<li><p>Key-value pairs specified in the <code>parameters</code> option (either as a hash
+or a query string) will be merged with (and <em>take precedence</em> over) the
+serialized form parameters.</p>
+</li>
+</ul>
+<h5>Example</h5>
+<p>Suppose you have this HTML form:
+
+</p>
+<pre><code>language: html
+&lt;form id=&quot;person-example&quot; method=&quot;POST&quot; action=&quot;/user/info&quot;&gt;
+  &lt;fieldset&gt;&lt;legend&gt;User info&lt;/legend&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;label for=&quot;username&quot;&gt;Username:&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; value=&quot;&quot; /&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;label for=&quot;age&quot;&gt;Age:&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;age&quot; id=&quot;age&quot; value=&quot;&quot; size=&quot;3&quot; /&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;label for=&quot;hobbies&quot;&gt;Your hobbies are:&lt;/label&gt;
+        &lt;select name=&quot;hobbies[]&quot; id=&quot;hobbies&quot; multiple=&quot;multiple&quot;&gt;
+          &lt;option&gt;coding&lt;/option&gt;
+          &lt;option&gt;swimming&lt;/option&gt;
+          &lt;option&gt;biking&lt;/option&gt;
+          &lt;option&gt;hiking&lt;/option&gt;
+          &lt;option&gt;drawing&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;serialize!&quot; /&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+<p>You can easily post it with Ajax like this:
+
+</p>
+<pre><code>$(&#39;person-example&#39;).request(); //done - it&#39;s posted
+
+// do the same with a callback:
+$(&#39;person-example&#39;).request({
+  onComplete: function(){ alert(&#39;Form data saved!&#39;) }
+})</code></pre>
+<p>To override the HTTP method and add some parameters, simply use <code>method</code>
+and <code>parameters</code> in the options. In this example we set the method to GET
+and set two fixed parameters:
+<code>interests</code> and <code>hobbies</code>. The latter already exists in the form but this
+value will take precedence.
+
+</p>
+<pre><code>$(&#39;person-example&#39;).request({
+  method: &#39;get&#39;,
+  parameters: { interests:&#39;JavaScript&#39;, &#39;hobbies[]&#39;:[&#39;programming&#39;, &#39;music&#39;] },
+  onComplete: function(){ alert(&#39;Form data saved!&#39;) }
+})</code></pre>
+<p class="note functionalized">This method can be called <em>either</em> as an instance method <em>or</em> as a 
+<a href="form.html#Form.request" class="link-short" title="Form.request (class method)" data-id="Form.request">generic method</a>. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.prototype.reset" data-title="Form#reset (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form#reset" class="member-name methodClicker">Form#reset</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Element.html"" class="link-short" title="Element">Element</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form#reset" class="ellipsis_description"><p>Resets a form to its default values.
+ ...</p>
+</div><div id="short_Form#reset" class="short_description hiddenSpan"><p>Resets a form to its default values.
+</p>
+</div><h3 id="Form#reset" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>Example usage:
+
+</p>
+<pre><code>Form.reset(&#39;contact&#39;)
+
+// equivalent:
+$(&#39;contact&#39;).reset()
+
+// both have the same effect as pressing the reset button</code></pre>
+<p>This method allows you to programatically reset a form. It is a wrapper
+for the <code>reset()</code> method native to <code>HTMLFormElement</code>.</p>
+<p class="note functionalized">This method can be called <em>either</em> as an instance method <em>or</em> as a 
+<a href="form.html#Form.reset" class="link-short" title="Form.reset (class method)" data-id="Form.reset">generic method</a>. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><article id="Form.prototype.serialize" data-title="Form#serialize (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Form#serialize" class="member-name methodClicker">Form#serialize</span>([options])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String">String</a></li><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Object.html"" class="link-short" title="Object">Object</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Form#serialize" class="ellipsis_description"><p>Serializes form data to a string suitable for <a href="Ajax.html"></a> requests (default
+behavior) or, if the <code>hash</code> option evaluate...</p>
+</div><div id="short_Form#serialize" class="short_description hiddenSpan"><p>Serializes form data to a string suitable for <a href="Ajax.html"></a> requests (default
+behavior) or, if the <code>hash</code> option evaluates to <code>true</code>, an object hash
+where keys are form control names and values are data.
+</p>
+</div><h3 id="Form#serialize" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>options
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. A list of options that affect the return value of the method.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>Depending of whether or not the <code>hash</code> option evaluates to <code>true</code>, the
+result is either an object of the form <code>{name: &quot;johnny&quot;, color: &quot;blue&quot;}</code>
+or a <a href="http://www.nodemanual.org/latest/js_doc/String.html"></a> of the form <code>&quot;name=johnny&amp;color=blue&quot;</code>, suitable for
+parameters in an <a href="Ajax.html"></a> request. This method mimics the way browsers
+serialize forms natively so that form data can be sent without refreshing
+the page.
+
+</p>
+<p>See <a href="form.html#Form.serializeElements" class="link-short" title="Form.serializeElements (class method)" data-id="Form.serializeElements">Form.serializeElements</a> for more details on the options.
+
+</p>
+<h5>Examples</h5>
+<pre><code>$(&#39;person-example&#39;).serialize()
+// -&gt; &#39;username=sulien&amp;age=22&amp;hobbies=coding&amp;hobbies=hiking&#39;
+
+$(&#39;person-example&#39;).serialize(true)
+// -&gt; {username: &#39;sulien&#39;, age: &#39;22&#39;, hobbies: [&#39;coding&#39;, &#39;hiking&#39;]}</code></pre>
+<h5>Notes</h5>
+<p>Disabled form elements are not serialized (as per W3C HTML recommendation).
+Also, file inputs are skipped as they cannot be serialized and sent using
+only JavaScript.</p>
+<p class="note functionalized">This method can be called <em>either</em> as an instance method <em>or</em> as a 
+<a href="form.html#Form.serialize" class="link-short" title="Form.serialize (class method)" data-id="Form.serialize">generic method</a>. If calling as generic, pass the instance in as the first argument.
+</p></div></div></div></div></article><div class="membersBackground"></div><div class="members"><div class="membersContent"><h1 class="memberHeader"><span class="name">Form.Element.EventObserver</span><span class="backToMDN"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Form.Element.EventObserver" target="_blank">(View original on MDN)</a></span></h1><ul data-tabs="tabs" class="tabs"><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li></ul></div></div><article id="Form.Element.EventObserver" data-title="Form.Element.EventObserver (class)" class="article"><div class="section superclass"><!-- h3 <Superclass></Superclass><div class="memberContent"><a href="form.html#Abstract.EventObserver" class="" title="Abstract.EventObserver (class)" data-id="Abstract.EventObserver">Abstract.EventObserver</a></div>--></div></article><div class="membersBackground"></div><div class="members"><div class="membersContent"><h1 class="memberHeader"><span class="name">Form.Element.Observer</span><span class="backToMDN"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Form.Element.Observer" target="_blank">(View original on MDN)</a></span></h1><ul data-tabs="tabs" class="tabs"><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"><a href="#" class="dropdown-toggle"><span>Constructors (1)</span></a><ul class="dropdown-menu"><li data-id="new Form.Element.Observer" class="memberLink"><a href="Form.Element.html#Form.Element.Observer.new" class="" title="new Form.Element.Observer (constructor)" data-id="new Form.Element.Observer">new</a>                                 
+</li></ul></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li></ul></div></div><article id="Form.Element.Observer" data-title="Form.Element.Observer (class)" class="article"><div class="section description"><div class="memberContent"><p>An <a href="form.html#Abstract.TimedObserver" class="link-short" title="Abstract.TimedObserver (class)" data-id="Abstract.TimedObserver">Abstract.TimedObserver</a> subclass that watches for changes to a form
+field&#39;s value. This triggers the callback when the form field&#39;s value
+(according to <a href="Form.Element.html#Form.Element.getValue" class="link-short" title="Form.Element.getValue (class method)" data-id="Form.Element.getValue">Form.Element.getValue</a>) changes. (Note that when the value
+actually changes can vary from browser to browser, particularly with
+<code>select</code> boxes.)
+
+</p>
+<p>Form.Element observer implements the <code>getValue()</code> method using
+<a href="Form.Element.html#Form.Element.getValue" class="link-short" title="Form.Element.getValue (class method)" data-id="Form.Element.getValue">Form.Element.getValue</a> on the given element. See <a href="form.html#Abstract.TimedObserver" class="link-short" title="Abstract.TimedObserver (class)" data-id="Abstract.TimedObserver">Abstract.TimedObserver</a>
+for general documentation on timed observers.</p>
+</div></div><div class="section superclass"><!-- h3 <Superclass></Superclass><div class="memberContent"><a href="form.html#Abstract.TimedObserver" class="" title="Abstract.TimedObserver (class)" data-id="Abstract.TimedObserver">Abstract.TimedObserver</a></div>--></div></article><article id="Form.Element.Observer.new" data-title="new Form.Element.Observer (constructor)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call">new <span id="new Form.Element.Observer" class="member-name methodClicker">Form.Element.Observer</span>(<a href="http://www.nodemanual.org/latest/js_doc/String.html">String</a> | <a href="Element.html">Element</a> element, <a href="http://www.nodemanual.org/latest/js_doc/Number.html">Number</a> frequency, <a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> callback)</li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_new Form.Element.Observer" class="ellipsis_description"><p>Creates a <a href="Form.Element.html#Form.Element.Observer" class="link-short" title="Form.Element.Observer (class)" data-id="Form.Element.Observer">Form.Element.Observer</a>. ...</p>
+</div><div id="short_new Form.Element.Observer" class="short_description hiddenSpan"><p>Creates a <a href="Form.Element.html#Form.Element.Observer" class="link-short" title="Form.Element.Observer (class)" data-id="Form.Element.Observer">Form.Element.Observer</a>.</p>
+</div><h3 id="new Form.Element.Observer" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>element
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/String.html" id="String" class=" clicker" title="String" data-id="String">String</a> |
+<a href="Element.html" id="Element" class=" clicker" title="Element" data-id="Element">Element</a></p></td><td><p>Required. The form element to watch. Can be an element instance or an ID.</p>
+</td>  
+</tr><tr><td><p><i>frequency
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Number.html" id="Number" class=" clicker" title="Number" data-id="Number">Number</a></p></td><td><p>Required. The frequency, in seconds&nbsp;&mdash; e.g., 0.33 to check for changes every third of a second.</p>
+</td>  
+</tr><tr><td><p><i>callback
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Required. The callback to trigger when the value changes.</p>
+</td>  
+</tr></tbody></table></div></div></div></div></article><div class="membersBackground"></div><div class="members"><div class="membersContent"><h1 class="memberHeader"><span class="name">Form.EventObserver</span><span class="backToMDN"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Form.EventObserver" target="_blank">(View original on MDN)</a></span></h1><ul data-tabs="tabs" class="tabs"><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li></ul></div></div><article id="Form.EventObserver" data-title="Form.EventObserver (class)" class="article"><div class="section superclass"><!-- h3 <Superclass></Superclass><div class="memberContent"><a href="form.html#Abstract.EventObserver" class="" title="Abstract.EventObserver (class)" data-id="Abstract.EventObserver">Abstract.EventObserver</a></div>--></div></article><div class="membersBackground"></div><div class="members"><div class="membersContent"><h1 class="memberHeader"><span class="name">Form.Observer</span><span class="backToMDN"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Form.Observer" target="_blank">(View original on MDN)</a></span></h1><ul data-tabs="tabs" class="tabs"><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"><a href="#" class="dropdown-toggle"><span>Constructors (1)</span></a><ul class="dropdown-menu"><li data-id="new Form.Observer" class="memberLink"><a href="form.html#Form.Observer.new" class="" title="new Form.Observer (constructor)" data-id="new Form.Observer">new</a>                                 
+</li></ul></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li></ul></div></div><article id="Form.Observer" data-title="Form.Observer (class)" class="article"><div class="section description"><div class="memberContent"><p>An <a href="form.html#Abstract.TimedObserver" class="link-short" title="Abstract.TimedObserver (class)" data-id="Abstract.TimedObserver">Abstract.TimedObserver</a> subclass that watches for changes to a form.
+The callback is triggered when the form changes&nbsp;&mdash; e.g., when any
+of its fields&#39; values changes, when fields are added/removed, etc.; anything
+that affects the serialized form of the form (see <a href="Form#serialize.html" id="Form#serialize" class="link-short clicker" title="Form#serialize (instance method)" data-id="Form#serialize">Form#serialize</a>).
+
+</p>
+<h5>Example</h5>
+<p>In this example an <code>observer</code> is used to change the appearance of the form
+if any of the values had been changed. It returns to its initial state when
+the data is submitted (saved).
+
+</p>
+<pre><code>language: html
+&lt;form id=&quot;example&quot; action=&quot;#&quot;&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Login Preferences&lt;/legend&gt;
+    &lt;p id=&quot;msg&quot; class=&quot;message&quot;&gt;Current settings:&lt;/p&gt;
+    &lt;p&gt;
+      &lt;label for=&quot;greeting&quot;&gt;Greeting message&lt;/label&gt;
+      &lt;input id=&quot;greeting&quot; type=&quot;text&quot; name=&quot;greeting&quot; value=&quot;Hello world!&quot; /&gt;
+    &lt;/p&gt;
+    &lt;h4&gt;Login options&lt;/h4&gt;
+    &lt;p&gt;
+        &lt;input id=&quot;login-visible&quot; type=&quot;checkbox&quot; name=&quot;login-visible&quot; checked=&quot;checked&quot; /&gt;
+        &lt;label for=&quot;login-visible&quot;&gt;allow others to see my last login date&lt;/label&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;input id=&quot;land-recent&quot; type=&quot;checkbox&quot; name=&quot;land-recent&quot; /&gt;
+        &lt;label for=&quot;land-recent&quot;&gt;land on recent changes overview instead of the Dashboard&lt;/label&gt;
+    &lt;/p&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;save&quot; /&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  new Form.Observer(&#39;example&#39;, 0.3, function(form, value){
+    $(&#39;msg&#39;).update(&#39;Your preferences have changed. Resubmit to save&#39;).style.color = &#39;red&#39;
+    form.down().setStyle({ background:&#39;lemonchiffon&#39;, borderColor:&#39;red&#39; })
+  })
+
+  $(&#39;example&#39;).onsubmit = function() {
+    $(&#39;msg&#39;).update(&#39;Preferences saved!&#39;).style.color = &#39;green&#39;
+    this.down().setStyle({ background:null, borderColor:null })
+    return false
+  }
+&lt;/script&gt;</code></pre>
+</div></div><div class="section superclass"><!-- h3 <Superclass></Superclass><div class="memberContent"><a href="form.html#Abstract.TimedObserver" class="" title="Abstract.TimedObserver (class)" data-id="Abstract.TimedObserver">Abstract.TimedObserver</a></div>--></div></article><article id="Form.Observer.new" data-title="new Form.Observer (constructor)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call">new <span id="new Form.Observer" class="member-name methodClicker">Form.Observer</span>(<a href="http://www.nodemanual.org/latest/js_doc/String.html">String</a> | <a href="Element.html">Element</a> element, <a href="http://www.nodemanual.org/latest/js_doc/Number.html">Number</a> frequency, <a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> callback)</li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_new Form.Observer" class="ellipsis_description"><p>Creates a <a href="form.html#Form.Observer" class="link-short" title="Form.Observer (class)" data-id="Form.Observer">Form.Observer</a>. ...</p>
+</div><div id="short_new Form.Observer" class="short_description hiddenSpan"><p>Creates a <a href="form.html#Form.Observer" class="link-short" title="Form.Observer (class)" data-id="Form.Observer">Form.Observer</a>.</p>
+</div><h3 id="new Form.Observer" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>element
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/String.html" id="String" class=" clicker" title="String" data-id="String">String</a> |
+<a href="Element.html" id="Element" class=" clicker" title="Element" data-id="Element">Element</a></p></td><td><p>Required. The element of the form to watch. Can be an element instance or an ID.</p>
+</td>  
+</tr><tr><td><p><i>frequency
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Number.html" id="Number" class=" clicker" title="Number" data-id="Number">Number</a></p></td><td><p>Required. The frequency, in seconds -- e.g., 0.33 to check for changes every third of a second.</p>
+</td>  
+</tr><tr><td><p><i>callback
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Required. The callback to trigger when the form changes.</p>
+</td>  
+</tr></tbody></table></div></div></div></div></article><div id="disqus_thread"></div></div></div></div></div><footer id="footer"><div class="container"><div class="footer-text">&#169; 2012:</div></div></footer></div><!-- scripts concatenated and minified via ant build script--><script defer src="./resources/javascripts/plugins.js"></script>
+<script defer src="./resources/javascripts/prettify.js"></script>
+<script defer src="./resources/javascripts/prettify-extension.js"></script>
+<script defer src="./resources/javascripts/ux.js"></script>
+<!-- end scripts--><!--[if lt IE 7]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script><script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})
+
+</script><![endif]--></body>

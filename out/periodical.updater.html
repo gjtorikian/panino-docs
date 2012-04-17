@@ -1,0 +1,233 @@
+<!DOCTYPE html><!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><title>Prototype</title><meta name="generator" content="panino-doc-build"/><meta name="author" content="Garen J. Torikian"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="stylesheet" href="./resources/csses/bootstrap.css"/><link rel="stylesheet" href="./resources/csses/prettify.css"/><link rel="stylesheet" href="./resources/csses/refguide_overrides.css"/><link href="./resources/images/favicon.ico" rel="icon" type="image/x-icon"/><link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/vs.min.css"/><script src="./resources/javascripts/jquery.js"></script><script src="./resources/javascripts/clicker.js"></script><script src="./resources/javascripts/jquery.collapse.js"></script><script src="./resources/javascripts/jquery.cookie.js"></script><script src="./resources/javascripts/bootstrap-dropdown.js"></script><body onload="styleCode()"><div class="topbar"><div class="fill"><div id="topSection" class="container"><ul class="nav leftnav"></ul><ul class="nav"></ul><form id="searchbox" action="" class="pull-right"><input name="query" type="text" placeholder="Search Documentation" title="Search across all the documentation types" class="span3"/></form></div></div></div><header id="overview" class="jumbotron masthead"><div class="inner"><div class="container"><h1>Node.js Manual</h1><p class="lead"></p></div></div></header><div class="container"><div class="content"><div class="row container"><div class="span5 offset4 sidebarContainer"><div id="sidebar"><div id="well"><h3>Modules</h3><ul class="menu"><li><div class="menu-item"><a href="assert.html" class="menuLink namespace">assert</a></div></li><li><div class="menu-item"><a href="child.process.html" class="menuLink namespace">child_process</a></div></li><li><div class="menu-item"><a href="cluster.html" class="menuLink namespace">cluster    </a></div></li><li><div class="menu-item"><a href="crypto.html" class="menuLink namespace">crypto</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="cipher.html" class="menuLink class">Cipher</a></div></li><li><div class="menu-item"><a href="decipher.html" class="menuLink class">Decipher   </a></div></li><li><div class="menu-item"><a href="diffieHellman.html" class="menuLink class">Diffie-Hellman</a></div></li><li><div class="menu-item"><a href="hash.html" class="menuLink class">Hash    </a></div></li><li><div class="menu-item"><a href="hmac.html" class="menuLink class">HMAC</a></div></li><li><div class="menu-item"><a href="signer.html" class="menuLink class">Signer  </a></div></li><li><div class="menu-item"><a href="verifier.html" class="menuLink class">Verifier                                                          </a></div></li></ul></li><li><div class="menu-item"><a href="dgram.html" class="menuLink namespace">dgram</a></div></li><li><div class="menu-item"><a href="dns.html" class="menuLink namespace">dns</a></div></li><li><div class="menu-item"><a href="eventemitter.html" class="menuLink namespace">EventEmitter</a></div></li><li><div class="menu-item"><a href="fs.html" class="menuLink namespace">fs</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="fs.FSWatcher.html" class="menuLink class">FSWatcher   </a></div></li><li><div class="menu-item"><a href="fs.ReadStream.html" class="menuLink class">Readstream                          </a></div></li><li><div class="menu-item"><a href="fs.Stats.html" class="menuLink class">Stats  </a></div></li><li><div class="menu-item"><a href="fs.WriteStream.html" class="menuLink class">Writestream                            </a></div></li></ul></li><li><div class="menu-item"><a href="http.html" class="menuLink namespace">http</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="http.Agent.html" class="menuLink class">Agent   </a></div></li><li><div class="menu-item"><a href="http.ClientRequest.html" class="menuLink class">ClientRequest   </a></div></li><li><div class="menu-item"><a href="http.ClientResponse.html" class="menuLink class">ClientResponse        </a></div></li><li><div class="menu-item"><a href="http.Server.html" class="menuLink class">Server</a></div></li><li><div class="menu-item"><a href="http.ServerRequest.html" class="menuLink class">ServerRequest</a></div></li><li><div class="menu-item"><a href="http.ServerResponse.html" class="menuLink class">ServerResponse   </a></div></li></ul></li><li><div class="menu-item"><a href="https.html" class="menuLink namespace">https</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="https.Agent.html" class="menuLink class">Agent    </a></div></li><li><div class="menu-item"><a href="https.Server.html" class="menuLink class">Server                             </a></div></li></ul></li><li><div class="menu-item"><a href="net.html" class="menuLink namespace">net</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="net.Server.html" class="menuLink class">Server   </a></div></li><li><div class="menu-item"><a href="net.Socket.html" class="menuLink class">Socket              </a></div></li></ul></li><li><div class="menu-item"><a href="os.html" class="menuLink namespace">os</a></div></li><li><div class="menu-item"><a href="path.html" class="menuLink namespace">path</a></div></li><li><div class="menu-item"><a href="querystring.html" class="menuLink namespace">querystring</a></div></li><li><div class="menu-item"><a href="readline.html" class="menuLink namespace">readline</a></div></li><li><div class="menu-item"><a href="tls.html" class="menuLink namespace">tls</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="tls.SecurePair.html" class="menuLink class">SecurePair  </a></div></li><li><div class="menu-item"><a href="tls.Server.html" class="menuLink class">Server   </a></div></li><li><div class="menu-item"><a href="tls.CleartextStream.html" class="menuLink class">CleartextStream              </a></div></li></ul></li><li><div class="menu-item"><a href="tty.html" class="menuLink namespace">tty</a></div></li><li><div class="menu-item"><a href="url.html" class="menuLink namespace">url</a></div></li><li><div class="menu-item"><a href="util.html" class="menuLink namespace">util</a></div></li><li><div class="menu-item"><a href="vm.html" class="menuLink namespace">vm</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="vm.Script.html" class="menuLink class">Script      </a></div></li></ul></li><li><div class="menu-item"><a href="zlib.html" class="menuLink namespace">zlib                                                                       </a></div></li></ul><h3>Globals</h3><ul class="menu"><li><div class="menu-item"><a href="buffer.html" class="menuLink class">Buffers</a></div></li><li><div class="menu-item"><a href="process.html" class="menuLink class">Process</a></div></li><li><div class="menu-item"><a href="console.html" class="menuLink class">STDIO</a></div></li><li><div class="menu-item"><a href="streams.html" class="menuLink class">Streams</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="streams.ReadableStream.html" class="menuLink class">Readable Streams</a></div></li><li><div class="menu-item"><a href="streams.WritableStream.html" class="menuLink class">Writable Streams</a></div></li></ul></li><li><div class="menu-item"><a href="timer.html" class="menuLink class">Timers</a></div></li></ul><h3>Concepts</h3><ul class="menu"><li><div class="menu-item"><a href="addons.html" class="menuLink namespace">Addons</a></div></li><li><div class="menu-item"><a href="debugging.node.js.html" class="menuLink namespace">Debugging Node.js</a></div></li><li><div class="menu-item"><a href="global.objects.html" class="menuLink namespace">Global Objects    </a></div></li><li><div class="menu-item"><a href="modules.html" class="menuLink namespace">Modules</a></div></li><li><div class="menu-item"><a href="repl.html" class="menuLink namespace">REPL    </a></div></li></ul></div></div></div><div class="span11"><div id="content"><div class="membersBackground"></div><div class="members"><div class="membersContent"><h1 class="memberHeader"><span class="name">Ajax.PeriodicalUpdater</span><span class="backToMDN"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Ajax.PeriodicalUpdater" target="_blank">(View original on MDN)</a></span></h1><ul data-tabs="tabs" class="tabs"><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"><a href="#" class="dropdown-toggle"><span>Constructors (1)</span></a><ul class="dropdown-menu"><li data-id="new Ajax.PeriodicalUpdater" class="memberLink"><a href="periodical.updater.html#Ajax.PeriodicalUpdater.new" class="" title="new Ajax.PeriodicalUpdater (constructor)" data-id="new Ajax.PeriodicalUpdater">new</a>                                 
+</li></ul></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"><a href="#" class="dropdown-toggle"><span>Functions (2)</span></a><ul class="dropdown-menu"><li data-id="Ajax.PeriodicalUpdater#start" class="memberLink"><a href="periodical.updater.html#Ajax.PeriodicalUpdater.prototype.start" class="" title="Ajax.PeriodicalUpdater#start (instance method)" data-id="Ajax.PeriodicalUpdater#start">start</a>                                 
+</li><li data-id="Ajax.PeriodicalUpdater#stop" class="memberLink"><a href="periodical.updater.html#Ajax.PeriodicalUpdater.prototype.stop" class="" title="Ajax.PeriodicalUpdater#stop (instance method)" data-id="Ajax.PeriodicalUpdater#stop">stop</a>                                 
+</li></ul></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li></ul></div></div><article id="Ajax.PeriodicalUpdater" data-title="Ajax.PeriodicalUpdater (class)" class="article"><div class="section description"><div class="memberContent"><p>Periodically performs an Ajax request and updates a container&#39;s contents
+based on the response text.
+
+</p>
+<p><a href="periodical.updater.html#Ajax.PeriodicalUpdater" class="link-short" title="Ajax.PeriodicalUpdater (class)" data-id="Ajax.PeriodicalUpdater">Ajax.PeriodicalUpdater</a> behaves like <a href="Ajax.html#Ajax.Updater"></a>, but performs the
+update at a prescribed interval, rather than only once. (Note that it is
+<em>not</em> a subclass of <a href="Ajax.html#Ajax.Updater"></a>; it&#39;s a wrapper around it.)
+
+</p>
+<p>This class addresses the common need of periodical update, as required by
+all sorts of &quot;polling&quot; mechanisms (e.g., an online chatroom or an online
+mail client).
+
+</p>
+<p>The basic idea is to run a regular <a href="Ajax.html#Ajax.Updater"></a> at regular intervals,
+keeping track of the response text so it can (optionally) react to
+receiving the exact same response consecutively.
+
+</p>
+<h5>Additional options</h5>
+<p><a href="periodical.updater.html#Ajax.PeriodicalUpdater" class="link-short" title="Ajax.PeriodicalUpdater (class)" data-id="Ajax.PeriodicalUpdater">Ajax.PeriodicalUpdater</a> features all the common options and callbacks
+described in the <a href="Ajax.html">section</a> &mdash; <em>plus</em> those added by
+<a href="Ajax.html#Ajax.Updater"></a>.
+
+</p>
+<p>It also provides two new options:
+
+</p>
+<ul>
+<li><code>frequency</code> (<a href="http://www.nodemanual.org/latest/js_doc/Number.html"></a>; default is <code>2</code>): How long, in seconds, to wait
+between the end of one request and the beginning of the next.</li>
+<li><code>decay</code> (<a href="http://www.nodemanual.org/latest/js_doc/Number.html"></a>; default is <code>1</code>): The rate at which the <code>frequency</code>
+grows when the response received is <em>exactly</em> the same as the previous.
+The default of <code>1</code> means <code>frequency</code> will never grow; override the
+default if a stale response implies it&#39;s worthwhile to poll less often.
+If <code>decay</code> is set to <code>2</code>, for instance, <code>frequency</code> will double
+(2 seconds, 4 seconds, 8 seconds...) each consecutive time the result
+is the same; when the result is different once again, <code>frequency</code> will
+revert to its original value.</li>
+</ul>
+<h5>Disabling and re-enabling a <a href="periodical.updater.html#Ajax.PeriodicalUpdater" class="link-short" title="Ajax.PeriodicalUpdater (class)" data-id="Ajax.PeriodicalUpdater">Ajax.PeriodicalUpdater</a></h5>
+<p>You can hit the brakes on a running <a href="periodical.updater.html#Ajax.PeriodicalUpdater" class="link-short" title="Ajax.PeriodicalUpdater (class)" data-id="Ajax.PeriodicalUpdater">Ajax.PeriodicalUpdater</a> by calling
+<a href="periodical.updater.html#Ajax.PeriodicalUpdater.prototype.stop" class="link-short" title="Ajax.PeriodicalUpdater#stop (instance method)" data-id="Ajax.PeriodicalUpdater#stop">Ajax.PeriodicalUpdater#stop</a>. If you wish to re-enable it later, call
+<a href="periodical.updater.html#Ajax.PeriodicalUpdater.prototype.start" class="link-short" title="Ajax.PeriodicalUpdater#start (instance method)" data-id="Ajax.PeriodicalUpdater#start">Ajax.PeriodicalUpdater#start</a>.</p>
+</div></div></article><h3 class="sectionHeader">Constructors</h3><article id="Ajax.PeriodicalUpdater.new" data-title="new Ajax.PeriodicalUpdater (constructor)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call">new <span id="new Ajax.PeriodicalUpdater" class="member-name methodClicker">Ajax.PeriodicalUpdater</span>(<a href="http://www.nodemanual.org/latest/js_doc/String.html">String</a> | <a href="Element.html">Element</a> container, <a href="http://www.nodemanual.org/latest/js_doc/String.html">String</a> url[, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> options])</li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_new Ajax.PeriodicalUpdater" class="ellipsis_description"><p>Creates a new <a href="periodical.updater.html#Ajax.PeriodicalUpdater" class="link-short" title="Ajax.PeriodicalUpdater (class)" data-id="Ajax.PeriodicalUpdater">Ajax.PeriodicalUpdater</a>.
+ ...</p>
+</div><div id="short_new Ajax.PeriodicalUpdater" class="short_description hiddenSpan"><p>Creates a new <a href="periodical.updater.html#Ajax.PeriodicalUpdater" class="link-short" title="Ajax.PeriodicalUpdater (class)" data-id="Ajax.PeriodicalUpdater">Ajax.PeriodicalUpdater</a>.
+</p>
+</div><h3 id="new Ajax.PeriodicalUpdater" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>container
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/String.html" id="String" class=" clicker" title="String" data-id="String">String</a> |
+<a href="Element.html" id="Element" class=" clicker" title="Element" data-id="Element">Element</a></p></td><td><p>Required. The DOM element whose contents to update as a result of the Ajax request. Can be a DOM node or a string that identifies a node&#39;s ID.</p>
+</td>  
+</tr><tr><td><p><i>url
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/String.html" id="String" class=" clicker" title="String" data-id="String">String</a></p></td><td><p>Required. The URL to fetch. When the <em>same-origin</em> policy is in effect (as it is in most cases), <code>url</code>  must  be a relative URL or an absolute URL that starts with a slash (i.e., it must not begin with <code>http</code>).</p>
+</td>  
+</tr><tr><td><p><i>options
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. Configuration for the request. See the <a href="Ajax.html">section</a> for more information.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>Periodically performs an AJAX request and updates a container&#39;s contents
+based on the response text. Offers a mechanism for &quot;decay,&quot; which lets it
+trigger at widening intervals while the response is unchanged.
+
+</p>
+<p>This object addresses the common need of periodical update, which is used
+by all sorts of &quot;polling&quot; mechanisms (e.g. in an online chatroom or an
+online mail client).
+
+</p>
+<p>The basic idea is to run a regular <a href="Ajax.html#Ajax.Updater"></a> at
+regular intervals, monitoring changes in the response text if the <code>decay</code>
+option (see below) is active.
+
+</p>
+<h5>Additional options</h5>
+<p><a href="periodical.updater.html#Ajax.PeriodicalUpdater" class="link-short" title="Ajax.PeriodicalUpdater (class)" data-id="Ajax.PeriodicalUpdater">Ajax.PeriodicalUpdater</a> features all the common options and callbacks
+(see the <a href="Ajax.html">section</a> for more information), plus those added by
+<a href="Ajax.html#Ajax.Updater"></a>. It also provides two new options that deal with the
+original period, and its decay rate (how Rocket Scientist does that make
+us sound, uh?!).
+
+</p>
+<table>
+<thead>
+  <tr>
+    <th>Option</th>
+    <th>Default</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th><code>frequency</code></th>
+    <td><code>2</code></td>
+<td>Okay, this is not a frequency (e.g 0.5Hz), but a period (i.e. a number of seconds).
+Don&#39;t kill me, I didn&#39;t write this one! This is the minimum interval at which AJAX
+requests are made. You don&#39;t want to make it too short (otherwise you may very well
+end up with multiple requests in parallel, if they take longer to process and return),
+but you technically can provide a number below one, e.g. 0.75 second.</td>
+  </tr>
+  <tr>
+    <th><code>decay</code></th>
+    <td>1</td>
+<td>This controls the rate at which the request interval grows when the response is
+unchanged. It is used as a multiplier on the current period (which starts at the original
+value of the <code>frequency</code> parameter). Every time a request returns an unchanged
+response text, the current period is multiplied by the decay. Therefore, the default
+value means regular requests (no change of interval). Values higher than one will
+yield growing intervals. Values below one are dangerous: the longer the response text
+stays the same, the more often you&#39;ll check, until the interval is so short your browser
+is left with no other choice than suicide. Note that, as soon as the response text
+<em>does</em> change, the current period resets to the original one.</td>
+  </tr>
+</tbody>
+</table>
+
+<p>To better understand decay, here is a small sequence of calls from the
+following example:
+
+</p>
+<pre><code>new Ajax.PeriodicalUpdater(&#39;items&#39;, &#39;/items&#39;, {
+  method: &#39;get&#39;, frequency: 3, decay: 2
+});</code></pre>
+<table id="decayTable">
+<thead>
+  <tr>
+    <th>Call#</th>
+    <th>When?</th>
+    <th>Decay before</th>
+    <th>Response changed?</th>
+    <th>Decay after</th>
+    <th>Next period</th>
+    <th>Comments</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>1</td>
+    <td>00:00</td>
+    <td>2</td>
+    <td>n/a</td>
+    <td>1</td>
+    <td>3</td>
+<td>Response is deemed changed, since there is no prior response to compare to!</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>00:03</td>
+    <td>1</td>
+    <td>yes</td>
+    <td>1</td>
+    <td>3</td>
+<td>Response did change again: we &quot;reset&quot; to 1, which was already the decay.</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>00:06</td>
+    <td>1</td>
+    <td>no</td>
+    <td>2</td>
+    <td>6</td>
+<td>Response didn&#39;t change: decay augments by the <code>decay</code> option factor:
+we&#39;re waiting longer now&#8230;</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>00:12</td>
+    <td>2</td>
+    <td>no</td>
+    <td>4</td>
+    <td>12</td>
+    <td>Still no change, doubling again.</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>00:24</td>
+    <td>4</td>
+    <td>no</td>
+    <td>8</td>
+    <td>24</td>
+    <td>Jesus, is this thing going to change or what?</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>00:48</td>
+    <td>8</td>
+    <td>yes</td>
+    <td>1</td>
+    <td>3</td>
+<td>Ah, finally! Resetting decay to 1, and therefore using the original period.</td>
+  </tr>
+</tbody>
+</table>
+
+<h5>Disabling and re-enabling a <a href="periodical.updater.html#Ajax.PeriodicalUpdater" class="link-short" title="Ajax.PeriodicalUpdater (class)" data-id="Ajax.PeriodicalUpdater">Ajax.PeriodicalUpdater</a></h5>
+<p>You can pull the brake on a running <a href="periodical.updater.html#Ajax.PeriodicalUpdater" class="link-short" title="Ajax.PeriodicalUpdater (class)" data-id="Ajax.PeriodicalUpdater">Ajax.PeriodicalUpdater</a> by simply
+calling its <code>stop</code> method. If you wish to re-enable it later, just call
+its <code>start</code> method. Both take no argument.
+
+</p>
+<h5>Beware!  Not a specialization!</h5>
+<p><a href="periodical.updater.html#Ajax.PeriodicalUpdater" class="link-short" title="Ajax.PeriodicalUpdater (class)" data-id="Ajax.PeriodicalUpdater">Ajax.PeriodicalUpdater</a> is not a specialization of <a href="Ajax.html#Ajax.Updater"></a>,
+despite its name. When using it, do not expect to be able to use methods
+normally provided by <a href="Ajax.html#Ajax.Request"></a> and &quot;inherited&quot; by <a href="Ajax.html#Ajax.Updater"></a>,
+such as <code>evalJSON</code> or <code>getHeader</code>. Also the <code>onComplete</code> callback is
+hijacked to be used for update management, so if you wish to be notified
+of every successful request, use <code>onSuccess</code> instead (beware: it will get
+called <em>before</em> the update is performed).</p>
+</div></div></div></div></article><article id="Ajax.PeriodicalUpdater.prototype.start" data-title="Ajax.PeriodicalUpdater#start (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Ajax.PeriodicalUpdater#start" class="member-name methodClicker">PeriodicalUpdater#start</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="undefined.html"" class="link-short" title="undefined">undefined</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Ajax.PeriodicalUpdater#start" class="ellipsis_description"><p>Starts the periodical updater (if it had previously been stopped with
+<a href="periodical.updater.html#Ajax.PeriodicalUpdater.prototype.stop" class="link-short" title="Ajax.PeriodicalUpdater#stop (instance method)" data-id="Ajax.PeriodicalUpdater#stop">Ajax.PeriodicalUpdater#stop</a>). ...</p>
+</div><div id="short_Ajax.PeriodicalUpdater#start" class="short_description hiddenSpan"><p>Starts the periodical updater (if it had previously been stopped with
+<a href="periodical.updater.html#Ajax.PeriodicalUpdater.prototype.stop" class="link-short" title="Ajax.PeriodicalUpdater#stop (instance method)" data-id="Ajax.PeriodicalUpdater#stop">Ajax.PeriodicalUpdater#stop</a>).</p>
+</div><h3 id="Ajax.PeriodicalUpdater#start" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"></div></div></div></div></article><article id="Ajax.PeriodicalUpdater.prototype.stop" data-title="Ajax.PeriodicalUpdater#stop (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Ajax.PeriodicalUpdater#stop" class="member-name methodClicker">PeriodicalUpdater#stop</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="undefined.html"" class="link-short" title="undefined">undefined</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Ajax.PeriodicalUpdater#stop" class="ellipsis_description"><p>Stops the periodical updater.
+ ...</p>
+</div><div id="short_Ajax.PeriodicalUpdater#stop" class="short_description hiddenSpan"><p>Stops the periodical updater.
+</p>
+</div><h3 id="Ajax.PeriodicalUpdater#stop" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>Also calls the <code>onComplete</code> callback, if one has been defined.</p>
+</div></div></div></div></article><div id="disqus_thread"></div></div></div></div></div><footer id="footer"><div class="container"><div class="footer-text">&#169; 2012:</div></div></footer></div><!-- scripts concatenated and minified via ant build script--><script defer src="./resources/javascripts/plugins.js"></script>
+<script defer src="./resources/javascripts/prettify.js"></script>
+<script defer src="./resources/javascripts/prettify-extension.js"></script>
+<script defer src="./resources/javascripts/ux.js"></script>
+<!-- end scripts--><!--[if lt IE 7]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script><script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})
+
+</script><![endif]--></body>

@@ -1,0 +1,602 @@
+<!DOCTYPE html><!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><title>Prototype</title><meta name="generator" content="panino-doc-build"/><meta name="author" content="Garen J. Torikian"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="stylesheet" href="./resources/csses/bootstrap.css"/><link rel="stylesheet" href="./resources/csses/prettify.css"/><link rel="stylesheet" href="./resources/csses/refguide_overrides.css"/><link href="./resources/images/favicon.ico" rel="icon" type="image/x-icon"/><link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/vs.min.css"/><script src="./resources/javascripts/jquery.js"></script><script src="./resources/javascripts/clicker.js"></script><script src="./resources/javascripts/jquery.collapse.js"></script><script src="./resources/javascripts/jquery.cookie.js"></script><script src="./resources/javascripts/bootstrap-dropdown.js"></script><body onload="styleCode()"><div class="topbar"><div class="fill"><div id="topSection" class="container"><ul class="nav leftnav"></ul><ul class="nav"></ul><form id="searchbox" action="" class="pull-right"><input name="query" type="text" placeholder="Search Documentation" title="Search across all the documentation types" class="span3"/></form></div></div></div><header id="overview" class="jumbotron masthead"><div class="inner"><div class="container"><h1>Node.js Manual</h1><p class="lead"></p></div></div></header><div class="container"><div class="content"><div class="row container"><div class="span5 offset4 sidebarContainer"><div id="sidebar"><div id="well"><h3>Modules</h3><ul class="menu"><li><div class="menu-item"><a href="assert.html" class="menuLink namespace">assert</a></div></li><li><div class="menu-item"><a href="child.process.html" class="menuLink namespace">child_process</a></div></li><li><div class="menu-item"><a href="cluster.html" class="menuLink namespace">cluster    </a></div></li><li><div class="menu-item"><a href="crypto.html" class="menuLink namespace">crypto</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="cipher.html" class="menuLink class">Cipher</a></div></li><li><div class="menu-item"><a href="decipher.html" class="menuLink class">Decipher   </a></div></li><li><div class="menu-item"><a href="diffieHellman.html" class="menuLink class">Diffie-Hellman</a></div></li><li><div class="menu-item"><a href="hash.html" class="menuLink class">Hash    </a></div></li><li><div class="menu-item"><a href="hmac.html" class="menuLink class">HMAC</a></div></li><li><div class="menu-item"><a href="signer.html" class="menuLink class">Signer  </a></div></li><li><div class="menu-item"><a href="verifier.html" class="menuLink class">Verifier                                                          </a></div></li></ul></li><li><div class="menu-item"><a href="dgram.html" class="menuLink namespace">dgram</a></div></li><li><div class="menu-item"><a href="dns.html" class="menuLink namespace">dns</a></div></li><li><div class="menu-item"><a href="eventemitter.html" class="menuLink namespace">EventEmitter</a></div></li><li><div class="menu-item"><a href="fs.html" class="menuLink namespace">fs</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="fs.FSWatcher.html" class="menuLink class">FSWatcher   </a></div></li><li><div class="menu-item"><a href="fs.ReadStream.html" class="menuLink class">Readstream                          </a></div></li><li><div class="menu-item"><a href="fs.Stats.html" class="menuLink class">Stats  </a></div></li><li><div class="menu-item"><a href="fs.WriteStream.html" class="menuLink class">Writestream                            </a></div></li></ul></li><li><div class="menu-item"><a href="http.html" class="menuLink namespace">http</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="http.Agent.html" class="menuLink class">Agent   </a></div></li><li><div class="menu-item"><a href="http.ClientRequest.html" class="menuLink class">ClientRequest   </a></div></li><li><div class="menu-item"><a href="http.ClientResponse.html" class="menuLink class">ClientResponse        </a></div></li><li><div class="menu-item"><a href="http.Server.html" class="menuLink class">Server</a></div></li><li><div class="menu-item"><a href="http.ServerRequest.html" class="menuLink class">ServerRequest</a></div></li><li><div class="menu-item"><a href="http.ServerResponse.html" class="menuLink class">ServerResponse   </a></div></li></ul></li><li><div class="menu-item"><a href="https.html" class="menuLink namespace">https</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="https.Agent.html" class="menuLink class">Agent    </a></div></li><li><div class="menu-item"><a href="https.Server.html" class="menuLink class">Server                             </a></div></li></ul></li><li><div class="menu-item"><a href="net.html" class="menuLink namespace">net</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="net.Server.html" class="menuLink class">Server   </a></div></li><li><div class="menu-item"><a href="net.Socket.html" class="menuLink class">Socket              </a></div></li></ul></li><li><div class="menu-item"><a href="os.html" class="menuLink namespace">os</a></div></li><li><div class="menu-item"><a href="path.html" class="menuLink namespace">path</a></div></li><li><div class="menu-item"><a href="querystring.html" class="menuLink namespace">querystring</a></div></li><li><div class="menu-item"><a href="readline.html" class="menuLink namespace">readline</a></div></li><li><div class="menu-item"><a href="tls.html" class="menuLink namespace">tls</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="tls.SecurePair.html" class="menuLink class">SecurePair  </a></div></li><li><div class="menu-item"><a href="tls.Server.html" class="menuLink class">Server   </a></div></li><li><div class="menu-item"><a href="tls.CleartextStream.html" class="menuLink class">CleartextStream              </a></div></li></ul></li><li><div class="menu-item"><a href="tty.html" class="menuLink namespace">tty</a></div></li><li><div class="menu-item"><a href="url.html" class="menuLink namespace">url</a></div></li><li><div class="menu-item"><a href="util.html" class="menuLink namespace">util</a></div></li><li><div class="menu-item"><a href="vm.html" class="menuLink namespace">vm</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="vm.Script.html" class="menuLink class">Script      </a></div></li></ul></li><li><div class="menu-item"><a href="zlib.html" class="menuLink namespace">zlib                                                                       </a></div></li></ul><h3>Globals</h3><ul class="menu"><li><div class="menu-item"><a href="buffer.html" class="menuLink class">Buffers</a></div></li><li><div class="menu-item"><a href="process.html" class="menuLink class">Process</a></div></li><li><div class="menu-item"><a href="console.html" class="menuLink class">STDIO</a></div></li><li><div class="menu-item"><a href="streams.html" class="menuLink class">Streams</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="streams.ReadableStream.html" class="menuLink class">Readable Streams</a></div></li><li><div class="menu-item"><a href="streams.WritableStream.html" class="menuLink class">Writable Streams</a></div></li></ul></li><li><div class="menu-item"><a href="timer.html" class="menuLink class">Timers</a></div></li></ul><h3>Concepts</h3><ul class="menu"><li><div class="menu-item"><a href="addons.html" class="menuLink namespace">Addons</a></div></li><li><div class="menu-item"><a href="debugging.node.js.html" class="menuLink namespace">Debugging Node.js</a></div></li><li><div class="menu-item"><a href="global.objects.html" class="menuLink namespace">Global Objects    </a></div></li><li><div class="menu-item"><a href="modules.html" class="menuLink namespace">Modules</a></div></li><li><div class="menu-item"><a href="repl.html" class="menuLink namespace">REPL    </a></div></li></ul></div></div></div><div class="span11"><div id="content"><div class="membersBackground"></div><div class="members"><div class="membersContent"><h1 class="memberHeader"><span class="name">Enumerable</span><span class="backToMDN"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Enumerable" target="_blank">(View original on MDN)</a></span></h1><ul data-tabs="tabs" class="tabs"></ul></div></div><article id="Enumerable" data-title="Enumerable (mixin)" class="article"><div class="section description"><div class="memberContent"><p><a href="Enumerable.html" id="Enumerable" class="link-short clicker" title="Enumerable (mixin)" data-id="Enumerable">Enumerable</a> provides a large set of useful methods for enumerations &mdash;
+objects that act as collections of values. It is a cornerstone of
+Prototype.
+
+</p>
+<p><a href="Enumerable.html" id="Enumerable" class="link-short clicker" title="Enumerable (mixin)" data-id="Enumerable">Enumerable</a> is a <em>mixin</em>: a set of methods intended not for standaone
+use, but for incorporation into other objects.
+
+</p>
+<p>Prototype mixes <a href="Enumerable.html" id="Enumerable" class="link-short clicker" title="Enumerable (mixin)" data-id="Enumerable">Enumerable</a> into several classes. The most visible cases
+are <a href="http://www.nodemanual.org/latest/js_doc/Array.html"></a> and <a href="Hash.html"></a>, but you&#39;ll find it in less obvious spots as
+well, such as in <a href="ObjectRange.html"></a> and various DOM- or Ajax-related objects.
+
+</p>
+<h5>The <code>context</code> parameter</h5>
+<p>Every method of <a href="Enumerable.html" id="Enumerable" class="link-short clicker" title="Enumerable (mixin)" data-id="Enumerable">Enumerable</a> that takes an iterator also takes the &quot;context
+object&quot; as the next (optional) parameter. The context object is what the
+iterator will be <em>bound</em> to &mdash; what the keyword <code>this</code> will refer to inside
+the iterator.
+
+</p>
+<pre><code>var myObject = {};
+
+[&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;].each(function(name, index) {
+  this[name] = index;
+}, myObject); // we have specified the context
+
+myObject;
+// -&gt; { foo: 0, bar: 1, baz: 2}</code></pre>
+<p>If there is no <code>context</code> argument, the iterator function will execute in
+the scope from which the <a href="Enumerable.html" id="Enumerable" class="link-short clicker" title="Enumerable (mixin)" data-id="Enumerable">Enumerable</a> method itself was called.
+
+</p>
+<h5>Mixing <a href="Enumerable.html" id="Enumerable" class="link-short clicker" title="Enumerable (mixin)" data-id="Enumerable">Enumerable</a> into your own objects</h5>
+<p>So, let&#39;s say you&#39;ve created your very own collection-like object (say,
+some sort of Set, or perhaps something that dynamically fetches data
+ranges from the server side, lazy-loading style). You want to be able to
+mix <a href="Enumerable.html" id="Enumerable" class="link-short clicker" title="Enumerable (mixin)" data-id="Enumerable">Enumerable</a> in (and we commend you for it). How do you go about this?
+
+</p>
+<p>The Enumerable module basically makes only one requirement on your object:
+it must provide a method named <code>_each</code> (note the leading underscore) that
+will accept a function as its unique argument, and will contain the actual
+&quot;raw iteration&quot; algorithm, invoking its argument with each element in turn.
+
+</p>
+<p>As detailed in the documentation for <a href="Enumerable#each.html" id="Enumerable#each" class="link-short clicker" title="Enumerable#each (instance method)" data-id="Enumerable#each">Enumerable#each</a>, <a href="Enumerable.html" id="Enumerable" class="link-short clicker" title="Enumerable (mixin)" data-id="Enumerable">Enumerable</a>
+provides all the extra layers (handling iteration short-circuits, passing
+numeric indices, etc.). You just need to implement the actual iteration,
+as fits your internal structure.
+
+</p>
+<p>If you&#39;re still confused, just have a look at the Prototype source code for
+<a href="http://www.nodemanual.org/latest/js_doc/Array.html"></a>, <a href="Hash.html"></a>, or <a href="ObjectRange.html"></a>. They all begin with their own
+<code>_each</code> method, which should help you grasp the idea.
+
+</p>
+<p>Once you&#39;re done with this, you just need to mix <a href="Enumerable.html" id="Enumerable" class="link-short clicker" title="Enumerable (mixin)" data-id="Enumerable">Enumerable</a> in, which
+you&#39;ll usually do before defining your methods, so as to make sure whatever
+overrides you provide for <a href="Enumerable.html" id="Enumerable" class="link-short clicker" title="Enumerable (mixin)" data-id="Enumerable">Enumerable</a> methods will indeed prevail. In
+short, your code will probably end up looking like this:
+
+
+</p>
+<pre><code>var YourObject = Class.create(Enumerable, {
+  initialize: function() { // with whatever constructor arguments you need
+    // Your construction code
+  },
+
+  _each: function(iterator) {
+    // Your iteration code, invoking iterator at every turn
+  },
+
+  // Your other methods here, including Enumerable overrides
+});</code></pre>
+<p>Then, obviously, your object can be used like this:
+
+</p>
+<pre><code>var obj = new YourObject();
+// Populate the collection somehow
+obj.pluck(&#39;somePropName&#39;);
+obj.invoke(&#39;someMethodName&#39;);
+obj.size();
+// etc.</code></pre>
+</div></div></article><article id="Enumerable.prototype.all" data-title="Enumerable#all (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#all" class="member-name methodClicker">Enumerable#all</span>([<a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> iterator = "Prototype.K"][, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias multiple">Aliased as:
+<ul class="alias"><li><a href="Enumerable#every.html" id="Enumerable#every" class=" clicker" title="Enumerable#every (instance method)" data-id="Enumerable#every">Enumerable#every</a></li></ul></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#all" class="ellipsis_description"><p>Determines whether all the elements are &quot;truthy&quot; (boolean-equivalent to
+<code>true</code>), either directly or through computat...</p>
+</div><div id="short_Enumerable#all" class="short_description hiddenSpan"><p>Determines whether all the elements are &quot;truthy&quot; (boolean-equivalent to
+<code>true</code>), either directly or through computation by the provided iterator.
+Stops on the first falsy element found (e.g., the first element that
+is boolean-equivalent to <code>false</code>, such as <code>undefined</code>, <code>0</code>, or indeed
+<code>false</code>);
+</p>
+</div><h3 id="Enumerable#all" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>iterator
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Optional. An optional function to use to evaluate each element in the enumeration; the function should return the value to test. If this is not provided, the element itself is tested.</p>
+</td>  
+</tr><tr><td><p><i>context
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. An optional object to use as <code>this</code> within calls to the iterator.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Examples</h5>
+<pre><code>[].all();
+// -&gt; true (empty arrays have no elements that could be falsy)
+
+$R(1, 5).all();
+// -&gt; true (all values in [1..5] are truthy)
+
+[0, 1, 2].all();
+// -&gt; false (with only one loop cycle: 0 is falsy)
+
+[9, 10, 15].all(function(n) { return n &gt;= 10; });
+// -&gt; false (the iterator returns false on 9)</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.any" data-title="Enumerable#any (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#any" class="member-name methodClicker">Enumerable#any</span>([<a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> iterator = "Prototype.K"][, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias multiple">Aliased as:
+<ul class="alias"><li><a href="Enumerable#some.html" id="Enumerable#some" class=" clicker" title="Enumerable#some (instance method)" data-id="Enumerable#some">Enumerable#some</a></li></ul></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#any" class="ellipsis_description"><p>Determines whether at least one element is truthy (boolean-equivalent to
+<code>true</code>), either directly or through computa...</p>
+</div><div id="short_Enumerable#any" class="short_description hiddenSpan"><p>Determines whether at least one element is truthy (boolean-equivalent to
+<code>true</code>), either directly or through computation by the provided iterator.
+</p>
+</div><h3 id="Enumerable#any" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>iterator
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Optional. An optional function to use to evaluate each element in the enumeration; the function should return the value to test. If this is not provided, the element itself is tested.</p>
+</td>  
+</tr><tr><td><p><i>context
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. An optional object to use as <code>this</code> within calls to the iterator.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Examples</h5>
+<pre><code>[].any();
+// -&gt; false (empty arrays have no elements that could be truthy)
+
+$R(0, 2).any();
+// -&gt; true (on the second loop, 1 is truthy)
+
+[2, 4, 6, 8, 10].any(function(n) { return n &gt; 5; });
+// -&gt; true (the iterator will return true on 6)</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.collect" data-title="Enumerable#collect (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#collect" class="member-name methodClicker">Enumerable#collect</span>([<a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> iterator = "Prototype.K"][, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias multiple">Aliased as:
+<ul class="alias"><li><a href="Enumerable#map.html" id="Enumerable#map" class=" clicker" title="Enumerable#map (instance method)" data-id="Enumerable#map">Enumerable#map</a></li></ul></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#collect" class="ellipsis_description"><p>Returns the result of applying <code>iterator</code> to each element. If no
+<code>iterator</code> is provided, the elements are simply cop...</p>
+</div><div id="short_Enumerable#collect" class="short_description hiddenSpan"><p>Returns the result of applying <code>iterator</code> to each element. If no
+<code>iterator</code> is provided, the elements are simply copied to the
+returned array.
+</p>
+</div><h3 id="Enumerable#collect" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>iterator
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Optional. The iterator function to apply to each element in the enumeration.</p>
+</td>  
+</tr><tr><td><p><i>context
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. An optional object to use as <code>this</code> within calls to the iterator.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Examples</h5>
+<pre><code>[&#39;Hitch&#39;, &quot;Hiker&#39;s&quot;, &#39;Guide&#39;, &#39;to&#39;, &#39;the&#39;, &#39;Galaxy&#39;].collect(function(s) {
+  return s.charAt(0).toUpperCase();
+});
+// -&gt; [&#39;H&#39;, &#39;H&#39;, &#39;G&#39;, &#39;T&#39;, &#39;T&#39;, &#39;G&#39;]
+
+$R(1,5).collect(function(n) {
+  return n * n;
+});
+// -&gt; [1, 4, 9, 16, 25]</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.detect" data-title="Enumerable#detect (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#detect" class="member-name methodClicker">Enumerable#detect</span>(<a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> iterator[, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="firstElement.html"" class="link-short" title="firstElement">firstElement</a></li><li class="argument-type"><a href="undefined.html"" class="link-short" title="undefined">undefined</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias multiple">Aliased as:
+<ul class="alias"><li><a href="Enumerable#find.html" id="Enumerable#find" class=" clicker" title="Enumerable#find (instance method)" data-id="Enumerable#find">Enumerable#find</a></li></ul></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#detect" class="ellipsis_description"><p>Returns the first element for which the iterator returns a truthy value.
+Aliased by the <a href="Enumerable#find.html" id="Enumerable#find" class="link-short clicker" title="Enumerable#find (instance method)" data-id="Enumerable#find">Enumerable#find</a> method.
+ ...</p>
+</div><div id="short_Enumerable#detect" class="short_description hiddenSpan"><p>Returns the first element for which the iterator returns a truthy value.
+Aliased by the <a href="Enumerable#find.html" id="Enumerable#find" class="link-short clicker" title="Enumerable#find (instance method)" data-id="Enumerable#find">Enumerable#find</a> method.
+</p>
+</div><h3 id="Enumerable#detect" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>iterator
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Required. The iterator function to apply to each element in the enumeration.</p>
+</td>  
+</tr><tr><td><p><i>context
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. An optional object to use as <code>this</code> within calls to the iterator.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Example</h5>
+<pre><code>[1, 7, -2, -4, 5].detect(function(n) { return n &lt; 0; });
+// -&gt; -2</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.each" data-title="Enumerable#each (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#each" class="member-name methodClicker">Enumerable#each</span>(<a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> iterator[, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Enumerable.html"" class="link-short" title="Enumerable (mixin)">Enumerable</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#each" class="ellipsis_description"><p>Calls <code>iterator</code> for each item in the collection.
+ ...</p>
+</div><div id="short_Enumerable#each" class="short_description hiddenSpan"><p>Calls <code>iterator</code> for each item in the collection.
+</p>
+</div><h3 id="Enumerable#each" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>iterator
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Required. A <code>Function</code> that expects an item in the collection as the first argument and a numerical index as the second.</p>
+</td>  
+</tr><tr><td><p><i>context
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. The scope in which to call <code>iterator</code>. Affects what the keyword <code>this</code> means inside <code>iterator</code>.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Examples</h5>
+<pre><code>[&#39;one&#39;, &#39;two&#39;, &#39;three&#39;].each(alert);
+// Alerts &quot;one&quot;, then alerts &quot;two&quot;, then alerts &quot;three&quot;</code></pre>
+<h5>Built-In Variants</h5>
+<p>Most of the common use cases for <code>each</code> are already available pre-coded
+as other methods on <a href="Enumerable.html" id="Enumerable" class="link-short clicker" title="Enumerable (mixin)" data-id="Enumerable">Enumerable</a>. Whether you want to find the first
+matching item in an enumeration, or transform it, or determine whether it
+has any (or all) values matching a particular condition, <a href="Enumerable.html" id="Enumerable" class="link-short clicker" title="Enumerable (mixin)" data-id="Enumerable">Enumerable</a>
+has a method to do that for you.</p>
+</div></div></div></div></article><article id="Enumerable.prototype.eachSlice" data-title="Enumerable#eachSlice (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#eachSlice" class="member-name methodClicker">Enumerable#eachSlice</span>(<a href="http://www.nodemanual.org/latest/js_doc/Number.html">Number</a> number[, <a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> iterator = "Prototype.K"][, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="Enumerable.html"" class="link-short" title="Enumerable (mixin)">Enumerable</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#eachSlice" class="ellipsis_description"><p>Groups items into chunks of the given size. The final &quot;slice&quot; may have
+fewer than <code>number</code> items; it won&#39;t &quot;pad&quot; the...</p>
+</div><div id="short_Enumerable#eachSlice" class="short_description hiddenSpan"><p>Groups items into chunks of the given size. The final &quot;slice&quot; may have
+fewer than <code>number</code> items; it won&#39;t &quot;pad&quot; the last group with empty
+values. For that behavior, use <a href="Enumerable#inGroupsOf.html" id="Enumerable#inGroupsOf" class="link-short clicker" title="Enumerable#inGroupsOf (instance method)" data-id="Enumerable#inGroupsOf">Enumerable#inGroupsOf</a>.
+</p>
+</div><h3 id="Enumerable#eachSlice" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>number
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Number.html" id="Number" class=" clicker" title="Number" data-id="Number">Number</a></p></td><td><p>Required. The number of items to include in each slice.</p>
+</td>  
+</tr><tr><td><p><i>iterator
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Optional. An optional function to use to transform each element before it&#39;s included in the slice; if this is not provided, the element itself is included.</p>
+</td>  
+</tr><tr><td><p><i>context
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. An optional object to use as <code>this</code> within calls to the iterator.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Example</h5>
+<pre><code>var students = [
+  { name: &#39;Sunny&#39;, age: 20 },
+  { name: &#39;Audrey&#39;, age: 21 },
+  { name: &#39;Matt&#39;, age: 20 },
+  { name: &#39;Amelie&#39;, age: 26 },
+  { name: &#39;Will&#39;, age: 21 }
+];
+
+students.eachSlice(3, function(student) {
+  return student.name;
+});
+// -&gt; [[&#39;Sunny&#39;, &#39;Audrey&#39;, &#39;Matt&#39;], [&#39;Amelie&#39;, &#39;Will&#39;]]</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.entries" data-title="Enumerable#entries (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#entries" class="member-name methodClicker">Enumerable#entries</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias single">Aliased as: 
+<a href="Enumerable#toArray.html" id="Enumerable#toArray" class=" clicker" title="Enumerable#toArray (instance method)" data-id="Enumerable#toArray">Enumerable#toArray</a></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#entries" class="ellipsis_description"><p> ...</p>
+</div><div id="short_Enumerable#entries" class="short_description hiddenSpan"></div><h3 id="Enumerable#entries" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"></div></div></div></div></article><article id="Enumerable.prototype.every" data-title="Enumerable#every (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#every" class="member-name methodClicker">Enumerable#every</span>([iterator = "Prototype.K"][, context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias single">Aliased as: 
+<a href="Enumerable#all.html" id="Enumerable#all" class=" clicker" title="Enumerable#all (instance method)" data-id="Enumerable#all">Enumerable#all</a></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#every" class="ellipsis_description"><p> ...</p>
+</div><div id="short_Enumerable#every" class="short_description hiddenSpan"></div><h3 id="Enumerable#every" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"></div></div></div></div></article><article id="Enumerable.prototype.filter" data-title="Enumerable#filter (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#filter" class="member-name methodClicker">Enumerable#filter</span>(iterator[, context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias single">Aliased as: 
+<a href="Enumerable#findAll.html" id="Enumerable#findAll" class=" clicker" title="Enumerable#findAll (instance method)" data-id="Enumerable#findAll">Enumerable#findAll</a></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#filter" class="ellipsis_description"><p> ...</p>
+</div><div id="short_Enumerable#filter" class="short_description hiddenSpan"></div><h3 id="Enumerable#filter" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"></div></div></div></div></article><article id="Enumerable.prototype.find" data-title="Enumerable#find (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#find" class="member-name methodClicker">Enumerable#find</span>(iterator[, context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="firstElement.html"" class="link-short" title="firstElement">firstElement</a></li><li class="argument-type"><a href="undefined.html"" class="link-short" title="undefined">undefined</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias single">Aliased as: 
+<a href="Enumerable#detect.html" id="Enumerable#detect" class=" clicker" title="Enumerable#detect (instance method)" data-id="Enumerable#detect">Enumerable#detect</a></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#find" class="ellipsis_description"><p> ...</p>
+</div><div id="short_Enumerable#find" class="short_description hiddenSpan"></div><h3 id="Enumerable#find" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"></div></div></div></div></article><article id="Enumerable.prototype.findAll" data-title="Enumerable#findAll (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#findAll" class="member-name methodClicker">Enumerable#findAll</span>(<a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> iterator[, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias multiple">Aliased as:
+<ul class="alias"><li><a href="Enumerable#filter.html" id="Enumerable#filter" class=" clicker" title="Enumerable#filter (instance method)" data-id="Enumerable#filter">Enumerable#filter</a></li><li><a href="Enumerable#select.html" id="Enumerable#select" class=" clicker" title="Enumerable#select (instance method)" data-id="Enumerable#select">Enumerable#select</a></li></ul></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#findAll" class="ellipsis_description"><p>Returns all the elements for which the iterator returned a truthy value.
+For the opposite operation, see [[Enumerabl...</p>
+</div><div id="short_Enumerable#findAll" class="short_description hiddenSpan"><p>Returns all the elements for which the iterator returned a truthy value.
+For the opposite operation, see <a href="Enumerable#reject.html" id="Enumerable#reject" class="link-short clicker" title="Enumerable#reject (instance method)" data-id="Enumerable#reject">Enumerable#reject</a>.
+</p>
+</div><h3 id="Enumerable#findAll" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>iterator
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Required. An iterator function to use to test the elements.</p>
+</td>  
+</tr><tr><td><p><i>context
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. An optional object to use as <code>this</code> within calls to the iterator.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Example</h5>
+<pre><code>[1, &#39;two&#39;, 3, &#39;four&#39;, 5].findAll(Object.isString);
+// -&gt; [&#39;two&#39;, &#39;four&#39;]</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.grep" data-title="Enumerable#grep (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#grep" class="member-name methodClicker">Enumerable#grep</span>(<a href="http://www.nodemanual.org/latest/js_doc/RegExp.html">RegExp</a> | <a href="http://www.nodemanual.org/latest/js_doc/String.html">String</a> | <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> filter[, <a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> iterator = "Prototype.K"][, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#grep" class="ellipsis_description"><p>Returns an array containing all of the elements for which the given
+filter returns <code>true</code> (or a truthy value). If an...</p>
+</div><div id="short_Enumerable#grep" class="short_description hiddenSpan"><p>Returns an array containing all of the elements for which the given
+filter returns <code>true</code> (or a truthy value). If an iterator is provided,
+it is used to produce the returned value for each selected element; this
+is done <em>after</em> the element has been selected by the filter.
+</p>
+</div><h3 id="Enumerable#grep" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>filter
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/RegExp.html" id="RegExp" class=" clicker" title="RegExp" data-id="RegExp">RegExp</a> |
+<a href="http://www.nodemanual.org/latest/js_doc/String.html" id="String" class=" clicker" title="String" data-id="String">String</a> |
+<a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Required. The filter to apply to elements. This can be a <code>RegExp</code> instance, a regular expression <a href="http://www.nodemanual.org/latest/js_doc/String.html"></a>, or any object with a <code>match</code> function.</p>
+</td>  
+</tr><tr><td><p><i>iterator
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Optional. An optional function to apply to selected elements before including them in the result.</p>
+</td>  
+</tr><tr><td><p><i>context
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. An optional object to use as <code>this</code> within calls to the iterator.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>If the given filter is a <a href="http://www.nodemanual.org/latest/js_doc/String.html"></a>, it is converted into a <code>RegExp</code>
+object. To select elements, each element is passed into the filter&#39;s
+<code>match</code> function, which should return a truthy value to select the element
+or a falsy value not to. Note that the <code>RegExp</code> <code>match</code> function will
+convert elements to Strings to perform matching.
+
+</p>
+<h5>Examples</h5>
+<pre><code>// Get all strings containing a repeated letter
+[&#39;hello&#39;, &#39;world&#39;, &#39;this&#39;, &#39;is&#39;, &#39;cool&#39;].grep(/(.)\1/);
+// -&gt; [&#39;hello&#39;, &#39;cool&#39;]
+
+// Get all numbers ending with 0 or 5 and subtract 1 from them
+$R(1, 30).grep(/[05]$/, function(n) { return n - 1; });
+// -&gt; [4, 9, 14, 19, 24, 29]</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.include" data-title="Enumerable#include (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#include" class="member-name methodClicker">Enumerable#include</span>( object)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias multiple">Aliased as:
+<ul class="alias"><li><a href="Enumerable#member.html" id="Enumerable#member" class=" clicker" title="Enumerable#member (instance method)" data-id="Enumerable#member">Enumerable#member</a></li></ul></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#include" class="ellipsis_description"><p>Determines whether a given object is in the enumerable or not,
+based on the <code>==</code> comparison operator (equality with ...</p>
+</div><div id="short_Enumerable#include" class="short_description hiddenSpan"><p>Determines whether a given object is in the enumerable or not,
+based on the <code>==</code> comparison operator (equality with implicit type
+conversion).
+</p>
+</div><h3 id="Enumerable#include" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>object
+</i></p></td><td><p></p></td><td><p>Required. The object to look for.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Examples</h5>
+<pre><code>$R(1, 15).include(10);
+// -&gt; true
+
+[&#39;hello&#39;, &#39;world&#39;].include(&#39;HELLO&#39;);
+// -&gt; false (&#39;hello&#39; != &#39;HELLO&#39;)
+
+[1, 2, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;].include(3);
+// -&gt; true (&#39;3&#39; == 3)</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.inGroupsOf" data-title="Enumerable#inGroupsOf (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#inGroupsOf" class="member-name methodClicker">Enumerable#inGroupsOf</span>(<a href="http://www.nodemanual.org/latest/js_doc/Number.html">Number</a> number[, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> fillWith = null])<li class="signature-returns"><ul class="argument-types"><li class="argument-type">[ <a href="group.html" id="group" class="link-short clicker" title="group" data-id="group">group</a>... ]</li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#inGroupsOf" class="ellipsis_description"><p>Like <a href="Enumerable#eachSlice.html" id="Enumerable#eachSlice" class="link-short clicker" title="Enumerable#eachSlice (instance method)" data-id="Enumerable#eachSlice">Enumerable#eachSlice</a>, but pads out the last chunk with the
+specified value if necessary and doesn&#39;t support...</p>
+</div><div id="short_Enumerable#inGroupsOf" class="short_description hiddenSpan"><p>Like <a href="Enumerable#eachSlice.html" id="Enumerable#eachSlice" class="link-short clicker" title="Enumerable#eachSlice (instance method)" data-id="Enumerable#eachSlice">Enumerable#eachSlice</a>, but pads out the last chunk with the
+specified value if necessary and doesn&#39;t support the <code>iterator</code> function.
+</p>
+</div><h3 id="Enumerable#inGroupsOf" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>number
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Number.html" id="Number" class=" clicker" title="Number" data-id="Number">Number</a></p></td><td><p>Required. The number of items to include in each group.</p>
+</td>  
+</tr><tr><td><p><i>fillWith
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. An optional filler to use if the last group needs any; defaults to <code>null</code>.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Examples</h5>
+<pre><code>var students = [
+  { name: &#39;Sunny&#39;,  age: 20 },
+  { name: &#39;Audrey&#39;, age: 21 },
+  { name: &#39;Matt&#39;,   age: 20 },
+  { name: &#39;Amelie&#39;, age: 26 },
+  { name: &#39;Will&#39;,   age: 21 }
+];
+
+students.inGroupsOf(2, { name: &#39;&#39;, age: 0 });
+// -&gt; [
+//      [{ name: &#39;Sunny&#39;, age: 20 }, { name: &#39;Audrey&#39;, age: 21 }],
+//      [{ name: &#39;Matt&#39;, age: 20 },  { name: &#39;Amelie&#39;, age: 26 }],
+//      [{ name: &#39;Will&#39;, age: 21 },  { name: &#39;&#39;, age: 0 }]
+//    ]</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.inject" data-title="Enumerable#inject (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#inject" class="member-name methodClicker">Enumerable#inject</span>( accumulator, <a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> iterator[, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="accumulatedValue.html"" class="link-short" title="accumulatedValue">accumulatedValue</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#inject" class="ellipsis_description"><p>Incrementally builds a result value based on the successive results
+of the iterator. This can be used for array cons...</p>
+</div><div id="short_Enumerable#inject" class="short_description hiddenSpan"><p>Incrementally builds a result value based on the successive results
+of the iterator. This can be used for array construction, numerical
+sums/averages, etc.
+</p>
+</div><h3 id="Enumerable#inject" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>accumulator
+</i></p></td><td><p></p></td><td><p>Required. The initial value to which the <code>iterator</code> adds.</p>
+</td>  
+</tr><tr><td><p><i>iterator
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Required. An iterator function used to build the accumulated result.</p>
+</td>  
+</tr><tr><td><p><i>context
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. An optional object to use as <code>this</code> within calls to the iterator.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>The <code>iterator</code> function is called once for each element in the
+enumeration, receiving the current value of the accumulator as its first
+argument, the element as its second argument, and the element&#39;s index as
+its third. It returns the new value for the accumulator.
+
+</p>
+<h5>Examples</h5>
+<pre><code>$R(1,10).inject(0, function(acc, n) { return acc + n; });
+// -&gt; 55 (sum of 1 to 10)
+
+[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;].inject([], function(string, value, index) {
+  if (index % 2 === 0) { // even numbers
+    string += value;
+  }
+  return string;
+});
+// -&gt; &#39;ace&#39;</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.inspect" data-title="Enumerable#inspect (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#inspect" class="member-name methodClicker">Enumerable#inspect</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html"" class="link-short" title="String">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#inspect" class="ellipsis_description"><p>Returns the debug-oriented string representation of the object. ...</p>
+</div><div id="short_Enumerable#inspect" class="short_description hiddenSpan"><p>Returns the debug-oriented string representation of the object.</p>
+</div><h3 id="Enumerable#inspect" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"></div></div></div></div></article><article id="Enumerable.prototype.invoke" data-title="Enumerable#invoke (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#invoke" class="member-name methodClicker">Enumerable#invoke</span>(<a href="http://www.nodemanual.org/latest/js_doc/String.html">String</a> methodName[,  arg...])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#invoke" class="ellipsis_description"><p>Invokes the same method, with the same arguments, for all items in a
+collection. Returns an array of the results of ...</p>
+</div><div id="short_Enumerable#invoke" class="short_description hiddenSpan"><p>Invokes the same method, with the same arguments, for all items in a
+collection. Returns an array of the results of the method calls.
+</p>
+</div><h3 id="Enumerable#invoke" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>methodName
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/String.html" id="String" class=" clicker" title="String" data-id="String">String</a></p></td><td><p>Required. The name of the method to invoke.</p>
+</td>  
+</tr><tr><td><p><i>args
+</i></p></td><td><p></p></td><td><p>Required. Optional arguments to pass to the method.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Examples</h5>
+<pre><code>[&#39;hello&#39;, &#39;world&#39;].invoke(&#39;toUpperCase&#39;);
+// -&gt; [&#39;HELLO&#39;, &#39;WORLD&#39;]
+
+[&#39;hello&#39;, &#39;world&#39;].invoke(&#39;substring&#39;, 0, 3);
+// -&gt; [&#39;hel&#39;, &#39;wor&#39;]
+
+$$(&#39;input&#39;).invoke(&#39;stopObserving&#39;, &#39;change&#39;);
+// -&gt; Stops observing the &#39;change&#39; event on all input elements,
+// returns an array of the element references.</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.map" data-title="Enumerable#map (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#map" class="member-name methodClicker">Enumerable#map</span>([iterator = "Prototype.K"][, context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias single">Aliased as: 
+<a href="Enumerable#collect.html" id="Enumerable#collect" class=" clicker" title="Enumerable#collect (instance method)" data-id="Enumerable#collect">Enumerable#collect</a></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#map" class="ellipsis_description"><p> ...</p>
+</div><div id="short_Enumerable#map" class="short_description hiddenSpan"></div><h3 id="Enumerable#map" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"></div></div></div></div></article><article id="Enumerable.prototype.max" data-title="Enumerable#max (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#max" class="member-name methodClicker">Enumerable#max</span>([<a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> iterator = "Prototype.K"][, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="maxValue.html"" class="link-short" title="maxValue">maxValue</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label related-to">Related to
+<a href="Enumerable#min.html" id="Enumerable#min" class=" clicker" title="Enumerable#min (instance method)" data-id="Enumerable#min">Enumerable#min</a>  
+</span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#max" class="ellipsis_description"><p>Returns the maximum element (or element-based <code>iterator</code> result), or
+<code>undefined</code> if the enumeration is empty. Elemen...</p>
+</div><div id="short_Enumerable#max" class="short_description hiddenSpan"><p>Returns the maximum element (or element-based <code>iterator</code> result), or
+<code>undefined</code> if the enumeration is empty. Elements are either compared
+directly, or by first calling <code>iterator</code> and comparing returned values.
+If multiple &quot;max&quot; elements (or results) are equivalent, the one closest
+to the end of the enumeration is returned.
+</p>
+</div><h3 id="Enumerable#max" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>iterator
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Optional. An optional function to use to evaluate each element in the enumeration; the function should return the value to test. If this is not provided, the element itself is tested.</p>
+</td>  
+</tr><tr><td><p><i>context
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. An optional object to use as <code>this</code> within calls to the iterator.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>If provided, <code>iterator</code> is called with two arguments: The element being
+evaluated, and its index in the enumeration; it should return the value
+<code>max</code> should consider (and potentially return).
+
+</p>
+<h5>Examples</h5>
+<pre><code>[&#39;c&#39;, &#39;b&#39;, &#39;a&#39;].max();
+// -&gt; &#39;c&#39;
+
+[1, 3, &#39;3&#39;, 2].max();
+// -&gt; &#39;3&#39; (because both 3 and &#39;3&#39; are &quot;max&quot;, and &#39;3&#39; was later)
+
+[&#39;zero&#39;, &#39;one&#39;, &#39;two&#39;].max(function(item) { return item.length; });
+// -&gt; 4</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.member" data-title="Enumerable#member (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#member" class="member-name methodClicker">Enumerable#member</span>(object)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias single">Aliased as: 
+<a href="Enumerable#include.html" id="Enumerable#include" class=" clicker" title="Enumerable#include (instance method)" data-id="Enumerable#include">Enumerable#include</a></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#member" class="ellipsis_description"><p> ...</p>
+</div><div id="short_Enumerable#member" class="short_description hiddenSpan"></div><h3 id="Enumerable#member" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"></div></div></div></div></article><article id="Enumerable.prototype.min" data-title="Enumerable#min (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#min" class="member-name methodClicker">Enumerable#min</span>([<a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> iterator = "Prototype.K"][, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="minValue.html"" class="link-short" title="minValue">minValue</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label related-to">Related to
+<a href="Enumerable#max.html" id="Enumerable#max" class=" clicker" title="Enumerable#max (instance method)" data-id="Enumerable#max">Enumerable#max</a>  
+</span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#min" class="ellipsis_description"><p>Returns the minimum element (or element-based <code>iterator</code> result), or
+<code>undefined</code> if the enumeration is empty. Elemen...</p>
+</div><div id="short_Enumerable#min" class="short_description hiddenSpan"><p>Returns the minimum element (or element-based <code>iterator</code> result), or
+<code>undefined</code> if the enumeration is empty. Elements are either compared
+directly, or by first calling <code>iterator</code> and comparing returned values.
+If multiple &quot;min&quot; elements (or results) are equivalent, the one closest
+to the <em>beginning</em> of the enumeration is returned.
+</p>
+</div><h3 id="Enumerable#min" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>iterator
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Optional. An optional function to use to evaluate each element in the enumeration; the function should return the value to test. If this is not provided, the element itself is tested.</p>
+</td>  
+</tr><tr><td><p><i>context
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. An optional object to use as <code>this</code> within calls to the iterator.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>If provided, <code>iterator</code> is called with two arguments: The element being
+evaluated, and its index in the enumeration; it should return the value
+<code>min</code> should consider (and potentially return).
+
+</p>
+<h5>Examples</h5>
+<pre><code>[&#39;c&#39;, &#39;b&#39;, &#39;a&#39;].min();
+// -&gt; &#39;a&#39;
+
+[3, 1, &#39;1&#39;, 2].min();
+// -&gt; 1 (because both 1 and &#39;1&#39; are &quot;min&quot;, and 1 was earlier)
+
+[&#39;un&#39;, &#39;deux&#39;, &#39;trois&#39;].min(function(item) { return item.length; });
+// -&gt; 2</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.partition" data-title="Enumerable#partition (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#partition" class="member-name methodClicker">Enumerable#partition</span>([<a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> iterator = "Prototype.K"][, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type">[ <a href="TrueArray.html" id="TrueArray" class="link-short clicker" title="TrueArray" data-id="TrueArray">TrueArray</a>, <a href="FalseArray.html" id="FalseArray" class="link-short clicker" title="FalseArray" data-id="FalseArray">FalseArray</a> ]</li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#partition" class="ellipsis_description"><p>Partitions the elements in two groups: those regarded as true, and those
+considered false. By default, regular JavaS...</p>
+</div><div id="short_Enumerable#partition" class="short_description hiddenSpan"><p>Partitions the elements in two groups: those regarded as true, and those
+considered false. By default, regular JavaScript boolean equivalence
+(e.g., truthiness vs. falsiness) is used, but an iterator can be provided
+that computes a boolean representation of the elements.
+</p>
+</div><h3 id="Enumerable#partition" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>iterator
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Optional. An optional function to use to evaluate each element in the enumeration; the function should return the value to test. If this is not provided, the element itself is tested.</p>
+</td>  
+</tr><tr><td><p><i>context
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. An optional object to use as <code>this</code> within calls to the iterator.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>Using <code>partition</code> is more efficient than using <a href="Enumerable#findAll.html" id="Enumerable#findAll" class="link-short clicker" title="Enumerable#findAll (instance method)" data-id="Enumerable#findAll">Enumerable#findAll</a> and
+then using <a href="Enumerable#reject.html" id="Enumerable#reject" class="link-short clicker" title="Enumerable#reject (instance method)" data-id="Enumerable#reject">Enumerable#reject</a> because the enumeration is only processed
+once.
+
+</p>
+<h5>Examples</h5>
+<pre><code>[&#39;hello&#39;, null, 42, false, true, , 17].partition();
+// -&gt; [[&#39;hello&#39;, 42, true, 17], [null, false, undefined]]
+
+$R(1, 10).partition(function(n) {
+  return 0 == n % 2;
+});
+// -&gt; [[2, 4, 6, 8, 10], [1, 3, 5, 7, 9]]</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.pluck" data-title="Enumerable#pluck (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#pluck" class="member-name methodClicker">Enumerable#pluck</span>(<a href="http://www.nodemanual.org/latest/js_doc/String.html">String</a> property)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#pluck" class="ellipsis_description"><p>Pre-baked implementation for a common use-case of <a href="Enumerable#collect.html" id="Enumerable#collect" class="link-short clicker" title="Enumerable#collect (instance method)" data-id="Enumerable#collect">Enumerable#collect</a>
+and <a href="Enumerable#each.html" id="Enumerable#each" class="link-short clicker" title="Enumerable#each (instance method)" data-id="Enumerable#each">Enumerable#each</a>: fetching the same ...</p>
+</div><div id="short_Enumerable#pluck" class="short_description hiddenSpan"><p>Pre-baked implementation for a common use-case of <a href="Enumerable#collect.html" id="Enumerable#collect" class="link-short clicker" title="Enumerable#collect (instance method)" data-id="Enumerable#collect">Enumerable#collect</a>
+and <a href="Enumerable#each.html" id="Enumerable#each" class="link-short clicker" title="Enumerable#each (instance method)" data-id="Enumerable#each">Enumerable#each</a>: fetching the same property for all of the
+elements. Returns an array of the property values.
+</p>
+</div><h3 id="Enumerable#pluck" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>property
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/String.html" id="String" class=" clicker" title="String" data-id="String">String</a></p></td><td><p>Required. The name of the property to fetch.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Example</h5>
+<pre><code>[&#39;hello&#39;, &#39;world&#39;, &#39;this&#39;, &#39;is&#39;, &#39;nice&#39;].pluck(&#39;length&#39;);
+// -&gt; [5, 5, 4, 2, 4]</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.reject" data-title="Enumerable#reject (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#reject" class="member-name methodClicker">Enumerable#reject</span>(<a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> iterator[, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#reject" class="ellipsis_description"><p>Returns all the elements for which the iterator returns a falsy value.
+For the opposite operation, see [[Enumerable#...</p>
+</div><div id="short_Enumerable#reject" class="short_description hiddenSpan"><p>Returns all the elements for which the iterator returns a falsy value.
+For the opposite operation, see <a href="Enumerable#findAll.html" id="Enumerable#findAll" class="link-short clicker" title="Enumerable#findAll (instance method)" data-id="Enumerable#findAll">Enumerable#findAll</a>.
+</p>
+</div><h3 id="Enumerable#reject" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>iterator
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Required. An iterator function to use to test the elements.</p>
+</td>  
+</tr><tr><td><p><i>context
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. An optional object to use as <code>this</code> within calls to the iterator.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Example</h5>
+<pre><code>[1, &quot;two&quot;, 3, &quot;four&quot;, 5].reject(Object.isString);
+// -&gt; [1, 3, 5]</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.select" data-title="Enumerable#select (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#select" class="member-name methodClicker">Enumerable#select</span>(iterator[, context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias single">Aliased as: 
+<a href="Enumerable#findAll.html" id="Enumerable#findAll" class=" clicker" title="Enumerable#findAll (instance method)" data-id="Enumerable#findAll">Enumerable#findAll</a></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#select" class="ellipsis_description"><p> ...</p>
+</div><div id="short_Enumerable#select" class="short_description hiddenSpan"></div><h3 id="Enumerable#select" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"></div></div></div></div></article><article id="Enumerable.prototype.size" data-title="Enumerable#size (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#size" class="member-name methodClicker">Enumerable#size</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Number.html"" class="link-short" title="Number">Number</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#size" class="ellipsis_description"><p>Returns the size of the enumeration. ...</p>
+</div><div id="short_Enumerable#size" class="short_description hiddenSpan"><p>Returns the size of the enumeration.</p>
+</div><h3 id="Enumerable#size" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"></div></div></div></div></article><article id="Enumerable.prototype.some" data-title="Enumerable#some (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#some" class="member-name methodClicker">Enumerable#some</span>([iterator = "Prototype.K"][, context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html"" class="link-short" title="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias single">Aliased as: 
+<a href="Enumerable#any.html" id="Enumerable#any" class=" clicker" title="Enumerable#any (instance method)" data-id="Enumerable#any">Enumerable#any</a></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#some" class="ellipsis_description"><p> ...</p>
+</div><div id="short_Enumerable#some" class="short_description hiddenSpan"></div><h3 id="Enumerable#some" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"></div></div></div></div></article><article id="Enumerable.prototype.sortBy" data-title="Enumerable#sortBy (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#sortBy" class="member-name methodClicker">Enumerable#sortBy</span>(<a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> iterator[, <a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> context])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#sortBy" class="ellipsis_description"><p>Creates a custom-sorted array of the elements based on the criteria
+computed, for each element, by the iterator. Com...</p>
+</div><div id="short_Enumerable#sortBy" class="short_description hiddenSpan"><p>Creates a custom-sorted array of the elements based on the criteria
+computed, for each element, by the iterator. Computed criteria must have
+well-defined ordering semantics (i.e. the <code>&lt;</code> operator must exist between
+any two criteria).
+</p>
+</div><h3 id="Enumerable#sortBy" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>iterator
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Required. The function to use to compute the criterion for each element in the enumeration.</p>
+</td>  
+</tr><tr><td><p><i>context
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Optional. An optional object to use as <code>this</code> within calls to the iterator.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p><a href="Enumerable#sortBy.html" id="Enumerable#sortBy" class="link-short clicker" title="Enumerable#sortBy (instance method)" data-id="Enumerable#sortBy">Enumerable#sortBy</a> does not guarantee a <em>stable</em> sort; adjacent
+equivalent elements may be swapped.
+
+</p>
+<h5>Example</h5>
+<pre><code>[&#39;hello&#39;, &#39;world&#39;, &#39;this&#39;, &#39;is&#39;, &#39;nice&#39;].sortBy(function(s) {
+  return s.length;
+});
+// -&gt; [&#39;is&#39;, &#39;nice&#39;, &#39;this&#39;, &#39;world&#39;, &#39;hello&#39;]</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.toArray" data-title="Enumerable#toArray (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#toArray" class="member-name methodClicker">Enumerable#toArray</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label alias multiple">Aliased as:
+<ul class="alias"><li><a href="Enumerable#entries.html" id="Enumerable#entries" class=" clicker" title="Enumerable#entries (instance method)" data-id="Enumerable#entries">Enumerable#entries</a></li></ul></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#toArray" class="ellipsis_description"><p>Returns an Array containing the elements of the enumeration.
+ ...</p>
+</div><div id="short_Enumerable#toArray" class="short_description hiddenSpan"><p>Returns an Array containing the elements of the enumeration.
+</p>
+</div><h3 id="Enumerable#toArray" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Example</h5>
+<pre><code>$R(1, 5).toArray();
+// -&gt; [1, 2, 3, 4, 5]
+
+$H({ name: &#39;Sunny&#39;, age: 20 }).toArray();
+// -&gt; [[&#39;name&#39;, &#39;Sunny&#39;], [&#39;age&#39;, 20]]</code></pre>
+</div></div></div></div></article><article id="Enumerable.prototype.zip" data-title="Enumerable#zip (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Enumerable#zip" class="member-name methodClicker">Enumerable#zip</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> sequence...[, <a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> iterator = "Prototype.K"])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Enumerable#zip" class="ellipsis_description"><p>Zips together (think of the zipper on a pair of trousers) 2+ sequences,
+returning a new array of tuples. Each tuple ...</p>
+</div><div id="short_Enumerable#zip" class="short_description hiddenSpan"><p>Zips together (think of the zipper on a pair of trousers) 2+ sequences,
+returning a new array of tuples. Each tuple is an array containing one
+value per original sequence. Tuples can be transformed to something else
+by applying the optional <code>iterator</code> on them.
+</p>
+</div><h3 id="Enumerable#zip" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>sequence
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Required. A sequence to zip with this enumerable (there can be several of these if desired).</p>
+</td>  
+</tr><tr><td><p><i>iterator
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function" data-id="Function">Function</a></p></td><td><p>Optional. Optional function to use to transform the tuples once generated; this is always the last argument provided.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>If supplied, <code>iterator</code> is called with each tuple as its only argument
+and should return the value to use in place of that tuple.
+
+</p>
+<h5>Examples</h5>
+<pre><code>var firstNames = [&#39;Jane&#39;, &#39;Nitin&#39;, &#39;Guy&#39;];
+var lastNames  = [&#39;Doe&#39;,  &#39;Patel&#39;, &#39;Forcier&#39;];
+var ages       = [23,     41,      17];
+
+firstNames.zip(lastNames);
+// -&gt; [[&#39;Jane&#39;, &#39;Doe&#39;], [&#39;Nitin&#39;, &#39;Patel&#39;], [&#39;Guy&#39;, &#39;Forcier&#39;]]
+
+firstNames.zip(lastNames, ages);
+// -&gt; [[&#39;Jane&#39;, &#39;Doe&#39;, 23], [&#39;Nitin&#39;, &#39;Patel&#39;, 41], [&#39;Guy&#39;, &#39;Forcier&#39;, 17]]
+
+firstNames.zip(lastNames, ages, function(tuple) {
+  return tuple[0] + &#39; &#39; + tuple[1] + &#39; is &#39; + tuple[2];
+});
+// -&gt; [&#39;Jane Doe is 23&#39;, &#39;Nitin Patel is 41&#39;, &#39;Guy Forcier is 17&#39;]</code></pre>
+</div></div></div></div></article><div id="disqus_thread"></div></div></div></div></div><footer id="footer"><div class="container"><div class="footer-text">&#169; 2012:</div></div></footer></div><!-- scripts concatenated and minified via ant build script--><script defer src="./resources/javascripts/plugins.js"></script>
+<script defer src="./resources/javascripts/prettify.js"></script>
+<script defer src="./resources/javascripts/prettify-extension.js"></script>
+<script defer src="./resources/javascripts/ux.js"></script>
+<!-- end scripts--><!--[if lt IE 7]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script><script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})
+
+</script><![endif]--></body>

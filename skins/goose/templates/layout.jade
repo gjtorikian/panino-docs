@@ -1,0 +1,32 @@
+include ../../common_layout
+include lib
+
+!!! 5
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+mixin head('Prototype')
+
+body(onload="styleCode()")
+
+  mixin topBar()
+
+  mixin header
+
+  .container
+    .content
+      .row.container
+        .span5.offset4.sidebarContainer
+          #sidebar
+            include side_menu.jade
+        .span11
+          #content
+             mixin api()
+
+             div(id="disqus_thread")
+
+    mixin footer
+
+  mixin endingScripts

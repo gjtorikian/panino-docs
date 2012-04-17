@@ -1,0 +1,333 @@
+<!DOCTYPE html><!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><title>Prototype</title><meta name="generator" content="panino-doc-build"/><meta name="author" content="Garen J. Torikian"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="stylesheet" href="./resources/csses/bootstrap.css"/><link rel="stylesheet" href="./resources/csses/prettify.css"/><link rel="stylesheet" href="./resources/csses/refguide_overrides.css"/><link href="./resources/images/favicon.ico" rel="icon" type="image/x-icon"/><link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/vs.min.css"/><script src="./resources/javascripts/jquery.js"></script><script src="./resources/javascripts/clicker.js"></script><script src="./resources/javascripts/jquery.collapse.js"></script><script src="./resources/javascripts/jquery.cookie.js"></script><script src="./resources/javascripts/bootstrap-dropdown.js"></script><body onload="styleCode()"><div class="topbar"><div class="fill"><div id="topSection" class="container"><ul class="nav leftnav"></ul><ul class="nav"></ul><form id="searchbox" action="" class="pull-right"><input name="query" type="text" placeholder="Search Documentation" title="Search across all the documentation types" class="span3"/></form></div></div></div><header id="overview" class="jumbotron masthead"><div class="inner"><div class="container"><h1>Node.js Manual</h1><p class="lead"></p></div></div></header><div class="container"><div class="content"><div class="row container"><div class="span5 offset4 sidebarContainer"><div id="sidebar"><div id="well"><h3>Modules</h3><ul class="menu"><li><div class="menu-item"><a href="assert.html" class="menuLink namespace">assert</a></div></li><li><div class="menu-item"><a href="child.process.html" class="menuLink namespace">child_process</a></div></li><li><div class="menu-item"><a href="cluster.html" class="menuLink namespace">cluster    </a></div></li><li><div class="menu-item"><a href="crypto.html" class="menuLink namespace">crypto</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="cipher.html" class="menuLink class">Cipher</a></div></li><li><div class="menu-item"><a href="decipher.html" class="menuLink class">Decipher   </a></div></li><li><div class="menu-item"><a href="diffieHellman.html" class="menuLink class">Diffie-Hellman</a></div></li><li><div class="menu-item"><a href="hash.html" class="menuLink class">Hash    </a></div></li><li><div class="menu-item"><a href="hmac.html" class="menuLink class">HMAC</a></div></li><li><div class="menu-item"><a href="signer.html" class="menuLink class">Signer  </a></div></li><li><div class="menu-item"><a href="verifier.html" class="menuLink class">Verifier                                                          </a></div></li></ul></li><li><div class="menu-item"><a href="dgram.html" class="menuLink namespace">dgram</a></div></li><li><div class="menu-item"><a href="dns.html" class="menuLink namespace">dns</a></div></li><li><div class="menu-item"><a href="eventemitter.html" class="menuLink namespace">EventEmitter</a></div></li><li><div class="menu-item"><a href="fs.html" class="menuLink namespace">fs</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="fs.FSWatcher.html" class="menuLink class">FSWatcher   </a></div></li><li><div class="menu-item"><a href="fs.ReadStream.html" class="menuLink class">Readstream                          </a></div></li><li><div class="menu-item"><a href="fs.Stats.html" class="menuLink class">Stats  </a></div></li><li><div class="menu-item"><a href="fs.WriteStream.html" class="menuLink class">Writestream                            </a></div></li></ul></li><li><div class="menu-item"><a href="http.html" class="menuLink namespace">http</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="http.Agent.html" class="menuLink class">Agent   </a></div></li><li><div class="menu-item"><a href="http.ClientRequest.html" class="menuLink class">ClientRequest   </a></div></li><li><div class="menu-item"><a href="http.ClientResponse.html" class="menuLink class">ClientResponse        </a></div></li><li><div class="menu-item"><a href="http.Server.html" class="menuLink class">Server</a></div></li><li><div class="menu-item"><a href="http.ServerRequest.html" class="menuLink class">ServerRequest</a></div></li><li><div class="menu-item"><a href="http.ServerResponse.html" class="menuLink class">ServerResponse   </a></div></li></ul></li><li><div class="menu-item"><a href="https.html" class="menuLink namespace">https</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="https.Agent.html" class="menuLink class">Agent    </a></div></li><li><div class="menu-item"><a href="https.Server.html" class="menuLink class">Server                             </a></div></li></ul></li><li><div class="menu-item"><a href="net.html" class="menuLink namespace">net</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="net.Server.html" class="menuLink class">Server   </a></div></li><li><div class="menu-item"><a href="net.Socket.html" class="menuLink class">Socket              </a></div></li></ul></li><li><div class="menu-item"><a href="os.html" class="menuLink namespace">os</a></div></li><li><div class="menu-item"><a href="path.html" class="menuLink namespace">path</a></div></li><li><div class="menu-item"><a href="querystring.html" class="menuLink namespace">querystring</a></div></li><li><div class="menu-item"><a href="readline.html" class="menuLink namespace">readline</a></div></li><li><div class="menu-item"><a href="tls.html" class="menuLink namespace">tls</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="tls.SecurePair.html" class="menuLink class">SecurePair  </a></div></li><li><div class="menu-item"><a href="tls.Server.html" class="menuLink class">Server   </a></div></li><li><div class="menu-item"><a href="tls.CleartextStream.html" class="menuLink class">CleartextStream              </a></div></li></ul></li><li><div class="menu-item"><a href="tty.html" class="menuLink namespace">tty</a></div></li><li><div class="menu-item"><a href="url.html" class="menuLink namespace">url</a></div></li><li><div class="menu-item"><a href="util.html" class="menuLink namespace">util</a></div></li><li><div class="menu-item"><a href="vm.html" class="menuLink namespace">vm</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="vm.Script.html" class="menuLink class">Script      </a></div></li></ul></li><li><div class="menu-item"><a href="zlib.html" class="menuLink namespace">zlib                                                                       </a></div></li></ul><h3>Globals</h3><ul class="menu"><li><div class="menu-item"><a href="buffer.html" class="menuLink class">Buffers</a></div></li><li><div class="menu-item"><a href="process.html" class="menuLink class">Process</a></div></li><li><div class="menu-item"><a href="console.html" class="menuLink class">STDIO</a></div></li><li><div class="menu-item"><a href="streams.html" class="menuLink class">Streams</a></div><ul class="menuTwo"><li><div class="menu-item"><a href="streams.ReadableStream.html" class="menuLink class">Readable Streams</a></div></li><li><div class="menu-item"><a href="streams.WritableStream.html" class="menuLink class">Writable Streams</a></div></li></ul></li><li><div class="menu-item"><a href="timer.html" class="menuLink class">Timers</a></div></li></ul><h3>Concepts</h3><ul class="menu"><li><div class="menu-item"><a href="addons.html" class="menuLink namespace">Addons</a></div></li><li><div class="menu-item"><a href="debugging.node.js.html" class="menuLink namespace">Debugging Node.js</a></div></li><li><div class="menu-item"><a href="global.objects.html" class="menuLink namespace">Global Objects    </a></div></li><li><div class="menu-item"><a href="modules.html" class="menuLink namespace">Modules</a></div></li><li><div class="menu-item"><a href="repl.html" class="menuLink namespace">REPL    </a></div></li></ul></div></div></div><div class="span11"><div id="content"><div class="membersBackground"></div><div class="members"><div class="membersContent"><h1 class="memberHeader"><span class="name">Function</span><span class="backToMDN"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" target="_blank">(View original on MDN)</a></span></h1><ul data-tabs="tabs" class="tabs"><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"><a href="#" class="dropdown-toggle"><span>Functions (8)</span></a><ul class="dropdown-menu"><li data-id="Function#argumentNames" class="memberLink"><a href="Function#argumentNames.html" id="Function#argumentNames" class=" clicker" title="Function#argumentNames (instance method)" data-id="Function#argumentNames">argumentNames</a>                                 
+</li><li data-id="Function#bind" class="memberLink"><a href="Function#bind.html" id="Function#bind" class=" clicker" title="Function#bind (instance method)" data-id="Function#bind">bind</a>                                 
+</li><li data-id="Function#bindAsEventListener" class="memberLink"><a href="Function#bindAsEventListener.html" id="Function#bindAsEventListener" class=" clicker" title="Function#bindAsEventListener (instance method)" data-id="Function#bindAsEventListener">bindAsEventListener</a>                                 
+</li><li data-id="Function#curry" class="memberLink"><a href="Function#curry.html" id="Function#curry" class=" clicker" title="Function#curry (instance method)" data-id="Function#curry">curry</a>                                 
+</li><li data-id="Function#defer" class="memberLink"><a href="Function#defer.html" id="Function#defer" class=" clicker" title="Function#defer (instance method)" data-id="Function#defer">defer</a>                                 
+</li><li data-id="Function#delay" class="memberLink"><a href="Function#delay.html" id="Function#delay" class=" clicker" title="Function#delay (instance method)" data-id="Function#delay">delay</a>                                 
+</li><li data-id="Function#methodize" class="memberLink"><a href="Function#methodize.html" id="Function#methodize" class=" clicker" title="Function#methodize (instance method)" data-id="Function#methodize">methodize</a>                                 
+</li><li data-id="Function#wrap" class="memberLink"><a href="Function#wrap.html" id="Function#wrap" class=" clicker" title="Function#wrap (instance method)" data-id="Function#wrap">wrap</a>                                 
+</li></ul></li><li data-dropdown="dropdown" class="dropdown"></li><li data-dropdown="dropdown" class="dropdown"></li></ul></div></div><article id="Function" data-title="Function (class)" class="article"><div class="section description"><div class="memberContent"><p>Extensions to the built-in <code>Function</code> object.</p>
+</div></div></article><article id="Function.prototype.argumentNames" data-title="Function#argumentNames (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Function#argumentNames" class="member-name methodClicker">Function#argumentNames</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Array.html"" class="link-short" title="Array">Array</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Function#argumentNames" class="ellipsis_description"><p>Reads the argument names as stated in the function definition and returns
+the values as an array of strings (or an e...</p>
+</div><div id="short_Function#argumentNames" class="short_description hiddenSpan"><p>Reads the argument names as stated in the function definition and returns
+the values as an array of strings (or an empty array if the function is
+defined without parameters).
+</p>
+</div><h3 id="Function#argumentNames" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><h5>Examples</h5>
+<pre><code>function fn(foo, bar) {
+  return foo + bar;
+}
+fn.argumentNames();
+//-&gt; [&#39;foo&#39;, &#39;bar&#39;]
+
+Prototype.emptyFunction.argumentNames();
+//-&gt; []</code></pre>
+</div></div></div></div></article><article id="Function.prototype.bind" data-title="Function#bind (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Function#bind" class="member-name methodClicker">Function#bind</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> context[,  args...])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Function.html"" class="link-short" title="Function (class)">Function</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label related-to">Related to
+<a href="Function#bindAsEventListener.html" id="Function#bindAsEventListener" class=" clicker" title="Function#bindAsEventListener (instance method)" data-id="Function#bindAsEventListener">Function#bindAsEventListener</a>  
+</span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Function#bind" class="ellipsis_description"><p>Binds this function to the given <code>context</code> by wrapping it in another
+function and returning the wrapper. Whenever th...</p>
+</div><div id="short_Function#bind" class="short_description hiddenSpan"><p>Binds this function to the given <code>context</code> by wrapping it in another
+function and returning the wrapper. Whenever the resulting &quot;bound&quot;
+function is called, it will call the original ensuring that <code>this</code> is set
+to <code>context</code>. Also optionally curries arguments for the function.
+</p>
+</div><h3 id="Function#bind" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>context
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Required. The object to bind to.</p>
+</td>  
+</tr><tr><td><p><i>args
+</i></p></td><td><p></p></td><td><p>Optional. Optional additional arguments to curry for the function.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><h5>Examples</h5>
+<p>A typical use of <a href="Function#bind.html" id="Function#bind" class="link-short clicker" title="Function#bind (instance method)" data-id="Function#bind">Function#bind</a> is to ensure that a callback (event
+handler, etc.) that is an object method gets called with the correct
+object as its context (<code>this</code> value):
+
+</p>
+<pre><code>var AlertOnClick = Class.create({
+  initialize: function(msg) {
+    this.msg = msg;
+  },
+  handleClick: function(event) {
+    event.stop();
+    alert(this.msg);
+  }
+});
+var myalert = new AlertOnClick(&quot;Clicked!&quot;);
+$(&#39;foo&#39;).observe(&#39;click&#39;, myalert.handleClick); // &lt;= WRONG
+// -&gt; If &#39;foo&#39; is clicked, the alert will be blank; &quot;this&quot; is wrong
+$(&#39;bar&#39;).observe(&#39;click&#39;, myalert.handleClick.bind(myalert)); // &lt;= RIGHT
+// -&gt; If &#39;bar&#39; is clicked, the alert will be &quot;Clicked!&quot;</code></pre>
+<p><code>bind</code> can also <em>curry</em> (burn in) arguments for the function if you
+provide them after the <code>context</code> argument:
+
+</p>
+<pre><code>var Averager = Class.create({
+  initialize: function() {
+    this.count = 0;
+    this.total = 0;
+  },
+  add: function(addend) {
+    ++this.count;
+    this.total += addend;
+  },
+  getAverage: function() {
+    return this.count == 0 ? NaN : this.total / this.count;
+  }
+});
+var a = new Averager();
+var b = new Averager();
+var aAdd5 = a.add.bind(a, 5);   // Bind to a, curry 5
+var aAdd10 = a.add.bind(a, 10); // Bind to a, curry 10
+var bAdd20 = b.add.bind(b, 20); // Bind to b, curry 20
+aAdd5();
+aAdd10();
+bAdd20();
+bAdd20();
+alert(a.getAverage());
+// -&gt; Alerts &quot;7.5&quot; (average of [5, 10])
+alert(b.getAverage());
+// -&gt; Alerts &quot;20&quot; (average of [20, 20])</code></pre>
+<p>(To curry without binding, see <a href="Function#curry.html" id="Function#curry" class="link-short clicker" title="Function#curry (instance method)" data-id="Function#curry">Function#curry</a>.)</p>
+</div></div></div></div></article><article id="Function.prototype.bindAsEventListener" data-title="Function#bindAsEventListener (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Function#bindAsEventListener" class="member-name methodClicker">Function#bindAsEventListener</span>(<a href="http://www.nodemanual.org/latest/js_doc/Object.html">Object</a> context[,  args...])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Function.html"" class="link-short" title="Function (class)">Function</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label related-to">Related to
+<a href="Function#bind.html" id="Function#bind" class=" clicker" title="Function#bind (instance method)" data-id="Function#bind">Function#bind</a>  
+</span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Function#bindAsEventListener" class="ellipsis_description"><p>An event-specific variant of <a href="Function#bind.html" id="Function#bind" class="link-short clicker" title="Function#bind (instance method)" data-id="Function#bind">Function#bind</a> which ensures the function
+will recieve the current event object as t...</p>
+</div><div id="short_Function#bindAsEventListener" class="short_description hiddenSpan"><p>An event-specific variant of <a href="Function#bind.html" id="Function#bind" class="link-short clicker" title="Function#bind (instance method)" data-id="Function#bind">Function#bind</a> which ensures the function
+will recieve the current event object as the first argument when
+executing.
+</p>
+</div><h3 id="Function#bindAsEventListener" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>context
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Object.html" id="Object" class=" clicker" title="Object" data-id="Object">Object</a></p></td><td><p>Required. The object to bind to.</p>
+</td>  
+</tr><tr><td><p><i>args
+</i></p></td><td><p></p></td><td><p>Optional. Optional arguments to curry after the event argument.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>It is not necessary to use <code>bindAsEventListener</code> for all bound event
+handlers; <a href="Function#bind.html" id="Function#bind" class="link-short clicker" title="Function#bind (instance method)" data-id="Function#bind">Function#bind</a> works well for the vast majority of cases.
+<code>bindAsEventListener</code> is only needed when:
+
+</p>
+<ul>
+<li>Using old-style DOM0 handlers rather than handlers hooked up via
+<a href="Event.html#Event.observe"></a>, because <code>bindAsEventListener</code> gets the event object
+from the right place (even on MSIE). (If you&#39;re using <code>Event.observe</code>,
+that&#39;s already handled.)</li>
+<li>You want to bind an event handler and curry additional arguments but
+have those arguments appear after, rather than before, the event object.
+This mostly happens if the number of arguments will vary, and so you
+want to know the event object is the first argument.</li>
+</ul>
+<h5>Example</h5>
+<pre><code>var ContentUpdater = Class.create({
+  initialize: function(initialData) {
+    this.data = Object.extend({}, initialData);
+  },
+  // On an event, update the content in the elements whose
+  // IDs are passed as arguments from our data
+  updateTheseHandler: function(event) {
+    var argIndex, id, element;
+    event.stop();
+    for (argIndex = 1; argIndex &lt; arguments.length; ++argIndex) {
+      id = arguments[argIndex];
+      element = $(id);
+      if (element) {
+        element.update(String(this.data[id]).escapeHTML());
+      }
+    }
+  }
+});
+var cu = new ContentUpdater({
+  dispName: &#39;Joe Bloggs&#39;,
+  dispTitle: &#39;Manager &lt;provisional&gt;&#39;,
+  dispAge: 47
+});
+// Using bindAsEventListener because of the variable arg lists:
+$(&#39;btnUpdateName&#39;).observe(&#39;click&#39;,
+  cu.updateTheseHandler.bindAsEventListener(cu, &#39;dispName&#39;)
+);
+$(&#39;btnUpdateAll&#39;).observe(&#39;click&#39;,
+  cu.updateTheseHandler.bindAsEventListener(cu, &#39;dispName&#39;, &#39;dispTitle&#39;, &#39;dispAge&#39;)
+);</code></pre>
+</div></div></div></div></article><article id="Function.prototype.curry" data-title="Function#curry (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Function#curry" class="member-name methodClicker">Function#curry</span>( args...)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Function.html"" class="link-short" title="Function (class)">Function</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Function#curry" class="ellipsis_description"><p><em>Curries</em> (burns in) arguments to a function, returning a new function
+that when called with call the original passi...</p>
+</div><div id="short_Function#curry" class="short_description hiddenSpan"><p><em>Curries</em> (burns in) arguments to a function, returning a new function
+that when called with call the original passing in the curried arguments
+(along with any new ones):
+</p>
+</div><h3 id="Function#curry" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>args
+</i></p></td><td><p></p></td><td><p>Required. The arguments to curry.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><pre><code>function showArguments() {
+  alert($A(arguments).join(&#39;, &#39;));
+}
+showArguments(1, 2,, 3);
+// -&gt; alerts &quot;1, 2, 3&quot;
+
+var f = showArguments.curry(1, 2, 3);
+f(&#39;a&#39;, &#39;b&#39;);
+// -&gt; alerts &quot;1, 2, 3, a, b&quot;</code></pre>
+<p><a href="Function#curry.html" id="Function#curry" class="link-short clicker" title="Function#curry (instance method)" data-id="Function#curry">Function#curry</a> works just like <a href="Function#bind.html" id="Function#bind" class="link-short clicker" title="Function#bind (instance method)" data-id="Function#bind">Function#bind</a> without the initial
+context argument. Use <code>bind</code> if you need to curry arguments <em>and</em> set
+context at the same time.
+
+</p>
+<p>The name &quot;curry&quot; comes from <a href="http://en.wikipedia.org/wiki/Currying">mathematics</a>.</p>
+</div></div></div></div></article><article id="Function.prototype.defer" data-title="Function#defer (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Function#defer" class="member-name methodClicker">Function#defer</span>( args...)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Number.html"" class="link-short" title="Number">Number</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Function#defer" class="ellipsis_description"><p>Schedules the function to run as soon as the interpreter is idle.
+ ...</p>
+</div><div id="short_Function#defer" class="short_description hiddenSpan"><p>Schedules the function to run as soon as the interpreter is idle.
+</p>
+</div><h3 id="Function#defer" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>args
+</i></p></td><td><p></p></td><td><p>Required. Optional arguments to pass into the function.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>A &quot;deferred&quot; function will not run immediately; rather, it will run as soon
+as the interpreter&#39;s call stack is empty.
+
+</p>
+<p>Behaves much like <code>window.setTimeout</code> with a delay set to <code>0</code>. Returns an
+ID that can be used to clear the timeout with <code>window.clearTimeout</code> before
+it runs.
+
+</p>
+<h5>Example</h5>
+<pre><code>function showMsg(msg) {
+  alert(msg);
+}
+
+showMsg(&quot;One&quot;);
+showMsg.defer(&quot;Two&quot;);
+showMsg(&quot;Three&quot;);
+// Alerts &quot;One&quot;, then &quot;Three&quot;, then (after a brief pause) &quot;Two&quot;
+// Note that &quot;Three&quot; happens before &quot;Two&quot;</code></pre>
+</div></div></div></div></article><article id="Function.prototype.delay" data-title="Function#delay (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Function#delay" class="member-name methodClicker">Function#delay</span>(<a href="http://www.nodemanual.org/latest/js_doc/Number.html">Number</a> timeout[,  args...])<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Number.html"" class="link-short" title="Number">Number</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Function#delay" class="ellipsis_description"><p>Schedules the function to run after the specified amount of time, passing
+any arguments given.
+ ...</p>
+</div><div id="short_Function#delay" class="short_description hiddenSpan"><p>Schedules the function to run after the specified amount of time, passing
+any arguments given.
+</p>
+</div><h3 id="Function#delay" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>timeout
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Number.html" id="Number" class=" clicker" title="Number" data-id="Number">Number</a></p></td><td><p>Required. The time, in seconds, to wait before calling the function.</p>
+</td>  
+</tr><tr><td><p><i>args
+</i></p></td><td><p></p></td><td><p>Optional. Optional arguments to pass to the function when calling it.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p>Behaves much like <code>window.setTimeout</code>, but the timeout is in seconds
+rather than milliseconds. Returns an integer ID that can be used to
+clear the timeout with <code>window.clearTimeout</code> before it runs.
+
+</p>
+<p>To schedule a function to run as soon as the interpreter is idle, use
+<a href="Function#defer.html" id="Function#defer" class="link-short clicker" title="Function#defer (instance method)" data-id="Function#defer">Function#defer</a>.
+
+</p>
+<h5>Example</h5>
+<pre><code>function showMsg(msg) {
+  alert(msg);
+}
+showMsg.delay(0.1, &quot;Hi there!&quot;);
+// -&gt; Waits a 10th of a second, then alerts &quot;Hi there!&quot;</code></pre>
+</div></div></div></div></article><article id="Function.prototype.methodize" data-title="Function#methodize (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Function#methodize" class="member-name methodClicker">Function#methodize</span>()<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Function.html"" class="link-short" title="Function (class)">Function</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Function#methodize" class="ellipsis_description"><p>Wraps the function inside another function that, when called, pushes
+<code>this</code> to the original function as the first ar...</p>
+</div><div id="short_Function#methodize" class="short_description hiddenSpan"><p>Wraps the function inside another function that, when called, pushes
+<code>this</code> to the original function as the first argument (with any further
+arguments following it).
+</p>
+</div><h3 id="Function#methodize" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Description</h4><p>The <code>methodize</code> method transforms the original function that has an
+explicit first argument to a function that passes <code>this</code> (the current
+context) as an implicit first argument at call time. It is useful when we
+want to transform a function that takes an object to a method of that
+object or its prototype, shortening its signature by one argument.
+
+</p>
+<h5>Example</h5>
+<pre><code>// A function that sets a name on a target object
+function setName(target, name) {
+  target.name = name;
+}
+
+// Use it
+obj = {};
+setName(obj, &#39;Fred&#39;);
+obj.name;
+// -&gt; &quot;Fred&quot;
+
+// Make it a method of the object
+obj.setName = setName.methodize();
+
+// Use the method instead
+obj.setName(&#39;Barney&#39;);
+obj.name;
+// -&gt; &quot;Barney&quot;</code></pre>
+<p>The example above is quite simplistic. It&#39;s more useful to copy methodized
+functions to object prototypes so that new methods are immediately shared
+among instances. In the Prototype library, <code>methodize</code> is used in various
+places such as the DOM module, so that (for instance) you can hide an
+element either by calling the static version of <code>Element.hide</code> and passing in
+an element reference or ID, like so:
+
+</p>
+<pre><code>Element.hide(&#39;myElement&#39;);</code></pre>
+<p>...or if you already have an element reference, just calling the
+methodized form instead:
+
+</p>
+<pre><code>myElement.hide();</code></pre>
+</div></div></div></div></article><article id="Function.prototype.wrap" data-title="Function#wrap (instance method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="Function#wrap" class="member-name methodClicker">Function#wrap</span>(<a href="http://www.nodemanual.org/latest/js_doc/Function.html">Function</a> wrapper)<li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Function.html"" class="link-short" title="Function (class)">Function</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_Function#wrap" class="ellipsis_description"><p>Returns a function &quot;wrapped&quot; around the original function.
+ ...</p>
+</div><div id="short_Function#wrap" class="short_description hiddenSpan"><p>Returns a function &quot;wrapped&quot; around the original function.
+</p>
+</div><h3 id="Function#wrap" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;
+</h3><div class="description"><h4>Arguments</h4><table class="argument-list zebra-striped bordered-table"><tbody><tr><td><p><i>wrapper
+</i></p></td><td><p><a href="http://www.nodemanual.org/latest/js_doc/Function.html" id="Function" class=" clicker" title="Function (class)" data-id="Function">Function</a></p></td><td><p>Required. The function to use as a wrapper.</p>
+</td>  
+</tr></tbody></table><h4>Description</h4><p><a href="Function#wrap.html" id="Function#wrap" class="link-short clicker" title="Function#wrap (instance method)" data-id="Function#wrap">Function#wrap</a> distills the essence of aspect-oriented programming into
+a single method, letting you easily build on existing functions by
+specifying before and after behavior, transforming the return value, or
+even preventing the original function from being called.
+
+</p>
+<p>The wraper function is called with this signature:
+
+</p>
+<pre><code>function wrapper(callOriginal[, args...])</code></pre>
+<p>...where <code>callOriginal</code> is a function that can be used to call the
+original (wrapped) function (or not, as appropriate). (<code>callOriginal</code> is
+not a direct reference to the original function, there&#39;s a layer of
+indirection in-between that sets up the proper context [<code>this</code> value] for
+it.)
+
+</p>
+<h5>Example</h5>
+<pre><code>// Wrap String#capitalize so it accepts an additional argument
+String.prototype.capitalize = String.prototype.capitalize.wrap(
+  function(callOriginal, eachWord) {
+    if (eachWord &amp;&amp; this.include(&quot; &quot;)) {
+      // capitalize each word in the string
+      return this.split(&quot; &quot;).invoke(&quot;capitalize&quot;).join(&quot; &quot;);
+    } else {
+      // proceed using the original function
+      return callOriginal();
+    }
+  });
+
+&quot;hello world&quot;.capitalize();
+// -&gt; &quot;Hello world&quot; (only the &#39;H&#39; is capitalized)
+&quot;hello world&quot;.capitalize(true);
+// -&gt; &quot;Hello World&quot; (both &#39;H&#39; and &#39;W&#39; are capitalized)</code></pre>
+</div></div></div></div></article><div id="disqus_thread"></div></div></div></div></div><footer id="footer"><div class="container"><div class="footer-text">&#169; 2012:</div></div></footer></div><!-- scripts concatenated and minified via ant build script--><script defer src="./resources/javascripts/plugins.js"></script>
+<script defer src="./resources/javascripts/prettify.js"></script>
+<script defer src="./resources/javascripts/prettify-extension.js"></script>
+<script defer src="./resources/javascripts/ux.js"></script>
+<!-- end scripts--><!--[if lt IE 7]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script><script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})
+
+</script><![endif]--></body>
