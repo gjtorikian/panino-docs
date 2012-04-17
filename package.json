@@ -18,7 +18,7 @@
   "repository"      : { "type": "git", "url": "git://github.com/gjtorikian/panino.git" },
 
   "bin"             : { "panino": "bin/panino" },
-  "main"            : "./lib/index.js",
+  "main"            : "./lib/cli.js",
 
   "dependencies"    : {
                         "nomnom"    : "1.5.1",
