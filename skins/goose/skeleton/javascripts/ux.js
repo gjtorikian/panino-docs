@@ -84,13 +84,11 @@ $(document).ready(function () {
     $('.members').each(function (i) {
         var position = $(this).position();
         var $classContent = $(this).closest('.classContent');
-        console.log(position);
-        console.log('min: ' + parseInt($classContent.position().top - 55) + ' / max: ' + parseInt($classContent.height() - 55));
+        
         $(this).scrollspy({
             min: $classContent.position().top - 55,
-            max: $classContent.height() - 55,
+            max: $classContent.position().top + $classContent.height(),
             onEnter: function (element, position) {
-                console.log(position);
                 var $pagination = $(element);
                 var $paginationContent = $('.membersContent pos' + i);
                 var $tabs = $('.tabs pos' + i);
@@ -106,14 +104,13 @@ $(document).ready(function () {
                 $tabs.addClass('tabsSansBorder');
             },
             onLeave: function (element, position) {
-                console.log(position);
                 var $pagination = $(element);
                 var $paginationContent = $('.membersContent pos' + i);
                 var $tabs = $('.tabs pos' + i);
 
                 $paginationContent.stop().css({
                     top: 11
-                }); //animate({'top': 11}, 300);
+                }); 
                 $pagination.css({
                     'position': 'absolute',
                     'top': 193
@@ -123,7 +120,7 @@ $(document).ready(function () {
                 });
 
                 $paginationContent.css('left', 0);
-                setTimeout(function () {
+               // setTimeout(function () {
                     $paginationContent.css({
                         'top': ''
                     });
@@ -134,7 +131,7 @@ $(document).ready(function () {
                     $paginationContent.css('left', 0);
                     $pagination.closest('.classContent').removeClass('srolled')
                     $tabs.removeClass('tabsSansBorder');
-                }, 300);
+               // }, 300);
             }
         });
     });
@@ -149,7 +146,7 @@ $(document).ready(function () {
             objName += ".new";
         }
 
-        a.attr("id", "js_" + objName);
+        a.attr("id", objName);
     });
 
     $('.brand').parent('.dropdown').hover(
@@ -171,7 +168,7 @@ $(document).ready(function () {
     function showMethodContent() {
         if (!location.hash) return;
 
-        var $clickerEl = $('span#js_' + location.hash.replace(/^#/, '').replace(/\./g, '\\.'));
+        var $clickerEl = $('span#' + location.hash.replace(/^#/, '').replace(/\./g, '\\.'));
         if ($clickerEl.length > 0 && $clickerEl.hasClass('methodClicker')) {
             var p = $clickerEl.parent();
             p[0].force = true;
@@ -196,7 +193,7 @@ function scrollTo(el, data) {
         data = el.getAttribute("data-id");
         location.hash = data;
     }
-    var el = $("span#js_" + data.replace(/\./g, "\\."))[0];
+    var el = $("span#" + data.replace(/\./g, "\\."))[0];
     if (!el) return;
 
     var article = $(el).closest('.article')[0];

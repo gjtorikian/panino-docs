@@ -676,6 +676,10 @@ li.signature {
     padding: 0 5px 0 5px;
 }
 
+.sigClassName {
+    display: none;
+}
+
 .member-name {
     color: #4397cd;
     font-weight: bold;
@@ -687,8 +691,14 @@ li.signature {
 .signature-call {
     cursor: pointer;
 }
+
 .signature-call a {
     color: #859c59;
+    
+}
+
+.sigArgList {
+    font-weight: normal;
 }
 
 .eventObjName {
@@ -697,6 +707,12 @@ li.signature {
 .eventListenerStart, .eventFunctionOpen, .eventFunctionClose {
     color: #999999;
 }
+
+.eventListenerStart:after
+{
+    content: ".on(";
+}
+
 .eventMember {
     padding-right: 0px;
 }
