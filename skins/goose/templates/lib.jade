@@ -153,12 +153,12 @@ mixin article(obj, parents)
               if obj.bound && ~obj.bound.indexOf('#')
                 p.note.methodized
                   | This method can be called <em>either</em> as an 
-                  != link(obj.bound, 'instance method', ['link-short'])
+                  != link(obj.bound, ['link-short'], 'instance method')
                   |  <em>or</em> as a generic method. If calling as generic, pass the instance in as the first argument.
               else if obj.bound && !~obj.bound.indexOf('#')
                 p.note.functionalized
                   | This method can be called <em>either</em> as an instance method <em>or</em> as a 
-                  != link(obj.bound, 'generic method', ['link-short'])
+                  != link(obj.bound, ['link-short'], 'generic method')
                   |. If calling as generic, pass the instance in as the first argument.
 
               - var r; // Probably inefficient; we want the Returns section under the Arguments, no matter where in source it's defined
@@ -234,7 +234,7 @@ mixin api()
                         ul.dropdown-menu
                           for m in members
                             li(data-id='#{m.id}', class='memberLink')
-                              mixin internalLink(obj, m, true, [])
+                              mixin internalLink(m, [], true)
        -pos++       
       mixin article(obj, [])
 
@@ -250,12 +250,11 @@ mixin short_description_list(collection)
         if obj.short_description
           mixin markdown(obj.short_description)
 
-mixin internalLink(obj, short, classes)
-  l = internalLink(obj, short, classes)
-  != l
+mixin internalLink(obj, classes, short)
+  != internalLink(obj, classes, short)
 
-mixin link(obj, short, classes)
-  l = link(obj, short, classes)
+mixin link(obj, classes, short)
+  l = link(obj, classes, short)
   != l
 
 mixin links(collection)

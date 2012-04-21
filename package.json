@@ -1,6 +1,6 @@
 {
   "name"            : "panino",
-  "version"         : "1.0.1",
+  "version"         : "1.0.3",
   "description"     : "API documentation generator with a strict grammar",
   "keywords"        : [
                         "api", "doc", "apidoc", "documentation", "pdoc"
@@ -8,7 +8,7 @@
   "homepage"        : "https://github.com/gjtorikian/panino",
 
   "author"          : "Garen J. Torikian <gjtorikian@gmail.com>",
-  "constributors"   : [
+  "contributors"   : [
                         "Vitaly Puzrin <vitaly@rcdesign.ru> (http://rcdesign.ru)",
                         "Aleksey V Zapparov <ixti@member.fsf.org> (http://www.ixti.net/)"
                       ],
@@ -23,12 +23,11 @@
   "dependencies"    : {
                         "nomnom"    : "1.5.1",
                         "jade"      : "0.18.0",
-                        "namp"      : "~0.1.4",
+                        "marked"    : "~0.2.4",
                         "fs-tools"  : "0.2.1",
                         "wrench"    : "1.3.8",
-                        "traverse"  : "~0.6.1",
                         "markdown_conrefs": "~1.2.3",
-                        "functional-docs": "~0.0.2"
+                        "functional-docs": "~0.0.3"
                       },
   "devDependencies" : {
                         "jison"     : "0.2.12",

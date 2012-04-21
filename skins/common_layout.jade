@@ -30,7 +30,8 @@ mixin head(guideTitle)
   script(src="#{dirPrefix}resources/javascripts/jquery.cookie.js")
   script(src="#{dirPrefix}resources/javascripts/bootstrap-dropdown.js")
   script(src="#{dirPrefix}resources/javascripts/jquery-scrollspy.js")
-
+  script(src="#{dirPrefix}resources/javascripts/prettify-extension.js")
+  
 mixin topBar()
   div.topbar
       div.fill
@@ -68,7 +69,6 @@ mixin endingScripts
   // scripts concatenated and minified via ant build script
   <script defer src="#{dirPrefix}resources/javascripts/plugins.js"></script>
   <script defer src="#{dirPrefix}resources/javascripts/prettify.js"></script>
-  <script defer src="#{dirPrefix}resources/javascripts/prettify-extension.js"></script>
   <script defer src="#{dirPrefix}resources/javascripts/ux.js"></script>
 
   //-<script defer src="tree.js"></script>
