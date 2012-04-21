@@ -42,7 +42,8 @@ notdef  (?!"class"|"mixin"|"new"|"=="|[$_a-zA-Z][$_a-zA-Z0-9.#]*\s*(?:$|[(=]|"->
 <def>"*"\s*?[\n][\s\S]*?/"**/" return 'TEXT'
 <def>\s+                    /* skip whitespaces */
 <def>")"\s*":"              this.begin('arg'); return '):'
-<def>"*"\s*"-"              return !yy.useAsterisk ? 'BULLET' : '*-'
+<def>"*"\s*"*"               return '**'
+<def>"*"\s*"-"              return '*-'
 <def>"*"\s*"fires"          return 'FIRES'
 <def>"*"\s*"includes"       return 'INCLUDES'
 <def>"*"                    /*return '*'*/
@@ -125,7 +126,7 @@ world
     x.line = ($5.line + 1);
     // register
     if ($$[x.id]) {
-      console.error('ERROR: name clash: ' + x.id);
+      console.error('FATAL: name clash: ' + x.id);
       process.exit(1);
     }
     $$[x.id] = x;
@@ -206,14 +207,42 @@ argument_descriptions
 
 argument_description
 
-  : 'BULLET' NAME '(' names_alternation ')' { $$ = {name: $2, types: $4} }
-  | 'BULLET' NAME '(' names_alternation '):' TEXT %{
-    $$ = {
-      name: $2,
-      types: $4,
-      description: $6.replace(/(?:\s*\*\s*|\s+)/g, ' ').replace(/(^\s*|\s*$)/g, '')
-    };
-  }%
+  : '*-' NAME '(' names_alternation ')' %{
+       if (yy.useAsterisk) {
+         console.error("FATAL: You can't use dashes for " + $2.name);
+         process.exit(1);
+       }
+       $$ = {name: $2, types: $4} 
+     }%
+  | '**' NAME '(' names_alternation ')' %{
+       if (yy.useDash) {
+         console.error("FATAL: You can't use asterisks for " + $2);
+         process.exit(1);
+       }
+       $$ = {name: $2, types: $4} 
+     }%
+  | '*-' NAME '(' names_alternation '):' TEXT %{
+       if (yy.useAsterisk) {
+         console.error("FATAL: You can't use dashes for " + $2);
+         process.exit(1);
+       }
+      $$ = {
+        name: $2,
+        types: $4,
+        description: $6.replace(/(?:\s*\*\s*|\s+)/g, ' ').replace(/(^\s*|\s*$)/g, '')
+      };
+    }%
+  | '**' NAME '(' names_alternation '):' TEXT %{
+       if (yy.useDash) {
+         console.error("FATAL: You can't use asterisks for " + $2);
+         process.exit(1);
+       }
+      $$ = {
+        name: $2,
+        types: $4,
+        description: $6.replace(/(?:\s*\*\s*|\s+)/g, ' ').replace(/(^\s*|\s*$)/g, '')
+      };
+    }%
   ;
 
 
@@ -339,8 +368,20 @@ mixin
 
 property
 
-  : name '->' returns { $$ = {id: $1, type: 'property', returns: $3} }
-  | name ','  returns { $$ = {id: $1, type: 'property', returns: $3} }
+  : name '->' returns %{ 
+      if (yy.useComma) {
+        console.error("FATAL: You can't use arrows for " + $1.id);
+        process.exit(1);
+      }
+      $$ = {id: $1, type: 'property', returns: $3} 
+    }%
+  | name ',' returns %{ 
+      if (yy.useArrow) {
+        console.error("FATAL: You can't use commas for " + $1.id);
+        process.exit(1);
+      }
+      $$ = {id: $1, type: 'property', returns: $3} 
+    }%
   ;
 
 
@@ -370,9 +411,21 @@ signature
   : method
 
   /* method returning value */
-  | method '->' returns { $$.returns = $3 }
+  | method ',' returns %{
+      if (yy.useArrow) {
+        console.error("FATAL: You can't use commas for " + $1.id);
+        process.exit(1);
+      }
+      $$.returns = $3 
+    }%
 
-  | method ',' returns { $$.returns = $3 }
+  | method '->' returns %{
+      if (yy.useComma) {
+        console.error("FATAL: You can't use arrows for " + $1.id);
+        process.exit(1);
+      }
+      $$.returns = $3 
+    }%
 
   /* property */
   | property

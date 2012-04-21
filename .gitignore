@@ -4,6 +4,7 @@ out/
 playground*
 tests/prototype-doc
 tests/features-doc
+src/
 .c9revisions
 .c9save
 .settings.xml

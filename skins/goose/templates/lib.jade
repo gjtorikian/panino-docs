@@ -72,7 +72,6 @@ mixin article(obj, parents)
     
     else
 
-      -var reqOptObj = [];
       .section.method
         .memberContent
           if obj.signatures
@@ -80,9 +79,6 @@ mixin article(obj, parents)
               ul.signatures
                 -var loops = 0;
                 for sig in obj.signatures
-                  if sig.args
-                    for arg in sig.args
-                      -reqOptObj.push({name: arg.name, optional: arg.optional}) // only sig object has "optional" information; store for later use
                   li.signature
                     ul
                       li.signature-call!= signature(obj, sig, ["methodClicker"])
@@ -231,14 +227,14 @@ mixin api()
             -if (true || obj.filename.indexOf("index") < 0)
               ul(class='tabs pos#{pos}', data-tabs='tabs')
                 for selector, title in {'Events': ['event', 'events'], 'Constructors': ['constructor', 'constructors'], 'Class methods': ['class method', 'class_methods'], 'Class properties': ['class property', 'class_properties'], 'Instance methods': ['instance method', 'instance_methods'], 'Instance properties': ['instance property', 'instance_properties'], 'Constants': ['constant', 'constants']}
-                  methods = obj.children.filter(function(x){return x.type === selector[0]})
+                  members = obj.children.filter(function(x){return x.type === selector[0]})
                     li(class="dropdown", data-dropdown="dropdown")
-                      if methods.length
-                        a(href="\#", class="dropdown-toggle")!= renameMemberTitle(title, methods.length)
+                      if members.length
+                        a(href="\#", class="dropdown-toggle")!= renameMemberTitle(title, members.length)
                         ul.dropdown-menu
-                          for m in methods
+                          for m in members
                             li(data-id='#{m.id}', class='memberLink')
-                              mixin internalLink(m, true, [])
+                              mixin internalLink(obj, m, true, [])
        -pos++       
       mixin article(obj, [])
 
