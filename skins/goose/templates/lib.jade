@@ -1,5 +1,4 @@
 - var methodSection = constructorSection = propertySection = eventSection = false;
-- var specialObjs = ["Buffer", "Cluster", "EventEmitter", "Streams"]
     
 -function renameMemberTitle(title, count)
   if title.indexOf("ethods") >= 0
@@ -234,7 +233,7 @@ mixin api()
                         ul.dropdown-menu
                           for m in members
                             li(data-id='#{m.id}', class='memberLink')
-                              mixin internalLink(m, [], true)
+                              mixin link(m, [], true)
        -pos++       
       mixin article(obj, [])
 
@@ -249,9 +248,6 @@ mixin short_description_list(collection)
           mixin link(obj)
         if obj.short_description
           mixin markdown(obj.short_description)
-
-mixin internalLink(obj, classes, short)
-  != internalLink(obj, classes, short)
 
 mixin link(obj, classes, short)
   l = link(obj, classes, short)
