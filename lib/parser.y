@@ -220,7 +220,6 @@ argument_description
          console.error("FATAL: You can't use dashes for " + $2);
          process.exit(1);
        }
-       console.log($6)
       $$ = {
         name: $2,
         types: $4,
