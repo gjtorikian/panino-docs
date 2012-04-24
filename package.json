@@ -1,6 +1,6 @@
 {
   "name"            : "panino",
-  "version"         : "1.0.8",
+  "version"         : "1.0.9",
   "description"     : "API documentation generator with a strict grammar",
   "keywords"        : [
                         "api", "doc", "apidoc", "documentation", "pdoc"
@@ -23,6 +23,7 @@
   "dependencies"    : {
                         "nomnom"    : ">=1.5",
                         "jade"      : ">=0.18",
+                        "marked"    : ">=0.2.4",
                         "namp"      : ">=0.1",
                         "fs-tools"  : ">=0.2",
                         "wrench"    : ">=1.3",

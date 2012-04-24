@@ -79,7 +79,7 @@ notdef  (?!"class"|"mixin"|"new"|"=="|[$_a-zA-Z][$_a-zA-Z0-9.#]*\s*(?:$|[(=]|"->
 <def>{name}                 return 'NAME'
 <def>{string}               return 'STRING'
 
-<arg>[\s\S]*?/("*"\s*[-\n\+]) this.popState(); return 'TEXT'
+<arg>[\s\S]*?/("*"\s*[\-\+\n]) this.popState(); return 'TEXT'
 
 <comment>[\s\S]*?/"**/"     this.popState(); console.log('LEFTCOMM'); return 'TEXT'
 
@@ -105,12 +105,17 @@ world
     for (var i in $3) x[i] = $3[i];
     // amend description
     var desq = $5.text;
-
     // strip leading *
     desq = desq.replace(/\s*\n\s*\*/g, '\n').replace(/^\*\n*/, ''); 
-    // trim leading spaces from description, but keep 4 space indentations
-    
-    x.description = desq; 
+
+    // trim leading spaces from description (might be buggy with namp, consider removing)
+    var lead = desq.match(/^\s+/);
+    if (lead) {
+      var re = new RegExp('\n' + lead[0], 'g');
+      desq = desq.substring(lead[0].length).replace(re, '\n');
+    }
+    x.description = desq.trim();
+
     // short description lasts until the first empty line
     x.short_description = x.description.replace(/\n\n[\s\S]*$/, '\n');
     
