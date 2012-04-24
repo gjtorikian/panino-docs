@@ -29,6 +29,7 @@ notdef  (?!"class"|"mixin"|"new"|"=="|[$_a-zA-Z][$_a-zA-Z0-9.#]*\s*(?:$|[(=]|"->
 <tags>"deprecated"          return 'DEPRECATED'
 <tags>"read-only"           return 'READONLY'
 <tags>"internal"            return 'INTERNAL'
+<tags>"hide"                return 'HIDE'
 <tags>"chainable"           return 'CHAINABLE'
 <tags>"section"             return 'SECTION'
 <tags>"alias of"            return 'ALIASOF'
@@ -42,8 +43,9 @@ notdef  (?!"class"|"mixin"|"new"|"=="|[$_a-zA-Z][$_a-zA-Z0-9.#]*\s*(?:$|[(=]|"->
 <def>"*"\s*?[\n][\s\S]*?/"**/" return 'TEXT'
 <def>\s+                    /* skip whitespaces */
 <def>")"\s*":"              this.begin('arg'); return '):'
-<def>"*"\s*"*"               return '**'
+<def>"*"\s*"*"              return '**'
 <def>"*"\s*"-"              return '*-'
+<def>"*"\s*"+"              return '*+'
 <def>"*"\s*"fires"          return 'FIRES'
 <def>"*"\s*"includes"       return 'INCLUDES'
 <def>"*"                    /*return '*'*/
@@ -77,7 +79,7 @@ notdef  (?!"class"|"mixin"|"new"|"=="|[$_a-zA-Z][$_a-zA-Z0-9.#]*\s*(?:$|[(=]|"->
 <def>{name}                 return 'NAME'
 <def>{string}               return 'STRING'
 
-<arg>[\s\S]*?/("*"\s*[-\n]) this.popState(); return 'TEXT'
+<arg>[\s\S]*?/("*"\s*[-\n\+]) this.popState(); return 'TEXT'
 
 <comment>[\s\S]*?/"**/"     this.popState(); console.log('LEFTCOMM'); return 'TEXT'
 
@@ -103,15 +105,12 @@ world
     for (var i in $3) x[i] = $3[i];
     // amend description
     var desq = $5.text;
+
     // strip leading *
     desq = desq.replace(/\s*\n\s*\*/g, '\n').replace(/^\*\n*/, ''); 
-    // trim leading spaces from description
-    var lead = desq.match(/^\s+/);
-    if (lead) {
-      var re = new RegExp('\n' + lead[0], 'g');
-      desq = desq.substring(lead[0].length).replace(re, '\n');
-    }
-    x.description = desq.trim();
+    // trim leading spaces from description, but keep 4 space indentations
+    
+    x.description = desq; 
     // short description lasts until the first empty line
     x.short_description = x.description.replace(/\n\n[\s\S]*$/, '\n');
     
@@ -130,17 +129,8 @@ world
       process.exit(1);
     }
     $$[x.id] = x;
-    // FIXME: remove once tree is build ok
-    /*$$[x.id] = {
-      id: x.id,
-      type: x.type,
-      section: x.section
-    };*/
   }%
 
-  /*| world '/**' tags panino_and_includes_and_fires error comment %{
-    console.log('ERR', $4, $5, $6, yy.lexer.conditionStack); yy.lexer.popState();
-  }%*/
   ;
 
 
@@ -165,6 +155,7 @@ tag
   | DEPRECATED ':' NUMBER '..' NUMBER { $$ = {deprecated: {from: $3, off: $5}} }
   | READONLY { $$ = {readonly: true} }
   | INTERNAL { $$ = {internal: true} }
+  | HIDE     { $$ = {hide: true} }
   | CHAINABLE { $$ = {chainable: true} }
   | SECTION ':' name { $$ = {section: $3} }
   | ALIASOF ':' name { $$ = {alias_of: $3} }
@@ -195,6 +186,8 @@ panino
   | mixin
   | signatures
   | signatures argument_descriptions { $$.arguments = $2 }
+  | signatures return_descriptions { $$.retDesc = $2 }
+  | signatures argument_descriptions return_descriptions { $$.arguments = $2; $$.retDesc = $3 }
   ;
 
 
@@ -221,11 +214,13 @@ argument_description
        }
        $$ = {name: $2, types: $4} 
      }%
+
   | '*-' NAME '(' names_alternation '):' TEXT %{
        if (yy.useAsterisk) {
          console.error("FATAL: You can't use dashes for " + $2);
          process.exit(1);
        }
+       console.log($6)
       $$ = {
         name: $2,
         types: $4,
@@ -245,6 +240,24 @@ argument_description
     }%
   ;
 
+return_descriptions
+
+  : return_description { $$ = [$1] }
+  | return_descriptions return_description { $$.push($2) }
+  ;
+
+return_description
+
+  :  '*+' '(' names_alternation ')' %{
+       $$ = { types: $3} 
+     }%
+  |  '*+' '(' names_alternation '):' TEXT %{
+      $$ = {
+        types: $3,
+        description: $5.replace(/(?:\s*\*\s*|\s+)/g, ' ').replace(/(^\s*|\s*$)/g, '')
+      };
+    }%
+  ;
 
 events
 
