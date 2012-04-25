@@ -36,6 +36,7 @@ notdef  (?!"class"|"mixin"|"new"|"=="|[$_a-zA-Z][$_a-zA-Z0-9.#]*\s*(?:$|[(=]|"->
 <tags>"alias"               /* N.B. shouldn't it be ALIAS, and reversed sense */ return 'ALIASOF'
 <tags>"related to"          return 'RELATEDTO'
 <tags>"belongs to"          return 'BELONGSTO'
+<tags>"extension"           return 'EXTENSION'
 <tags>{name}                return 'NAME'
 <tags>{string}              return 'STRING'
 
@@ -73,6 +74,7 @@ notdef  (?!"class"|"mixin"|"new"|"=="|[$_a-zA-Z][$_a-zA-Z0-9.#]*\s*(?:$|[(=]|"->
 <def>"{"                    return '{'
 <def>"}"                    return '}'
 <def>"|"                    return '|'
+<def>"`"                    return '`'
 <def>"class"                return 'CLASS'
 <def>"mixin"                return 'MIXIN'
 <def>"new"                  return 'NEW'
@@ -166,6 +168,7 @@ tag
   | ALIASOF ':' name { $$ = {alias_of: $3} }
   | RELATEDTO ':' name { $$ = {related_to: $3} }
   | BELONGSTO ':' name { $$ = {belongs_to: $3} }
+  | EXTENSION { $$ = {extension: true} }
   ;
 
 
@@ -258,9 +261,10 @@ return_description
   |  '*+' '(' names_alternation '):' TEXT %{
       $$ = {
         types: $3,
+        isArray: $3.isArray,
         description: $5.replace(/(?:\s*\*\s*|\s+)/g, ' ').replace(/(^\s*|\s*$)/g, '')
       };
-    }%
+     }%
   ;
 
 events
@@ -297,6 +301,8 @@ names_alternation
 
   : '?' { $$ = [] }
   | name { $$ = [$1] }
+  | '`' name '`' { $$ = [$2] }
+  | '[' name ']' { $$ = [$2]; $$.isArray = true }
   | names_alternation '|' name { $$.push($3) }
   ;
 

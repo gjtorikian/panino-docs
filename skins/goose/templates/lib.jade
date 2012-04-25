@@ -222,9 +222,9 @@ mixin api()
                   members = obj.children.filter(function(x){return x.type === selector[0]})
                     li(class="dropdown", data-dropdown="dropdown")
                       if members.length
-												a(href="\#", class="dropdown-toggle", data-toggle="dropdown")
-													!= renameMemberTitle(title, members.length)
-													b.caret
+                         a(href="\#", class="dropdown-toggle", data-toggle="dropdown")
+                            != renameMemberTitle(title, members.length)
+                            b.caret
                         ul.dropdown-menu
                           for m in members
                             li(data-id='#{m.id}', class='memberLink')
