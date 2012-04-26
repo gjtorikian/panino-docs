@@ -95,13 +95,54 @@ If `-s` is set and files are split, setting this flag true keeps child classes o
 
 #### -p PATH, --parse-options PATH               
 
-The path to a JSON file defining various parse options you want to use. For more information, see the section called "Parse Options."
+The path to a JSON file defining various parse options you want to use. For more information, see the section called "Syntax Parse Options."
 
-# Syntax
+# Syntax and Parse Options
 
 [Here's a full list of Panino's syntax](https://github.com/gjtorikian/panino/blob/master/syntax.md).
 
+Some of the syntaxes outlined in that document can be overwritten with a JSON object defined in a file, and pulled in through the `-p` argument. The format of that file can look something like this:
+
+```javascript
+{
+	"useDash"  : true,
+	"useComma" : true
+}
+```
+
+A strict grammar is used here to absolutely ensure that all the text across various files are written the same way. Panino comes with its own default "rules," that you can choose to overwrite. The two properties above are currently the only rules you can overwrite. For a more in-depth explanation of what they do, see the document on syntax.
+
+
+# Linkify Everything
+
+Panino was designed with the goal of supporting links whereever and whenever they make sense. This means, among other things, that any object encountered in a method signature, return type, parameter type, and so on, is turned into a link. The Panino build throws an exception and halts if it finds some text that it can't turn into a link.
+
+On the whole, this is A Good Thing for readers. It does mean, of course, slightly more work to set up Panino correctly for your project.
+
+There are three types of objects Panino needs to consider to linkify everything:
+
+1. Objects that are already linked by Panino. 
+2. Objects that exist in your code, but not in your documentation project. This could be, for example, objects in another folder, or, for Javascript, objects like `DOMElement`, which exist in the browser but not your project.
+3. Global objects for your language of choice, like `String`, `Array`, and so on.
+
+## Existing Objects
+For the first type, Panino creates a tree of all your objects and members, so you don't need to do anything to support these.
+
+## Outside Objects
+For the second type, you need to create a JSON object describing the relationship between objects and their documentation links. Set the path to this file with the `-a` argument. An example file might look like this:
+
+```javascript
+{
+	"DOMElement"  : "https://developer.mozilla.org/en/DOM/element",
+	"DOMContentLoaded"    : "https://developer.mozilla.org/en/DOM/DOM_event_reference/DOMContentLoaded"
+}
+```
+
+
+# Funcitons and Variables for Jade Templates
 
 # License
 
 This project is distributed under the [GPL](https://github.com/gjtorikian/panino/blob/master/LICENSE) license.
+
+# The Name ?
