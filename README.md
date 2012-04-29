@@ -20,8 +20,8 @@ Changes in this project are plentiful, and heavily modify the original intention
 
 * [Installation](#installation)
 * [Arguments and Configuration](#args)
-  ** [Defining a Skin](#skins)
-  ** [Variables, Functions, and CSS to use for Jade Templates](#functions)
+  * [Defining a Skin](#skins)
+  * [Variables, Functions, and CSS to use for Jade Templates](#functions)
 * [Syntax and Parse Options](#syntax)
 * [Linkify Everything](#linking)
 * [License](#license)
@@ -140,100 +140,12 @@ While writing your templates, you may find the need to call out to the Panino sy
 
 For a really good demonstration on putting these all together, check out [the default "goose" template](https://github.com/gjtorikian/panino-docs/tree/master/skins) provided with the tool.
 
-Here's a list of the variables you have access to:
-
-* `list`: This is a gigantic JSON object containing the definitions of all your classes, including members, subclasses, source file location, e.t.c. Use with discretion.
-* `tree`: Very similar to `list`, except it represents the current object your template is iterating over. You have access to many, many properties, which are ironically undocumented at the moment. You can also print out a list of your AST by passing `-f ast` to your build.
-
-You'll most likely always be working with this object by doing stuff like this:
-	for obj in tree.children
-		for child in obj.children.filter(function(x){return x.type === 'class method'}) // grab only members
-			h3 Methods
-				if child.description
-					mixin markdown(child.description) // convert description from Markdown to HTML
-
-* `date`: The current date of the build
-* `isIndex`: Checks if the current file is the index defined by the `-i` argument. Typically, you just want to include the content of this file into your template, because `tree` is empty and there's no member information to iterate over.
-* `indexContent`: If the current file _is_ the index, this is its content.
-* `title`: The title of your documentation, as defined by `-t`.
-* `fileName`: The current file you're processing
-* `options`: A JSON containing all the build options you passed into Panino
-
-Here's a list of the functions you have access to:
-* `markdown`: A function that converts Markdown into HTML (including conrefs). It takes two parameters:
-	* `text`: The Markdown content to convert (required)
-	* `inline`: A Boolean value which, if true, strips the surrounding `<p>` tages of the converted HTML. (optional)
-
-* `signature`: A function that generates a member signature, including [linkifying everything](#linking). It takes three arguments:
-	* `obj`: The parent object (required)
-	* `sig`: The signature itself (required)
-	* `classes`: An optional array of class names to surround the signature with (optional)
-
-You'd use this function by doing something like this:
-
-	for sig in obj.signatures // if the object even has signatures
-		li.signature
-			ul
-		      li.signature-call!= signature(obj, sig, ["methodClicker"]) // pass in each signature
-
-* `link`: Renders any ID given to it as a link; throws an error if the ID does not exist. This method takes three arguments:
-	* `text`: The ID to linkify. This can be anything, like the name of a class(`Bicycle`), to a member in the class (`Bicycle.pedal`) (required)
-	* `classes`: An optional array of class names to surround the link with (optional)
-	* `short`: A Boolean which, if specified, indicates that the link is coming from a `[[ ]]` notation. You should not set this yourself. (optional)
-
-You'd use this function by doing something like this:
-
-	if obj.alias_of // if this object has aliases
-		li
-			span.label.alias.single
-				| Aliased as: 
-				!= link(obj.alias_of) // turn each alias into a link
-
-* `argumentTable`: Generates a table of your member's arguments. You can place this anywhere you want in your description. This function takes four arguments:
-	* `args`: The signature's arguments (required)
-	* `tableClasses`: An optional array of class names to surround the table with (optional)
-	* `trClasses`: An optional array of class names to surround the `<tr>`s with (optional)
-	* `tdClasses`: An optional array of class names to surround the `<td>`s with (optional)
-
-You'd use this function by doing something like this:
-
-	if obj.arguments
-	    h4 Arguments
-	      != argumentTable(obj.arguments, ["argument-list", "zebra-striped", "bordered-table"])
-
-* `returnLink`: Turns the return value of a member into a link. This method takes three arguments:
-	* `obj`: The parent object (required)
-	* `ret`: The return value itself (required)
-	* `classes`: An optional array of class names to surround the link with (optional)
-
-Building on the `signature()` example above, you'd use this function by doing something like this:
-
-	for sig in obj.signatures // if the object even has signatures
-		li.signature
-			ul
-		      li.signature-call!= signature(obj, sig, ["methodClicker"]) // pass in each signature
-                if sig.returns // if there's a return type
-                  li.signature-returns
-                    ul.argument-types
-                      for ret in sig.returns
-                        li.argument-type!= returnLink(obj, ret, []) // list out each return type
-
-* `returnTable`: Generates a table of your member's return values. You can place this anywhere you want in your description. This function takes four arguments:
-	* `returnVals`: The signature's return values (required)
-	* `tableClasses`: An optional array of class names to surround the table with (optional)
-	* `trClasses`: An optional array of class names to surround the `<tr>`s with (optional)
-	* `tdClasses`: An optional array of class names to surround the `<td>`s with (optional)
-
-You'd use this function by doing something like this:
-
-	if obj.retDesc
-		h4 Returns
-			!= returnTable(obj.retDesc, ["return-list", "zebra-striped", "bordered-table"]) 
+[Here's a list of the variables you have access to.](https://github.com/gjtorikian/panino/blob/master/FUNCTIONS.md).
 
 <a name="syntax" />
 # Syntax and Parse Options
 
-[Here's a full list of Panino's syntax](https://github.com/gjtorikian/panino/blob/master/syntax.md).
+[Here's a full list of Panino's syntax](https://github.com/gjtorikian/panino/blob/master/SYNTAX.md).
 
 Some of the syntaxes outlined in that document can be overwritten with a JSON object defined in a file, and pulled in through the `-p` argument. The format of that file can look something like this:
 
@@ -282,4 +194,4 @@ This project is distributed under the [GPL](https://github.com/gjtorikian/panino
 <a name="name" />
 # Why the Name?
 
-_Panino_ refers to [a type of bread in Italy](http://en.wikipedia.org/wiki/Panini_(sandwich)#Terminology). Panini is its plural form, but is often mistakenly used as the singular. It seemed important to draw attention to the fact that what you're defining should represent what it actually is.
+_Panino_ refers to [a type of bread in Italy](http://en.wikipedia.org/wiki/Panini_\(sandwich\)#Terminology). Panini is its plural form, but is often mistakenly used as the singular. It seemed important to draw attention to the fact that what you're defining should represent what it actually is.
