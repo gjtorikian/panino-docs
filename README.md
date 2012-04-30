@@ -4,13 +4,14 @@ Panino is an API documentation generation tool. It can read comments from your s
 
 Your documentation should be written following a specific syntax. Panino parses your content following a strict, no-crap -allowed grammar. This means that there is a very specific set of rules and expectations as to how to write your documentation. These rules are not terribly hard or unweildly. Keeping documentation parsed through a grammar ensures thorough and consistent docs, no matter who it's written by. 
 
-This project is forked from [ndoc](https://github.com/nodeca/ndoc), which itself is based off of [pdoc](https://github.com/tobie/pdoc). ([This blog post](http://andrewdupont.net/2008/11/16/pdoc-inline-documentation-for-prototype/) identifies some of the advantages over other commenting-to-documentation systems.
+This project is forked from [ndoc](https://github.com/nodeca/ndoc), which itself is based off of [pdoc](https://github.com/tobie/pdoc). ([This blog post](http://andrewdupont.net/2008/11/16/pdoc-inline-documentation-for-prototype/) identifies some of the advantages over other commenting-to-documentation systems.)
 
-Changes in this project are plentiful, and heavily modify the original intention of ndoc. Some differences include:
+Changes in this project are plentiful, and heavily modify the original intention of ndoc. Some features include:
 
-* The ability to convert Markdown files
+* Support for Markdown files
 * Creating a separate page for every class, including support for "`[[ ]]`"-notation linking
 * Adding "ellipsis" descriptions, truncating the full member description into 120 characters.
+* Support for "extension" and "hide" tags
 * Linkifying everything (object types in arguments, return types, e.t.c.)
 * Allowing to specify a URL to retrieve Javascript documentation about global objects (like `Array` or `String`)
 * Support for [content references (or conrefs)](http://www.github.com/gjtorikian/markdown_conrefs). Conrefs are a way to write a sentance once, and refer to it in multiple locations. 
@@ -26,6 +27,8 @@ Changes in this project are plentiful, and heavily modify the original intention
 * [Linkify Everything](#linking)
 * [License](#license)
 * [Why the Name?](#name)
+
+You may also want to check out [Panda](https://github.com/gjtorikian/panda-docs), which is a generic documentation generation system that shares many of the same concepts.
 
 <a name="installation" />
 # Installation
@@ -59,67 +62,58 @@ Panino requires only two options to be set:
 * `--path`. This identifies the location of your source files. 
 * `--skin`. The Jade templates to use for your rendered documentation.
 
-However, there are a plentiful number of options to tweak and manage.
+However, there are a plentiful number of options to tweak and manage:
 
-#### -e STRING, --extension STRING
+<dl>
 
-Defines the extension of your source files. Don't include the `.` seperator.
+<dd>-e STRING, --extension STRING</dd>
+<dt>Defines the extension of your source files. Don't include the `.` seperator.</dt>
 
-#### -r, --recursive
+<dd>-r, --recursive</dd>
+<dt>If this flag is set, Panino recursively walks the source file directory.</dt>
 
-If this flag is set, Panino recursively walks the source file directory.
+<dd>-o PATH, --output PATH</dd>
+<dt>Defines the path where the rendered output is placed. </dt>
 
-#### -o PATH, --output PATH                      
-
-Defines the path where the rendered output is placed. 
-
-#### -f CHOICE, --format CHOICE                      
-
-Defines the output format of your documentation. Can be:
+<dd>-f CHOICE, --format CHOICE</dd>
+<dt>Defines the output format of your documentation. Can be:
 
 * `html` for an HTML rendering
 * `ast` for an AST list
 * `js` for a Javascript file
+</dt>
 
-#### -i PATH, --index PATH                       
+<dd>-i PATH, --index PATH</dd>
+<dt>If you're generating multiple files, you can choose to render an an index of landing page for those files. In general, this is a Markdown-formatted file whose content can be placed into your Jade templates.</dt>
 
-If you're generating multiple files, you can choose to render an an index of landing page for those files. In general, this is a Markdown-formatted file whose content can be placed into your Jade templates.
+<dd>-t STRING, --title STRING</dd>
+<dt>The title of your documentation.</dt>
 
-#### -t STRING, --title STRING
+<dd>-l FMT, --link-format FMT</dd>
+<dt>A String that defines the format for your links in your files. By default, this is `{file}#L{line}].</dt>
 
-The title of your documentation.
+<dd>-view-source-label STRING</dd>
+<dt>The text to use for the "View source" link for each file, as defined by `-l`.</dt>
 
-#### -l FMT, --link-format FMT                   
+<dd>-g STRING, --global-object-type STRING</dd>
+<dt>Defines the type of language you're documenting. This is really only used when `-e` is `md` or `markdown`; in all other instances, the file extension of your source files are used to determine the language (_e.g._ `.js => JavaScript`).</dt>
 
-A String that defines the format for your links in your files. By default, this is `{file}#L{line}].
+<dd>-j STRING, --doc-path STRING</dd>
+<dt>Defines a URL to point to for the global objects in your language. For more information, see the section called "Linkify Everything."</dt>
 
-#### --view-source-label STRING                  
+<dd>-a PATH, --additional-global-objects PATH</dd>
+<dt>The path to a JSON file containing a structure defining more relationships between global objects and documentation URLs. For more information, see the section called "Linkify Everything."</dt>
 
-The text to use for the "View source" link for each file, as defined by `-l`.
+<dd>-s, --split</dd>
+<dt>If this flag is set, Panino splits the output for HTML builds into a separate file per class.</dt>
 
-#### -g STRING, --global-object-type STRING
+<dd>-k, --keepChildClasses</dd>
+<dt>If `-s` is set and files are split, setting this flag true keeps child classes on the same page as the parent; otherwise, they get their own files, too.</dt>
 
-Defines the type of language you're documenting. This is really only used when `-e` is `md` or `markdown`; in all other instances, the file extension of your source files are used to determine the language (_e.g._ `.js => JavaScript`).
+<dd>-p PATH, --parse-options PATH</dd>
+<dt>The path to a JSON file defining various parse options you want to use. For more information, see the section called "Syntax Parse Options."</dt>
 
-#### -j STRING, --doc-path STRING
-
-Defines a URL to point to for the global objects in your language. For more information, see the section called "Linkify Everything."
-
-#### -a PATH, --additional-global-objects PATH
-
-The path to a JSON file containing a structure defining more relationships between global objects and documentation URLs. For more information, see the section called "Linkify Everything."
-
-#### -s, --split
-
-If this flag is set, Panino splits the output for HTML builds into a separate file per class.
-
-#### -k, --keepChildClasses 
-
-If `-s` is set and files are split, setting this flag true keeps child classes on the same page as the parent; otherwise, they get their own files, too.
-
-#### -p PATH, --parse-options PATH               
-
-The path to a JSON file defining various parse options you want to use. For more information, see the section called "Syntax Parse Options."
+</dl>
 
 <a name="skin" />
 ## Defining a Skin
