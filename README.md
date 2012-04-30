@@ -140,12 +140,12 @@ While writing your templates, you may find the need to call out to the Panino sy
 
 For a really good demonstration on putting these all together, check out [the default "goose" template](https://github.com/gjtorikian/panino-docs/tree/master/skins) provided with the tool.
 
-[Here's a list of the variables you have access to.](https://github.com/gjtorikian/panino/blob/master/FUNCTIONS.md).
+[Here's a list of the variables you have access to.](https://github.com/gjtorikian/panino-docs/blob/master/FUNCTIONS.md).
 
 <a name="syntax" />
 # Syntax and Parse Options
 
-[Here's a full list of Panino's syntax](https://github.com/gjtorikian/panino/blob/master/SYNTAX.md).
+[Here's a full list of Panino's syntax](https://github.com/gjtorikian/panino-docs/blob/master/SYNTAX.md).
 
 Some of the syntaxes outlined in that document can be overwritten with a JSON object defined in a file, and pulled in through the `-p` argument. The format of that file can look something like this:
 
@@ -171,11 +171,11 @@ There are three types of objects Panino considers when linkify everything:
 2. Objects that exist in your code, but not in your documentation project. This could be, for example, objects in another folder, or, for Javascript, objects like `DOMElement`, which exist in the browser but not your project.
 3. Global objects for your language of choice, like `String`, `Array`, and so on.
 
-## Existing Objects
+#### Existing Objects
 
 For the first type, Panino creates a tree of all your objects and members, so you don't need to do anything to support these.
 
-## Outside Objects
+#### Outside Objects
 
 For the second and third types, you need to create a JSON object describing the relationship between objects and their documentation links. Set the path to this file with the `-a` argument. An example file might look like this:
 
@@ -189,7 +189,7 @@ For the second and third types, you need to create a JSON object describing the 
 <a name="license" />
 # License
 
-This project is distributed under the [GPL](https://github.com/gjtorikian/panino/blob/master/LICENSE) license.
+This project is distributed under the [GPL](https://github.com/gjtorikian/panino-docs/blob/master/LICENSE) license.
 
 <a name="name" />
 # Why the Name?

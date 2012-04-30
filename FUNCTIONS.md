@@ -1,3 +1,4 @@
+# Variables, Functions, and CSS to use for Jade Templates
 
 * [Variables](#variables)
 * [Functions](#functions)

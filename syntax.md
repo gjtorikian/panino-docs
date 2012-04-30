@@ -1,133 +1,143 @@
-Syntax
-======
+# Syntax
 
-This document describes the various syntax rules for code files, as well as Markdown files.
+This document describes the various syntax rules for code files, as well as Markdown files. Note that some of these options can be overwritten with the `-p` argument, and are noted as such.
 
-Comments
---------
+## Comments
 
-Documentation comments start with `/**` and end with `**/`. Each new line starts with `*`. 
+**For Source Files**: Documentation comments start with `/**` and end with `**/`. Each new line starts with `*`. 
 
     /** ...
      *  ...
      **/
 
-Tags (optional)
-----
+**For Markdown Files**: This rule obviously does not apply.
 
-The opening line of a comment is reserved for tags. Tags are optional. Tags are separated by a comma followed by optional whitespace(s) (`, `). They can be either a tag name or a key / value pair separated by a colon and optional whitespace(s) (`: `):
+## Tags (optional)
+
+**For Source Files**: the opening line of a comment is reserved for tags. Tags are optional, and separated by a comma followed by optional whitespace(s) (`, `). They can be either a tag name or a key / value pair separated by a colon and optional whitespace(s) (`: `):
 
     tagName ': ' tagValue [', ' tagName ': ' tagValue]...
 
 Currently supported tags are:
 
-  * `section: <name>`           - description belongs to specified section `name`
-  * `alias of: <name>`          - entity is another name for entity `name`
-  * `related to: <name>`        - description is related to entity `name`
-  * `read-only`                 - entity is read-only
-  * `internal`                  - entity is meant to be private
-  * `chainable`                 - method can be chained, i.e. the return value is the same object to which method belongs. E.g. $(...).on(...).on(...)
-  * `deprecated`                - entity is considered deprecated. Deprecation tag in addition have the following flavors:
-    * `deprecated: <from>`        - deprecated starting from version `from`
-    * `deprecated: <from>..<out>` - deprecated starting from version `from` and will be removed by version `out`
+  * `section: <name>`: Defines what section a description belongs to
+  * `alias of: <name>`: Identifies an alias for the member
+  * `related to: <name>`: Identifies a related member
+  * `read-only`: Identifies a member as read-only
+  * `internal`: Identifies a member as private 
+  * `hide`: Identifies that the member should not be shown in resulting HTML builds
+  * `extension`: Identifies that the member is not a part of the current file or class. This is very typical in, for example, Javascript documentation. Suppose you have two classes, one called `Vehicle` and the other called `Bicycle`, in two different files. `Bicycle` can extended the functions in `Vehicle`, but they should be marked with the `extension` tag, to prevent the parser from considering the extension as part of `Bicycle`.
+  * `chainable`: Identifies that a method can be chained, _i.e._ the return value is the same object to which method belongs, like `$(...).on(...).on(...)`
+  * `deprecated`: Identifies that the member is considered deprecated. The deprecation tag can also specify version, like this:
+    * `deprecated: <from>`: The member is deprecated starting from version `from`
+    * `deprecated: <from>..<out>`. The member is deprecated starting from version `from` and will be removed by version `out`
 
-E.g.:
+For example:
 
-    /** deprecated: 1.0..2.0, section: DOM, alias of: Element#descendantOf, chainable
-     *  Element#childOf(@element, className) -> Element
-     *
-     *  ...
-     **/
+```
+/** deprecated: 1.0..2.0, section: DOM, alias of: Element#descendantOf, chainable
+ *  Element#childOf(@element, className) -> Element
+ *
+ *  ...
+ **/
+```
 
+**For Markdown Files**: Tags come in a parenthesis list _after_ all the signature and return type descriptions. For example:
 
+```
+### Element#childOf(@element, className) -> Element
+- element (DOMElement): blah blah
+- className (String): blather blather
+(deprecated: 1.0..2.0, section: DOM, alias of: Element#descendantOf, chainable)
+...
 
-EBNF
-----
+## Extended Backus–Naur Form ([EBNF](http://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_Form))
 
-The lines _directly following_ tags are reserved for the EBNF description of the documented object. Typically, there's only one EBNF per documented object:
+**For Source Files**: The lines _directly following_ tags are reserved for the EBNF description of the documented object. Typically, there's only one EBNF per documented object:
 
-    /** 
-     *  Element#down(@element[, cssSelector][, index]) -> Element | null
-     *
-     *  ...
-     **/
+```
+/** 
+ *  Element#down(@element[, cssSelector][, index]) -> Element | null
+ *
+ *  ...
+ **/
+```
 
-However, methods, functions, etc. may have several signatures, hence may require more than one description line, in which case description lines directly follow each other:
+However, methods, functions, e.t.c. may have several signatures, and may require more than one description line, in which case description lines directly follow each other:
 
-    /** 
-     *  Element#writeAttribute(@element, attribute[, value = true]) -> Element
-     *  Element#writeAttribute(@element, attributes) -> Element
-     *
-     *  ...
-     **/
-     
+```
+/** 
+ *  Element#writeAttribute(@element, attribute[, value = true]) -> Element
+ *  Element#writeAttribute(@element, attributes) -> Element
+ *
+ *  ...
+ **/
+```
+
+**For Markdown Files**: All EBNF descriptions are preceeded by the `#` notation for H3:
+
+```
+### Element#down(@element[, cssSelector][, index]) -> Element | null
+```
+
+For multiple signatures, continue to add H3 headers:
+
+```
+### Element#writeAttribute(@element, attribute[, value = true]) -> Element
+### Element#writeAttribute(@element, attributes) -> Element
+```
+
+In these descriptions, `->` is being used to signify a "return." You can override this to be `, ` by setting the parse options with `-p`.
+
 ### Arguments
 
-For all methods, functions, etc. parentheses around the arguments are required even if no arguments are present.
-The syntax for arguments is as follows:
+**For Source and Markdown Files**: For all methods, functions, e.t.c., parentheses around the arguments are required even if no arguments are present. The syntax for arguments is as follows:
 
-#### required arguments
+#### Required Arguments
 
-    /** 
-     *  Event.stop(event) -> Event
-     *
-     *  ...
-     **/
+    Event.stop(event) -> Event
      
-#### optional arguments
+#### Optional Arguments
 
 Optional arguments are surrounded by squared brackets (`[]`).
 
-    /** 
-     *  String#evalJSON([sanitize]) -> Object | Array
-     *
-     *  ...
-     **/
+    String#evalJSON([sanitize]) -> Object | Array
+
+#### Default Values
 
 A default value may be indicated using the equal sign (`=`).
      
-    /** 
-     *  String#evalJSON([sanitize = false]) -> Object | Array
-     *
-     *  ...
-     **/
-     
+    String#evalJSON([sanitize = false]) -> Object | Array
 
-Note that the argument separating comas belong _inside_ the brackets.
-
-    /** 
-     *  Event.findElement(event[, cssSelector]) -> Element | null
-     *
-     *  ...
-     **/     
-     
+   
 Arguments can be described below the EBNF description using the following syntax:
     
-    - argumentName (acceptedType | otherAcceptedType | ...): description.
-     
-### Supported EBNF types
+    - argumentName (acceptedType | additionalAcceptedType | ...): description.
+
+Two things are default here:
+
+* A `-` is required when listing each argument's description. With `-p`, you can specify this as being `*`.
+* The description is defined as existing within a `( ):` notation. **For Markdown Files**, you can specify this as being `{ }`.
+    
+### Supported EBNF Types
 
 **BIG FAT WARNING**: EBNF descriptions **must be separated by an empty comment line** from the rest of description:
 
-    /** 
-     *  String#evalJSON([sanitize = false]) -> Object | Array
-     *
-     *  Here goes markdown for String#evalJSON description.
-     **/
+    String#evalJSON([sanitize = false]) -> Object | Array
+
+    Here goes markdown for String#evalJSON description.
      
 
-    /** 
-     *  Event.findElement(event[, cssSelector]) -> Element | null
-     *  - event (Event): a native Event instance
-     *  - cssSelector (String): a optional CSS selector which uses
-     *  the same syntax found in regular CSS.
-     *
-     *  Regular method markdown goes here.
-     **/
+    Event.findElement(event[, cssSelector]) -> Element | null
+    - event (Event): a native Event instance
+    - cssSelector (String): a optional CSS selector which uses
+    the same syntax found in regular CSS.
+    
+    Regular method markdown goes here.
 
-Descriptions are parsed as markdown markup, with github-style extension for code blocks 
+Descriptions are parsed as GitHub Flavored Markdown.
      
-#### Namespace
+## Namespace
 
     /** 
      *  Ajax
@@ -141,7 +151,7 @@ Descriptions are parsed as markdown markup, with github-style extension for code
      *  ...
      **/
      
-#### Classes
+## Classes
 
 Classes require a `class` prefix:
 
@@ -170,7 +180,7 @@ Included mixins are indicated like so:
      *  ...
      **/
 
-#### Mixins
+## Mixins
 
 Mixins are indicated by a `mixin` prefix:
 
@@ -180,7 +190,7 @@ Mixins are indicated by a `mixin` prefix:
      *  ...
      **/
 
-#### Constructors
+## Constructors
 
 Constructors require the `new` prefix and their arguments.
 
@@ -196,7 +206,7 @@ Constructors require the `new` prefix and their arguments.
      *  ...
      **/
      
-#### Class Methods
+## Class Methods
 
 Class methods are identified by a dot (`.`).
 
@@ -206,7 +216,7 @@ Class methods are identified by a dot (`.`).
      *  ...
      **/
 
-#### Instance Methods
+## Instance Methods
 
 Instance methods are identified by the hash symbol (`#`).
 
@@ -216,7 +226,7 @@ Instance methods are identified by the hash symbol (`#`).
      *  ...
      **/
      
-#### Utilities
+## Utilities
 
 Utilities are global functions starting with a dollar-sign (`$`).
 
@@ -226,7 +236,7 @@ Utilities are global functions starting with a dollar-sign (`$`).
      *  ...
      **/
      
-#### Methodized Methods
+## Methodized Methods
 
 Methodized methods are methods which are both available as a class method and an instance method, in which case the first argument becomes the instance object itself. For example, all of `Element`'s instance methods are methodized and thus also available as class methods of `Element`. Methodized methods are indicated by prefixing their first argument with the `@` symbol.
 
@@ -236,7 +246,7 @@ Methodized methods are methods which are both available as a class method and an
      *  ...
      **/
      
-#### Class Properties
+## Class Properties
 
 Class properties are identified by a dot (`.`).
 
@@ -246,7 +256,7 @@ Class properties are identified by a dot (`.`).
      *  ...
      **/
      
-#### Instance Properties
+## Instance Properties
 
 Instance properties are identified by the hash symbol (`#`).
 
@@ -256,7 +266,7 @@ Instance properties are identified by the hash symbol (`#`).
      *  ...
      **/
      
-#### Constants
+## Constants
 
 Constant must have their value specified using the equal sign (`=`).
 
@@ -266,7 +276,7 @@ Constant must have their value specified using the equal sign (`=`).
      *  ...
      **/
      
-#### Events
+## Events
 
 Events are identified by `@`:
 
@@ -276,8 +286,7 @@ Events are identified by `@`:
      *  ...
      **/
 
-Sugar
-----
+## Additional Sugar
 
 ### Sections
 
@@ -293,13 +302,5 @@ Sections are grouped parts of documentation. They don't add to element hierarchy
 
 Short links help to quickly refer some element. Supported are two flavors:
 
-  * `[[Method.Name]]`         - renders to `<a href=HREF>Method.Name</a>`
-  * `[[Method.Name TEXT]]`    - renders to `<a href=HREF>TEXT</a>`
-
-Difference from PDoc
---------------------
-
-1. Descriptions should be ALWAYS separated by empty line from the upper string (signature, section, tags...).
-2. `deprecated` can have options.
-3. Additional tags - read-only, internal, chainable.
-4. Support for events
+  * `[[Method.Name]]`: Renders to `<a href=HREF>Method.Name</a>`
+  * `[[Method.Name TEXT]]`: Renders to `<a href=HREF>TEXT</a>`
