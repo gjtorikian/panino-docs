@@ -1,6 +1,6 @@
 # Introduction
 
-Panino is an API documentation generation tool. It can read comments from your source files, or, parse Markdown files and generate the same documentation. At the moment, Javascript documentation has the most support.
+Panino is an API documentation generation tool. It can read comments from your source files, or, parse Markdown files and generate the same documentation. At the moment, Javascript documentation has the most support. Panino runs on Node.js, and uses Jade as its templating engine.
 
 Your documentation should be written following a specific syntax. Panino parses your content following a strict, no-crap -allowed grammar. This means that there is a very specific set of rules and expectations as to how to write your documentation. These rules are not terribly hard or unweildly. Keeping documentation parsed through a grammar ensures thorough and consistent docs, no matter who it's written by. 
 
@@ -10,12 +10,15 @@ Changes in this project are plentiful, and heavily modify the original intention
 
 * Support for Markdown files
 * Creating a separate page for every class, including support for "`[[ ]]`"-notation linking
-* Adding "ellipsis" descriptions, truncating the full member description into 120 characters.
+* Adting "ellipsis" descriptions, truncating the full member description into 120 characters.
 * Support for "extension" and "hide" tags
 * Linkifying everything (object types in arguments, return types, e.t.c.)
 * Allowing to specify a URL to retrieve Javascript documentation about global objects (like `Array` or `String`)
 * Support for [content references (or conrefs)](http://www.github.com/gjtorikian/markdown_conrefs). Conrefs are a way to write a sentance once, and refer to it in multiple locations. 
 * Documentation runs through [a test suite](https://github.com/gjtorikian/functional-docs) to ensure the validity of all links and images
+
+
+You may also want to check out [Panda](https://github.com/gjtorikian/panda-docs), which is a generic documentation generation system that shares many of the same concepts.
 
 ###### TOC
 
@@ -27,8 +30,6 @@ Changes in this project are plentiful, and heavily modify the original intention
 * [Linkify Everything](#linking)
 * [License](#license)
 * [Why the Name?](#name)
-
-You may also want to check out [Panda](https://github.com/gjtorikian/panda-docs), which is a generic documentation generation system that shares many of the same concepts.
 
 <a name="installation" />
 # Installation
@@ -66,52 +67,52 @@ However, there are a plentiful number of options to tweak and manage:
 
 <dl>
 
-<dd>-e STRING, --extension STRING</dd>
-<dt>Defines the extension of your source files. Don't include the `.` seperator.</dt>
+<dt>-e STRING, --extension STRING</dt>
+<dd>Defines the extension of your source files. Don't include the `.` seperator.</dd>
 
-<dd>-r, --recursive</dd>
-<dt>If this flag is set, Panino recursively walks the source file directory.</dt>
+<dt>-r, --recursive</dt>
+<dd>If this flag is set, Panino recursively walks the source file directory.</dd>
 
-<dd>-o PATH, --output PATH</dd>
-<dt>Defines the path where the rendered output is placed. </dt>
+<dt>-o PATH, --output PATH</dt>
+<dd>Defines the path where the rendered output is placed. </dd>
 
-<dd>-f CHOICE, --format CHOICE</dd>
-<dt>Defines the output format of your documentation. Can be:
+<dt>-f CHOICE, --format CHOICE</dt>
+<dd>Defines the output format of your documentation. Can be:
 
 * `html` for an HTML rendering
 * `ast` for an AST list
 * `js` for a Javascript file
-</dt>
+</dd>
 
-<dd>-i PATH, --index PATH</dd>
-<dt>If you're generating multiple files, you can choose to render an an index of landing page for those files. In general, this is a Markdown-formatted file whose content can be placed into your Jade templates.</dt>
+<dt>-i PATH, --index PATH</dt>
+<dd>If you're generating multiple files, you can choose to render an an index of landing page for those files. In general, this is a Markdown-formatted file whose content can be placed into your Jade templates.</dd>
 
-<dd>-t STRING, --title STRING</dd>
-<dt>The title of your documentation.</dt>
+<dt>-t STRING, --title STRING</dt>
+<dd>The title of your documentation.</dd>
 
-<dd>-l FMT, --link-format FMT</dd>
-<dt>A String that defines the format for your links in your files. By default, this is `{file}#L{line}].</dt>
+<dt>-l FMT, --link-format FMT</dt>
+<dd>A String that defines the format for your links in your files. By default, this is `{file}#L{line}].</dd>
 
-<dd>-view-source-label STRING</dd>
-<dt>The text to use for the "View source" link for each file, as defined by `-l`.</dt>
+<dt>-view-source-label STRING</dt>
+<dd>The text to use for the "View source" link for each file, as defined by `-l`.</dd>
 
-<dd>-g STRING, --global-object-type STRING</dd>
-<dt>Defines the type of language you're documenting. This is really only used when `-e` is `md` or `markdown`; in all other instances, the file extension of your source files are used to determine the language (_e.g._ `.js => JavaScript`).</dt>
+<dt>-g STRING, --global-object-type STRING</dt>
+<dd>Defines the type of language you're documenting. This is really only used when `-e` is `md` or `markdown`; in all other instances, the file extension of your source files are used to determine the language (_e.g._ `.js => JavaScript`).</dd>
 
-<dd>-j STRING, --doc-path STRING</dd>
-<dt>Defines a URL to point to for the global objects in your language. For more information, see the section called "Linkify Everything."</dt>
+<dt>-j STRING, --doc-path STRING</dt>
+<dd>Defines a URL to point to for the global objects in your language. For more information, see the section called "Linkify Everything."</dd>
 
-<dd>-a PATH, --additional-global-objects PATH</dd>
-<dt>The path to a JSON file containing a structure defining more relationships between global objects and documentation URLs. For more information, see the section called "Linkify Everything."</dt>
+<dt>-a PATH, --adtitional-global-objects PATH</dt>
+<dd>The path to a JSON file containing a structure defining more relationships between global objects and documentation URLs. For more information, see the section called "Linkify Everything."</dd>
 
-<dd>-s, --split</dd>
-<dt>If this flag is set, Panino splits the output for HTML builds into a separate file per class.</dt>
+<dt>-s, --split</dt>
+<dd>If this flag is set, Panino splits the output for HTML builds into a separate file per class.</dd>
 
-<dd>-k, --keepChildClasses</dd>
-<dt>If `-s` is set and files are split, setting this flag true keeps child classes on the same page as the parent; otherwise, they get their own files, too.</dt>
+<dt>-k, --keepChildClasses</dt>
+<dd>If `-s` is set and files are split, setting this flag true keeps child classes on the same page as the parent; otherwise, they get their own files, too.</dd>
 
-<dd>-p PATH, --parse-options PATH</dd>
-<dt>The path to a JSON file defining various parse options you want to use. For more information, see the section called "Syntax Parse Options."</dt>
+<dt>-p PATH, --parse-options PATH</dt>
+<dd>The path to a JSON file defining various parse options you want to use. For more information, see the section called "Syntax Parse Options."</dd>
 
 </dl>
 
