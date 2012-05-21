@@ -209,7 +209,7 @@ argument_descriptions
 
 argument_description
 
-  : '*-' NAME '{' names_alternation '}' TEXT %{
+  : '*-' NAME popen names_alternation pclose TEXT %{
        if (yy.useAsterisk) {
          console.error("FATAL: You can't use dashes for " + $2);
          process.exit(1);
@@ -241,15 +241,42 @@ return_descriptions
 
 return_description
 
-  :  '*+' '(' names_alternation ')' %{
-       $$ = { types: $3} 
+  :  '*+' popen names_alternation pclose TEXT %{
+       $$ = {
+          types: $3,
+          isArray: $3.isArray,
+          description: $5.replace(/(?:\s*\*\s*|\s+)/g, ' ').replace(/(^\s*|\s*$)/g, '')
+        };
      }%
-  |  '*+' '(' names_alternation '):' TEXT %{
-      $$ = {
-        types: $3,
-        isArray: $3.isArray,
-        description: $5.replace(/(?:\s*\*\s*|\s+)/g, ' ').replace(/(^\s*|\s*$)/g, '')
-      };
+  ;
+
+popen
+  : '(' %{
+       if (yy.useParenthesis === false || yy.useCurlies === true) {
+          console.error("FATAL: You can't use opening parenthesis for the argument: '" + $0 + "'");
+          process.exit(1);
+       }
+     }%
+  | '{' %{
+       if (yy.useParenthesis === true || yy.useCurlies === false) {
+          console.error("FATAL: You can't use opening curlies for the argument: '" + $0 + "'");
+          process.exit(1);
+       }
+     }%
+  ;
+
+pclose
+  : '):' %{
+       if (yy.useParenthesis === false || yy.useCurlies === true) {
+          console.error("FATAL: You can't use closing parenthesis for the argument: '" + $0 + "'");
+          process.exit(1);
+       }
+     }%
+  | '}' %{
+       if (yy.useParenthesis === true|| yy.useCurlies === false) {
+          console.error("FATAL: You can't use closing curlies for the argument: '" + $0 + "'");
+          process.exit(1);
+       }
      }%
   ;
 

@@ -1,6 +1,6 @@
 # Syntax
 
-This document describes the various syntax rules for code files, as well as Markdown files. Note that some of these options can be overwritten with the `-p` argument, and are noted as such.
+This document describes the various syntax rules for code files, as well as Markdown files. Note that some of these options can be overwritten with the `-p` argument, and are noted as such. Check out the `parseOptions.json` file for how these are being set.
 
 ## Comments
 
@@ -91,7 +91,9 @@ In these descriptions, `->` is being used to signify a "return." You can overrid
 
 ### Arguments
 
-**For Source and Markdown Files**: For all methods, functions, e.t.c., parentheses around the arguments are required even if no arguments are present. The syntax for arguments is as follows:
+**For Source and Markdown Files**: For all methods, functions, e.t.c., parentheses around the arguments are required even if no arguments are present. All arguments must also have descriptions.
+
+The syntax for arguments is as follows:
 
 #### Required Arguments
 
@@ -125,7 +127,7 @@ Two things are default here:
 
     String#evalJSON([sanitize = false]) -> Object | Array
 
-    Here goes markdown for String#evalJSON description.
+    Here is some markdown for String#evalJSON description.
      
 
     Event.findElement(event[, cssSelector]) -> Element | null
