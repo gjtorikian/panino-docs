@@ -44,6 +44,7 @@ notdef  (?!"class"|"mixin"|"new"|"=="|[$_a-zA-Z][$_a-zA-Z0-9.#]*\s*(?:$|[(=]|"->
 <def>"*"\s*?[\n][\s\S]*?/"**/" return 'TEXT'
 <def>\s+                    /* skip whitespaces */
 <def>")"\s*":"              this.begin('arg'); return '):'
+<def>"}"\s+                 this.begin('arg'); return '}'
 <def>"*"\s*"*"              return '**'
 <def>"*"\s*"-"              return '*-'
 <def>"*"\s*"+"              return '*+'
@@ -69,10 +70,10 @@ notdef  (?!"class"|"mixin"|"new"|"=="|[$_a-zA-Z][$_a-zA-Z0-9.#]*\s*(?:$|[(=]|"->
 <def>":"                    return ':'
 <def>"("                    return '('
 <def>")"                    return ')'
-<def>"["                    return '['
-<def>"]"                    return ']'
 <def>"{"                    return '{'
 <def>"}"                    return '}'
+<def>"["                    return '['
+<def>"]"                    return ']'
 <def>"|"                    return '|'
 <def>"`"                    return '`'
 <def>"class"                return 'CLASS'
@@ -208,22 +209,7 @@ argument_descriptions
 
 argument_description
 
-  : '*-' NAME '(' names_alternation ')' %{
-       if (yy.useAsterisk) {
-         console.error("FATAL: You can't use dashes for " + $2.name);
-         process.exit(1);
-       }
-       $$ = {name: $2, types: $4} 
-     }%
-  | '**' NAME '(' names_alternation ')' %{
-       if (yy.useDash) {
-         console.error("FATAL: You can't use asterisks for " + $2);
-         process.exit(1);
-       }
-       $$ = {name: $2, types: $4} 
-     }%
-
-  | '*-' NAME '(' names_alternation '):' TEXT %{
+  : '*-' NAME '{' names_alternation '}' TEXT %{
        if (yy.useAsterisk) {
          console.error("FATAL: You can't use dashes for " + $2);
          process.exit(1);
@@ -234,7 +220,7 @@ argument_description
         description: $6.replace(/(?:\s*\*\s*|\s+)/g, ' ').replace(/(^\s*|\s*$)/g, '')
       };
     }%
-  | '**' NAME '(' names_alternation '):' TEXT %{
+  | '**' NAME '{' names_alternation '}' TEXT %{
        if (yy.useDash) {
          console.error("FATAL: You can't use asterisks for " + $2);
          process.exit(1);

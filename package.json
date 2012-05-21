@@ -1,9 +1,9 @@
 {
   "name"            : "panino",
-  "version"         : "1.0.15",
+  "version"         : "1.0.16",
   "description"     : "API documentation generator with a strict grammar",
   "keywords"        : [
-                        "api", "doc", "apidoc", "documentation", "pdoc"
+                        "api", "doc", "apidoc", "documentation", "pdoc", "ndoc"
                       ],
   "homepage"        : "https://github.com/gjtorikian/panino",
 
