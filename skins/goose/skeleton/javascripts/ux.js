@@ -13,6 +13,14 @@ $(function () {
     else if (pathName.indexOf("nodejs_dev_guide") >= 0) $('li#nodejs_dev_guide').addClass("active");
     else if (pathName.indexOf("js_doc") >= 0) $('li#js_doc').addClass("active");
 
+    // sticky footer stuff
+    if ($('#mainContent').height() > $('#sidebarContainer').height()) {
+        $('#nonFooter').css( {
+            'min-height': '100%'
+        });
+        $('#nonFooter').height("auto");
+    }
+    
     function loadCallback(evt) {
         var form = document.getElementById("searchbox");
         var input = form.query;
@@ -86,7 +94,7 @@ $(document).ready(function () {
         var $classContent = $(this).closest('.classContent');
         
         $(this).scrollspy({
-            min: $classContent.position().top - 55,
+            min: $classContent.position().top - 35,
             max: $classContent.position().top + $classContent.height(),
             onEnter: function (element, position) {
                 var $pagination = $(element);

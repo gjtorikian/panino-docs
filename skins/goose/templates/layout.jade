@@ -1,32 +1,30 @@
 include ../../common_layout
 include lib
 
-!!! 5
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+mixin doctype
 
-mixin head(title + " - " + fileName)
+html(xmlns="http://www.w3.org/1999/xhtml")
+  head
+    mixin head
+  
+  body
+    mixin navBar
+    #nonFooter
+      #wrapper
+        .content
+          .row.centerpiece
+            .span3#sidebarContainer
+              #sidebar
+                include side_menu.jade
+            .span9#mainContent
+              #documentation
+                -if (isIndex)
+                  mixin markdown(indexContent)
+                -else
+                  mixin api()
 
-body
-
-  mixin topBar
-
-  mixin header
-
-  .container
-    .content
-      .row.container
-        .span5.offset4.sidebarContainer
-          #sidebar
-            include side_menu.jade
-        .span11
-          #content
-             mixin api()
-
-             div(id="disqus_thread")
-
+              div(id="disqus_thread")
+      .push
     mixin footer
-
-  mixin endingScripts
+  
+    mixin endingScripts

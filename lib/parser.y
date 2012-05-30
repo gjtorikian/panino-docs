@@ -6,6 +6,7 @@ exp     (?:[eE][-+]?[0-9]+)
 frac    (?:\.[\.0-9]+)
 name    (?:[$_a-zA-Z][$_a-zA-Z0-9]*)
 string  (?:[$_a-zA-Z][$_a-zA-Z0-9 ]*)
+json    (?:\{["':$_a-zA-Z0-9 \,]*\})
 notdef  (?!"class"|"mixin"|"new"|"=="|[$_a-zA-Z][$_a-zA-Z0-9.#]*\s*(?:$|[(=]|"->"|", "))
 %x INITIAL tags def arg comment
 
@@ -37,8 +38,10 @@ notdef  (?!"class"|"mixin"|"new"|"=="|[$_a-zA-Z][$_a-zA-Z0-9.#]*\s*(?:$|[(=]|"->
 <tags>"related to"          return 'RELATEDTO'
 <tags>"belongs to"          return 'BELONGSTO'
 <tags>"extension"           return 'EXTENSION'
+<tags>"metadata"            return 'METADATA'
 <tags>{name}                return 'NAME'
 <tags>{string}              return 'STRING'
+<tags>{json}                return 'JSON'
 
 <def>"**/"                  this.popState(); return '**/'
 <def>"*"\s*?[\n][\s\S]*?/"**/" return 'TEXT'
@@ -170,6 +173,7 @@ tag
   | RELATEDTO ':' name { $$ = {related_to: $3} }
   | BELONGSTO ':' name { $$ = {belongs_to: $3} }
   | EXTENSION { $$ = {extension: true} }
+  | METADATA ':' JSON { $$ = {metadata: $3} }
   ;
 
 

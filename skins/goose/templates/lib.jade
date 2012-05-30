@@ -14,7 +14,6 @@ mixin article(obj, parents)
 
   title = obj.id + (obj.type ? ' (' + obj.type + ')' : '')
   article.article(id=obj.path, data-title=title)
-
     if obj.type === 'section' || obj.type === 'namespace' || obj.type === 'class' || obj.type === 'mixin'
 
       if obj.description
@@ -157,11 +156,11 @@ mixin article(obj, parents)
 
               if obj.arguments
                 h4 Arguments
-                  != argumentTable(obj.arguments, ["argument-list", "zebra-striped", "bordered-table"])
+                != argumentTable(obj.arguments, ["argument-list", "table", "table-striped", "table-bordered"])
 
               if obj.retDesc
                 h4 Returns
-                  != returnTable(obj.retDesc, ["return-list", "zebra-striped", "bordered-table"])   
+                != returnTable(obj.retDesc, ["return-list", "table", "table-striped", "table-bordered"])
 
   //- children
   for child in obj.children.filter(function(x){return x.type === 'section'})
@@ -208,6 +207,7 @@ mixin article(obj, parents)
 mixin api()
   -pos = 0
   for obj in tree.children
+    -console.log(pos)
     .classContent
       .membersBackground
       div(class=' members pos#{pos}')
@@ -217,7 +217,7 @@ mixin api()
               span.name #{heading}
             
             -if (true || obj.filename.indexOf("index") < 0)
-              ul(class='tabs pos#{pos}', data-tabs='tabs')
+              ul(class='nav tabs pos#{pos}', data-tabs='tabs')
                 for selector, title in {'Events': ['event', 'events'], 'Constructors': ['constructor', 'constructors'], 'Class methods': ['class method', 'class_methods'], 'Class properties': ['class property', 'class_properties'], 'Instance methods': ['instance method', 'instance_methods'], 'Instance properties': ['instance property', 'instance_properties'], 'Constants': ['constant', 'constants']}
                   members = obj.children.filter(function(x){return x.type === selector[0]})
                     li(class="dropdown", data-dropdown="dropdown")
