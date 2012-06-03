@@ -31,11 +31,11 @@ Currently supported tags are:
   * `deprecated`: Identifies that the member is considered deprecated. The deprecation tag can also specify version, like this:
     * `deprecated: <from>`: The member is deprecated starting from version `from`
     * `deprecated: <from>..<out>`. The member is deprecated starting from version `from` and will be removed by version `out`
-
+    * `metadata`: This is arbitrary metadata that you can use in your templates. It's just a simple JSON object.
 For example:
 
 ```
-/** deprecated: 1.0..2.0, section: DOM, alias of: Element#descendantOf, chainable
+/** deprecated: 1.0..2.0, section: DOM, alias of: Element#descendantOf, chainable, metadata { "goingToRemove": "yes", testing": true}
  *  Element#childOf(@element, className) -> Element
  *
  *  ...
@@ -48,10 +48,17 @@ For example:
 ### Element#childOf(@element, className) -> Element
 - element (DOMElement): blah blah
 - className (String): blather blather
-(deprecated: 1.0..2.0, section: DOM, alias of: Element#descendantOf, chainable)
+(deprecated: 1.0..2.0, section: DOM, alias of: Element#descendantOf, chainable, metadata: { "goingToRemove": "yes", testing": true})
 ...
+```
 
-## Extended Backus–Naur Form ([EBNF](http://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_Form))
+For classes, it comes right after the decleration:
+
+```
+## SomeClass
+(deprecated: 1.0..2.0, metadata: { "youGetTheIdea": true})
+
+## Defining Members via [Extended Backus–Naur Form (EBNF)](http://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_Form)
 
 **For Source Files**: The lines _directly following_ tags are reserved for the EBNF description of the documented object. Typically, there's only one EBNF per documented object:
 
@@ -87,11 +94,11 @@ For multiple signatures, continue to add H3 headers:
 ### Element#writeAttribute(@element, attributes) -> Element
 ```
 
-In these descriptions, `->` is being used to signify a "return." You can override this to be `, ` by setting the parse options with `-p`.
+In these descriptions, `->` is being used to signify a "return." You can override this to become a comma (`,`) by setting the parse options with `-p`.
 
 ### Arguments
 
-**For Source and Markdown Files**: For all methods, functions, e.t.c., parentheses around the arguments are required even if no arguments are present. All arguments must also have descriptions.
+**For Source and Markdown Files**: For all methods, functions, e.t.c., parentheses around the arguments are required; if there are no arguments, empty parentheses (`()`) are required. 
 
 The syntax for arguments is as follows:
 
@@ -112,14 +119,14 @@ A default value may be indicated using the equal sign (`=`).
     String#evalJSON([sanitize = false]) -> Object | Array
 
    
-Arguments can be described below the EBNF description using the following syntax:
+All arguments must also have descriptions. Arguments can be described below the member's EBNF description using the following syntax:
     
     - argumentName (acceptedType | additionalAcceptedType | ...): description.
 
-Two things are default here:
+Two things are required here:
 
 * A `-` is required when listing each argument's description. With `-p`, you can specify this as being `*`.
-* The description is defined as existing within a `( ):` notation. **For Markdown Files**, you can specify this as being `{ }`.
+* The description is defined as existing within a `( ):` notation. Using `-p`, you can specify this as being `{ }`.
     
 ### Supported EBNF Types
 

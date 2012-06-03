@@ -207,9 +207,9 @@ mixin article(obj, parents)
 mixin api()
   -pos = 0
   for obj in tree.children
-    -console.log(pos)
     .classContent
       .membersBackground
+
       div(class=' members pos#{pos}')
         div(class=' membersContent pos#{pos}')
             h1.memberHeader
@@ -230,7 +230,7 @@ mixin api()
                             li(data-id='#{m.id}', class='memberLink')
                               mixin link(m, [], true)
        -pos++       
-      mixin article(obj, [])
+       mixin article(obj, [])
 
 
 mixin short_description_list(collection)

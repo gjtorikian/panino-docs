@@ -16,7 +16,7 @@ Changes in this project are plentiful, and heavily modify the original intention
 * Allowing to specify a URL to retrieve Javascript documentation about global objects (like `Array` or `String`)
 * Support for [content references (or conrefs)](http://www.github.com/gjtorikian/markdown_conrefs). Conrefs are a way to write a sentance once, and refer to it in multiple locations. 
 * Documentation runs through [a test suite](https://github.com/gjtorikian/functional-docs) to ensure the validity of all links and images
-
+* Support for arbitrary metadata on classes and members
 
 You may also want to check out [Panda](https://github.com/gjtorikian/panda-docs), which is a generic documentation generation system that shares many of the same concepts.
 

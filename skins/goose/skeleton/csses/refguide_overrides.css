@@ -674,11 +674,6 @@ li.signature {
     color: #999999;
 }
 
-.eventListenerStart:after
-{
-    content: ".on(";
-}
-
 .eventMember {
     padding-right: 0px;
 }
