@@ -1,5 +1,5 @@
-- var methodSection = constructorSection = propertySection = eventSection = false;
-    
+- var methodSection, constructorSection, propertySection, eventSection;
+
 -function renameMemberTitle(title, count)
   if title.indexOf("ethods") >= 0
     span Functions (#{count})
@@ -15,6 +15,9 @@ mixin article(obj, parents)
   title = obj.id + (obj.type ? ' (' + obj.type + ')' : '')
   article.article(id=obj.path, data-title=title)
     if obj.type === 'section' || obj.type === 'namespace' || obj.type === 'class' || obj.type === 'mixin'
+
+      if obj.stability
+        mixin markdown(">" + obj.stability)
 
       if obj.description
         .section.description
@@ -229,7 +232,8 @@ mixin api()
                           for m in members
                             li(data-id='#{m.id}', class='memberLink')
                               mixin link(m, [], true)
-       -pos++       
+       -pos++
+       -methodSection = constructorSection = propertySection = eventSection = false;
        mixin article(obj, [])
 
 

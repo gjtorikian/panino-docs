@@ -107,27 +107,7 @@ blockquote p{
 .small_win #topSection .dropdown {
     margin-right: 40%;
 }
-.navbar .brand {
-    margin-left: 0px;
-}
-.brand {
-    background: transparent url(../images/node_logo.png) no-repeat 13px 5px;
-    width: 105px;
-    outline: none;
-    height: 40px;
-    padding: 0 10px !important; 
-    border: none;
-}
-.brand.dropdown-toggle:after {
-    content: none;
-    display: block;
-    height: 40px;
-    border: none;
-}
-.open .brand,
-.brand:hover{
-  background: rgba(255, 255, 255, 0.05) url(../images/node_logo.png) no-repeat 13px 5px !important;
-}
+
 
 .headerTitle {
     position: relative;

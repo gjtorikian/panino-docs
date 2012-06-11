@@ -122,6 +122,28 @@ world
     }
     x.description = desq.trim();
 
+	var stabilityList = ["0 - Deprecated", "1 - Experimental", "2 - Unstable", "3 - Stable", 
+						 "4 - API Frozen", "5 - Locked" ];
+	var stabilityPrefix = "> Stability: ";
+	if (x.description.indexOf(stabilityPrefix) == 0) {
+		x.description = x.description.substr(stabilityPrefix.length);
+		var firstLine = x.description.replace(/\n\n[\s\S]*$/, '\n');
+		var stability = stabilityList.filter(function(s) {
+			if (s == firstLine.trim())
+				return true;
+			return false;
+		});
+		if (stability.length <= 0) {
+			console.error("In " + x.id + " you tried to provide a stability of " + firstLine + 
+					      ", but I didn't recognize it!");
+			process.exit(1);
+		}
+		else {
+			x.stability = stability[0];
+			x.description = x.description.substr(firstLine.length);
+		}
+	}
+
     // short description lasts until the first empty line
     x.short_description = x.description.replace(/\n\n[\s\S]*$/, '\n');
     
@@ -173,9 +195,17 @@ tag
   | RELATEDTO ':' name { $$ = {related_to: $3} }
   | BELONGSTO ':' name { $$ = {belongs_to: $3} }
   | EXTENSION { $$ = {extension: true} }
-  | METADATA ':' JSON { $$ = {metadata: $3} }
+  | METADATA ':' JSON { $$ = {metadata: JSON.parse($3)} }
   ;
 
+stability_list
+  : '0 - Deprecated'
+  | '1 - Experimental'
+  | '2 - Unstable'
+  | '3 - Stable'
+  | '4 - API Frozen'
+  | '5 - Locked'
+  ;
 
 panino_and_includes_and_fires
 
@@ -197,6 +227,7 @@ panino
   | namespace
   | class
   | mixin
+  | '>' stability_list { $$ = {stability: $2} }
   | signatures
   | signatures argument_descriptions { $$.arguments = $2 }
   | signatures return_descriptions { $$.retDesc = $2 }
