@@ -74,6 +74,9 @@ However, there are a plentiful number of options to tweak and manage:
 <dt>-o PATH, --output PATH</dt>
 <dd>Defines the path where the rendered output is placed. </dd>
 
+<dt>-u PATH, --outputAssets PATH</dt>
+<dd>Defines the path where the resources are placed. </dd>
+
 <dt>-f CHOICE, --format CHOICE</dt>
 <dd>Defines the output format of your documentation. Can be:
   <ul>
