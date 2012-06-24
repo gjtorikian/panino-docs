@@ -122,27 +122,27 @@ world
     }
     x.description = desq.trim();
 
-	var stabilityList = ["0 - Deprecated", "1 - Experimental", "2 - Unstable", "3 - Stable", 
-						 "4 - API Frozen", "5 - Locked" ];
-	var stabilityPrefix = "> Stability: ";
-	if (x.description.indexOf(stabilityPrefix) == 0) {
-		x.description = x.description.substr(stabilityPrefix.length);
-		var firstLine = x.description.replace(/\n\n[\s\S]*$/, '\n');
-		var stability = stabilityList.filter(function(s) {
-			if (s == firstLine.trim())
-				return true;
-			return false;
-		});
-		if (stability.length <= 0) {
-			console.error("In " + x.id + " you tried to provide a stability of " + firstLine + 
-					      ", but I didn't recognize it!");
-			process.exit(1);
-		}
-		else {
-			x.stability = stability[0];
-			x.description = x.description.substr(firstLine.length);
-		}
-	}
+  var stabilityList = ["0 - Deprecated", "1 - Experimental", "2 - Unstable", "3 - Stable", 
+             "4 - API Frozen", "5 - Locked" ];
+  var stabilityPrefix = "> Stability: ";
+  if (x.description.indexOf(stabilityPrefix) == 0) {
+    x.description = x.description.substr(stabilityPrefix.length);
+    var firstLine = x.description.replace(/\n\n[\s\S]*$/, '\n');
+    var stability = stabilityList.filter(function(s) {
+      if (s == firstLine.trim())
+        return true;
+      return false;
+    });
+    if (stability.length <= 0) {
+      console.error("In " + x.id + " you tried to provide a stability of " + firstLine + 
+                ", but I didn't recognize it!");
+      process.exit(1);
+    }
+    else {
+      x.stability = stability[0];
+      x.description = x.description.substr(firstLine.length);
+    }
+  }
 
     // short description lasts until the first empty line
     x.short_description = x.description.replace(/\n\n[\s\S]*$/, '\n');
@@ -232,7 +232,7 @@ panino
   | signatures argument_descriptions %{ 
     if ($1.signatures) {
       $1.signatures.forEach(function (signature) {
-        if (signature.args) {
+        if (signature && signature.args) {
           var types = $2.types;
           var c = -1;
           var cArgPos = 0;
@@ -243,9 +243,17 @@ panino
               if (c < 0)
                 c = a == 0 ? a : a - 1;
 
-                signature.callback.args[cArgPos].type = $2[a].types;
-                signature.callback.args[cArgPos].optional = $2[a].optional;
-                signature.callback.args[cArgPos].ellipsis = $2[a].ellipsis;
+                if (signature.callback) {
+                  signature.callback.args[cArgPos].type = $2[a].types;
+                  signature.callback.args[cArgPos].optional = $2[a].optional;
+                  signature.callback.args[cArgPos].ellipsis = $2[a].ellipsis;
+                }
+                else {
+                  console.error("Error: No callback found here. Your argument list might be incorrect.");
+                  console.error(signature);
+                  console.error($1);
+                  process.exit(1);
+                }
             }
           }
         }
@@ -257,7 +265,7 @@ panino
   | signatures argument_descriptions return_descriptions %{ 
     if ($1.signatures) {
       $1.signatures.forEach(function (signature) {
-        if (signature.args) {
+        if (signature && signature.args) {
           var types = $2.types;
           var c = -1;
           var cArgPos = 0;
@@ -268,16 +276,24 @@ panino
               if (c < 0)
                 c = a == 0 ? a : a - 1;
 
-                signature.callback.args[cArgPos].type = $2[a].types;
-                signature.callback.args[cArgPos].optional = $2[a].optional;
-                signature.callback.args[cArgPos].ellipsis = $2[a].ellipsis;
+                if (signature.callback) {
+                  signature.callback.args[cArgPos].type = $2[a].types;
+                  signature.callback.args[cArgPos].optional = $2[a].optional;
+                  signature.callback.args[cArgPos].ellipsis = $2[a].ellipsis;
+                }
+                else {
+                  console.error("Error: No callback found here. Your argument list might be incorrect.");
+                  console.error(signature);
+                  console.error($1);
+                  process.exit(1);
+                }
             }
           }
         }
       });
     }
     $$.arguments = $2;
-	  $$.retDesc = $3;
+    $$.retDesc = $3;
   }% 
   ;
 
@@ -512,7 +528,7 @@ constant
 signatures
   : signature %{
     $$ = $1;
-    if ($1.args) {
+    if ($1 && $1.args) {
       for (var a = 0; a < $1.args.length; a++) {
         if ($1.args[a].callback) {
           $1.callback = $1.args[a];
@@ -526,7 +542,7 @@ signatures
     delete $$.returns;
   }%
   | signatures signature %{
-    if ($1.args) {
+    if ($1 && $1.args) {
       for (var a = 0; a < $1.args.length; a++) {
         if ($1.args[a].callback) {
           $1.callback = $1.args[a];
