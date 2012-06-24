@@ -240,20 +240,18 @@ panino
             if (signature.args[a])
               signature.args[a].types = $2[a].types;
             else { // we're looking at args for a callback
-              if (c < 0)
-                c = a == 0 ? a : a - 1;
-
-                if (signature.callback) {
+              if (signature.callback) {
                   signature.callback.args[cArgPos].type = $2[a].types;
                   signature.callback.args[cArgPos].optional = $2[a].optional;
                   signature.callback.args[cArgPos].ellipsis = $2[a].ellipsis;
-                }
-                else {
+                  cArgPos++;
+              }
+              else {
                   console.error("Error: No callback found here. Your argument list might be incorrect.");
                   console.error(signature);
                   console.error($1);
                   process.exit(1);
-                }
+              } 
             }
           }
         }
@@ -273,20 +271,18 @@ panino
             if (signature.args[a])
               signature.args[a].types = $2[a].types;
             else { // we're looking at args for a callback
-              if (c < 0)
-                c = a == 0 ? a : a - 1;
-
-                if (signature.callback) {
+              if (signature.callback) {
                   signature.callback.args[cArgPos].type = $2[a].types;
                   signature.callback.args[cArgPos].optional = $2[a].optional;
                   signature.callback.args[cArgPos].ellipsis = $2[a].ellipsis;
-                }
-                else {
+                  cArgPos++;
+              }
+              else {
                   console.error("Error: No callback found here. Your argument list might be incorrect.");
                   console.error(signature);
                   console.error($1);
                   process.exit(1);
-                }
+              } 
             }
           }
         }
