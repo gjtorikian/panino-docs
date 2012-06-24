@@ -5,6 +5,7 @@ playground*
 tests/prototype-doc
 tests/features-doc
 src/
+nodejs_ref_guide/
 .c9revisions
 .c9save
 .settings.xml

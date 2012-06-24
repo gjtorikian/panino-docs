@@ -229,9 +229,56 @@ panino
   | mixin
   | '>' stability_list { $$ = {stability: $2} }
   | signatures
-  | signatures argument_descriptions { $$.arguments = $2 }
+  | signatures argument_descriptions %{ 
+    if ($1.signatures) {
+      $1.signatures.forEach(function (signature) {
+        if (signature.args) {
+          var types = $2.types;
+          var c = -1;
+          var cArgPos = 0;
+          for (var a = 0; a < $2.length; a++) {
+            if (signature.args[a])
+              signature.args[a].types = $2[a].types;
+            else { // we're looking at args for a callback
+              if (c < 0)
+                c = a == 0 ? a : a - 1;
+
+                signature.callback.args[cArgPos].type = $2[a].types;
+                signature.callback.args[cArgPos].optional = $2[a].optional;
+                signature.callback.args[cArgPos].ellipsis = $2[a].ellipsis;
+            }
+          }
+        }
+      });
+    }
+    $$.arguments = $2;
+  }%
   | signatures return_descriptions { $$.retDesc = $2 }
-  | signatures argument_descriptions return_descriptions { $$.arguments = $2; $$.retDesc = $3 }
+  | signatures argument_descriptions return_descriptions %{ 
+    if ($1.signatures) {
+      $1.signatures.forEach(function (signature) {
+        if (signature.args) {
+          var types = $2.types;
+          var c = -1;
+          var cArgPos = 0;
+          for (var a = 0; a < $2.length; a++) {
+            if (signature.args[a])
+              signature.args[a].types = $2[a].types;
+            else { // we're looking at args for a callback
+              if (c < 0)
+                c = a == 0 ? a : a - 1;
+
+                signature.callback.args[cArgPos].type = $2[a].types;
+                signature.callback.args[cArgPos].optional = $2[a].optional;
+                signature.callback.args[cArgPos].ellipsis = $2[a].ellipsis;
+            }
+          }
+        }
+      });
+    }
+    $$.arguments = $2;
+	  $$.retDesc = $3;
+  }% 
   ;
 
 
@@ -465,13 +512,31 @@ constant
 signatures
   : signature %{
     $$ = $1;
-    $$.signatures = [{args: $1.args, returns: $1.returns}];
+    if ($1.args) {
+      for (var a = 0; a < $1.args.length; a++) {
+        if ($1.args[a].callback) {
+          $1.callback = $1.args[a];
+          break;
+        }
+      }
+    }
+    $$.signatures = [{args: $1.args, callback: $1.callback, returns: $1.returns}];
     delete $$.args;
+    delete $$.callback;
     delete $$.returns;
   }%
   | signatures signature %{
-    $$.signatures.push({args: $2.args, returns: $2.returns});
+    if ($1.args) {
+      for (var a = 0; a < $1.args.length; a++) {
+        if ($1.args[a].callback) {
+          $1.callback = $1.args[a];
+          break;
+        }
+      }
+    }
+    $$.signatures = [{args: $1.args, callback: $1.callback, returns: $1.returns}];
     delete $$.args;
+    delete $$.callback;
     delete $$.returns;
   }%
   ;
@@ -584,7 +649,7 @@ arg
   : NAME { $$ = {name: $1} }
 
   /* callback */
-  | NAME '(' args ')' { $$ = {name: $1, args: $3} }
+  | NAME '(' args ')' { $$ = {name: $1, args: $3, callback: true}; }
 
   /* with default value */
   | arg '=' name_or_value { $$.default_value = $3 }
