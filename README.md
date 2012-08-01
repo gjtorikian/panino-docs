@@ -110,6 +110,9 @@ However, there are a plentiful number of options to tweak and manage:
 <dt>-s, --split</dt>
 <dd>If this flag is set, Panino splits the output for HTML builds into a separate file per class.</dd>
 
+<dt>-d, --disableTests</dt>
+<dd>Lets you disable the testing suite. **NOT RECOMMENDED!**</dd>
+
 <dt>-p PATH, --parse-options PATH</dt>
 <dd>The path to a JSON file defining various parse options you want to use. For more information, see the section called "<a href="#syntax">Syntax Parse Options</a>."</dd>
 
