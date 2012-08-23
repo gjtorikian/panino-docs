@@ -1,0 +1,74 @@
+<!DOCTYPE html><!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]--><html xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Node.js Manual TEST - </title><meta name="generator" content="panino-doc-build"><meta name="author" content="Garen J. Torikian"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="./assets/csses/bootstrap.min.css"><link rel="stylesheet" href="./assets/csses/prettify.css"><link rel="stylesheet" href="./assets/csses/refguide_overrides.css"><link href="./assets/images/favicon.ico" rel="icon" type="image/x-icon"><link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/vs.min.css"><script src="./assets/javascripts/jquery.js"></script><script src="./assets/javascripts/clicker.js"></script><script src="./assets/javascripts/jquery.collapse.js"></script><script src="./assets/javascripts/jquery.cookie.js"></script><script src="./assets/javascripts/bootstrap-dropdown.js"></script><script src="./assets/javascripts/jquery-scrollspy.js"></script><script src="./assets/javascripts/prettify-extension.js"></script></head><body><div class="navbar navbar-fixed-top"><div class="navbar-inner"><div id="topSection" class="container"><ul class="nav topLinks"></ul><form id="searchbox" action="" class="navbar-search pull-right"> <input name="query" type="text" placeholder="Search the API" title="Search across all the documentation" class="search-query span3"></form></div></div></div><div id="nonFooter"><div id="wrapper"><div class="content"><div class="row centerpiece"><div id="sidebarContainer" class="span3"><div id="sidebar"><!--include _menu.jade--></div></div><div id="mainContent" class="span9"><div id="documentation"><div class="classContent"><div class="membersBackground"></div><div class=" members pos0"><div class=" membersContent pos0"><h1 class="memberHeader"><span class="name">timer</span></h1><ul data-tabs="tabs" class="nav tabs pos0"><li data-dropdown="dropdown" class="dropdown"><ul class="dropdown-menu"></ul></li><li data-dropdown="dropdown" class="dropdown"><ul class="dropdown-menu"></ul></li><li data-dropdown="dropdown" class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Functions (3)</span><b class="caret"></b></a><ul class="dropdown-menu"><li data-id="timer.clearInterval" class="memberLink"><a href="#timer.clearInterval" class="" title="timer.clearInterval (class method)" data-id="timer.clearInterval">clearInterval</a></li><li data-id="timer.clearTimeout" class="memberLink"><a href="#timer.clearTimeout" class="" title="timer.clearTimeout (class method)" data-id="timer.clearTimeout">clearTimeout</a></li><li data-id="timer.setInterval" class="memberLink"><a href="#timer.setInterval" class="" title="timer.setInterval (class method)" data-id="timer.setInterval">setInterval</a></li></ul></li><li data-dropdown="dropdown" class="dropdown"><ul class="dropdown-menu"></ul></li><li data-dropdown="dropdown" class="dropdown"><ul class="dropdown-menu"></ul></li><li data-dropdown="dropdown" class="dropdown"><ul class="dropdown-menu"></ul></li><li data-dropdown="dropdown" class="dropdown"><ul class="dropdown-menu"></ul></li></ul></div></div><article id="timer" data-title="timer (class)" class="article"><blockquote>
+<p>5 - Locked</p>
+</blockquote>
+<div class="section description"><div class="memberContent"><p>The timer functions are useful for scheduling functions to run after a defined
+amount of time. All of the objects in this class are global; the method calls
+don&#39;t need to be prepended with an object name.</p>
+<p>It&#39;s important to note that your callback probably <em>won&#39;t</em> be called in exactly
+<code>delay</code> milliseconds. Node.js makes no guarantees about the exact timing of when
+the callback is fired, nor of the ordering things will fire in. The callback is
+called as close as possible to the time specified.</p>
+<p>The difference between <code>`setInterval()</code> and <code>setTimeout()</code> is simple:
+<code>setTimeout()</code> executes a function after a certain period of time, while
+<code>setInterval()</code> executes a function, then after a set period of time, executes
+the function again, then waits again, and executes again. This continues until
+<code>clearInterval()</code> is called.</p>
+<h4>Example: The Wrong Way to use Timers</h4>
+<pre><code>    <span class="keyword">for</span> (var <span class="built_in">i</span> = <span class="number">0</span>; <span class="built_in">i</span> &lt; <span class="number">5</span>; <span class="built_in">i</span>++) {
+       setTimeout(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+         console.<span class="built_in">log</span>(<span class="built_in">i</span>);
+       }, <span class="built_in">i</span>);
+     }</code></pre>
+<p>The code above prints the number <code>5</code> five times. This happens because the loop
+fills up before the first <code>setTimeout()</code> is called.</p>
+<h4>Example: The Right Way to use Timers</h4>
+<p>The solution to the above problem is to create a
+[closure](<a href="http://stackoverflow.com/questions/1801957/what-exactly-does-closure-r">http://stackoverflow.com/questions/1801957/what-exactly-does-closure-r</a>
+efer-to-in-javascript) so that the current value of <code>i</code> is stored:</p>
+<pre><code> <span class="keyword">for</span> (var <span class="built_in">i</span> = <span class="number">0</span>; <span class="built_in">i</span> &lt; <span class="number">5</span>; <span class="built_in">i</span>++) {
+   (
+       <span class="keyword">function</span>(<span class="built_in">i</span>) {
+           setTimeout(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+               console.<span class="built_in">log</span>(<span class="built_in">i</span>);
+            }, <span class="built_in">i</span>);
+        }
+    )(<span class="built_in">i</span>)};</code></pre>
+</div></div></article><h3 class="sectionHeader">Methods</h3><article id="timer.clearInterval" data-title="timer.clearInterval (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="timer.clearInterval" class="member-name methodClicker"><span class="sigClassName">timer.</span><span class="sigMemberName">clearInterval</span></span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_timer.clearInterval" class="ellipsis_description"><p>Stops a interval from triggering.</p>
+</div><div id="short_timer.clearInterval" class="short_description hiddenSpan"><p>Stops a interval from triggering.</p>
+</div><h3 id="timer.clearInterval" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">intervalId</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Number.html" class="" title="Number" data-id="Number">Number</a></td><td class="argDescription ">Required. The id of the interval</td></tr></table></div></div></div></div></article><article id="timer.clearTimeout" data-title="timer.clearTimeout (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="timer.clearTimeout" class="member-name methodClicker"><span class="sigClassName">timer.</span><span class="sigMemberName">clearTimeout</span></span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_timer.clearTimeout" class="ellipsis_description"><p>Prevents a timeout from triggering.</p>
+</div><div id="short_timer.clearTimeout" class="short_description hiddenSpan"><p>Prevents a timeout from triggering.</p>
+</div><h3 id="timer.clearTimeout" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">timeoutId</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Number.html" class="" title="Number" data-id="Number">Number</a></td><td class="argDescription ">Required. The id of the timeout</td></tr></table></div></div></div></div></article><article id="timer.setInterval" data-title="timer.setInterval (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="timer.setInterval" class="member-name methodClicker"><span class="sigClassName">timer.</span><span class="sigMemberName">setInterval</span></span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_timer.setInterval" class="ellipsis_description"><p>This schedules the repeated execution of a callback function after a defined
+delay. It returns an <code>intervalId</code> for possible use with <code>clearInterval()</code>.
+Optionally, you can also pass arguments to the callback.</p>
+</div><div id="short_timer.setInterval" class="short_description hiddenSpan"><p>This schedules the repeated execution of a callback function after a defined
+delay. It returns an <code>intervalId</code> for possible use with <code>clearInterval()</code>.
+Optionally, you can also pass arguments to the callback.</p>
+<h4>Example</h4>
+<pre><code>    <span class="reserved">var</span> interval_count = <span class="number">0</span>;
+
+    <span class="regexp">//</span> Set an interval <span class="keyword">for</span> one second, twice;
+    <span class="regexp">//</span> <span class="literal">on</span> the third second, <span class="keyword">break</span> out
+    setInterval(<span class="reserved">function</span>(param) {
+      ++interval_count;
+
+      <span class="keyword">if</span> (interval_count == <span class="number">3</span>)
+        clearInterval(<span class="keyword">this</span>);
+    }, <span class="number">1000</span>, <span class="string">'test param'</span>);</code></pre>
+<p>/**
+ timer.setTimeout(callback(), delay [, arg...])</p>
+<ul>
+<li>callback {Function}   The callback function to execute</li>
+<li>delay {Number}   The delay (in milliseconds) before executing the callback</li>
+<li>arg {Object}  Any optional arguments to pass the to callback</li>
+</ul>
+<p>This function schedules the execution of a one-time callback function after a
+defined delay, It returns a <code>timeoutId</code>, which can be used later with
+<code>clearTimeout()</code>. Optionally, you can also pass arguments to the callback.</p>
+</div><h3 id="timer.setInterval" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">callback</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Function.html" class="" title="Function" data-id="Function">Function</a></td><td class="argDescription ">Required. The callback function to execute</td></tr><tr class="argumentRow "><td class="argName ">delay</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Number.html" class="" title="Number" data-id="Number">Number</a></td><td class="argDescription ">Required. The delay (in milliseconds) before executing the callback</td></tr><tr class="argumentRow "><td class="argName ">arg</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Object.html" class="" title="Object" data-id="Object">Object</a></td><td class="argDescription ">Required. Any optional arguments to pass the to callback</td></tr></table></div></div></div></div></article></div></div><div id="disqus_thread"></div></div></div></div></div><div class="push"></div></div><div id="footer"><div class="footerInner"><div class="footer-text">&#169; 2012:</div></div></div><!-- scripts concatenated and minified via ant build script--><script defer src="./assets/javascripts/plugins.js"></script>
+<script defer src="./assets/javascripts/prettify.js"></script>
+<script defer src="./assets/javascripts/prettify-extension.js"></script>
+<script defer src="./assets/javascripts/ux.js"></script><!-- end scripts--><!--[if lt IE 7]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script><script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})
+</script><![endif]--></body></html>

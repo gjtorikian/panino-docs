@@ -1,5 +1,5 @@
 .DS_Store
-node_modules
+node_modules/
 out/
 playground*
 tests/prototype-doc
@@ -13,3 +13,4 @@ nodeParseOptions.json
 .settings.xml
 .settings
 out.txt
+.cache/

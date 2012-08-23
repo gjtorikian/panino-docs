@@ -25,21 +25,21 @@ mixin head
 
   meta(name="viewport", content="width=device-width,initial-scale=1")
 
-  link(rel="stylesheet", href="#{dirPrefix}resources/csses/bootstrap.min.css")
-  link(rel="stylesheet", href="#{dirPrefix}resources/csses/prettify.css")
-  link(rel="stylesheet", href="#{dirPrefix}resources/csses/refguide_overrides.css")
+  link(rel="stylesheet", href="./assets/csses/bootstrap.min.css")
+  link(rel="stylesheet", href="./assets/csses/prettify.css")
+  link(rel="stylesheet", href="./assets/csses/refguide_overrides.css")
 
-  link(href="#{dirPrefix}resources/images/favicon.ico", rel="icon", type="image/x-icon")
+  link(href="./assets/images/favicon.ico", rel="icon", type="image/x-icon")
 
   link(type="text/css", rel="stylesheet", href="http://yandex.st/highlightjs/6.1/styles/vs.min.css")
 
-  script(src="#{dirPrefix}resources/javascripts/jquery.js")
-  script(src="#{dirPrefix}resources/javascripts/clicker.js")
-  script(src="#{dirPrefix}resources/javascripts/jquery.collapse.js")
-  script(src="#{dirPrefix}resources/javascripts/jquery.cookie.js")
-  script(src="#{dirPrefix}resources/javascripts/bootstrap-dropdown.js")
-  script(src="#{dirPrefix}resources/javascripts/jquery-scrollspy.js")
-  script(src="#{dirPrefix}resources/javascripts/prettify-extension.js")
+  script(src="./assets/javascripts/jquery.js")
+  script(src="./assets/javascripts/clicker.js")
+  script(src="./assets/javascripts/jquery.collapse.js")
+  script(src="./assets/javascripts/jquery.cookie.js")
+  script(src="./assets/javascripts/bootstrap-dropdown.js")
+  script(src="./assets/javascripts/jquery-scrollspy.js")
+  script(src="./assets/javascripts/prettify-extension.js")
   
 mixin navBar
   div.navbar.navbar-fixed-top
@@ -60,10 +60,10 @@ mixin footer
 
 mixin endingScripts
   // scripts concatenated and minified via ant build script
-  <script defer src="#{dirPrefix}resources/javascripts/plugins.js"></script>
-  <script defer src="#{dirPrefix}resources/javascripts/prettify.js"></script>
-  <script defer src="#{dirPrefix}resources/javascripts/prettify-extension.js"></script>
-  <script defer src="#{dirPrefix}resources/javascripts/ux.js"></script>
+  <script defer src="./assets/javascripts/plugins.js"></script>
+  <script defer src="./assets/javascripts/prettify.js"></script>
+  <script defer src="./assets/javascripts/prettify-extension.js"></script>
+  <script defer src="./assets/javascripts/ux.js"></script>
 
   //-<script defer src="tree.js"></script>
   // end scripts

@@ -1,0 +1,576 @@
+<!DOCTYPE html><!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]--><html xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Node.js Manual TEST - </title><meta name="generator" content="panino-doc-build"><meta name="author" content="Garen J. Torikian"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="./assets/csses/bootstrap.min.css"><link rel="stylesheet" href="./assets/csses/prettify.css"><link rel="stylesheet" href="./assets/csses/refguide_overrides.css"><link href="./assets/images/favicon.ico" rel="icon" type="image/x-icon"><link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/vs.min.css"><script src="./assets/javascripts/jquery.js"></script><script src="./assets/javascripts/clicker.js"></script><script src="./assets/javascripts/jquery.collapse.js"></script><script src="./assets/javascripts/jquery.cookie.js"></script><script src="./assets/javascripts/bootstrap-dropdown.js"></script><script src="./assets/javascripts/jquery-scrollspy.js"></script><script src="./assets/javascripts/prettify-extension.js"></script></head><body><div class="navbar navbar-fixed-top"><div class="navbar-inner"><div id="topSection" class="container"><ul class="nav topLinks"></ul><form id="searchbox" action="" class="navbar-search pull-right"> <input name="query" type="text" placeholder="Search the API" title="Search across all the documentation" class="search-query span3"></form></div></div></div><div id="nonFooter"><div id="wrapper"><div class="content"><div class="row centerpiece"><div id="sidebarContainer" class="span3"><div id="sidebar"><!--include _menu.jade--></div></div><div id="mainContent" class="span9"><div id="documentation"><div class="classContent"><div class="membersBackground"></div><div class=" members pos0"><div class=" membersContent pos0"><h1 class="memberHeader"><span class="name">tls</span></h1><ul data-tabs="tabs" class="nav tabs pos0"><li data-dropdown="dropdown" class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Events (1)</span><b class="caret"></b></a><ul class="dropdown-menu"><li data-id="tls@secureConnection" class="memberLink"><a href="#tls.secureConnection" class="" title="tls@secureConnection (event)" data-id="tls@secureConnection">secureConnection</a></li></ul></li><li data-dropdown="dropdown" class="dropdown"><ul class="dropdown-menu"></ul></li><li data-dropdown="dropdown" class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Functions (3)</span><b class="caret"></b></a><ul class="dropdown-menu"><li data-id="tls.connect" class="memberLink"><a href="#tls.connect" class="" title="tls.connect (class method)" data-id="tls.connect">connect</a></li><li data-id="tls.createSecurePair" class="memberLink"><a href="#tls.createSecurePair" class="" title="tls.createSecurePair (class method)" data-id="tls.createSecurePair">createSecurePair</a></li><li data-id="tls.createServer" class="memberLink"><a href="#tls.createServer" class="" title="tls.createServer (class method)" data-id="tls.createServer">undefined</a></li></ul></li><li data-dropdown="dropdown" class="dropdown"><ul class="dropdown-menu"></ul></li><li data-dropdown="dropdown" class="dropdown"><ul class="dropdown-menu"></ul></li><li data-dropdown="dropdown" class="dropdown"><ul class="dropdown-menu"></ul></li><li data-dropdown="dropdown" class="dropdown"><ul class="dropdown-menu"></ul></li></ul></div></div><article id="tls" data-title="tls (class)" class="article"><blockquote>
+<p>3 - Stable</p>
+</blockquote>
+<div class="section description"><div class="memberContent"><p>The <code>tls</code> module uses OpenSSL to provide both the Transport Layer Security and
+the Secure Socket Layer; in other words, it provides encrypted stream
+communications. To access this module, add <code>require(&#39;tls&#39;)</code> in your code.</p>
+<p>TLS/SSL is a public/private key infrastructure. Each client and each server must
+have a private key. A private key is created in your terminal like this:</p>
+<pre><code>openssl genrsa -<span class="keyword">out</span> ryans-key<span class="preprocessor">.pem</span> <span class="number">1024</span></code></pre>
+<p>where <code>ryans-key.pm</code> is the name of your file. All servers (and some clients)
+need to have a certificate. Certificates are public keys signed by a Certificate
+Authority— or, they are self-signed. The first step to getting a certificate is
+to create a &quot;Certificate Signing Request&quot; (CSR) file. This is done using:</p>
+<pre><code>openssl req -new -key ryans-key<span class="preprocessor">.pem</span> -<span class="keyword">out</span> ryans-csr<span class="preprocessor">.pem</span></code></pre>
+<p>To create a self-signed certificate with the CSR, enter this:</p>
+<pre><code>openssl x509 -req -<span class="keyword">in</span> ryans-csr<span class="preprocessor">.pem</span> -signkey ryans-key<span class="preprocessor">.pem</span> -<span class="keyword">out</span></code></pre>
+<p>ryans-cert.pem</p>
+<p>Alternatively, you can send the CSR to a Certificate Authority for signing.</p>
+<p>(Documentation on creating a CA are pending; for now, interested users should
+just look at
+<a href="https://github.com/joyent/node/blob/master/test/fixtures/keys/Makefile"><code>test/fixtures/keys/Makefile</code></a> in the Node.js source code.)</p>
+<p>To create a .pfx or .p12, do this:</p>
+<pre><code>openssl pkcs12 -export -<span class="keyword">in</span> agent5-cert<span class="preprocessor">.pem</span> -inkey agent5-key<span class="preprocessor">.pem</span> \
+    -certfile ca-cert<span class="preprocessor">.pem</span> -<span class="keyword">out</span> agent5<span class="preprocessor">.pfx</span></code></pre>
+<ul>
+<li><code>in</code>: The certificate</li>
+<li><code>inkey</code>: The private key</li>
+<li><code>certfile</code>: All the CA certs concatenated in one file, like this:
+<code>cat ca1-cert.pem ca2-cert.pem &gt; ca-cert.pem</code></li>
+</ul>
+<h4>Using NPN and SNI</h4>
+<p>NPN (Next Protocol Negotiation) and SNI (Server Name Indication) are TLS
+handshake extensions provided with this module.</p>
+<p>NPN is to use one TLS server for multiple protocols (HTTP, SPDY).
+SNI is to use one TLS server for multiple hostnames with different SSL
+certificates.</p>
+<h5>Client-initiated Renegotiation Attack Mitigation</h5>
+<p>The TLS protocol lets the client renegotiate certain aspects of the TLS session.
+Unfortunately, session renegotiation requires a disproportional amount of
+server-side resources, which makes it a potential vector for denial-of-service
+attacks.</p>
+<p>To mitigate this, renegotiations are limited to three times every 10 minutes. An
+error is emitted on the <a href="#tls.CleartextStream" class="link-short" title="tls.CleartextStream (class)" data-id="tls.CleartextStream">CleartextStream</a> instance when
+the threshold is exceeded. The limits are configurable:</p>
+<ul>
+<li><p><code>tls.CLIENT_RENEG_LIMIT</code>: the renegotiation limit; default is 3.</p>
+</li>
+<li><p><code>tls.CLIENT_RENEG_WINDOW</code>: the renegotiation window in seconds; default is</p>
+<pre><code>                       <span class="attribute">10 minutes.</code></pre>
+</li>
+</ul>
+<p>Don&#39;t change the defaults unless you know what you are doing.</p>
+<p>To test your server, connect to it with <code>openssl s_client -connect address:port</code>
+and tap <code>R&lt;CR&gt;</code> (that&#39;s the letter <code>R</code> followed by a carriage return) a few
+times.</p>
+</div></div><div class="section subclasses"><!-- h3 <Subclasses></Subclasses><div class="memberContent"><ul class="method-list"><li><a href="#tls.Server" class="" title="tls.Server (class)" data-id="tls.Server">tls.Server</a></li><li><a href="#tls.SecurePair" class="" title="tls.SecurePair (class)" data-id="tls.SecurePair">tls.SecurePair</a></li><li><a href="#tls.CleartextStream" class="" title="tls.CleartextStream (class)" data-id="tls.CleartextStream">tls.CleartextStream</a></li></ul></div>--></div></article><article id="tls.CleartextStream" data-title="tls.CleartextStream (class)" class="article"><div class="section description"><div class="memberContent"><p>This is a stream on top of the encrypted stream that makes it possible to
+read/write an encrypted data as a cleartext data.</p>
+<p>This instance implements the duplex <a href="stream.html#stream" class="link-short" title="stream (class)" data-id="stream">undefined</a> interfaces. It has all
+the common stream methods and events.</p>
+</div></div><div class="section superclass"><!-- h3 <Superclass></Superclass><div class="memberContent"><a href="#tls" class="" title="tls (class)" data-id="tls">tls</a></div>--></div></article><h3 class="sectionHeader">Events</h3><article id="tls.CleartextStream.event.clientError" data-title="tls.CleartextStream@clientError (event)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span class="eventObjName">tls.CleartextStream</span><span class="eventListenerStart">.on("</span><span id="tls.CleartextStream.clientError" class="member-name eventMember methodClicker">clientError</span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.CleartextStream@clientError" class="ellipsis_description"><p>If a client connection emits an &#39;error&#39; event before a secure connection is
+established, this event is triggered, and the error is passed along.</p>
+</div><div id="short_tls.CleartextStream@clientError" class="short_description hiddenSpan"><p>If a client connection emits an &#39;error&#39; event before a secure connection is
+established, this event is triggered, and the error is passed along.</p>
+</div><h3 id="tls.CleartextStream@clientError" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">exception</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Error.html" class="" title="Error" data-id="Error">Error</a></td><td class="argDescription ">Required. The standard Error object</td></tr></table></div></div></div></div></article><article id="tls.CleartextStream.event.secureConnect" data-title="tls.CleartextStream@secureConnect (event)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span class="eventObjName">tls.CleartextStream</span><span class="eventListenerStart">.on("</span><span id="tls.CleartextStream.secureConnect" class="member-name eventMember methodClicker">secureConnect</span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.CleartextStream@secureConnect" class="ellipsis_description"><p>This event is emitted after a new connection has been successfully handshaked.
+The listener will be called no matter if the server&#39;s certificate was authorized
+or not.</p>
+</div><div id="short_tls.CleartextStream@secureConnect" class="short_description hiddenSpan"><p>This event is emitted after a new connection has been successfully handshaked.
+The listener will be called no matter if the server&#39;s certificate was authorized
+or not.</p>
+<p>It is up to the user to test <code>cleartextStream.authorized</code> to see if the server
+certificate was signed by one of the specified CAs. If
+<code>cleartextStream.authorized === false</code>, then the error can be found in
+<code>cleartextStream.authorizationError</code>. Also if NPN was used, you can check
+<code>cleartextStream.npnProtocol</code> for the negotiated protocol.</p>
+</div><h3 id="tls.CleartextStream@secureConnect" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><p>It is up to the user to test <code>cleartextStream.authorized</code> to see if the server
+certificate was signed by one of the specified CAs. If
+<code>cleartextStream.authorized === false</code>, then the error can be found in
+<code>cleartextStream.authorizationError</code>. Also if NPN was used, you can check
+<code>cleartextStream.npnProtocol</code> for the negotiated protocol.</p>
+</div></div></div></div></article><h3 class="sectionHeader">Methods</h3><article id="tls.CleartextStream.address" data-title="tls.CleartextStream.address (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.CleartextStream.address" class="member-name methodClicker"><span class="sigClassName">tls.CleartextStream.</span><span class="sigMemberName">address</span></span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Object.html" class="returnType " title="Object" data-id="Object">Object</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.CleartextStream.address" class="ellipsis_description"><p>Returns the bound address, the address family name, and port of the
+underlying socket as reported by the operating system.</p>
+</div><div id="short_tls.CleartextStream.address" class="short_description hiddenSpan"><p>Returns the bound address, the address family name, and port of the
+underlying socket as reported by the operating system.</p>
+</div><h3 id="tls.CleartextStream.address" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"></div></div></div></div></article><article id="tls.CleartextStream.connections" data-title="tls.CleartextStream.connections (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.CleartextStream.connections" class="member-name methodClicker"><span class="sigClassName">tls.CleartextStream.</span><span class="sigMemberName">connections</span></span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Object.html" class="returnType " title="Object" data-id="Object">Object</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.CleartextStream.connections" class="ellipsis_description"><p>Returns the bound address and port of the underlying socket as reported by the
+operating system. The object has two properties, <em>e.g.</em>
+<code>{&quot;address&quot;:&quot;192.168.57.1&quot;, &quot;port&quot;:62053}</code></p>
+</div><div id="short_tls.CleartextStream.connections" class="short_description hiddenSpan"><p>Returns the bound address and port of the underlying socket as reported by the
+operating system. The object has two properties, <em>e.g.</em>
+<code>{&quot;address&quot;:&quot;192.168.57.1&quot;, &quot;port&quot;:62053}</code></p>
+</div><h3 id="tls.CleartextStream.connections" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"></div></div></div></div></article><article id="tls.CleartextStream.getCipher" data-title="tls.CleartextStream.getCipher (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.CleartextStream.getCipher" class="member-name methodClicker"><span class="sigClassName">tls.CleartextStream.</span><span class="sigMemberName">getCipher</span></span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Object.html" class="returnType " title="Object" data-id="Object">Object</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.CleartextStream.getCipher" class="ellipsis_description"><p>Returns an object representing the cipher name and the SSL/TLS
+protocol version of the current connection. The format is:</p>
+</div><div id="short_tls.CleartextStream.getCipher" class="short_description hiddenSpan"><p>Returns an object representing the cipher name and the SSL/TLS
+protocol version of the current connection. The format is:</p>
+<p>  { name: &#39;AES256-SHA&#39;, version: &#39;TLSv1/SSLv3&#39; }</p>
+<p>See SSL_CIPHER_get_name() and SSL_CIPHER_get_version() in
+<a href="http://www.openssl.org/docs/ssl/ssl.html#DEALING_WITH_CIPHERS">http://www.openssl.org/docs/ssl/ssl.html#DEALING_WITH_CIPHERS</a> for more
+information.</p>
+</div><h3 id="tls.CleartextStream.getCipher" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><p>  { name: &#39;AES256-SHA&#39;, version: &#39;TLSv1/SSLv3&#39; }</p>
+<p>See SSL_CIPHER_get_name() and SSL_CIPHER_get_version() in
+<a href="http://www.openssl.org/docs/ssl/ssl.html#DEALING_WITH_CIPHERS">http://www.openssl.org/docs/ssl/ssl.html#DEALING_WITH_CIPHERS</a> for more
+information.</p>
+</div></div></div></div></article><article id="tls.CleartextStream.getPeerCertificate" data-title="tls.CleartextStream.getPeerCertificate (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.CleartextStream.getPeerCertificate" class="member-name methodClicker"><span class="sigClassName">tls.CleartextStream.</span><span class="sigMemberName">getPeerCertificate</span></span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Object.html" class="returnType " title="Object" data-id="Object">Object</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.CleartextStream.getPeerCertificate" class="ellipsis_description"><p>Returns an object representing the peer&#39;s certificate. The returned object has
+some properties corresponding to the field of the certificate.</p>
+</div><div id="short_tls.CleartextStream.getPeerCertificate" class="short_description hiddenSpan"><p>Returns an object representing the peer&#39;s certificate. The returned object has
+some properties corresponding to the field of the certificate.</p>
+<p>If the peer does not provide a certificate, it returns <code>null</code> or an empty
+object.</p>
+<h4>Example</h4>
+<pre><code>{ subject:
+   { C: <span class="comment">'UK',</span>
+     ST: <span class="comment">'Acknack Ltd',</span>
+     L: <span class="comment">'Rhys Jones',</span>
+     O: <span class="comment">'node.js',</span>
+     OU: <span class="comment">'Test TLS Certificate',</span>
+     CN: <span class="comment">'localhost' },</span>
+  issuer:
+   { C: <span class="comment">'UK',</span>
+     ST: <span class="comment">'Acknack Ltd',</span>
+     L: <span class="comment">'Rhys Jones',</span>
+     O: <span class="comment">'node.js',</span>
+     OU: <span class="comment">'Test TLS Certificate',</span>
+     CN: <span class="comment">'localhost' },</span>
+     valid_from: <span class="comment">'Nov 11 09:52:22 2009 GMT',</span>
+     valid_to: <span class="comment">'Nov  6 09:52:22 2029 GMT',</span>
+    fingerprint:</code></pre>
+<p>&#39;2A:7A:C2:DD:E5:F9:CC:53:72:35:99:7A:02:5A:71:38:52:EC:8A:DF&#39; }</p>
+</div><h3 id="tls.CleartextStream.getPeerCertificate" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><p>If the peer does not provide a certificate, it returns <code>null</code> or an empty
+object.</p>
+</div></div></div></div></article><h3 class="sectionHeader">Properties</h3><article id="tls.CleartextStream.authorizationError" data-title="tls.CleartextStream.authorizationError (class property)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.CleartextStream.authorizationError" class="member-name methodClicker"><span class="sigClassName">tls.CleartextStream.</span><span class="sigMemberName">authorizationError</span></span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Error.html" class="returnType " title="Error" data-id="Error">Error</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.CleartextStream.authorizationError" class="ellipsis_description"><p>The reason why the peer&#39;s certificate has not been verified. This property
+becomes available only when <code>cleartextStream.authorized === false</code>.</p>
+</div><div id="short_tls.CleartextStream.authorizationError" class="short_description hiddenSpan"><p>The reason why the peer&#39;s certificate has not been verified. This property
+becomes available only when <code>cleartextStream.authorized === false</code>.</p>
+</div><h3 id="tls.CleartextStream.authorizationError" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"></div></div></div></div></article><article id="tls.CleartextStream.authorized" data-title="tls.CleartextStream.authorized (class property)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.CleartextStream.authorized" class="member-name methodClicker"><span class="sigClassName">tls.CleartextStream.</span><span class="sigMemberName">authorized</span></span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html" class="returnType " title="Boolean" data-id="Boolean">Boolean</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.CleartextStream.authorized" class="ellipsis_description"><p>If <code>true</code>, the peer certificate was signed by one of the specified CAs;
+otherwise, <code>false</code>.</p>
+</div><div id="short_tls.CleartextStream.authorized" class="short_description hiddenSpan"><p>If <code>true</code>, the peer certificate was signed by one of the specified CAs;
+otherwise, <code>false</code>.</p>
+</div><h3 id="tls.CleartextStream.authorized" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"></div></div></div></div></article><article id="tls.CleartextStream.remoteAddress" data-title="tls.CleartextStream.remoteAddress (class property)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.CleartextStream.remoteAddress" class="member-name methodClicker"><span class="sigClassName">tls.CleartextStream.</span><span class="sigMemberName">remoteAddress</span></span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html" class="returnType " title="String" data-id="String">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.CleartextStream.remoteAddress" class="ellipsis_description"><p>The string representation of the remote IP address. For example,
+<code>&#39;74.125.127.100&#39;</code> or <code>&#39;2001:4860:a005::68&#39;</code>.</p>
+</div><div id="short_tls.CleartextStream.remoteAddress" class="short_description hiddenSpan"><p>The string representation of the remote IP address. For example,
+<code>&#39;74.125.127.100&#39;</code> or <code>&#39;2001:4860:a005::68&#39;</code>.</p>
+</div><h3 id="tls.CleartextStream.remoteAddress" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"></div></div></div></div></article><article id="tls.CleartextStream.remotePort" data-title="tls.CleartextStream.remotePort (class property)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.CleartextStream.remotePort" class="member-name methodClicker"><span class="sigClassName">tls.CleartextStream.</span><span class="sigMemberName">remotePort</span></span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Number.html" class="returnType " title="Number" data-id="Number">Number</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.CleartextStream.remotePort" class="ellipsis_description"><p>The numeric representation of the remote port. For example, <code>443</code>.</p>
+</div><div id="short_tls.CleartextStream.remotePort" class="short_description hiddenSpan"><p>The numeric representation of the remote port. For example, <code>443</code>.</p>
+</div><h3 id="tls.CleartextStream.remotePort" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"></div></div></div></div></article><article id="tls.SecurePair" data-title="tls.SecurePair (class)" class="article"><div class="section description"><div class="memberContent"><p>Returned by <a href="#tls.createSecurePair" class="link-short" title="tls.createSecurePair (class method)" data-id="tls.createSecurePair">createSecurePair</a>.</p>
+</div></div><div class="section superclass"><!-- h3 <Superclass></Superclass><div class="memberContent"><a href="#tls" class="" title="tls (class)" data-id="tls">tls</a></div>--></div></article><article id="tls.SecurePair.event.secure" data-title="tls.SecurePair@secure (event)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span class="eventObjName">tls.SecurePair</span><span class="eventListenerStart">.on("</span><span id="tls.SecurePair.secure" class="member-name eventMember methodClicker">secure</span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.SecurePair@secure" class="ellipsis_description"><p>The event is emitted from the SecurePair once the pair has successfully
+established a secure connection.</p>
+</div><div id="short_tls.SecurePair@secure" class="short_description hiddenSpan"><p>The event is emitted from the SecurePair once the pair has successfully
+established a secure connection.</p>
+<p>Similar to the checking for the server <code>&#39;secureConnection&#39;</code> event,
+<a href="#tls.CleartextStream.authorized" class="link-short" title="tls.CleartextStream.authorized (class property)" data-id="tls.CleartextStream.authorized">authorized</a> should be
+checked to confirm whether the certificate used properly authorized.</p>
+</div><h3 id="tls.SecurePair@secure" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><p>Similar to the checking for the server <code>&#39;secureConnection&#39;</code> event,
+<a href="#tls.CleartextStream.authorized" class="link-short" title="tls.CleartextStream.authorized (class property)" data-id="tls.CleartextStream.authorized">authorized</a> should be
+checked to confirm whether the certificate used properly authorized.</p>
+</div></div></div></div></article><article id="tls.Server" data-title="tls.Server (class)" class="article"><div class="section description"><div class="memberContent"><p>This class is a subclass of <a href="net.html#net.Server" class="link-short" title="net.Server (class)" data-id="net.Server">undefined</a> and has the same methods
+as it. However, instead of accepting just raw TCP connections, it also accepts
+encrypted connections using TLS or SSL.</p>
+</div></div><div class="section superclass"><!-- h3 <Superclass></Superclass><div class="memberContent"><a href="#tls" class="" title="tls (class)" data-id="tls">tls</a></div>--></div></article><article id="tls.Server.addContext" data-title="tls.Server.addContext (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.Server.addContext" class="member-name methodClicker"><span class="sigClassName">tls.Server.</span><span class="sigMemberName">addContext</span></span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.Server.addContext" class="ellipsis_description"><p>Add secure context that will be used if client request&#39;s SNI hostname is
+matching passed <code>hostname</code> (wildcards can be used). <code>credentials</code> can contain
+<code>key</code>, <code>cert</code>, and <code>ca</code>.</p>
+</div><div id="short_tls.Server.addContext" class="short_description hiddenSpan"><p>Add secure context that will be used if client request&#39;s SNI hostname is
+matching passed <code>hostname</code> (wildcards can be used). <code>credentials</code> can contain
+<code>key</code>, <code>cert</code>, and <code>ca</code>.</p>
+<h4>Example</h4>
+<pre><code>var serverResults = [];
+
+var <span class="built_in">server</span> = tls.createServer(serverOptions, <span class="keyword">function</span>(c) {
+  serverResults.push(c.servername);
+});
+
+<span class="built_in">server</span>.addContext(<span class="comment">'a.example.com', SNIContexts['a.example.com']);</span>
+<span class="built_in">server</span>.addContext(<span class="comment">'*.test.com', SNIContexts['asterisk.test.com']);</span>
+
+<span class="built_in">server</span>.listen(<span class="number">1337</span>);</code></pre>
+</div><h3 id="tls.Server.addContext" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">hostname</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/String.html" class="" title="String" data-id="String">String</a></td><td class="argDescription ">Required. The hostname to match</td></tr><tr class="argumentRow "><td class="argName ">credentials</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Object.html" class="" title="Object" data-id="Object">Object</a></td><td class="argDescription ">Required. The credentials to use</td></tr></table></div></div></div></div></article><article id="tls.Server.address" data-title="tls.Server.address (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.Server.address" class="member-name methodClicker"><span class="sigClassName">tls.Server.</span><span class="sigMemberName">address</span></span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/String.html" class="returnType " title="String" data-id="String">String</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.Server.address" class="ellipsis_description"><p>Returns the bound address and port of the server as reported by the operating
+system.</p>
+</div><div id="short_tls.Server.address" class="short_description hiddenSpan"><p>Returns the bound address and port of the server as reported by the operating
+system.</p>
+<p>For more information, see <a href="net.html#net.Server.address" class="link-short" title="net.Server.address (class method)" data-id="net.Server.address">address</a>.</p>
+</div><h3 id="tls.Server.address" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><p>For more information, see <a href="net.html#net.Server.address" class="link-short" title="net.Server.address (class method)" data-id="net.Server.address">address</a>.</p>
+</div></div></div></div></article><article id="tls.Server.close" data-title="tls.Server.close (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.Server.close" class="member-name methodClicker"><span class="sigClassName">tls.Server.</span><span class="sigMemberName">close</span></span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.Server.close" class="ellipsis_description"><p>Stops the server from accepting new connections. This function is asynchronous,
+and the server is finally closed when it emits a <code>&#39;close&#39;</code> event.</p>
+</div><div id="short_tls.Server.close" class="short_description hiddenSpan"><p>Stops the server from accepting new connections. This function is asynchronous,
+and the server is finally closed when it emits a <code>&#39;close&#39;</code> event.</p>
+</div><h3 id="tls.Server.close" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"></div></div></div></div></article><article id="tls.Server.listen" data-title="tls.Server.listen (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.Server.listen" class="member-name methodClicker"><span class="sigClassName">tls.Server.</span><span class="sigMemberName">listen</span></span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.Server.listen" class="ellipsis_description"><p>Begin accepting connections on the specified <code>port</code> and <code>host</code>.  If the <code>host</code>
+is omitted, the server will accept connections directed to any IPv4 address
+(<code>INADDR_ANY</code>).</p>
+</div><div id="short_tls.Server.listen" class="short_description hiddenSpan"><p>Begin accepting connections on the specified <code>port</code> and <code>host</code>.  If the <code>host</code>
+is omitted, the server will accept connections directed to any IPv4 address
+(<code>INADDR_ANY</code>).</p>
+<p>For more information, see <a href="net.html#net.Server" class="link-short" title="net.Server (class)" data-id="net.Server">undefined</a>.</p>
+</div><h3 id="tls.Server.listen" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><p>For more information, see <a href="net.html#net.Server" class="link-short" title="net.Server (class)" data-id="net.Server">undefined</a>.</p>
+<h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">port</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Number.html" class="" title="Number" data-id="Number">Number</a></td><td class="argDescription ">Required. The specific port to listen to</td></tr><tr class="argumentRow "><td class="argName ">host</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/String.html" class="" title="String" data-id="String">String</a></td><td class="argDescription ">Required. An optional host to listen to</td></tr><tr class="argumentRow "><td class="argName ">callback</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Function.html" class="" title="Function" data-id="Function">Function</a></td><td class="argDescription ">Required. An optional callback to execute when the server has been bound</td></tr></table></div></div></div></div></article><article id="tls.Server.pause" data-title="tls.Server.pause (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.Server.pause" class="member-name methodClicker"><span class="sigClassName">tls.Server.</span><span class="sigMemberName">pause</span></span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.Server.pause" class="ellipsis_description"><p>Stop accepting connections for the given number of milliseconds. This could be
+useful for throttling new connections against DoS attacks or other
+oversubscriptions.</p>
+</div><div id="short_tls.Server.pause" class="short_description hiddenSpan"><p>Stop accepting connections for the given number of milliseconds. This could be
+useful for throttling new connections against DoS attacks or other
+oversubscriptions.</p>
+</div><h3 id="tls.Server.pause" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">msecs</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Number.html" class="" title="Number" data-id="Number">Number</a></td><td class="argDescription ">Required. The number of milliseconds to pause for</td></tr></table></div></div></div></div></article><article id="tls.Server.connections" data-title="tls.Server.connections (class property)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.Server.connections" class="member-name methodClicker"><span class="sigClassName">tls.Server.</span><span class="sigMemberName">connections</span></span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Number.html" class="returnType " title="Number" data-id="Number">Number</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.Server.connections" class="ellipsis_description"><p>The number of concurrent connections on the server.</p>
+</div><div id="short_tls.Server.connections" class="short_description hiddenSpan"><p>The number of concurrent connections on the server.</p>
+</div><h3 id="tls.Server.connections" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"></div></div></div></div></article><article id="tls.Server.maxConnections" data-title="tls.Server.maxConnections (class property)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.Server.maxConnections" class="member-name methodClicker"><span class="sigClassName">tls.Server.</span><span class="sigMemberName">maxConnections</span></span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Number.html" class="returnType " title="Number" data-id="Number">Number</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.Server.maxConnections" class="ellipsis_description"><p>Set this property to reject connections when the server&#39;s connection count gets
+high.</p>
+</div><div id="short_tls.Server.maxConnections" class="short_description hiddenSpan"><p>Set this property to reject connections when the server&#39;s connection count gets
+high.</p>
+</div><h3 id="tls.Server.maxConnections" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"></div></div></div></div></article><article id="tls.event.secureConnection" data-title="tls@secureConnection (event)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span class="eventObjName">tls</span><span class="eventListenerStart">.on("</span><span id="tls.secureConnection" class="member-name eventMember methodClicker">secureConnection</span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls@secureConnection" class="ellipsis_description"><p>This event is emitted after a new connection has been successfully handshaked.</p>
+</div><div id="short_tls@secureConnection" class="short_description hiddenSpan"><p>This event is emitted after a new connection has been successfully handshaked.</p>
+<p>If <a href="#tls.CleartextStream.authorized" class="link-short" title="tls.CleartextStream.authorized (class property)" data-id="tls.CleartextStream.authorized">authorized</a> is
+<code>false</code>, then <a href="#tls.CleartextStream.authorizationError" class="link-short" title="tls.CleartextStream.authorizationError (class property)" data-id="tls.CleartextStream.authorizationError">authorizationError</a> is set to describe how the authorization
+failed. Depending on the settings of the TLS server, your unauthorized
+connections may still be accepted.</p>
+<p><code>cleartextStream.npnProtocol</code> is a string containing the selected NPN protocol.
+<code>cleartextStream.servername</code> is a string containing the servername requested
+with SNI.</p>
+</div><h3 id="tls@secureConnection" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><p>If <a href="#tls.CleartextStream.authorized" class="link-short" title="tls.CleartextStream.authorized (class property)" data-id="tls.CleartextStream.authorized">authorized</a> is
+<code>false</code>, then <a href="#tls.CleartextStream.authorizationError" class="link-short" title="tls.CleartextStream.authorizationError (class property)" data-id="tls.CleartextStream.authorizationError">authorizationError</a> is set to describe how the authorization
+failed. Depending on the settings of the TLS server, your unauthorized
+connections may still be accepted.</p>
+<p><code>cleartextStream.npnProtocol</code> is a string containing the selected NPN protocol.
+<code>cleartextStream.servername</code> is a string containing the servername requested
+with SNI.</p>
+<h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">cleartextStream</td><td class="argType" "><a href="#tls.CleartextStream" class="" title="tls.CleartextStream (class)" data-id="tls.CleartextStream">tls.CleartextStream</a></td><td class="argDescription ">Required. A object containing the NPN and SNI string protocols</td></tr></table></div></div></div></div></article><article id="tls.connect" data-title="tls.connect (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.connect" class="member-name methodClicker"><span class="sigClassName">tls.</span><span class="sigMemberName">connect</span></span></li></ul><ul class="metaInfo"></ul></li><li class="signature"><ul><li class="signature-call"><span id="tls.connect" class="member-name methodClicker"><span class="sigClassName">tls.</span><span class="sigMemberName">connect</span></span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="#tls.CleartextStream" class="returnType " title="tls.CleartextStream (class)" data-id="tls.CleartextStream">tls.CleartextStream</a></li></ul></li></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.connect" class="ellipsis_description"><p>Creates a new client connection to the given <code>port</code> and <code>host</code>. This function
+returns a <a href="#tls.CleartextStream" class="link-short" title="tls.CleartextStream (class)" data-id="tls.CleartextStream">undefined</a> object.</p>
+</div><div id="short_tls.connect" class="short_description hiddenSpan"><p>Creates a new client connection to the given <code>port</code> and <code>host</code>. This function
+returns a <a href="#tls.CleartextStream" class="link-short" title="tls.CleartextStream (class)" data-id="tls.CleartextStream">undefined</a> object.</p>
+<p><code>options</code> should be an object that specifies the following values:</p>
+<ul>
+<li><p><code>host</code>: Host the client should connect to</p>
+</li>
+<li><p><code>port</code>: Port the client should connect to</p>
+</li>
+<li><p><code>socket</code>: Establish secure connection on a given socket rather than
+creating a new socket. If this option is specified, <code>host</code> and <code>port</code>
+are ignored.</p>
+</li>
+<li><p><code>pfx</code>: A string or <code>Buffer</code> containing the private key, certificate and
+CA certs of the server in PFX or PKCS12 format.</p>
+</li>
+<li><p><code>key</code>: A string or <code>Buffer</code> containing the private key of the client in aPEM
+format. The default is <code>null</code>.</p>
+</li>
+<li><p><code>passphrase</code>: A string of a passphrase for the private key. The default is
+<code>null</code>.</p>
+</li>
+<li><p><code>cert</code>: A string or <code>Buffer</code> containing the certificate key of the client in
+a PEM format; in other words, the public x509 certificate to use. The default is
+<code>null</code>.</p>
+</li>
+<li><p><code>ca</code>: An array of strings or <code>Buffer</code>s of trusted certificates. These are
+used to authorize connections. If this is omitted, several &quot;well-known root&quot; CAs
+will be used, like VeriSign.</p>
+</li>
+<li><p><code>rejectUnauthorized</code>: If <code>true</code>, the server certificate is verified against
+the list of supplied CAs. An <code>&#39;error&#39;</code> event is emitted if verification
+fails. Default to  <code>false</code>.</p>
+</li>
+</ul>
+<ul>
+<li><p><code>NPNProtocols</code>: An array of strings or a  <code>Buffer</code> containing supported NPN
+protocols.</p>
+<pre><code><span class="string">`Buffer`</span> should have the following <span class="keyword">format</span>: <span class="string">`0x05hello0x05world`</span>, where</code></pre>
+<p>the preceding byte indicates the following protocol name&#39;s length. Passing an
+array is usually much simpler: <code>[&#39;hello&#39;, &#39;world&#39;]</code>.</p>
+<pre><code><span class="title">Protocols</span> should be ordered by their priority.</code></pre>
+</li>
+<li><p><code>servername</code>: The server name for the SNI (Server Name Indication) TLS
+extension.</p>
+</li>
+</ul>
+<p><code>secureConnectionListener</code> automatically sets a listener for the
+<a href="#tls.event.secureConnection"><code>secureConnection</code></a> event.</p>
+<h4>Example: Connecting to an echo server on port 8000:</h4>
+<pre><code><span class="title">var</span> tls = require('tls');
+<span class="title">var</span> fs = require('fs');
+
+<span class="title">var</span> options = {
+  // <span class="type">These</span> are necessary only <span class="keyword">if</span> using the client certificate authentication
+  key: fs.readFileSync('client-key.pem'),
+  cert: fs.readFileSync('client-cert.pem'),
+
+  // <span class="type">This</span> is necessary only <span class="keyword">if</span> the server uses the self-signed certificate
+  ca: [ fs.readFileSync('server-cert.pem') ]
+};
+
+<span class="title">var</span> cleartextStream = tls.connect(<span class="number">8000</span>, options, function() {
+  console.log('client connected',
+              cleartextStream.authorized ?<span class="string"> 'authorized'</span> :<span class="string"> 'unauthorized'</span>);
+  process.stdin.pipe(cleartextStream);
+  process.stdin.resume();
+});
+<span class="title">cleartextStream</span>.setEncoding('utf8');
+<span class="title">cleartextStream</span>.on('<span class="typedef"><span class="keyword">data</span>', function<span class="container">(<span class="title">data</span>)</span> <span class="container">{
+  <span class="title">console</span>.<span class="title">log</span>(<span class="title">data</span>);
+}</span>);</span>
+<span class="title">cleartextStream</span>.on('end', function() {
+  server.close();
+});</code></pre>
+<p>Or, with pfx:</p>
+<pre><code><span class="title">var</span> tls = require('tls');
+<span class="title">var</span> fs = require('fs');
+
+<span class="title">var</span> options = {
+  pfx: fs.readFileSync('client.pfx')
+};
+
+<span class="title">var</span> cleartextStream = tls.connect(<span class="number">8000</span>, options, function() {
+  console.log('client connected',
+              cleartextStream.authorized ?<span class="string"> 'authorized'</span> :<span class="string"> 'unauthorized'</span>);
+  process.stdin.pipe(cleartextStream);
+  process.stdin.resume();
+});
+<span class="title">cleartextStream</span>.setEncoding('utf8');
+<span class="title">cleartextStream</span>.on('<span class="typedef"><span class="keyword">data</span>', function<span class="container">(<span class="title">data</span>)</span> <span class="container">{
+  <span class="title">console</span>.<span class="title">log</span>(<span class="title">data</span>);
+}</span>);</span>
+<span class="title">cleartextStream</span>.on('end', function() {
+  server.close();
+});</code></pre>
+</div><h3 id="tls.connect" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><p><code>options</code> should be an object that specifies the following values:</p>
+<ul>
+<li><p><code>host</code>: Host the client should connect to</p>
+</li>
+<li><p><code>port</code>: Port the client should connect to</p>
+</li>
+<li><p><code>socket</code>: Establish secure connection on a given socket rather than
+creating a new socket. If this option is specified, <code>host</code> and <code>port</code>
+are ignored.</p>
+</li>
+<li><p><code>pfx</code>: A string or <code>Buffer</code> containing the private key, certificate and
+CA certs of the server in PFX or PKCS12 format.</p>
+</li>
+<li><p><code>key</code>: A string or <code>Buffer</code> containing the private key of the client in aPEM
+format. The default is <code>null</code>.</p>
+</li>
+<li><p><code>passphrase</code>: A string of a passphrase for the private key. The default is
+<code>null</code>.</p>
+</li>
+<li><p><code>cert</code>: A string or <code>Buffer</code> containing the certificate key of the client in
+a PEM format; in other words, the public x509 certificate to use. The default is
+<code>null</code>.</p>
+</li>
+<li><p><code>ca</code>: An array of strings or <code>Buffer</code>s of trusted certificates. These are
+used to authorize connections. If this is omitted, several &quot;well-known root&quot; CAs
+will be used, like VeriSign.</p>
+</li>
+<li><p><code>rejectUnauthorized</code>: If <code>true</code>, the server certificate is verified against
+the list of supplied CAs. An <code>&#39;error&#39;</code> event is emitted if verification
+fails. Default to  <code>false</code>.</p>
+</li>
+</ul>
+<ul>
+<li><p><code>NPNProtocols</code>: An array of strings or a  <code>Buffer</code> containing supported NPN
+protocols.</p>
+<pre><code><span class="string">`Buffer`</span> should have the following <span class="keyword">format</span>: <span class="string">`0x05hello0x05world`</span>, where</code></pre>
+<p>the preceding byte indicates the following protocol name&#39;s length. Passing an
+array is usually much simpler: <code>[&#39;hello&#39;, &#39;world&#39;]</code>.</p>
+<pre><code><span class="title">Protocols</span> should be ordered by their priority.</code></pre>
+</li>
+<li><p><code>servername</code>: The server name for the SNI (Server Name Indication) TLS
+extension.</p>
+</li>
+</ul>
+<p><code>secureConnectionListener</code> automatically sets a listener for the
+<a href="#tls.event.secureConnection"><code>secureConnection</code></a> event.</p>
+<h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">options</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Object.html" class="" title="Object" data-id="Object">Object</a></td><td class="argDescription ">Required. Configuration options to pass in</td></tr><tr class="argumentRow "><td class="argName ">port</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Number.html" class="" title="Number" data-id="Number">Number</a></td><td class="argDescription ">Required. The port to connect to</td></tr><tr class="argumentRow "><td class="argName ">host</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/String.html" class="" title="String" data-id="String">String</a></td><td class="argDescription ">Required. An optional hostname to connect to`</td></tr><tr class="argumentRow "><td class="argName ">options</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Object.html" class="" title="Object" data-id="Object">Object</a></td><td class="argDescription ">Required. Any options you want to pass to the server</td></tr><tr class="argumentRow "><td class="argName ">secureConnectionListener</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Function.html" class="" title="Function" data-id="Function">Function</a></td><td class="argDescription ">Required. An optional listener</td></tr></table></div></div></div></div></article><article id="tls.createSecurePair" data-title="tls.createSecurePair (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.createSecurePair" class="member-name methodClicker"><span class="sigClassName">tls.</span><span class="sigMemberName">createSecurePair</span></span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="#tls.SecurePair" class="returnType " title="tls.SecurePair (class)" data-id="tls.SecurePair">tls.SecurePair</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.createSecurePair" class="ellipsis_description"><p>Creates a new secure <code>pair</code> object with two streams, one of which reads/writes
+encrypted data, and one reads/writes cleartext data. This function returns a
+SecurePair object with <a href="#tls.CleartextStream" class="link-short" title="tls.CleartextStream (class)" data-id="tls.CleartextStream">undefined</a> and
+<code>encrypted</code> stream properties.</p>
+</div><div id="short_tls.createSecurePair" class="short_description hiddenSpan"><p>Creates a new secure <code>pair</code> object with two streams, one of which reads/writes
+encrypted data, and one reads/writes cleartext data. This function returns a
+SecurePair object with <a href="#tls.CleartextStream" class="link-short" title="tls.CleartextStream (class)" data-id="tls.CleartextStream">undefined</a> and
+<code>encrypted</code> stream properties.</p>
+<p>Generally, the encrypted strean is piped to/from an incoming encrypted data
+stream, and the cleartext one is used as a replacement for the initial encrypted
+stream.</p>
+</div><h3 id="tls.createSecurePair" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><p>Generally, the encrypted strean is piped to/from an incoming encrypted data
+stream, and the cleartext one is used as a replacement for the initial encrypted
+stream.</p>
+<h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">credentials</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Object.html" class="" title="Object" data-id="Object">Object</a></td><td class="argDescription ">Required. An optional credentials object from <a href="crypto.html#crypto.createCredentials" class="link-short" title="crypto.createCredentials (class method)" data-id="crypto.createCredentials">createCredentials</a></td></tr><tr class="argumentRow "><td class="argName ">isServer</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html" class="" title="Boolean" data-id="Boolean">Boolean</a></td><td class="argDescription ">Required. An optional boolean indicating whether this TLS connection should be opened as a server (<code>true</code>) or a client (<code>false</code>)</td></tr><tr class="argumentRow "><td class="argName ">requestCert</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html" class="" title="Boolean" data-id="Boolean">Boolean</a></td><td class="argDescription ">Required. A boolean indicating whether a server should request a certificate from a connecting client; only applies to server connections</td></tr><tr class="argumentRow "><td class="argName ">rejectUnauthorized</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Boolean.html" class="" title="Boolean" data-id="Boolean">Boolean</a></td><td class="argDescription ">Required. A boolean indicating whether a server should automatically reject clients with invalid certificates; only applies to servers with <code>requestCert</code> enabled</td></tr></table></div></div></div></div></article><article id="tls.createServer" data-title="tls.createServer (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="tls.createServer" class="member-name methodClicker"><span class="sigClassName">tls.</span><span class="sigMemberName">createServer</span></span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_tls.createServer" class="ellipsis_description"><p>Creates a new <a href="#tls.Server" class="link-short" title="tls.Server (class)" data-id="tls.Server">undefined</a>.</p>
+</div><div id="short_tls.createServer" class="short_description hiddenSpan"><p>Creates a new <a href="#tls.Server" class="link-short" title="tls.Server (class)" data-id="tls.Server">undefined</a>.</p>
+<p>The <code>options</code> object has the following mix of required values:</p>
+<ul>
+<li><p><code>pfx</code>: A string or <code>Buffer</code> containing the private key, certificate, and
+CA certs of the server in PFX or PKCS12 format. (Mutually exclusive with
+the <code>key</code>, <code>cert</code>, and <code>ca</code> options.)</p>
+</li>
+<li><p><code>key</code>: A string or <code>Buffer</code> containing the private key of the server in a
+PEM format. (Required)</p>
+</li>
+<li><p><code>cert</code>: A string or <code>Buffer</code> containing the certificate key of the server in
+a PEM format. (Required)</p>
+</li>
+</ul>
+<p><code>options</code> also has the following option values:</p>
+<ul>
+<li><p><code>ca</code>: An array of strings or <code>Buffer</code>s of trusted certificates. These are
+used to authorize connections. If this is omitted, several &quot;well-known root&quot; CAs
+will be used, like VeriSign.</p>
+</li>
+<li><p><code>crl</code>: Either a string or list of strings of PEM encoded CRLs (Certificate
+Revocation List)</p>
+</li>
+<li><p><code>ciphers</code>: A string describing the ciphers to use or exclude. Consult
+<a href="http://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT">http://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT</a> for
+details on the format.
+To mitigate [BEAST attacks]
+(<a href="http://blog.ivanristic.com/2011/10/mitigating-the-beast-attack-on-tls.html">http://blog.ivanristic.com/2011/10/mitigating-the-beast-attack-on-tls.html</a>),
+it is recommended that you use this option in conjunction with the
+<code>honorCipherOrder</code> option described below to prioritize the RC4 algorithm,
+since it is a non-CBC cipher. A recommended cipher list follows:
+<code>ECDHE-RSA-AES256-SHA:AES256-SHA:RC4-SHA:RC4:HIGH:!MD5:!aNULL:!EDH:!AESGCM</code></p>
+</li>
+<li><p><code>honorCipherOrder</code> : When choosing a cipher, use the server&#39;s preferences
+instead of the client preferences.
+Note that if SSLv2 is used, the server will send its list of preferences
+to the client, and the client chooses the cipher.
+Although, this option is disabled by default, it is <em>recommended</em> that you
+use this option in conjunction with the <code>ciphers</code> option to mitigate
+BEAST attacks.</p>
+</li>
+<li><p><code>NPNProtocols</code>: An array of strings or a  <code>Buffer</code> containing supported NPN
+protocols.</p>
+<pre><code><span class="string">`Buffer`</span> should have the following <span class="keyword">format</span>: <span class="string">`0x05hello0x05world`</span>, where</code></pre>
+<p>the preceding byte indicates the following protocol name&#39;s length. Passing an
+array is usually much simplier: <code>[&#39;hello&#39;, &#39;world&#39;]</code>.</p>
+<pre><code><span class="title">Protocols</span> should be ordered by their priority.</code></pre>
+</li>
+<li><p><code>passphrase</code>: A string of a passphrase for the private key or pfx.</p>
+</li>
+<li><p><code>rejectUnauthorized</code>: If <code>true</code> the server rejects any connection that is
+not authorized with the list of supplied CAs. This option only has an effect if
+<code>requestCert</code> is <code>true</code>. This defaults to <code>false</code>.</p>
+</li>
+<li><p><code>requestCert</code>: If <code>true</code> the server requests a certificate from clients that
+connect and attempt to verify that certificate. This defaults to <code>false</code>.</p>
+</li>
+<li><p><code>sessionIdContext</code>: A string containing an opaque identifier for session
+resumption. If <code>requestCert</code> is <code>true</code>, the default is an MD5 hash value
+generated from the command line. Otherwise, the default is not provided.</p>
+</li>
+<li><p><code>SNICallback</code>: A function that is called if the client supports the SNI TLS
+extension. Only one argument will be passed to it: <code>servername</code>. <code>SNICallback</code>
+should return a SecureContext instance. You can use
+<code>crypto.createCredentials(...).context</code> to get a proper SecureContext. If
+<code>SNICallback</code> wasn&#39;t provided, a default callback within the high-level API is
+used (for more information, see below).</p>
+</li>
+</ul>
+<p><code>secureConnectionListener</code> automatically sets a listener for the
+<a href="#tls.event.secureConnection"><code>secureConnection</code></a> event.</p>
+<h4>Example</h4>
+<p>Here&#39;s a simple &quot;echo&quot; server:</p>
+<pre><code><span class="reserved">var</span> tls = require(<span class="string">'tls'</span>);
+<span class="reserved">var</span> fs = require(<span class="string">'fs'</span>);
+
+<span class="reserved">var</span> options = {
+  key: fs.readFileSync(<span class="string">'server-key.pem'</span>),
+  cert: fs.readFileSync(<span class="string">'server-cert.pem'</span>),
+
+  <span class="regexp">//</span> This <span class="keyword">is</span> necessary only <span class="keyword">if</span> using the client certificate authentication.
+  requestCert: <span class="literal">true</span>,
+
+  <span class="regexp">//</span> This <span class="keyword">is</span> necessary only <span class="keyword">if</span> the client uses the self-signed certificate.
+  ca: [ fs.readFileSync(<span class="string">'client-cert.pem'</span>) ]
+};
+
+<span class="reserved">var</span> server = tls.createServer(options, <span class="reserved">function</span>(cleartextStream) {
+  console.log(<span class="string">'server connected'</span>,
+              cleartextStream.authorized ? <span class="string">'authorized'</span> : <span class="string">'unauthorized'</span>);
+  cleartextStream.write(<span class="string">"welcome!\n"</span>);
+  cleartextStream.setEncoding(<span class="string">'utf8'</span>);
+  cleartextStream.pipe(cleartextStream);
+});
+server.listen(<span class="number">8000</span>, <span class="reserved">function</span>() {
+  console.log(<span class="string">'server bound'</span>);
+});</code></pre>
+<p>Or, with pfx:</p>
+<pre><code><span class="reserved">var</span> tls = require(<span class="string">'tls'</span>);
+<span class="reserved">var</span> fs = require(<span class="string">'fs'</span>);
+
+<span class="reserved">var</span> options = {
+  pfx: fs.readFileSync(<span class="string">'server.pfx'</span>),
+
+  <span class="regexp">//</span> This <span class="keyword">is</span> necessary only <span class="keyword">if</span> using the client certificate authentication.
+  requestCert: <span class="literal">true</span>,
+
+};
+
+<span class="reserved">var</span> server = tls.createServer(options, <span class="reserved">function</span>(cleartextStream) {
+  console.log(<span class="string">'server connected'</span>,
+              cleartextStream.authorized ? <span class="string">'authorized'</span> : <span class="string">'unauthorized'</span>);
+  cleartextStream.write(<span class="string">"welcome!\n"</span>);
+  cleartextStream.setEncoding(<span class="string">'utf8'</span>);
+  cleartextStream.pipe(cleartextStream);
+});
+server.listen(<span class="number">8000</span>, <span class="reserved">function</span>() {
+  console.log(<span class="string">'server bound'</span>);
+});</code></pre>
+<p>You can test this server by connecting to it with <code>openssl s_client</code>:</p>
+<pre><code><span class="title">openssl</span> s_client -connect <span class="number">127.0.0.1:8000</span></code></pre>
+</div><h3 id="tls.createServer" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><p>The <code>options</code> object has the following mix of required values:</p>
+<ul>
+<li><p><code>pfx</code>: A string or <code>Buffer</code> containing the private key, certificate, and
+CA certs of the server in PFX or PKCS12 format. (Mutually exclusive with
+the <code>key</code>, <code>cert</code>, and <code>ca</code> options.)</p>
+</li>
+<li><p><code>key</code>: A string or <code>Buffer</code> containing the private key of the server in a
+PEM format. (Required)</p>
+</li>
+<li><p><code>cert</code>: A string or <code>Buffer</code> containing the certificate key of the server in
+a PEM format. (Required)</p>
+</li>
+</ul>
+<p><code>options</code> also has the following option values:</p>
+<ul>
+<li><p><code>ca</code>: An array of strings or <code>Buffer</code>s of trusted certificates. These are
+used to authorize connections. If this is omitted, several &quot;well-known root&quot; CAs
+will be used, like VeriSign.</p>
+</li>
+<li><p><code>crl</code>: Either a string or list of strings of PEM encoded CRLs (Certificate
+Revocation List)</p>
+</li>
+<li><p><code>ciphers</code>: A string describing the ciphers to use or exclude. Consult
+<a href="http://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT">http://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT</a> for
+details on the format.
+To mitigate [BEAST attacks]
+(<a href="http://blog.ivanristic.com/2011/10/mitigating-the-beast-attack-on-tls.html">http://blog.ivanristic.com/2011/10/mitigating-the-beast-attack-on-tls.html</a>),
+it is recommended that you use this option in conjunction with the
+<code>honorCipherOrder</code> option described below to prioritize the RC4 algorithm,
+since it is a non-CBC cipher. A recommended cipher list follows:
+<code>ECDHE-RSA-AES256-SHA:AES256-SHA:RC4-SHA:RC4:HIGH:!MD5:!aNULL:!EDH:!AESGCM</code></p>
+</li>
+<li><p><code>honorCipherOrder</code> : When choosing a cipher, use the server&#39;s preferences
+instead of the client preferences.
+Note that if SSLv2 is used, the server will send its list of preferences
+to the client, and the client chooses the cipher.
+Although, this option is disabled by default, it is <em>recommended</em> that you
+use this option in conjunction with the <code>ciphers</code> option to mitigate
+BEAST attacks.</p>
+</li>
+<li><p><code>NPNProtocols</code>: An array of strings or a  <code>Buffer</code> containing supported NPN
+protocols.</p>
+<pre><code><span class="string">`Buffer`</span> should have the following <span class="keyword">format</span>: <span class="string">`0x05hello0x05world`</span>, where</code></pre>
+<p>the preceding byte indicates the following protocol name&#39;s length. Passing an
+array is usually much simplier: <code>[&#39;hello&#39;, &#39;world&#39;]</code>.</p>
+<pre><code><span class="title">Protocols</span> should be ordered by their priority.</code></pre>
+</li>
+<li><p><code>passphrase</code>: A string of a passphrase for the private key or pfx.</p>
+</li>
+<li><p><code>rejectUnauthorized</code>: If <code>true</code> the server rejects any connection that is
+not authorized with the list of supplied CAs. This option only has an effect if
+<code>requestCert</code> is <code>true</code>. This defaults to <code>false</code>.</p>
+</li>
+<li><p><code>requestCert</code>: If <code>true</code> the server requests a certificate from clients that
+connect and attempt to verify that certificate. This defaults to <code>false</code>.</p>
+</li>
+<li><p><code>sessionIdContext</code>: A string containing an opaque identifier for session
+resumption. If <code>requestCert</code> is <code>true</code>, the default is an MD5 hash value
+generated from the command line. Otherwise, the default is not provided.</p>
+</li>
+<li><p><code>SNICallback</code>: A function that is called if the client supports the SNI TLS
+extension. Only one argument will be passed to it: <code>servername</code>. <code>SNICallback</code>
+should return a SecureContext instance. You can use
+<code>crypto.createCredentials(...).context</code> to get a proper SecureContext. If
+<code>SNICallback</code> wasn&#39;t provided, a default callback within the high-level API is
+used (for more information, see below).</p>
+</li>
+</ul>
+<p><code>secureConnectionListener</code> automatically sets a listener for the
+<a href="#tls.event.secureConnection"><code>secureConnection</code></a> event.</p>
+<h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">options</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Object.html" class="" title="Object" data-id="Object">Object</a></td><td class="argDescription ">Required. Any options you want to pass to the server</td></tr><tr class="argumentRow "><td class="argName ">secureConnectionListener</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Function.html" class="" title="Function" data-id="Function">Function</a></td><td class="argDescription ">Required. An optional listener, automatically set as a listiner for the <a href="#tls.secureConnection" class="link-short" title="tls@secureConnection (event)" data-id="tls@secureConnection">secureConnection</a> event.</td></tr></table></div></div></div></div></article></div></div><div id="disqus_thread"></div></div></div></div></div><div class="push"></div></div><div id="footer"><div class="footerInner"><div class="footer-text">&#169; 2012:</div></div></div><!-- scripts concatenated and minified via ant build script--><script defer src="./assets/javascripts/plugins.js"></script>
+<script defer src="./assets/javascripts/prettify.js"></script>
+<script defer src="./assets/javascripts/prettify-extension.js"></script>
+<script defer src="./assets/javascripts/ux.js"></script><!-- end scripts--><!--[if lt IE 7]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script><script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})
+</script><![endif]--></body></html>

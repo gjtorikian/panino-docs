@@ -1,0 +1,319 @@
+<!DOCTYPE html><!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]--><html xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Node.js Manual TEST - </title><meta name="generator" content="panino-doc-build"><meta name="author" content="Garen J. Torikian"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="./assets/csses/bootstrap.min.css"><link rel="stylesheet" href="./assets/csses/prettify.css"><link rel="stylesheet" href="./assets/csses/refguide_overrides.css"><link href="./assets/images/favicon.ico" rel="icon" type="image/x-icon"><link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/vs.min.css"><script src="./assets/javascripts/jquery.js"></script><script src="./assets/javascripts/clicker.js"></script><script src="./assets/javascripts/jquery.collapse.js"></script><script src="./assets/javascripts/jquery.cookie.js"></script><script src="./assets/javascripts/bootstrap-dropdown.js"></script><script src="./assets/javascripts/jquery-scrollspy.js"></script><script src="./assets/javascripts/prettify-extension.js"></script></head><body><div class="navbar navbar-fixed-top"><div class="navbar-inner"><div id="topSection" class="container"><ul class="nav topLinks"></ul><form id="searchbox" action="" class="navbar-search pull-right"> <input name="query" type="text" placeholder="Search the API" title="Search across all the documentation" class="search-query span3"></form></div></div></div><div id="nonFooter"><div id="wrapper"><div class="content"><div class="row centerpiece"><div id="sidebarContainer" class="span3"><div id="sidebar"><!--include _menu.jade--></div></div><div id="mainContent" class="span9"><div id="documentation"><div class="classContent"><div class="membersBackground"></div><div class=" members pos0"><div class=" membersContent pos0"><h1 class="memberHeader"><span class="name">https</span></h1><ul data-tabs="tabs" class="nav tabs pos0"><li data-dropdown="dropdown" class="dropdown"><ul class="dropdown-menu"></ul></li><li data-dropdown="dropdown" class="dropdown"><ul class="dropdown-menu"></ul></li><li data-dropdown="dropdown" class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Functions (3)</span><b class="caret"></b></a><ul class="dropdown-menu"><li data-id="https.createServer" class="memberLink"><a href="#https.createServer" class="" title="https.createServer (class method)" data-id="https.createServer">createServer</a></li><li data-id="https.get" class="memberLink"><a href="#https.get" class="" title="https.get (class method)" data-id="https.get">get</a></li><li data-id="https.request" class="memberLink"><a href="#https.request" class="" title="https.request (class method)" data-id="https.request">request</a></li></ul></li><li data-dropdown="dropdown" class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Properties (1)   </span><b class="caret"></b></a><ul class="dropdown-menu"><li data-id="https.globalAgent" class="memberLink"><a href="#https.globalAgent" class="" title="https.globalAgent (class property)" data-id="https.globalAgent">globalAgent</a></li></ul></li><li data-dropdown="dropdown" class="dropdown"><ul class="dropdown-menu"></ul></li><li data-dropdown="dropdown" class="dropdown"><ul class="dropdown-menu"></ul></li><li data-dropdown="dropdown" class="dropdown"><ul class="dropdown-menu"></ul></li></ul></div></div><article id="https" data-title="https (class)" class="article"><blockquote>
+<p>3 - Stable</p>
+</blockquote>
+<div class="section description"><div class="memberContent"><p>HTTPS is the HTTP protocol over TLS/SSL. In Node.js, this is implemented as a
+separate module. To use this module, include <code>require(&#39;https&#39;)</code> in your code.</p>
+<p>Creating HTTPS servers is somewhat complicated and requires generating
+certificates.</p>
+<h4>Examples</h4>
+<script src='http://snippets.c9.io/github.com/c9/nodemanual.org-examples/nodejs_ref_guide/https/https.js?linestart=1&lineend=0&showlines=false' defer='defer'></script>
+
+<p>Or, with pfx:</p>
+<script src='http://snippets.c9.io/github.com/c9/nodemanual.org-examples/nodejs_ref_guide/https/https_pfx.js?linestart=3&lineend=0&showlines=false' defer='defer'></script></div></div><div class="section subclasses"><!-- h3 <Subclasses></Subclasses><div class="memberContent"><ul class="method-list"><li><a href="#https.Agent" class="" title="https.Agent (class)" data-id="https.Agent">https.Agent</a></li><li><a href="#https.Server" class="" title="https.Server (class)" data-id="https.Server">https.Server</a></li></ul></div>--></div></article><article id="https.Agent" data-title="https.Agent (class)" class="article"><div class="section description"><div class="memberContent"><p>An <code>Agent</code> object for HTTPS, similar to <a href="http.html#http.Agent" class="link-short" title="http.Agent (class)" data-id="http.Agent">undefined</a>. For more
+information, see <a href="#https.request" class="link-short" title="https.request (class method)" data-id="https.request">request</a>.</p>
+</div></div><div class="section superclass"><!-- h3 <Superclass></Superclass><div class="memberContent"><a href="#https" class="" title="https (class)" data-id="https">https</a></div>--></div></article><h3 class="sectionHeader">Properties</h3><article id="https.Agent.maxSockets" data-title="https.Agent.maxSockets (class property)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="https.Agent.maxSockets" class="member-name methodClicker"><span class="sigClassName">https.Agent.</span><span class="sigMemberName">maxSockets</span></span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Number.html" class="returnType " title="Number" data-id="Number">Number</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_https.Agent.maxSockets" class="ellipsis_description"><p>Determines how many concurrent sockets the agent can have open per host. By
+default, this is set to 5.</p>
+</div><div id="short_https.Agent.maxSockets" class="short_description hiddenSpan"><p>Determines how many concurrent sockets the agent can have open per host. By
+default, this is set to 5.</p>
+</div><h3 id="https.Agent.maxSockets" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"></div></div></div></div></article><article id="https.Agent.sockets" data-title="https.Agent.sockets (class property)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="https.Agent.sockets" class="member-name methodClicker"><span class="sigClassName">https.Agent.</span><span class="sigMemberName">sockets</span></span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="http://www.nodemanual.org/latest/js_doc/Object.html" class="returnType " title="Object" data-id="Object">Object</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_https.Agent.sockets" class="ellipsis_description"><p>An object which contains arrays of sockets currently in use by the Agent.
+<strong>Don&#39;t modify this!</strong></p>
+</div><div id="short_https.Agent.sockets" class="short_description hiddenSpan"><p>An object which contains arrays of sockets currently in use by the Agent.
+<strong>Don&#39;t modify this!</strong></p>
+</div><h3 id="https.Agent.sockets" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"></div></div></div></div></article><article id="https.Server" data-title="https.Server (class)" class="article"><div class="section description"><div class="memberContent"><p>This class is a subclass of <a href="tls.html#tls.Server" class="link-short" title="tls.Server (class)" data-id="tls.Server">Server</a> and emits the same
+events as <a href="http.html#http.Server" class="link-short" title="http.Server (class)" data-id="http.Server">undefined</a>.</p>
+<p>Creating HTTPS servers is somewhat complicated and requires generating
+certificates.</p>
+</div></div><div class="section superclass"><!-- h3 <Superclass></Superclass><div class="memberContent"><a href="#https" class="" title="https (class)" data-id="https">https</a></div>--></div></article><h3 class="sectionHeader">Events</h3><article id="https.Server.event.checkContinue" data-title="https.Server@checkContinue (event)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span class="eventObjName">https.Server</span><span class="eventListenerStart">.on("</span><span id="https.Server.checkContinue" class="member-name eventMember methodClicker">checkContinue</span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_https.Server@checkContinue" class="ellipsis_description"><p>Emitted each time a request with an <code>http Expect: 100-continue</code> is received. If
+this event isn&#39;t listened for, the server will automatically respond with a <code>100
+Continue</code> as appropriate.</p>
+</div><div id="short_https.Server@checkContinue" class="short_description hiddenSpan"><p>Emitted each time a request with an <code>http Expect: 100-continue</code> is received. If
+this event isn&#39;t listened for, the server will automatically respond with a <code>100
+Continue</code> as appropriate.</p>
+<p>Handling this event involves calling <code>response.writeContinue</code> if the client
+should continue to send the request body, or generating an appropriate HTTP
+response (<em>e.g.</em> <code>400 Bad Request</code>) if the client should not continue to send
+the request body.</p>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>When this event is emitted and handled, the <code>request</code> event is not be emitted.</div>
+</div><h3 id="https.Server@checkContinue" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><p>Handling this event involves calling <code>response.writeContinue</code> if the client
+should continue to send the request body, or generating an appropriate HTTP
+response (<em>e.g.</em> <code>400 Bad Request</code>) if the client should not continue to send
+the request body.</p>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>When this event is emitted and handled, the <code>request</code> event is not be emitted.</div>
+<h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">request</td><td class="argType" "><a href="http.html#http.ServerRequest" class="" title="http.ServerRequest (class)" data-id="http.ServerRequest">http.ServerRequest</a></td><td class="argDescription ">Required. An instance of <code>http.ServerRequest</code></td></tr><tr class="argumentRow "><td class="argName ">response</td><td class="argType" "><a href="http.html#http.ServerResponse" class="" title="http.ServerResponse (class)" data-id="http.ServerResponse">http.ServerResponse</a></td><td class="argDescription ">Required. An instance of <code>http.ServerResponse</code></td></tr></table></div></div></div></div></article><article id="https.Server.event.clientError" data-title="https.Server@clientError (event)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span class="eventObjName">https.Server</span><span class="eventListenerStart">.on("</span><span id="https.Server.clientError" class="member-name eventMember methodClicker">clientError</span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_https.Server@clientError" class="ellipsis_description"><p>If a client connection emits an <code>&#39;error&#39;</code> event, it&#39;s forwarded here.</p>
+</div><div id="short_https.Server@clientError" class="short_description hiddenSpan"><p>If a client connection emits an <code>&#39;error&#39;</code> event, it&#39;s forwarded here.</p>
+</div><h3 id="https.Server@clientError" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">exception</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Error.html" class="" title="Error" data-id="Error">Error</a></td><td class="argDescription ">Required. The exception being thrown</td></tr></table></div></div></div></div></article><article id="https.Server.event.close" data-title="https.Server@close (event)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span class="eventObjName">https.Server</span><span class="eventListenerStart">.on("</span><span id="https.Server.close" class="member-name eventMember methodClicker">close</span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_https.Server@close" class="ellipsis_description"><p>Emitted when the server closes.</p>
+</div><div id="short_https.Server@close" class="short_description hiddenSpan"><p>Emitted when the server closes.</p>
+</div><h3 id="https.Server@close" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">socket</td><td class="argType" "><a href="net.html#net.Socket" class="" title="net.Socket (class)" data-id="net.Socket">net.Socket</a></td><td class="argDescription ">Required. An object of type <a href="net.html#net.Socket" class="link-short" title="net.Socket (class)" data-id="net.Socket">undefined</a></td></tr></table></div></div></div></div></article><article id="https.Server.event.connection" data-title="https.Server@connection (event)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span class="eventObjName">https.Server</span><span class="eventListenerStart">.on("</span><span id="https.Server.connection" class="member-name eventMember methodClicker">connection</span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_https.Server@connection" class="ellipsis_description"><p>Emitted when a new TCP stream is established. Usually users won&#39;t want to access
+this event. The <code>socket</code> can also be accessed at
+<a href="http.html#http.ServerRequest.connection" class="link-short" title="http.ServerRequest.connection (class property)" data-id="http.ServerRequest.connection">connection</a>.</p>
+</div><div id="short_https.Server@connection" class="short_description hiddenSpan"><p>Emitted when a new TCP stream is established. Usually users won&#39;t want to access
+this event. The <code>socket</code> can also be accessed at
+<a href="http.html#http.ServerRequest.connection" class="link-short" title="http.ServerRequest.connection (class property)" data-id="http.ServerRequest.connection">connection</a>.</p>
+</div><h3 id="https.Server@connection" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">socket</td><td class="argType" "><a href="net.html#net.Socket" class="" title="net.Socket (class)" data-id="net.Socket">net.Socket</a></td><td class="argDescription ">Required. An object of type <a href="net.html#net.Socket" class="link-short" title="net.Socket (class)" data-id="net.Socket">undefined</a></td></tr></table></div></div></div></div></article><article id="https.Server.event.request" data-title="https.Server@request (event)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span class="eventObjName">https.Server</span><span class="eventListenerStart">.on("</span><span id="https.Server.request" class="member-name eventMember methodClicker">request</span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_https.Server@request" class="ellipsis_description"><p>Emitted each time there is a request. Note that, in the case of keep-alive
+connections, there may be multiple requests per connection.</p>
+</div><div id="short_https.Server@request" class="short_description hiddenSpan"><p>Emitted each time there is a request. Note that, in the case of keep-alive
+connections, there may be multiple requests per connection.</p>
+</div><h3 id="https.Server@request" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">request</td><td class="argType" "><a href="http.html#http.ServerRequest" class="" title="http.ServerRequest (class)" data-id="http.ServerRequest">http.ServerRequest</a></td><td class="argDescription ">Required. An instance of <a href="http.html#http.ServerRequest" class="link-short" title="http.ServerRequest (class)" data-id="http.ServerRequest">undefined</a></td></tr><tr class="argumentRow "><td class="argName ">response</td><td class="argType" "><a href="http.html#http.ServerResponse" class="" title="http.ServerResponse (class)" data-id="http.ServerResponse">http.ServerResponse</a></td><td class="argDescription ">Required. An instance of <a href="http.html#http.ServerResponse" class="link-short" title="http.ServerResponse (class)" data-id="http.ServerResponse">undefined</a></td></tr></table></div></div></div></div></article><article id="https.Server.event.upgrade" data-title="https.Server@upgrade (event)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span class="eventObjName">https.Server</span><span class="eventListenerStart">.on("</span><span id="https.Server.upgrade" class="member-name eventMember methodClicker">upgrade</span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_https.Server@upgrade" class="ellipsis_description"><p>Emitted each time a client requests a http upgrade. If this event isn&#39;t listened
+for, then clients requesting an upgrade will have their connections closed.</p>
+</div><div id="short_https.Server@upgrade" class="short_description hiddenSpan"><p>Emitted each time a client requests a http upgrade. If this event isn&#39;t listened
+for, then clients requesting an upgrade will have their connections closed.</p>
+<p>After this event is emitted, the request&#39;s socket won&#39;t have a <code>data</code> event
+listener, meaning you will need to bind to it in order to handle data sent to
+the server on that socket.</p>
+</div><h3 id="https.Server@upgrade" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><p>After this event is emitted, the request&#39;s socket won&#39;t have a <code>data</code> event
+listener, meaning you will need to bind to it in order to handle data sent to
+the server on that socket.</p>
+<h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">request</td><td class="argType" "><a href="http.html#http.ServerRequest" class="" title="http.ServerRequest (class)" data-id="http.ServerRequest">http.ServerRequest</a></td><td class="argDescription ">Required. The arguments for the http request, as it is in the request event</td></tr><tr class="argumentRow "><td class="argName ">socket</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Number.html" class="" title="Number" data-id="Number">Number</a></td><td class="argDescription ">Required. The network socket between the server and client</td></tr><tr class="argumentRow "><td class="argName ">head</td><td class="argType" "><a href="buffer.html#Buffer" class="" title="Buffer (class)" data-id="Buffer">Buffer</a></td><td class="argDescription ">Required. The first packet of the upgraded stream; this can be empty</td></tr></table></div></div></div></div></article><h3 class="sectionHeader">Methods</h3><article id="https.Server.close" data-title="https.Server.close (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="https.Server.close" class="member-name methodClicker"><span class="sigClassName">https.Server.</span><span class="sigMemberName">close</span></span></li></ul><ul class="metaInfo"><li><span class="label related-to">Related to<a href="net.html#net.Server.close" class="" title="net.Server.close (class method)" data-id="net.Server.close">net.Server.close</a> </span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_https.Server.close" class="ellipsis_description"><p>Stops the server from accepting new connections.</p>
+</div><div id="short_https.Server.close" class="short_description hiddenSpan"><p>Stops the server from accepting new connections.</p>
+</div><h3 id="https.Server.close" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"></div></div></div></div></article><article id="https.Server.listen" data-title="https.Server.listen (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="https.Server.listen" class="member-name methodClicker"><span class="sigClassName">https.Server.</span><span class="sigMemberName">listen</span></span></li></ul><ul class="metaInfo"></ul></li><li class="signature"><ul><li class="signature-call"><span id="https.Server.listen" class="member-name methodClicker"><span class="sigClassName">https.Server.</span><span class="sigMemberName">listen</span></span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_https.Server.listen" class="ellipsis_description"><p>Begin accepting connections on the specified port and hostname. If the hostname
+is omitted, the server accepts connections directed to any IPv4 address
+(<code>INADDR_ANY</code>). To listen to a Unix socket, supply a filename instead of port
+and hostname.</p>
+</div><div id="short_https.Server.listen" class="short_description hiddenSpan"><p>Begin accepting connections on the specified port and hostname. If the hostname
+is omitted, the server accepts connections directed to any IPv4 address
+(<code>INADDR_ANY</code>). To listen to a Unix socket, supply a filename instead of port
+and hostname.</p>
+<p>This function is asynchronous. The <code>callback()</code> is added as a listener for the
+[[net.Server@listening <code>&#39;listening&#39;</code></a> event of <code>net.Server</code>.</p>
+</div><h3 id="https.Server.listen" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><p>This function is asynchronous. The <code>callback()</code> is added as a listener for the
+[[net.Server@listening <code>&#39;listening&#39;</code></a> event of <code>net.Server</code>.</p>
+<h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">port</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Number.html" class="" title="Number" data-id="Number">Number</a></td><td class="argDescription ">Required. The port to listen to</td></tr><tr class="argumentRow "><td class="argName ">hostname</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/String.html" class="" title="String" data-id="String">String</a></td><td class="argDescription ">Required. The hostname to listen to</td></tr><tr class="argumentRow "><td class="argName ">callback</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Function.html" class="" title="Function" data-id="Function">Function</a></td><td class="argDescription ">Required. The function to execute once the server has been bound to the port (related to: net.Server.listen)</td></tr></table></div></div></div></div></article><article id="https.createServer" data-title="https.createServer (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="https.createServer" class="member-name methodClicker"><span class="sigClassName">https.</span><span class="sigMemberName">createServer</span></span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="#https.Server" class="returnType " title="https.Server (class)" data-id="https.Server">https.Server</a></li></ul></li></li></ul><ul class="metaInfo"><li><span class="label related-to">Related to<a href="tls.html#tls.createServer" class="" title="tls.createServer (class method)" data-id="tls.createServer">tls.createServer</a> </span></li></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_https.createServer" class="ellipsis_description"><p>Returns a new HTTPS web server object.</p>
+</div><div id="short_https.createServer" class="short_description hiddenSpan"><p>Returns a new HTTPS web server object.</p>
+<p>The <code>options</code> object has a mix of required and optional values:</p>
+<ul>
+<li><code>key</code>: A string or <code>Buffer</code> containing the private key of the server in a
+PEM format. (Required)</li>
+<li><p><code>cert</code>: A string or <code>Buffer</code> containing the certificate key of the server in
+a PEM format. (Required)</p>
+</li>
+<li><p><code>ca</code>: An array of strings or <code>Buffer</code>s of trusted certificates. These are
+used to authorize connections. If this is omitted, several &quot;well-known root&quot; CAs
+will be used, like VeriSign.</p>
+</li>
+<li><p><code>NPNProtocols</code>: An array of strings or a  <code>Buffer</code> containing supported NPN
+protocols.</p>
+<pre><code><span class="string">`Buffer`</span> should have the following <span class="keyword">format</span>: <span class="string">`0x05hello0x05world`</span>, where</code></pre>
+<p>the preceding byte indicates the following protocol name&#39;s length. Passing an
+array is usually much simplier: <code>[&#39;hello&#39;, &#39;world&#39;]</code>.</p>
+<pre><code><span class="title">Protocols</span> should be ordered by their priority.</code></pre>
+</li>
+<li><p><code>passphrase</code>: A string of a passphrase for the private key.</p>
+</li>
+<li><p><code>rejectUnauthorized</code>: If <code>true</code> the server rejects any connection that is
+not authorized with the list of supplied CAs. This option only has an effect if
+<code>requestCert</code> is <code>true</code>. This defaults to <code>false</code>.</p>
+</li>
+<li><p><code>requestCert</code>: If <code>true</code> the server requests a certificate from clients that
+connect and attempt to verify that certificate. This defaults to <code>false</code>.</p>
+</li>
+<li><p><code>sessionIdContext</code>: A string containing an opaque identifier for session
+resumption. If <code>requestCert</code> is <code>true</code>, the default is an MD5 hash value
+generated from the command line. Otherwise, the default is not provided.</p>
+</li>
+<li><p><code>SNICallback</code>: A function that is called if the client supports the SNI TLS
+extension. Only one argument will be passed to it: <code>servername</code>. <code>SNICallback</code>
+should return a SecureContext instance. You can use
+<code>crypto.createCredentials(...).context</code> to get a proper SecureContext. If
+<code>SNICallback</code> wasn&#39;t provided, a default callback within the high-level API is
+used (for more information, see below).</p>
+</li>
+</ul>
+</div><h3 id="https.createServer" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><p>The <code>options</code> object has a mix of required and optional values:</p>
+<ul>
+<li><code>key</code>: A string or <code>Buffer</code> containing the private key of the server in a
+PEM format. (Required)</li>
+<li><p><code>cert</code>: A string or <code>Buffer</code> containing the certificate key of the server in
+a PEM format. (Required)</p>
+</li>
+<li><p><code>ca</code>: An array of strings or <code>Buffer</code>s of trusted certificates. These are
+used to authorize connections. If this is omitted, several &quot;well-known root&quot; CAs
+will be used, like VeriSign.</p>
+</li>
+<li><p><code>NPNProtocols</code>: An array of strings or a  <code>Buffer</code> containing supported NPN
+protocols.</p>
+<pre><code><span class="string">`Buffer`</span> should have the following <span class="keyword">format</span>: <span class="string">`0x05hello0x05world`</span>, where</code></pre>
+<p>the preceding byte indicates the following protocol name&#39;s length. Passing an
+array is usually much simplier: <code>[&#39;hello&#39;, &#39;world&#39;]</code>.</p>
+<pre><code><span class="title">Protocols</span> should be ordered by their priority.</code></pre>
+</li>
+<li><p><code>passphrase</code>: A string of a passphrase for the private key.</p>
+</li>
+<li><p><code>rejectUnauthorized</code>: If <code>true</code> the server rejects any connection that is
+not authorized with the list of supplied CAs. This option only has an effect if
+<code>requestCert</code> is <code>true</code>. This defaults to <code>false</code>.</p>
+</li>
+<li><p><code>requestCert</code>: If <code>true</code> the server requests a certificate from clients that
+connect and attempt to verify that certificate. This defaults to <code>false</code>.</p>
+</li>
+<li><p><code>sessionIdContext</code>: A string containing an opaque identifier for session
+resumption. If <code>requestCert</code> is <code>true</code>, the default is an MD5 hash value
+generated from the command line. Otherwise, the default is not provided.</p>
+</li>
+<li><p><code>SNICallback</code>: A function that is called if the client supports the SNI TLS
+extension. Only one argument will be passed to it: <code>servername</code>. <code>SNICallback</code>
+should return a SecureContext instance. You can use
+<code>crypto.createCredentials(...).context</code> to get a proper SecureContext. If
+<code>SNICallback</code> wasn&#39;t provided, a default callback within the high-level API is
+used (for more information, see below).</p>
+</li>
+</ul>
+<h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">options</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Object.html" class="" title="Object" data-id="Object">Object</a></td><td class="argDescription ">Required. Any options you want to pass to the server</td></tr><tr class="argumentRow "><td class="argName ">callback</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Function.html" class="" title="Function" data-id="Function">Function</a></td><td class="argDescription ">Required. A callback to execute</td></tr><tr class="argumentRow "><td class="argName ">request</td><td class="argType" "><a href="http.html#http.ClientRequest" class="" title="http.ClientRequest (class)" data-id="http.ClientRequest">http.ClientRequest</a></td><td class="argDescription ">Required. Any options you want to pass to the server</td></tr><tr class="argumentRow "><td class="argName ">response</td><td class="argType" "><a href="http.html#http.ClientResponse" class="" title="http.ClientResponse (class)" data-id="http.ClientResponse">http.ClientResponse</a></td><td class="argDescription ">Required. An optional listener</td></tr></table></div></div></div></div></article><article id="https.get" data-title="https.get (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="https.get" class="member-name methodClicker"><span class="sigClassName">https.</span><span class="sigMemberName">get</span></span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_https.get" class="ellipsis_description"><p>Exactly like <a href="http.html#http.get" class="link-short" title="http.get (class method)" data-id="http.get">get</a> but for HTTPS.</p>
+</div><div id="short_https.get" class="short_description hiddenSpan"><p>Exactly like <a href="http.html#http.get" class="link-short" title="http.get (class method)" data-id="http.get">get</a> but for HTTPS.</p>
+<p>Since most requests are GET requests without bodies, Node.js provides this
+convenience method. The only difference between this method and <a href="http.html#http.request" class="link-short" title="http.request (class method)" data-id="http.request">request</a> is that it sets the method to GET and calls <code>req.end()</code>
+automatically.</p>
+<h4>Example</h4>
+<script src='http://snippets.c9.io/github.com/c9/nodemanual.org-examples/nodejs_ref_guide/https/https.get.js?linestart=3&lineend=0&showlines=false' defer='defer'></script></div><h3 id="https.get" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><p>Since most requests are GET requests without bodies, Node.js provides this
+convenience method. The only difference between this method and <a href="http.html#http.request" class="link-short" title="http.request (class method)" data-id="http.request">request</a> is that it sets the method to GET and calls <code>req.end()</code>
+automatically.</p>
+<h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">options</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Object.html" class="" title="Object" data-id="Object">Object</a></td><td class="argDescription ">Required. Options to pass to the request</td></tr><tr class="argumentRow "><td class="argName ">callback</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Function.html" class="" title="Function" data-id="Function">Function</a></td><td class="argDescription ">Required. The callback to execute once the method finishes</td></tr></table></div></div></div></div></article><article id="https.request" data-title="https.request (class method)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="https.request" class="member-name methodClicker"><span class="sigClassName">https.</span><span class="sigMemberName">request</span></span></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_https.request" class="ellipsis_description"><p>Makes a request to a secure web server.</p>
+</div><div id="short_https.request" class="short_description hiddenSpan"><p>Makes a request to a secure web server.</p>
+<p>All options from [http.request <code>http.request()</code>]] are valid for <code>options</code>:</p>
+<ul>
+<li>Defaults to <code>&#39;localhost&#39;</code>.</li>
+<li>hostname: this supports <code>url.parse()</code>; <code>hostname</code> is preferred over <code>host</code></li>
+<li>port: the port of the remote server. Defaults to <code>80</code>.</li>
+<li>socketPath: the Unix Domain Socket (use either <code>host:port</code> or <code>socketPath</code>)</li>
+<li>method: a string specifying the HTTP request method. Defaults to <code>&#39;GET&#39;</code>.</li>
+<li>(if any) For example, <code>&#39;/index.html?page=12&#39;</code></li>
+<li>headers: an object containing request headers</li>
+<li>an Authorization header.</li>
+<li>used, the request defaults to <code>Connection: keep-alive</code>. The possible values are:<ul>
+<li><code>undefined</code>: uses <a href="http.html#http.globalAgent" class="link-short" title="http.globalAgent (class property)" data-id="http.globalAgent">globalAgent</a> for this host
+and port (default).</li>
+<li><code>Agent</code> object: this explicitlys use the passed in <code>Agent</code></li>
+<li><code>false</code>: this opts out of connection pooling with an Agent, and defaults the
+request to <code>Connection: close</code>.</li>
+</ul>
+</li>
+</ul>
+<p>The following options from <a href="tls.html#tls.connect" class="link-short" title="tls.connect (class method)" data-id="tls.connect">connect</a> can also be
+specified. However, a <a href="http.html#http.globalAgent" class="link-short" title="http.globalAgent (class property)" data-id="http.globalAgent">globalAgent</a> silently ignores these.</p>
+<ul>
+<li><p><code>pfx</code>: Certificate, private key, and CA certificates to use for SSL. The
+default is <code>null</code>.</p>
+<ul>
+<li><p><code>key</code>: A string or <code>Buffer</code> containing the private key of the client in aPEM
+format. The default is <code>null</code>.</p>
+</li>
+<li><p><code>passphrase</code>: A string of a passphrase for the private key or pfx. The
+default is <code>null</code>.</p>
+</li>
+<li><p><code>cert</code>: A string or <code>Buffer</code> containing the certificate key of the client in
+a PEM format; in other words, the public x509 certificate to use. The default is
+<code>null</code>.</p>
+</li>
+<li><p><code>ca</code>: An array of strings or <code>Buffer</code>s of trusted certificates. These are
+used to authorize connections. If this is omitted, several &quot;well-known root&quot; CAs
+will be used, like VeriSign.</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>ciphers</code>: A string describing the ciphers to use or exclude. Consult
+<a href="http://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT">http://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT</a> for
+details on the format.</p>
+</li>
+<li><p><code>rejectUnauthorized</code>: If <code>true</code>, the server certificate is verified against
+the list of supplied CAs. An <code>&#39;error&#39;</code> event is emitted if verification
+fails. Verification happens at the connection level, <em>before</em> the HTTP
+request is sent. Default to <code>false</code>.</p>
+</li>
+</ul>
+<h4>Example</h4>
+<script src='http://snippets.c9.io/github.com/c9/nodemanual.org-examples/nodejs_ref_guide/https/https.request_1.js?linestart=3&lineend=0&showlines=false' defer='defer'></script>
+
+<p>Here&#39;s an example specifying these options using a custom <code>Agent</code>:</p>
+<pre><code>var options = {
+  host: <span class="string">'encrypted.google.com'</span>,
+  port: <span class="number">443</span>,
+  path: <span class="string">'/'</span>,
+  method: <span class="string">'GET'</span>,
+  key: fs.readFileSync(<span class="string">'test/fixtures/keys/agent2-key.pem'</span>),
+  cert: fs.readFileSync(<span class="string">'test/fixtures/keys/agent2-cert.pem'</span>)
+};
+options.agent = new https.Agent(options);
+
+var req = https.request(options, <span class="keyword">function</span>(res) {
+  <span class="keyword">...</span>
+}</code></pre>
+<p>Or, if you choose not to use an <code>Agent</code>:</p>
+<pre><code>var options = {
+  host: <span class="string">'encrypted.google.com'</span>,
+  port: <span class="number">443</span>,
+  path: <span class="string">'/'</span>,
+  method: <span class="string">'GET'</span>,
+  key: fs.readFileSync(<span class="string">'test/fixtures/keys/agent2-key.pem'</span>),
+  cert: fs.readFileSync(<span class="string">'test/fixtures/keys/agent2-cert.pem'</span>),
+  agent: false
+};
+
+var req = https.request(options, <span class="keyword">function</span>(res) {
+  <span class="keyword">...</span>
+}</code></pre>
+</div><h3 id="https.request" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"><p>All options from [http.request <code>http.request()</code>]] are valid for <code>options</code>:</p>
+<ul>
+<li>Defaults to <code>&#39;localhost&#39;</code>.</li>
+<li>hostname: this supports <code>url.parse()</code>; <code>hostname</code> is preferred over <code>host</code></li>
+<li>port: the port of the remote server. Defaults to <code>80</code>.</li>
+<li>socketPath: the Unix Domain Socket (use either <code>host:port</code> or <code>socketPath</code>)</li>
+<li>method: a string specifying the HTTP request method. Defaults to <code>&#39;GET&#39;</code>.</li>
+<li>(if any) For example, <code>&#39;/index.html?page=12&#39;</code></li>
+<li>headers: an object containing request headers</li>
+<li>an Authorization header.</li>
+<li>used, the request defaults to <code>Connection: keep-alive</code>. The possible values are:<ul>
+<li><code>undefined</code>: uses <a href="http.html#http.globalAgent" class="link-short" title="http.globalAgent (class property)" data-id="http.globalAgent">globalAgent</a> for this host
+and port (default).</li>
+<li><code>Agent</code> object: this explicitlys use the passed in <code>Agent</code></li>
+<li><code>false</code>: this opts out of connection pooling with an Agent, and defaults the
+request to <code>Connection: close</code>.</li>
+</ul>
+</li>
+</ul>
+<p>The following options from <a href="tls.html#tls.connect" class="link-short" title="tls.connect (class method)" data-id="tls.connect">connect</a> can also be
+specified. However, a <a href="http.html#http.globalAgent" class="link-short" title="http.globalAgent (class property)" data-id="http.globalAgent">globalAgent</a> silently ignores these.</p>
+<ul>
+<li><p><code>pfx</code>: Certificate, private key, and CA certificates to use for SSL. The
+default is <code>null</code>.</p>
+<ul>
+<li><p><code>key</code>: A string or <code>Buffer</code> containing the private key of the client in aPEM
+format. The default is <code>null</code>.</p>
+</li>
+<li><p><code>passphrase</code>: A string of a passphrase for the private key or pfx. The
+default is <code>null</code>.</p>
+</li>
+<li><p><code>cert</code>: A string or <code>Buffer</code> containing the certificate key of the client in
+a PEM format; in other words, the public x509 certificate to use. The default is
+<code>null</code>.</p>
+</li>
+<li><p><code>ca</code>: An array of strings or <code>Buffer</code>s of trusted certificates. These are
+used to authorize connections. If this is omitted, several &quot;well-known root&quot; CAs
+will be used, like VeriSign.</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>ciphers</code>: A string describing the ciphers to use or exclude. Consult
+<a href="http://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT">http://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT</a> for
+details on the format.</p>
+</li>
+<li><p><code>rejectUnauthorized</code>: If <code>true</code>, the server certificate is verified against
+the list of supplied CAs. An <code>&#39;error&#39;</code> event is emitted if verification
+fails. Verification happens at the connection level, <em>before</em> the HTTP
+request is sent. Default to <code>false</code>.</p>
+</li>
+</ul>
+<h4>Arguments</h4><table class="argumentTable argument-list table table-striped table-bordered"><tr class="argumentRow "><td class="argName ">options</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Object.html" class="" title="Object" data-id="Object">Object</a></td><td class="argDescription ">Required. Any options you want to pass to the server</td></tr><tr class="argumentRow "><td class="argName ">callback</td><td class="argType" "><a href="http://www.nodemanual.org/latest/js_doc/Function.html" class="" title="Function" data-id="Function">Function</a></td><td class="argDescription ">Required. The callback to execute</td></tr></table></div></div></div></div></article><article id="https.globalAgent" data-title="https.globalAgent (class property)" class="article"><div class="section method"><div class="memberContent"><div class="title"><ul class="signatures"><li class="signature"><ul><li class="signature-call"><span id="https.globalAgent" class="member-name methodClicker"><span class="sigClassName">https.</span><span class="sigMemberName">globalAgent</span></span><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="#https.Agent" class="returnType " title="https.Agent (class)" data-id="https.Agent">https.Agent</a></li></ul></li></li></ul><ul class="metaInfo"></ul></li></ul></div><div class="sideToggler"><div id="ellipsis_https.globalAgent" class="ellipsis_description"><p>A global instance of the <a href="#https.Agent" class="link-short" title="https.Agent (class)" data-id="https.Agent">undefined</a>, which is used as the
+default for all HTTPS client requests.</p>
+</div><div id="short_https.globalAgent" class="short_description hiddenSpan"><p>A global instance of the <a href="#https.Agent" class="link-short" title="https.Agent (class)" data-id="https.Agent">undefined</a>, which is used as the
+default for all HTTPS client requests.</p>
+</div><h3 id="https.globalAgent" class="methodToggle methodClicker inactive">&nbsp;&nbsp;&nbsp;</h3><div class="description"></div></div></div></div></article></div></div><div id="disqus_thread"></div></div></div></div></div><div class="push"></div></div><div id="footer"><div class="footerInner"><div class="footer-text">&#169; 2012:</div></div></div><!-- scripts concatenated and minified via ant build script--><script defer src="./assets/javascripts/plugins.js"></script>
+<script defer src="./assets/javascripts/prettify.js"></script>
+<script defer src="./assets/javascripts/prettify-extension.js"></script>
+<script defer src="./assets/javascripts/ux.js"></script><!-- end scripts--><!--[if lt IE 7]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script><script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})
+</script><![endif]--></body></html>

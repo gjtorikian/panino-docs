@@ -44,13 +44,32 @@ From the command line, just run
 Otherwise, you can write a simple build script to do the work for you. Here's how that might look:
 
 ```javascript
-var panino = require("panino");
+var options = {
+  title       : "Node.js Manual TEST",
+  linkFormat  : 'http://example.com/{file}#{line}',
+  output      : './nodemanual',
+  skin        : "./skins/goose/templates/layout.jade",
+  assets      : "./skins/goose/assets",
+  additionalObjs : "./additionalObjs.json",
+  parseOptions   : "./nodeParseOptions.json"
+};
 
-panino.main(["./src/nodejs_ref_guide", "-e", "markdown", "-f", "html", "-g", "javascript", "-k", "-p", "./parseOptions.json", "-o", "./out/", "-t", "Node.js Docs", "--skin", "./skins/goose/"], function(err) {
+var files = wrench.readdirSyncRecursive("./nodejs_ref_guide").map(function(f) {
+  return path.join(__dirname + "/nodejs_ref_guide/" + f);
+});
+
+panino.parse(files, options, function (err, ast) {
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  }
+
+  panino.render('html', ast, options, function (err) {
     if (err) {
-        console.error(err);
-        process.exit(-1);
+      console.error(err);
+      process.exit(1);
     }
+  });
 });
 ```
 
@@ -77,12 +96,11 @@ However, there are a plentiful number of options to tweak and manage:
 <dt>-u PATH, --outputAssets PATH</dt>
 <dd>Defines the path where the resources are placed. </dd>
 
-<dt>-f CHOICE, --format CHOICE</dt>
+<dt>-f CHOICE, --renderer CHOICE</dt>
 <dd>Defines the output format of your documentation. Can be:
   <ul>
     <li><code>html</code> for an HTML rendering</li>
-    <li><code>ast</code> for an AST list</li>
-    <li><code>js</code> for a Javascript file</li>
+    <li><code>json</code> for an JSON representation of the AST</li>
   </ul>
 </dd>
 
@@ -104,11 +122,15 @@ However, there are a plentiful number of options to tweak and manage:
 <dt>-j STRING, --doc-path STRING</dt>
 <dd>Defines a URL to point to for the global objects in your language. For more information, see the section called "Linkify Everything."</dd>
 
-<dt>-a PATH, --adtitional-global-objects PATH</dt>
+<dt>-a PATH, --additional-global-objects PATH</dt>
 <dd>The path to a JSON file containing a structure defining more relationships between global objects and documentation URLs. For more information, see the section called "<a href="#linkify-everything">Linkify Everything</a>."</dd>
 
 <dt>-s, --split</dt>
 <dd>If this flag is set, Panino splits the output for HTML builds into a separate file per class.</dd>
+
+<dt>--alias</dt>
+<dd>Registers extensions alias. For example `cc:js` registers the `cc` extension as an alias of `js`. Separate these with commas.</dd>
+
 
 <dt>-d, --disableTests</dt>
 <dd>Lets you disable the testing suite. **NOT RECOMMENDED!**</dd>
@@ -116,18 +138,19 @@ However, there are a plentiful number of options to tweak and manage:
 <dt>-p PATH, --parse-options PATH</dt>
 <dd>The path to a JSON file defining various parse options you want to use. For more information, see the section called "<a href="#syntax">Syntax Parse Options</a>."</dd>
 
+<dt>--assets PATH</dt>
+<dd>The path to a folder of assets you want copied to your <em>out</em> directory.</dd>
+
 </dl>
 
 ## Defining a Skin
 
 Panino uses the [Jade templating engine](https://github.com/visionmedia/jade) to render the documentation. While you can define the location of your templates with `--skin`, your directory structure **must match** the following format:
 
-* _skeleton_
+* _assets_
 * _templates_
 
-Your CSS, images, Javascript, and other resource files should go in the _skeleton_ directory. Your _*.jade_ templates go into _templates_. Your content is rendered through the _templates_, and you must have at least one file called _layout.jade_. Your files in _skeleton_ are placed in your _out_ directory called _resources_.
-
-This admittedly confusing structure should be fixed up in a future release.
+Your CSS, images, Javascript, and other resource files should go in the _skeleton_ directory. Your _*.jade_ templates go into _templates_. Your content is rendered through the _templates. Your files in assets are placed in your _out_ directory.
 
 ## Variables, Functions, and CSS used for Jade Templates
 
