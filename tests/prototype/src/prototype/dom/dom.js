@@ -890,6 +890,7 @@
 
   /**
    *  Element.insert(@element, content) -> Element
+   *  - element (Element): An element
    *  - content (String | Element | Object): The content to insert.
    *
    *  Inserts content `above`, `below`, at the `top`, and/or at the `bottom` of
@@ -947,6 +948,7 @@
   
   /**
    *  Element.wrap(@element, wrapper[, attributes]) -> Element
+   *  - element (Element): An element
    *  - wrapper (Element | String): An element to wrap `element` inside, or
    *    else a string representing the tag name of an element to be created.
    *  - attributes (Object): A set of attributes to apply to the wrapper
@@ -1139,6 +1141,7 @@
   
   /**
    *  Element.clone(@element, deep) -> Element
+   *  - element (Element): Element to clone
    *  - deep (Boolean): Whether to clone `element`'s descendants as well.
    *
    *  Returns a duplicate of `element`.
