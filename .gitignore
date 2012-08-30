@@ -4,7 +4,6 @@ out/
 playground*
 tests/prototype-doc
 tests/features-doc
-src/
 nodejs_ref_guide/
 check_nodejs.js
 nodeParseOptions.json
@@ -15,3 +14,4 @@ nodeParseOptions.json
 out.txt
 .cache/
 nodemanual/
+tests/dump
