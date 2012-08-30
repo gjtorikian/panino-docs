@@ -160,7 +160,7 @@ While writing your templates, you may find the need to call out to the Panino sy
 
 # Syntax and Parse Options
 
-[Here's a full list of Panino's syntax](https://github.com/gjtorikian/panino-docs/blob/master/SYNTAX.md) that you can follow to write your well-formed documentation.
+[Here's a full list of Panino's syntax](https://github.com/gjtorikian/panino-docs/blob/master/syntax.md) that you can follow to write your well-formed documentation.
 
 Some of the syntaxes outlined in that document can be overwritten with a JSON object defined in a file, and pulled in through the `-p` argument. The format of that file looks something like this:
 
