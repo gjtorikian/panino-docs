@@ -343,7 +343,7 @@ argument_description
        }
 
       $6 = $6.split("\n").map(function(element, idx) {
-        return element.replace(/^\s+/g, '');
+        return element.replace(/^\s{4}/g, '');
       });
 
       $$ = {
