@@ -343,15 +343,17 @@ argument_description
        }
 
       $6 = $6.split("\n").map(function(element, idx) {
-        return element.replace(/^\s{1,4}/g, '');
+        return element.replace(/^\s+/g, '');
       });
 
+      console.log($6)
       $$ = {
         name: $2,
         types: $4,
-        description: $6.join("\n")
+        description: $6.join("\n\n")
       };
 
+      console.log($$.description)
     }%
   | '**' NAME '{' names_alternation '}' TEXT %{
       if (yy.useDash) {
@@ -360,13 +362,13 @@ argument_description
       }
 
       $6 = $6.split("\n").map(function(element, idx) {
-        return element.replace(/^\s{1,4}/g, '');
+        return element.replace(/^\s+/g, '');
       });
       
       $$ = {
         name: $2,
         types: $4,
-        description: $6.join("\n")
+        description: $6.join("\n\n")
       };
     }%
   ;
