@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Panino-docs by gjtorikian</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Panino-docs</h1>
+        <p class="header">API documentation generation tool that uses a strict grammer to ensure consistency.</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/gjtorikian/panino-docs/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/gjtorikian/panino-docs/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/gjtorikian/panino-docs">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/gjtorikian">gjtorikian</a></p>
+
+
+      </header>
+      <section>
+        <h1>Introduction</h1>
+
+<p>Panino is an API documentation generation tool. It can read comments from your source files, or, parse Markdown files and generate the same documentation. Panino runs on <a href="http://www.nodejs.org">Node.js</a>, and uses <a href="http://jade-lang.com/">Jade</a> as its templating engine.</p>
+
+<p>Panino parses your content following a strict, no-crap-allowed grammar that ensures <strong>correct</strong> and <strong>consistent</strong> documentation, because you've written it following a specific syntax. This means that there is a very specific set of rules and expectations as to how to write your documentation. These rules are not terribly hard or unweildly. Keeping documentation parsed through a grammar ensures thorough and consistent docs, no matter who it's written by. </p>
+
+<p>This project is forked from <a href="https://github.com/nodeca/ndoc">ndoc</a>, which itself is based off of <a href="https://github.com/tobie/pdoc">pdoc</a>. (<a href="http://andrewdupont.net/2008/11/16/pdoc-inline-documentation-for-prototype/">This blog post</a> identifies some of the advantages over other commenting-to-documentation systems. In a nutshell, though:</p>
+
+<blockquote>
+<p>Unlike other inline-doc parsers, PDoc does not rely on the JavaScript source code at all; it only parses the comments. This approach, though slightly more verbose, is much better at generating consistent, reliable documentation, and avoids the headaches encountered when documenting highly dynamic languages.</p>
+</blockquote>
+
+<h1>Installation</h1>
+
+<p>You'll need <code>node.js</code> and <code>npm</code> installed. Then, you can can choose to install Panino globally:</p>
+
+<pre><code>npm install -g panino
+</code></pre>
+
+<p>From the command line, just run</p>
+
+<pre><code>node panino --path [source_files]
+</code></pre>
+
+<p>Otherwise, you can write a simple build script to do the work for you. Here's how that might look:</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">title</span>       <span class="o">:</span> <span class="s2">"Node.js Manual TEST"</span><span class="p">,</span>
+  <span class="nx">linkFormat</span>  <span class="o">:</span> <span class="s1">'http://example.com/{file}#{line}'</span><span class="p">,</span>
+  <span class="nx">output</span>      <span class="o">:</span> <span class="s1">'./nodemanual'</span><span class="p">,</span>
+  <span class="nx">skin</span>        <span class="o">:</span> <span class="s2">"./skins/goose/templates/layout.jade"</span><span class="p">,</span>
+  <span class="nx">assets</span>      <span class="o">:</span> <span class="s2">"./skins/goose/assets"</span><span class="p">,</span>
+  <span class="nx">additionalObjs</span> <span class="o">:</span> <span class="s2">"./additionalObjs.json"</span><span class="p">,</span>
+  <span class="nx">parseOptions</span>   <span class="o">:</span> <span class="s2">"./nodeParseOptions.json"</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">files</span> <span class="o">=</span> <span class="nx">wrench</span><span class="p">.</span><span class="nx">readdirSyncRecursive</span><span class="p">(</span><span class="s2">"./nodejs_ref_guide"</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="s2">"/nodejs_ref_guide/"</span> <span class="o">+</span> <span class="nx">f</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">panino</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">files</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">ast</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">panino</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">'html'</span><span class="p">,</span> <span class="nx">ast</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+      <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+<h1>License</h1>
+
+<p>This project is distributed under the <a href="https://github.com/gjtorikian/panino-docs/blob/master/LICENSE">GPL</a> license.</p>
+
+<h1>Why the Name?</h1>
+
+<p><em>Panino</em> refers to <a href="http://en.wikipedia.org/wiki/Panini_(sandwich)#Terminology">a type of sandwich in Italy</a>. Panini is its plural form, but is often mistakenly used as the singular. It seemed important to draw attention to the fact that what you're defining should represent what it actually is, in documentation and beyond.</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
