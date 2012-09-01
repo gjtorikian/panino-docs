@@ -6,12 +6,29 @@ Panino parses your content following a strict, no-crap-allowed grammar that ensu
 
 > Unlike other inline-doc parsers, [this] does not rely on the JavaScript source code at all; it only parses the comments. This approach, though slightly more verbose, is much better at generating consistent, reliable documentation, and avoids the headaches encountered when documenting highly dynamic languages.
 
-This project is forked from [ndoc](https://github.com/nodeca/ndoc), which itself is based off of [pdoc](https://github.com/tobie/pdoc). [This blog post](http://andrewdupont.net/2008/11/16/pdoc-inline-documentation-for-prototype/) identifies some of the advantages over other commenting-to-documentation systems. Differences from ndoc are listed in [the manual](http://gjtorikian.github.com/panino-docs/), where you can also find more help on usage and syntax.
+This project is forked from [ndoc](https://github.com/nodeca/ndoc), which itself is based off of [pdoc](https://github.com/tobie/pdoc). [This blog post](http://andrewdupont.net/2008/11/16/pdoc-inline-documentation-for-prototype/) identifies some of the advantages over other commenting-to-documentation systems. 
+
+For more help, including syntax definitions, see [the manual](http://gjtorikian.github.com/panino-docs/).
 
 ### Who Uses It?
 
 * [Ace API](http://ace.ajax.org/api)
 * [NodeManual](http://www.nodemanual.org)
+
+# Features
+
+* Support for Markdown files
+* Creating a separate page for every class
+* Support for proper "`[[ ]]`"-notation linking (_e.g. `[[Class.foo]]` renders to a link wrapped in a `<code>` tag)
+* Adding "shortened" descriptions, truncating the full description into a single sentance
+* Ability to linkify everything (object types in signatures, return types, e.t.c.)
+* Allowing to specify a URL to retrieve documentation about global objects (like `Array` or `String`)
+* Support for [content references (or conrefs)](http://www.github.com/gjtorikian/markdown_conrefs). Conrefs are a way to write a sentance once, and refer to it in multiple locations. 
+* Documentation runs through [a test suite](https://github.com/gjtorikian/functional-docs) to ensure the validity of all links and images
+* Support for arbitrary metadata on classes and members (that can be used in templates)
+* Support for arbitrary Markdown-to-HTML page conversion
+
+Markdown is converted using [namp](https://github.com/gjtorikian/namp).
 
 # Installation
 
@@ -53,6 +70,21 @@ panino.parse(files, options, function (err, ast) {
   });
 });
 ```
+
+Panino has two processes: a parsing phase, and a rendering phase. 
+
+`panino.parse()` takes three arguments:
+
+* An array of files to use
+* Build options
+* A callback that returns `err` and the parsed `ast`
+
+`panino.render` takes four arguments:
+
+* The rendering mode; currently, this can be `html` or `json`, though you can also create your own renderers
+* The previously created `ast`
+* Build options
+* A final callback to check for `err`
 
 # License
 
