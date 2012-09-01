@@ -2,11 +2,16 @@
 
 Panino is an API documentation generation tool. It can read comments from your source files, or, parse Markdown files and generate the same documentation. Panino runs on [Node.js](http://www.nodejs.org), and uses [Jade](http://jade-lang.com/) as its templating engine.
 
-Panino parses your content following a strict, no-crap-allowed grammar that ensures **correct** and **consistent** documentation, because you've written it following a specific syntax. This means that there is a very specific set of rules and expectations as to how to write your documentation. These rules are not terribly hard or unweildly. Keeping documentation parsed through a grammar ensures thorough and consistent docs, no matter who it's written by. 
+Panino parses your content following a strict, no-crap-allowed grammar that ensures **correct** and **consistent** documentation, because you've written it following a specific syntax. This means that there is a very specific set of rules and expectations as to how to write your documentation. These rules are not terribly hard or unweildly. Keeping documentation parsed through a grammar ensures thorough and consistent docs, no matter who it's written by. To summarize: 
 
-This project is forked from [ndoc](https://github.com/nodeca/ndoc), which itself is based off of [pdoc](https://github.com/tobie/pdoc). ([This blog post](http://andrewdupont.net/2008/11/16/pdoc-inline-documentation-for-prototype/) identifies some of the advantages over other commenting-to-documentation systems. In a nutshell, though:
+> Unlike other inline-doc parsers, [this] does not rely on the JavaScript source code at all; it only parses the comments. This approach, though slightly more verbose, is much better at generating consistent, reliable documentation, and avoids the headaches encountered when documenting highly dynamic languages.
 
-> Unlike other inline-doc parsers, PDoc does not rely on the JavaScript source code at all; it only parses the comments. This approach, though slightly more verbose, is much better at generating consistent, reliable documentation, and avoids the headaches encountered when documenting highly dynamic languages.
+This project is forked from [ndoc](https://github.com/nodeca/ndoc), which itself is based off of [pdoc](https://github.com/tobie/pdoc). [This blog post](http://andrewdupont.net/2008/11/16/pdoc-inline-documentation-for-prototype/) identifies some of the advantages over other commenting-to-documentation systems. Differences from ndoc are listed in [the manual](http://gjtorikian.github.com/panino-docs/), where you can also find more help on usage and syntax.
+
+### Who Uses It?
+
+* [Ace API](http://ace.ajax.org/api)
+* [NodeManual](http://www.nodemanual.org)
 
 # Installation
 
@@ -22,9 +27,8 @@ Otherwise, you can write a simple build script to do the work for you. Here's ho
 
 ```javascript
 var options = {
-  title       : "Node.js Manual TEST",
-  linkFormat  : 'http://example.com/{file}#{line}',
-  output      : './nodemanual',
+  title       : "Some test docs",
+  output      : './output',
   skin        : "./skins/goose/templates/layout.jade",
   assets      : "./skins/goose/assets",
   additionalObjs : "./additionalObjs.json",
