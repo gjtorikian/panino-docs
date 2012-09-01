@@ -238,7 +238,14 @@ code, pre {
   font-size: 12px;
   overflow-x: auto;
 }
+li p {
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
 
+ul ul {
+  margin-bottom: 0px;
+}
 pre {
   padding: 20px;
   background: #3A3C42;
