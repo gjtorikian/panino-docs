@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Panino</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Panino</h1>
+
+        <ul>
+          <li class=""><a class="buttons" href="./index.html">Doc Syntax</a></li>
+          <li class=""><a class="buttons" href="./options.html">Build Options</a></li>
+          <li class=""><a class="buttons" href="./skin.html">Defining a Skin</a></li>
+          <li class="current">Linkify Everything</li>
+        </ul>
+      </header>
+      <section>
+        <h1>Linkify Everything</h1>
+
+<p>Panino was designed with the goal of supporting links wherever and whenever they make sense. This means, among other things, that any object encountered in a method signature, return type, or parameter type is turned into a valid link. The Panino build throws an exception and halts if it finds some content that it can't turn into a link.</p>
+
+<p>On the whole, this is A Good Thing for readers. It does mean, of course, slightly more work to set up Panino correctly for your project.</p>
+
+<p>There are three types of objects Panino considers when linkify everything:</p>
+
+<ol>
+<li>Objects that are already linked by Panino. </li>
+<li>Objects that exist in your code, but not in your documentation project. This could be, for example, objects in another folder, or, for JavaScript, objects like <code>DOMElement</code> which exist in the browser but not your project.</li>
+<li>Global objects for your language of choice, like <code>String</code>, <code>Array</code>, and so on.</li>
+</ol><h2>Existing Objects</h2>
+
+<p>For the first type, Panino creates a tree of all your objects and members, so you don't need to do anything to support these. You can link to objects in your documentation that exists using the <code>[[ ]]</code> notation.</p>
+
+<p>For example:</p>
+
+<p><code>[[Method.Name]]</code> - renders to <code>&lt;a href=link_to_method_docs&gt;&lt;code&gt;Method.Name&lt;code&gt;&lt;/a&gt;</code></p>
+
+<p>With <code>[[Method.Name]]</code>, Panino automatically wraps the link with a <code>&lt;code&gt;</code> tag for proper semantics. </p>
+
+<p><code>[[Method.Name TEXT]]</code>- renders to <code>&lt;a href=link_to_method_docs&gt;TEXT&lt;/a&gt;</code></p>
+
+<p>With <code>[[Method.Name TEXT]]</code>, any inline Markdown is allowed, <em>i.e.</em> <code>[[Method.Name **BOLD TEXT**]]</code> becomes <code>&lt;a href=link_to_method_docs&gt;&lt;strong&gt;BOLD TEXT&lt;/strong&gt;&lt;/a&gt;</code></p>
+
+<h2>Outside Objects</h2>
+
+<p>For the second and third types, you need to create a JSON object describing the relationship between objects and their documentation links. Set the path to this file with the <code>-a</code> argument. An example file might look like this:</p>
+
+<div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"DOMElement"</span>  <span class="o">:</span> <span class="s2">"https://developer.mozilla.org/en/DOM/element"</span><span class="p">,</span>
+  <span class="s2">"String"</span>    <span class="o">:</span> <span class="s2">"http://nodemanual.org/latest/js_doc/Array.html"</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>As Panino comes across links for <code>DOMElement</code> or <code>String</code>, it creates an external link to these pages.</p>
+
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Panino</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Panino</h1>
+
+        <ul>
+          <li class=""><a class="buttons" href="./index.html">Doc Syntax</a></li>
+          <li class="current">Build Options</li>
+          <li class=""><a class="buttons" href="./skin.html">Defining a Skin</a></li>
+          <li class=""><a class="buttons" href="./linkify.html">Linkify Everything</a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Build Options</h1>
+
+<p>Panino requires only one option to be set: </p>
+
+<ul>
+<li>
+<code>path</code>: an array of files and directories for your source</li>
+</ul><p>This is either the first argument in the cli version:</p>
+
+<pre><code>panino [path]
+</code></pre>
+
+<p>Or, the first argument in a script using <code>panino.parse()</code>:</p>
+
+<pre><code>panino.parse([path],...)
+</code></pre>
+
+<p>If you're rendering to HTML, you need one more options:</p>
+
+<ul>
+<li>
+<code>skin</code>: the location of your primary Jade template:</li>
+</ul><p>This is added ia <code>--skin</code> in the cli:</p>
+
+<pre><code>panino [path] --skin ./templates/layout.jade
+</code></pre>
+
+<p>Or, as a build option in <code>panino.render()</code>:</p>
+
+<pre><code>panino.parse([path],..., fucntion(err, ast) {
+   panino.render(ast, {"skin":"./templates/layout.jade"},...) 
+});
+</code></pre>
+
+<p>However, there are a plentiful number of options to tweak and manage. Provided below are first the cli command, followed by the build option you can use:</p>
+
+<ul>
+<li>
+<code>--exclude</code> | <code>exclude</code><br>
+Glob patterns of filenames to exclude; (you can use wildcards: ?, <em>, *</em>)</li>
+<li>
+<code>-o, --output</code> | <code>output</code><br>
+Resulting file(s) location.<br>
+Defaults to <em>out</em>
+</li>
+<li>
+<code>-skin</code> | <code>skin</code><br>
+Location for your primary Jade template; required only for HTML rendering</li>
+<li>
+<code>-u, --assets</code> | <code>assets</code><br>
+A directory containing some asset files for HTML rendering. These are copied to your out directory.</li>
+<li>
+<code>--use</code> | <code>use</code><br>
+Loads a custom plugin for rendering</li>
+<li>
+<code>-a, --additionalObjs</code> | <code>additionalObjs</code><br>
+The path to a JSON file containing a structure defining documentation sources for additional objects. See <a href="./linkify.html">Linkifying Everything</a> for more information.</li>
+<li>
+<code>--alias</code> | <code>aliases</code><br>
+Registers extensions alias. For example, <code>cc:js</code> registers the <code>cc</code> extension as an alias of <code>js</code>. These are comma-separated.</li>
+<li>
+<code>-r, --render</code> | <code>renderer</code><br>
+Documentation renderer (html, json). More can be added by custom plugins.<br>
+Defaults to HTML</li>
+<li>
+<code>--link-format</code> | <code>linkFormat</code>
+View sources link format. You can use <code>{file}</code> and <code>{line}</code> and any of your <em>package.json</em>  variables for interpolation<br>
+Defaults to no links</li>
+<li>
+<code>-t, --title</code> | <code>title</code><br>
+Documentation title template. You can use any of your <em>package.json</em> variables for interpolation.<br>
+Defaults to <code>{package.name} {package.version} API documentation</code>
+</li>
+<li>
+<code>-s, --split</code> | <code>split</code><br>
+Splits the output into a file per class
+Defaults to <code>true</code>
+</li>
+<li>
+<code>--package</code> | <code>package</code><br>
+Read a specified <em>package.json</em> file.<br>
+Defaults to <em>./package.json</em>
+</li>
+<li>
+<code>-d, --disableTests</code> | <code>disableTests</code><br>
+Disables the test suite that runs at the end of an HTML build. This is NOT recommended.
+Defaults to <code>false</code>
+</li>
+<li>
+<code>--index</code> | <code>index</code><br>
+Index file (with introduction text), <em>e.g.</em> a README.md file.</li>
+<li>
+<code>--keepOutDir</code> | <code>keepOutDir</code><br>
+Does not wipe output directory before building<br>
+Defaults to <code>false</code>
+</li>
+<li>
+<code>--showInternals</code> | <code>showInternals</code><br>
+Shows members that are marked as internal in the rendered output.<br>
+Defaults to <code>true</code>
+</li>
+</ul>
+
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>

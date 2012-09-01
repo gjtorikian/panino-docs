@@ -1,0 +1,321 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Panino</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Panino</h1>
+
+        <ul>
+          <li class=""><a class="buttons" href="./index.html">Doc Syntax</a></li>
+          <li class=""><a class="buttons" href="./options.html">Build Options</a></li>
+          <li class="current">Defining a Skin</li>
+          <li class=""><a class="buttons" href="./linkify.html">Linkify Everything</a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Defining a Skin</h1>
+
+<p>Panino uses the <a href="https://github.com/visionmedia/jade">Jade templating engine</a> to render HTML documentation. You can define the location of your primary Jade template with <code>--skin</code> (on the cli) or <code>skin</code> (in a build file).</p>
+
+<p>Your CSS, images, Javascript, and other resource files should go into a separate assets directory. </p>
+
+<p>Your content is rendered through the Jade template, and sent to the <em>out</em> directory. All your files in <em>assets</em> are also placed in your <em>out</em> directory.</p>
+
+<p>While writing your templates, you may find the need to call out to the Panino system for information about your documentation. Fear not, as there are various variables and functions you can use inside your Jade templates. </p>
+
+<ul>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#css">CSS</a></li>
+</ul><p><a name="variables"></a></p>
+
+<h2>Variables</h2>
+
+<p>Here's a list of the variables you have access to in your Jade templates:</p>
+
+<h3>tree</h3>
+
+<p>An object that represents the current item your template is iterating over. You have access to many, many properties, which are ironically undocumented. If you choose to render your documentation model as a JSON object, you can directly see which properties are available to you.</p>
+
+<p>You'll most likely always be working with this object by doing stuff like this:</p>
+
+<pre><code>for obj in tree.children
+    for child in obj.children.filter(function(x){return x.type === 'class method'}) // grab only members
+        h3 Methods
+            if child.description
+                mixin markdown(child.description) // convert description from Markdown to HTML
+</code></pre>
+
+<p>In other words: for the current <code>obj</code> in the tree, get a list of its class methods, and render over its descriptions.</p>
+
+<h3>list</h3>
+
+<p>This is an object containing the definitions of all your classes, including members, subclasses, source file location, <em>e.t.c.</em>. Use with discretion.</p>
+
+<h3>options</h3>
+
+<p>A list of all the build options you provided. You could also just pass in an arbitray list of options to be processed in your Jade template.</p>
+
+<h3>date</h3>
+
+<p>The current date.</p>
+
+<h3>showInternals</h3>
+
+<p>The value of <code>options.showInternals</code>.</p>
+
+<h3>title</h3>
+
+<p>The title of the documentation, as defined by <code>options.title</code>.</p>
+
+<h3>index</h3>
+
+<p>The path to your index file, as defined by <code>options.index</code>.</p>
+
+<h3>isIndex</h3>
+
+<p><code>true</code> if the current file is the index file. This only applies to files that are split.</p>
+
+<h3>fileName</h3>
+
+<p>The current file you're processing. This only applies to files that are split.</p>
+
+<h3>classId</h3>
+
+<p>The current class you're processing. This only applies to files that are split.</p>
+
+<h3>outFile</h3>
+
+<p>The name of the current output file. This only applies to files that are split.</p>
+
+<ul>
+<li>
+<code>options</code>: A JSON containing all the build options you passed into Panino</li>
+</ul><p><a name="functions"></a></p>
+
+<h2>Functions</h2>
+
+<p>Here's a list of the functions you have access to in your Jade templates:</p>
+
+<h3>markdown</h3>
+
+<p>A function that converts Markdown into HTML, via <a href="https://github.com/gjtorikian/namp">namp</a>. It also processes your conrefs. </p>
+
+<p>It takes two parameters:</p>
+
+<ul>
+<li>
+<code>text</code>: The Markdown content to convert (required)</li>
+<li>
+<code>inline</code>: A Boolean value which, if true, strips the surrounding <code>&lt;p&gt;</code> tages of the converted HTML. (optional)</li>
+</ul><h3>link</h3>
+
+<p>Renders any ID given to it as a link; throws an error if the ID does not exist. See <a href="./linkify.html">Linkify Everything</a> for more information. </p>
+
+<p>This method takes three arguments:</p>
+
+<ul>
+<li>
+<code>text</code>: The ID to linkify. This can be anything, like the name of a class (<code>Bicycle</code>), to a member in the class (<code>Bicycle.pedal</code>) (required)</li>
+<li>
+<code>classes</code>: An array of class names to surround the link with (optional)</li>
+<li>
+<code>short</code>: A Boolean which, if specified, indicates that the link is coming from a <code>[[ ]]</code> notation. You should not set this yourself. (optional)</li>
+</ul><p>You'd use this function by doing something like this:</p>
+
+<pre><code>if obj.alias_of // if this object has aliases
+    li
+        span.label.alias.single
+            | Aliased as: 
+            != link(obj.alias_of) // turn each alias into a link
+</code></pre>
+
+<h3>signature</h3>
+
+<p>A function that generates a member signature, including <a href="./linkify.html">linkifying everything</a>. </p>
+
+<p>It takes three arguments:</p>
+
+<ul>
+<li>
+<code>obj</code>: The parent object (required)</li>
+<li>
+<code>sig</code>: The signature itself (required)</li>
+<li>
+<code>classes</code>: An array of class names to surround the signature with (optional)</li>
+</ul><p>You'd use this function by doing something like this:</p>
+
+<pre><code>for sig in obj.signatures // if the object even has signatures
+    li.signature
+        ul
+          li.signature-call!= signature(obj, sig, ["methodClicker"]) // pass in each signature
+</code></pre>
+
+<h3>argumentTable</h3>
+
+<p>Generates a table of your member's arguments. You can place this anywhere you want in your description. </p>
+
+<p>This function takes four arguments:</p>
+
+<ul>
+<li>
+<code>args</code>: The signature's arguments (required)</li>
+<li>
+<code>tableClasses</code>: An array of class names to surround the table with (optional)</li>
+<li>
+<code>trClasses</code>: An array of class names to surround the <code>&lt;tr&gt;</code>s with (optional)</li>
+<li>
+<code>tdClasses</code>: An array of class names to surround the <code>&lt;td&gt;</code>s with (optional)</li>
+</ul><p>You'd use this function by doing something like this:</p>
+
+<pre><code>if obj.arguments
+    h4 Arguments
+      != argumentTable(obj.arguments, ["argument-list", "zebra-striped", "bordered-table"])
+</code></pre>
+
+<h3>returnLink</h3>
+
+<p>Turns the return value of a member into a link. </p>
+
+<p>This method takes three arguments:</p>
+
+<ul>
+<li>
+<code>obj</code>: The parent object (required)</li>
+<li>
+<code>ret</code>: The return value itself (required)</li>
+<li>
+<code>classes</code>: An optional array of class names to surround the link with (optional)</li>
+</ul><p>Building on the <code>signature()</code> example above, you'd use this function by doing something like this:</p>
+
+<pre><code>for sig in obj.signatures // if the object even has signatures
+    li.signature
+        ul
+          li.signature-call!= signature(obj, sig, ["methodClicker"]) // pass in each signature
+            if sig.returns // if there's a return type
+              li.signature-returns
+                ul.argument-types
+                  for ret in sig.returns
+                    li.argument-type!= returnLink(obj, ret, []) // list out each return type
+</code></pre>
+
+<h3>returnTable</h3>
+
+<p>Generates a table of your member's return values. You can place this anywhere you want in your description. </p>
+
+<p>This function takes four arguments:</p>
+
+<ul>
+<li>
+<code>returnVals</code>: The signature's return values (required)</li>
+<li>
+<code>tableClasses</code>: An array of class names to surround the table with (optional)</li>
+<li>
+<code>trClasses</code>: An array of class names to surround the <code>&lt;tr&gt;</code>s with (optional)</li>
+<li>
+<code>tdClasses</code>: An array of class names to surround the <code>&lt;td&gt;</code>s with (optional)</li>
+</ul><p>You'd use this function by doing something like this:</p>
+
+<pre><code>if obj.retDesc
+    h4 Returns
+        != returnTable(obj.retDesc, ["return-list", "zebra-striped", "bordered-table"]) 
+</code></pre>
+
+<p><a name="css"></a></p>
+
+<h2>CSS</h2>
+
+<p>Some of the functions above render HTML with their own CSS. Here's a list of those class names, so that you can manipulate (or hide) the content any way you like:</p>
+
+<h3>From link()`</h3>
+
+<ul>
+<li>
+<code>link-short</code>: Applied to links that came from <code>[[ ]]</code> conversions</li>
+</ul><h3>From <code>signature()</code>
+</h3>
+
+<ul>
+<li>
+<code>constructorIdentifier</code>: Applied to the <code>new</code> tag in the method signature for constructors</li>
+<li>
+<code>member-name</code>: Applied to the entire member signature, for all types</li>
+<li>
+<code>sigClassName</code>: Applied to the class name of the signature, <em>e.g.</em> <code>Bicycle.</code> in <code>Bicycle.pedal()</code>. Note the intentional inclusion of the <code>.</code>
+</li>
+<li>
+<code>sigMemberName</code>: Applied to the member name in the signature, <em>e.g.</em> <code>pedal</code> in <code>Bicycle.pedal()</code>
+</li>
+<li>
+<code>eventObjName</code>: Applied to the event's name in a signature</li>
+<li>
+<code>eventListenerStart</code>: Applied to the start of an event's signature</li>
+<li>
+<code>eventMember</code>: Applied to <em>just</em> the event name</li>
+<li>
+<code>sigArgList</code>: Applied to the argument list in a signature, <em>e.g.</em> <code>velocity, isPedaling</code> in <code>Bicycle.ride(velocity, isPedaling)</code>
+</li>
+<li>
+<code>eventListenerClose</code>: Applied to the closing of an event</li>
+<li>
+<code>eventFunctionOpen</code>: Applied to the starting callback of an event</li>
+<li>
+<code>argument</code>: Applied to every argument in a signature, <em>e.g.</em> <code>velocity</code> and <code>isPedaling</code> in <code>Bicycle.ride(velocity, isPedaling)</code>
+</li>
+<li>
+<code>eventFunctionClose</code>: Applied to the closing callback of an event</li>
+</ul><h3>From <code>argumentTable()</code>
+</h3>
+
+<ul>
+<li>
+<code>argumentTable</code>: Applied to the entire table</li>
+<li>
+<code>argumentRow</code>: Applied to every <code>&lt;tr&gt;</code>
+</li>
+<li>
+<code>argName</code>: Applied to the argument name</li>
+<li>
+<code>argType</code>: Applied to the argument type</li>
+<li>
+<code>argDescription</code>: Applied to the argument description</li>
+</ul><h3>From <code>returnLink()</code>
+</h3>
+
+<ul>
+<li>
+<code>returnType</code>: Applied to the return type</li>
+</ul><h3>From <code>returnTable()</code>
+</h3>
+
+<ul>
+<li>
+<code>returnTable</code>: Applied to the entire table</li>
+<li>
+<code>returnType</code>: Applied to the return type</li>
+<li>
+<code>returnDescription</code>: Applied to the return description</li>
+</ul>
+
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>

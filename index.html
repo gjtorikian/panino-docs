@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Panino-docs by gjtorikian</title>
+    <title>Panino</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -16,82 +16,505 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1 class="header">Panino-docs</h1>
-        <p class="header">API documentation generation tool that uses a strict grammer to ensure consistency.</p>
+        <h1 class="header">Panino</h1>
 
         <ul>
-          <li class="download"><a class="buttons" href="https://github.com/gjtorikian/panino-docs/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/gjtorikian/panino-docs/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/gjtorikian/panino-docs">View On GitHub</a></li>
+          <li class="current">Doc Syntax</li>
+          <li class=""><a class="buttons" href="./options.html">Build Options</a></li>
+          <li class=""><a class="buttons" href="./skin.html">Defining a Skin</a></li>
+          <li class=""><a class="buttons" href="./linkify.html">Linkify Everything</a></li>
         </ul>
-
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/gjtorikian">gjtorikian</a></p>
-
-
       </header>
       <section>
-        <h1>Introduction</h1>
+        <h1>Documentation Syntax</h1>
 
-<p>Panino is an API documentation generation tool. It can read comments from your source files, or, parse Markdown files and generate the same documentation. Panino runs on <a href="http://www.nodejs.org">Node.js</a>, and uses <a href="http://jade-lang.com/">Jade</a> as its templating engine.</p>
+<p>This document describes the various syntax rules for code files, as well as Markdown files In some cases, the format for Markdown differs, and is noted as such. </p>
 
-<p>Panino parses your content following a strict, no-crap-allowed grammar that ensures <strong>correct</strong> and <strong>consistent</strong> documentation, because you've written it following a specific syntax. This means that there is a very specific set of rules and expectations as to how to write your documentation. These rules are not terribly hard or unweildly. Keeping documentation parsed through a grammar ensures thorough and consistent docs, no matter who it's written by. </p>
+<p>Note also that you can provide your own style syntax for a few of the options below, by passing in a JSON rules file with the <code>-p</code> argument. Check out the <code>parseOptions.json</code> file for how these are being set. Potential overrides are identified below.</p>
 
-<p>This project is forked from <a href="https://github.com/nodeca/ndoc">ndoc</a>, which itself is based off of <a href="https://github.com/tobie/pdoc">pdoc</a>. (<a href="http://andrewdupont.net/2008/11/16/pdoc-inline-documentation-for-prototype/">This blog post</a> identifies some of the advantages over other commenting-to-documentation systems. In a nutshell, though:</p>
+<h2>Comments</h2>
 
-<blockquote>
-<p>Unlike other inline-doc parsers, PDoc does not rely on the JavaScript source code at all; it only parses the comments. This approach, though slightly more verbose, is much better at generating consistent, reliable documentation, and avoids the headaches encountered when documenting highly dynamic languages.</p>
-</blockquote>
+<p><strong>For JavaScript Source Files</strong>: Documentation comments start with <code>/**</code> and end with <code>**/</code>. Each new line starts with <code>*</code>. </p>
 
-<h1>Installation</h1>
-
-<p>You'll need <code>node.js</code> and <code>npm</code> installed. Then, you can can choose to install Panino globally:</p>
-
-<pre><code>npm install -g panino
+<pre><code>/** ...
+ *  ...
+ **/
 </code></pre>
 
-<p>From the command line, just run</p>
+<p><strong>For Markdown Files</strong>: This rule obviously does not apply. Members are parsed according to header tag location (see below).</p>
 
-<pre><code>node panino --path [source_files]
+<h2>Tags</h2>
+
+<p><strong>For Source Files</strong>: The opening line of a comment is reserved for tags. Tags are optional, and separated by a comma followed by optional whitespace(s) (<code>,</code>). They can be either a tag name or a key / value pair separated by a colon and optional whitespace(s) (<code>:</code>):</p>
+
+<pre><code>/** deprecated: 1.0..2.0, alias of: Element#descendantOf, chainable, metadata: { "goingToRemove": "yes", testing": true}
+ * Element#childOf(@element, className) -&gt; Element
+ *  ...
+ **/
 </code></pre>
 
-<p>Otherwise, you can write a simple build script to do the work for you. Here's how that might look:</p>
+<p><strong>For Markdown Files</strong>: Tags are defined within parenthesis <em>after</em> all the signature and return type descriptions. For example:</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">title</span>       <span class="o">:</span> <span class="s2">"Node.js Manual TEST"</span><span class="p">,</span>
-  <span class="nx">linkFormat</span>  <span class="o">:</span> <span class="s1">'http://example.com/{file}#{line}'</span><span class="p">,</span>
-  <span class="nx">output</span>      <span class="o">:</span> <span class="s1">'./nodemanual'</span><span class="p">,</span>
-  <span class="nx">skin</span>        <span class="o">:</span> <span class="s2">"./skins/goose/templates/layout.jade"</span><span class="p">,</span>
-  <span class="nx">assets</span>      <span class="o">:</span> <span class="s2">"./skins/goose/assets"</span><span class="p">,</span>
-  <span class="nx">additionalObjs</span> <span class="o">:</span> <span class="s2">"./additionalObjs.json"</span><span class="p">,</span>
-  <span class="nx">parseOptions</span>   <span class="o">:</span> <span class="s2">"./nodeParseOptions.json"</span>
-<span class="p">};</span>
+<pre><code>### Element#childOf(@element, className) -&gt; Element
+- element (DOMElement): blah blah
+- className (String): blather blather
+(deprecated: 1.0..2.0, alias of: Element#descendantOf, chainable, metadata: { "goingToRemove": "yes", testing": true})
+...
+</code></pre>
 
-<span class="kd">var</span> <span class="nx">files</span> <span class="o">=</span> <span class="nx">wrench</span><span class="p">.</span><span class="nx">readdirSyncRecursive</span><span class="p">(</span><span class="s2">"./nodejs_ref_guide"</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="s2">"/nodejs_ref_guide/"</span> <span class="o">+</span> <span class="nx">f</span><span class="p">);</span>
-<span class="p">});</span>
+<p>For classes, it comes right after the decleration:</p>
 
-<span class="nx">panino</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">files</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">ast</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-    <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-  <span class="p">}</span>
+<pre><code>## SomeClass
+(deprecated: 1.0..2.0, metadata: { "youGetTheIdea": true})
+</code></pre>
 
-  <span class="nx">panino</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">'html'</span><span class="p">,</span> <span class="nx">ast</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-      <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">});</span>
-<span class="p">});</span>
-</pre></div>
+<h3>Supported Tags</h3>
 
-<h1>License</h1>
+<ul>
+<li>
+<code>deprecated</code>: Identifies that the member is considered deprecated. The deprecation tag can also specify versions in two ways:
+<ul>
+<li>
+<code>deprecated: &lt;from&gt;</code>: The member is deprecated starting from version <code>from</code>
+</li>
+<li>
+<code>deprecated: &lt;from&gt;..&lt;out&gt;</code>. The member is deprecated starting from version <code>from</code> and will be removed by version <code>out</code>
+</li>
+</ul>
+</li>
+<li>
+<code>read-only</code>: Identifies a member as read-only</li>
+<li>
+<code>internal</code>: Identifies a member as private </li>
+<li>
+<code>hide</code>: Identifies that the member should not be shown during a render</li>
+<li>
+<code>chainable</code>: Identifies that a method can be chained, <em>i.e.</em> the return value is the same object to which method belongs, like <code>$(...).on(...).on(...)</code>
+</li>
+<li>
+<code>section: &lt;name&gt;</code>: Defines what section a description belongs to</li>
+<li>
+<code>alias of: &lt;name&gt;</code>: Identifies an alias for the member</li>
+<li>
+<code>related to: &lt;name&gt;</code>: Identifies a related member</li>
+<li>
+<code>belongs to: &lt;name&gt;</code>: Identifies that a member belongs to another section</li>
+<li>
+<code>extension</code>: Identifies that the member is not a part of the current file or class. <p>Suppose you have two classes, one called <code>Vehicle</code> and the other called <code>Bicycle</code>, in two different files. <code>Bicycle</code> can extended the functions in <code>Vehicle</code>, but they should be marked with the <code>extension</code> tag, to prevent the parser from considering the extension as part of <code>Bicycle</code>.</p></li>
+<li>
+<code>metadata</code>: This is arbitrary metadata that you can use later in your templates. It's just a simple JSON object.</li>
+</ul><h2>Defining Members via <a href="http://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_Form">Extended Backus–Naur Form (EBNF)</a>
+</h2>
 
-<p>This project is distributed under the <a href="https://github.com/gjtorikian/panino-docs/blob/master/LICENSE">GPL</a> license.</p>
+<p><strong>For Source Files</strong>: The lines <em>directly following</em> the opening <code>/**</code> are reserved for the EBNF description of the documented object. Typically, there's only one EBNF per documented object:</p>
 
-<h1>Why the Name?</h1>
+<pre><code>/** 
+ *  Element#down(@element[, cssSelector][, index]) -&gt; Element | null
+ *
+ *  ...
+ **/
+</code></pre>
 
-<p><em>Panino</em> refers to <a href="http://en.wikipedia.org/wiki/Panini_(sandwich)#Terminology">a type of sandwich in Italy</a>. Panini is its plural form, but is often mistakenly used as the singular. It seemed important to draw attention to the fact that what you're defining should represent what it actually is, in documentation and beyond.</p>
+<p>However, methods, functions, e.t.c. may have several signatures, and may require more than one description line, in which case description lines directly follow each other:</p>
+
+<pre><code>/** 
+ *  Element#writeAttribute(@element, attribute[, value = true]) -&gt; Element
+ *  Element#writeAttribute(@element, attributes) -&gt; Element
+ *
+ *  ...
+ **/
+</code></pre>
+
+<p><strong>For Markdown Files</strong>: All EBNF descriptions are preceeded by <code>###</code>, the notation for <code>&lt;h3&gt;</code>:</p>
+
+<pre><code>### Element#down(@element[, cssSelector][, index]) -&gt; Element | null
+</code></pre>
+
+<p>For multiple signatures, continue to add <code>###</code> lines:</p>
+
+<pre><code>### Element#writeAttribute(@element, attribute[, value = true]) -&gt; Element
+### Element#writeAttribute(@element, attributes) -&gt; Element
+</code></pre>
+
+<p><strong>BIG FAT WARNING</strong>: EBNF descriptions <strong>must be separated by an empty comment line</strong> from the rest of description:</p>
+
+<pre><code>/** 
+ *  String#evalJSON([sanitize = false]) -&gt; Object | Array
+ *
+ *  Here goes markdown for String#evalJSON description.
+ **/
+
+
+/** 
+ *  Event.findElement(event[, cssSelector]) -&gt; Element | null
+ *  - event (Event): a native Event instance
+ *  - cssSelector (String): a optional CSS selector which uses
+ *  the same syntax found in regular CSS.
+ *
+ *  Regular method markdown goes here.
+ **/
+</code></pre>
+
+<p>Descriptions are parsed as GitHub Flavored Markdown.</p>
+
+<h3>Defining Arguments</h3>
+
+<p><strong>For Source and Markdown Files</strong>: For all methods, functions, e.t.c., parentheses around the arguments are required; if there are no arguments, empty parentheses (<code>()</code>) are required. </p>
+
+<p>Note that Panino enforces accurate spelling. If you type <code>directory</code> as the argument signature name, and describe it later as <code>driectory</code>, the parser will complain. The same holds true if your provide an inaccruate number of descriptions--for example, listing three arguments but only describing two.</p>
+
+<h4>Required Arguments</h4>
+
+<pre><code>Event.stop(event)
+
+path.relative(from, to)
+</code></pre>
+
+<h4>Optional Arguments</h4>
+
+<p>Optional arguments are surrounded by square brackets (<code>[]</code>).</p>
+
+<pre><code>String#evalJSON([sanitize])
+
+console.assert(expression, [message])
+</code></pre>
+
+<h4>Callbacks</h4>
+
+<p>Indicate callbacks by providing an arbitray callback function with its own list of arguments:</p>
+
+<pre><code>dns.lookup(domain, [family=null], callback(err, address, family))
+
+fs.chmod(path, mode, [callback(err)])
+</code></pre>
+
+<h4>Default Values</h4>
+
+<p>A default value may be indicated using the equal sign (<code>=</code>).</p>
+
+<pre><code>String#evalJSON([sanitize = false])
+</code></pre>
+
+<h4>Sequence of Values</h4>
+
+<p>If an method can have a limitless number of arguments of the same type, you can define this using <code>...</code>:  </p>
+
+<pre><code>Array.push(elementN...) -&gt; Number
+</code></pre>
+
+<p>(Meaning here that you can push any number of elements onto an Array.</p>
+
+<h4>Return Values</h4>
+
+<p>To indicate a return value, add the <code>-&gt;</code> glyph to the end of a member, and indicate the returned type:</p>
+
+<pre><code>os.uptime(), Number
+</code></pre>
+
+<p>Return types must be valid and linkable. See <a href="./linkify.html">Linkifying Everything</a> for more information.</p>
+
+<p>You can also have functions that return multiple values, by seperating each type with a pipe (<code>|</code>):</p>
+
+<pre><code>fs.readFileSync(filename, [encoding]) -&gt; String | Buffer
+</code></pre>
+
+<p>To indicate an array of returned values, wrap each type in square brackets:</p>
+
+<pre><code>os.cpus(), [Object]
+</code></pre>
+
+<p>You can override the <code>-&gt;</code> glyph to become a comma (<code>,</code>) by setting <code>useComma: true</code>  or <code>useArrow: false</code> in the JSON parse options with <code>-p</code>. You cannot mix and match between <code>,</code> and <code>-&gt;</code>--it's either one or the other.</p>
+
+<h3>Describing Arguments</h3>
+
+<p>Arguments can be described below the member's EBNF description using the following syntax:</p>
+
+<pre><code>/**
+ * someFunction(argumentName)
+ * - argumentName (acceptedType | [additionalAcceptedType]): description.
+ *
+ **/
+</code></pre>
+
+<p>Breaking this down:</p>
+
+<ul>
+<li>Preface each argument with a <code>-</code>. You can override this to be <code>*</code> by setting <code>useDash: false</code> or <code>useAsterisk: true</code> in the JSON parse options with <code>-p</code>. You cannot mix and match between <code>-</code> and <code>*</code>--it's either one or the other.</li>
+<li>Indicate the argument name</li>
+<li>Provide a list of the possible argument types. You can separate multiple types with a pipe (<code>|</code>), or indicate an array by wrapping the argument in square brackets. Argument types must be valid and linkable. See <a href="./linkify.html">Linkifying Everything</a> for more information.<p>Wrap the argument type(s) in a <code>( ):</code> symbol. You can override this to be <code>{ }</code> by setting <code>useCurlies: true</code> or <code>useParenthesis: false</code> in the JSON parse options with <code>-p</code>. You cannot mix and match between <code>( ):</code> and <code>{ }</code>--it's either one or the other.</p></li>
+<li>Provide a description for the argument. This is optional. The description is parsed with GitHub-flavored Markdown.</li>
+</ul><p>You may find the need to add block-level descriptions in your arguments, such as if you need to provide a list of items. To do that, continue to add new lines in your argument description, but omit the starting <code>*</code> in your comment (or don't provide a newline for Markdown). For example:</p>
+
+<pre><code>/**
+ * Document.change(e, x) -&gt; Object
+ * - e (Object): An object containing information about the anchor position.  
+ Below is a list of each action type, followed by each property that's also available.
+   * `"insertLines"` (emitted by `insertLines()`)
+     * `range`: the Range of the change within the document
+     * `lines`: the lines in the document that are changing
+   * `"insertText"` (emitted by `insertNewLine()`)
+     * `range`: the Range of the change within the document
+     * `text`: the text that's being added
+   * `value`: An object describing the new Anchor position  
+
+   Both of these objects have a `row` and `column` property corresponding to the position.
+
+    console.log("Heh");
+
+ * - x (String): Something I'm making up.
+ *
+ * Fires whenever the document changes.
+ *
+ **/
+</code></pre>
+
+<p>The description for <code>e</code> has some text, followed by an unordered list, with yet more nested content. We then provide additional text ("Both of these objects..."), followed by a code block. Finally, we get back to the description for the next argument (<code>- x (String):</code>), and then add a new line and describe the method as a whole.</p>
+
+<h3>Describing Return Types</h3>
+
+<p>Describing the return type for a method is quite similar to describing argument methods; just preface the return line with <code>+</code>:</p>
+
+<pre><code>/**
+ * path.existsSync(p), Boolean
+ * - p {String}   A path to check
+ * + {Boolean} `true` if the path exists, `false` otherwise.
+**/
+</code></pre>
+
+<p>For methods with multiple return types, you can add a new line per return type:</p>
+
+<pre><code>/** 
+ * fs.readFileSync(filename, [encoding]) -&gt; String | Buffer
+ * - filename (String): Blah
+ * - encoding (String): Fah
+ * + (String): Returned if encoding is equal to `utf8`
+ * + (Buffer): Returned if no encoding is specified
+**/
+</code></pre>
+
+<p>And, just like argument descriptions, you can provide block text in your return type descriptions, by omitting the starting <code>*</code> (or not providing a newline for Markdown):</p>
+
+<pre><code>     * + (Object): An object with three properties, e.g.
+       ```
+        { port: 12346, family: 'IPv4', address: '127.0.0.1' }
+       ```
+     *
+     * Fires whenever the document changes.
+</code></pre>
+
+<h2>Supported EBNF Types</h2>
+
+<h3>Namespace</h3>
+
+<strong>For JavaScript Source Files</strong>:
+
+<pre><code>/** 
+ *  Ajax
+ *
+ *  ...
+ **/
+
+/** 
+ *  Prototype.Browser
+ *
+ *  ...
+ **/
+</code></pre>
+
+<strong>For Markdown Files</strong>
+
+<pre><code>## Ajax
+
+## Prototype.Browser
+
+</code></pre>
+
+<h3>Classes</h3>
+
+<strong>For JavaScript Source Files</strong>:
+
+<p>Classes require a <code>class</code> prefix:</p>
+
+<pre><code>/** 
+ *  class Ajax.Base
+ *
+ *  ...
+ **/
+</code></pre>
+
+<p>Sub-classes should indicate their parent:</p>
+
+<pre><code>/** 
+ *  class Ajax.Request &lt; Ajax.Base
+ *
+ *  ...
+ **/
+</code></pre>
+
+<p>Where <code>Ajax.Base</code> is the parent class and <code>Ajax.Request</code> the subclass.</p>
+
+<p>Included mixins are indicated like so:</p>
+
+<pre><code>/** 
+ *  class CustomHash
+ *  includes Enumerable, Comparable
+ *
+ *  ...
+ **/
+</code></pre>
+
+<strong>For Markdown Files</strong>:
+
+<pre><code>
+## Ajax.Base
+
+## Ajax.Request &lt; Ajax.Base
+
+## Ajax.Base
+includes Enumerable, Comparable
+</code></pre>
+
+<h3>Mixins</h3>
+
+<p>Mixins are indicated by a <code>mixin</code> prefix:</p>
+
+<pre><code>/** 
+ *  mixin Enumerable
+ *
+ *  ...
+ **/
+</code></pre>
+
+<h3>Constructors</h3>
+
+<p>Constructors require the <code>new</code> prefix and their arguments.</p>
+
+<pre><code>/** 
+ *  new Element(tagName[, attributes])
+ *
+ *  ...
+ **/
+
+/** 
+ *  new Foobar()
+ *
+ *  ...
+ **/
+</code></pre>
+
+<h3>Class Methods</h3>
+
+<p>Class methods are identified by a dot (<code>.</code>).</p>
+
+<pre><code>/** 
+ *  Array.from([iterable]) -&gt; Array
+ *
+ *  ...
+ **/
+</code></pre>
+
+<h3>Instance Methods</h3>
+
+<p>Instance methods are identified by the hash symbol (<code>#</code>).</p>
+
+<pre><code>/** 
+ *  Array#first() -&gt; Array element
+ *
+ *  ...
+ **/
+</code></pre>
+
+<h3>Utilities</h3>
+
+<p>Utilities are global functions starting with a dollar-sign (<code>$</code>).</p>
+
+<pre><code>/** 
+ *  $w(string) -&gt; Array
+ *
+ *  ...
+ **/
+</code></pre>
+
+<h3>Methodized Methods</h3>
+
+<p>Methodized methods are methods which are both available as a class method and an instance method, in which case the first argument becomes the instance object itself. For example, all of <code>Element</code>'s instance methods are methodized and thus also available as class methods of <code>Element</code>. Methodized methods are indicated by prefixing their first argument with the <code>@</code> symbol.</p>
+
+<pre><code>/** 
+ *  Element#hide(@element) -&gt; Element
+ *
+ *  ...
+ **/
+</code></pre>
+
+<h3>Class Properties</h3>
+
+<p>Class properties are identified by a dot (<code>.</code>).</p>
+
+<pre><code>/** 
+ *  Ajax.Responders.responders -&gt; Array
+ *
+ *  ...
+ **/
+</code></pre>
+
+<h3>Instance Properties</h3>
+
+<p>Instance properties are identified by the hash symbol (<code>#</code>).</p>
+
+<pre><code>/** 
+ *  Ajax.Response#responseText -&gt; String
+ *
+ *  ...
+ **/
+</code></pre>
+
+<h3>Constants</h3>
+
+<p>Constant must have their value specified using the equal sign (<code>=</code>).</p>
+
+<pre><code>/** 
+ *  Prototype.JSONFilter = /^\/\*-secure-([\s\S]*)\*\/\s*$/
+ *
+ *  ...
+ **/
+</code></pre>
+
+<h3>Events</h3>
+
+<p>Events are identified by <code>@</code>:</p>
+
+<pre><code>/** 
+ *  Features@head(request, socket, head)
+ *
+ *  ...
+ **/
+</code></pre>
+
+<h2>Additional Sugar</h2>
+
+<h3>Sections</h3>
+
+<p>Sections are grouped parts of documentation. They don't add to element hierarchy, but just help to organize documentation.</p>
+
+<pre><code>/** 
+ *  == Section Name ==
+ *
+ *  Describe this section here.
+ **/
+</code></pre>
+
+<h3>Short links</h3>
+
+<p>Short links help to quickly refer some element. There are two types:</p>
+
+<ul>
+<li>
+<code>[[Method.Name]]</code>: Renders to <code>&lt;code&gt;&lt;a href=HREF&gt;Method.Name&lt;/a&gt;&lt;/code&gt;</code>
+</li>
+<li>
+<code>[[Method.Name SOME TEXT HERE]]</code>: Renders to <code>&lt;a href=HREF&gt;SOME TEXT HERE&lt;/a&gt;</code>
+</li>
+</ul><p>Method names must be valid and linkable. See <a href="./linkify.html">Linkifying Everything</a> for more information.</p>
       </section>
       <footer>
         <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
