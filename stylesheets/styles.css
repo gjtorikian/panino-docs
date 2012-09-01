@@ -79,6 +79,10 @@ header h1 {
 header.without-description h1 {
   margin: 10px 0;
 }
+header h1 a {
+  text-decoration: underline;
+}
+
 header p {
   margin: 0;
   color: #61778B;
@@ -104,7 +108,7 @@ header ul {
   position: absolute;
   z-index: 1;
   right: 20px;
-  top: 20px;
+  top: 10px;
   height: 38px;
   padding: 1px 0;
   background: #5198DF;
@@ -167,6 +171,11 @@ header ul a {
   height: 40px;
   text-shadow: rgba(0, 0, 0, 0.4) 0 -1px 0;
 }
+
+header ul a.current {
+  color: greenYellow;
+}
+
 header ul a strong {
   font-size: 14px;
   display: block;
