@@ -380,10 +380,14 @@ return_descriptions
 return_description
 
   :  '*+' popen names_alternation pclose TEXT %{
-       $$ = {
+      $5 = $5.split("\n").map(function(element, idx) {
+        return element.replace(/^\s{4}/g, '');
+      });
+
+      $$ = {
           type: $3[0],
           isArray: $3.isArray,
-          description: $5.replace(/(?:\s*\*\s*|\s+)/g, ' ').replace(/(^\s*|\s*$)/g, '')
+          description: $5.join("\n\n")
         };
      }%
   ;
