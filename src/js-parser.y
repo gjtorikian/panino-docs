@@ -6,7 +6,7 @@ exp     (?:[eE][-+]?[0-9]+)
 frac    (?:\.[0-9]+)
 name    (?:[$_a-zA-Z][$_a-zA-Z0-9]*)
 eventend   (?:[^@(\s]+)
-string  (?:[$_a-zA-Z][$_a-zA-Z0-9 ]*)
+string  (?:[$_a-zA-Z0-9 ]*)
 json    (?:\{["':$_a-zA-Z0-9 \,]*\})
 notdef  (?!"class"|"mixin"|"new"|"=="|[$_a-zA-Z][$_a-zA-Z0-9.#]*\s*(?:$|[(=]|"->"|", "))
 %x INITIAL tags def arg comment
@@ -30,6 +30,8 @@ notdef  (?!"class"|"mixin"|"new"|"=="|[$_a-zA-Z][$_a-zA-Z0-9.#]*\s*(?:$|[(=]|"->
 <tags>[0-9]+(?:\.[0-9]+)*\b return 'VERSION'
 <tags>{int}{frac}?{exp}?\b  return 'NUMBER'
 <tags>"deprecated"          return 'DEPRECATED'
+<tags>"bubbles"             return 'BUBBLES'
+<tags>"cancelable"          return 'CANCELABLE'
 <tags>"read-only"           return 'READONLY'
 <tags>"internal"            return 'INTERNAL'
 <tags>"hide"                return 'HIDE'
@@ -38,12 +40,11 @@ notdef  (?!"class"|"mixin"|"new"|"=="|[$_a-zA-Z][$_a-zA-Z0-9.#]*\s*(?:$|[(=]|"->
 <tags>"alias of"            return 'ALIASOF'
 <tags>"alias"               /* N.B. shouldn't it be ALIAS, and reversed sense */ return 'ALIASOF'
 <tags>"related to"          return 'RELATEDTO'
+<tags>"see"                 return 'RELATEDTO'
 <tags>"belongs to"          return 'BELONGSTO'
 <tags>"extension"           return 'EXTENSION'
-<tags>"metadata"            return 'METADATA'
-<tags>{name}                return 'NAME'
 <tags>{json}                return 'JSON'
-<tags>{eventend}            return 'EVENTEND'
+<tags>.+                    return 'TEXT'
 <tags>{eventend}            return 'EVENTEND'
 
 <def>"**/"                  this.popState(); return '**/'
@@ -180,16 +181,19 @@ tag
   : DEPRECATED { $$ = {deprecated: true} }
   | DEPRECATED ':' VERSION { $$ = {deprecated: {since: $3}} }
   | DEPRECATED ':' VERSION '..' VERSION { $$ = {deprecated: {since: $3, off: $5}} }
+  | BUBBLES { $$ = {bubbles: true} }
+  | CANCELABLE { $$ = {cancelable: {description: ""}} }
+  | CANCELABLE ':' TEXT { $$ = {cancelable: {description: $3}} }
   | READONLY { $$ = {readonly: true} }
   | INTERNAL { $$ = {internal: true} }
   | HIDE     { $$ = {hide: true} }
   | CHAINABLE { $$ = {chainable: true} }
-  | SECTION ':' name { $$ = {section: $3} }
-  | ALIASOF ':' name { $$ = {alias_of: $3} }
-  | RELATEDTO ':' name { $$ = {related_to: $3} }
-  | BELONGSTO ':' name { $$ = {belongs_to: $3} }
+  | SECTION ':' TEXT { $$ = {section: $3} }
+  | ALIASOF ':' TEXT { $$ = {alias_of: $3} }
+  | RELATEDTO ':' TEXT { $$ = {related_to: $3} }
+  | BELONGSTO ':' TEXT { $$ = {belongs_to: $3} }
   | EXTENSION { $$ = {extension: true} }
-  | METADATA ':' JSON { $$ = {metadata: JSON.parse($3)} }
+  | JSON { $$ = {metadata: JSON.parse($1)} }
   ;
 
 stability_list

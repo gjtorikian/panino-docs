@@ -15,3 +15,4 @@ out.txt
 .cache/
 nodemanual/
 tests/dump
+tests/test_out
