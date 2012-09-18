@@ -16,3 +16,4 @@ out.txt
 nodemanual/
 tests/dump
 tests/test_out
+check_apf.js
