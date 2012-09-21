@@ -1,12 +1,12 @@
 var exec = require("child_process").exec;
 
-exec("jison src/js-parser.y", function (error, stdout, stderr) {
+exec("jison src/pdoc-parser.y", function (error, stdout, stderr) {
     if (error) {
         console.error(stderr)
         process.exit(1);
     }
 
-    exec("mv js-parser.js lib/panino/plugins/parsers/javascript/parser.js", function (error, stdout, stderr) {
+    exec("mv pdoc-parser.js lib/panino/plugins/parsers/javascript/pdoc/pdoc.js", function (error, stdout, stderr) {
 	    if (error) {
 	        console.error(stderr)
 	        process.exit(1);
