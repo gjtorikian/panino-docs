@@ -12,6 +12,8 @@ nodeParseOptions.json
 .settings.xml
 .settings
 out.txt
+out2.txt
+jsddoc_output.txt
 .cache/
 nodemanual/
 tests/dump

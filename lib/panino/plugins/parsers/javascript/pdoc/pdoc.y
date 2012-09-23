@@ -34,7 +34,7 @@ notdef  (?!"class"|"mixin"|"new"|"=="|[$_a-zA-Z][$_a-zA-Z0-9.#]*\s*(?:$|[(=]|"->
 <tags>"cancelable"          return 'CANCELABLE'
 <tags>"read-only"           return 'READONLY'
 <tags>"internal"            return 'INTERNAL'
-<tags>"hide"                return 'HIDE'
+<tags>"private"             return 'PRIVATE'
 <tags>"chainable"           return 'CHAINABLE'
 <tags>"section"             return 'SECTION'
 <tags>"alias of"            return 'ALIASOF'
@@ -138,9 +138,8 @@ world
       return false;
     });
     if (stability.length <= 0) {
-      console.error("In " + x.id + " you tried to provide a stability of " + firstLine + 
+      console.error("Error:".red + ": in " + x.id + " you tried to provide a stability of " + firstLine + 
                 ", but I didn't recognize it!");
-      process.exit(1);
     }
     else {
       x.stability = stability[0];
@@ -154,7 +153,7 @@ world
     x.line = ($5.line + 1);
     // register
     if ($$[x.id]) {
-      throw new Error('FATAL: name clash: ' + x.id);
+      console.warn("Warning".yellow + ": name clash: " + x.id);
     }
     $$[x.id] = x;
   }%
@@ -186,7 +185,7 @@ tag
   | CANCELABLE ':' TEXT { $$ = {cancelable: {description: $3}} }
   | READONLY { $$ = {readonly: true} }
   | INTERNAL { $$ = {internal: true} }
-  | HIDE     { $$ = {hide: true} }
+  | PRIVATE  { $$ = {private: true} }
   | CHAINABLE { $$ = {chainable: true} }
   | SECTION ':' TEXT { $$ = {section: $3} }
   | ALIASOF ':' TEXT { $$ = {alias_of: $3} }
@@ -242,8 +241,7 @@ panino
               }
 
               if (r == $2.length) {
-                console.error("ERROR: Couldn't find argument ", argName, " in\n ", $2, "\n--did you misspell something?");
-                process.exit(1);
+                console.warn("Warning".yellow + ": Couldn't find argument ", argName, " in\n ", $2, "\n--did you misspell something?");
               }
 
               signature.arguments[a].types = $2[r].types;
@@ -271,8 +269,7 @@ panino
                     }
 
                     if (r == $2.length) {
-                      console.error("ERROR: Couldn't find argument ", cbArgName, " in\n ", $2, "\n--did you misspell something?");
-                      process.exit(1);
+                      console.warn("Warning".yellow + ": Couldn't find argument ", cbArgName, " in\n ", $2, "\n--did you misspell something?");
                     }
 
                     signature.arguments[cbPos].arguments[cArgPos].description = $2[r].description;
@@ -312,10 +309,9 @@ panino
                   cArgPos++;
               }
               else {
-                  console.error("Error: No callback found here. Your argument list might be incorrect.");
-                  console.error(signature);
-                  console.error($1);
-                  process.exit(1);
+                  console.warn("Warning".yellow + ": No callback found here. Your argument list might be incorrect.");
+                  console.warn(signature);
+                  console.warn($1);
               } 
             }
           }
@@ -342,7 +338,7 @@ argument_description
 
   : '*-' NAME popen names_alternation pclose TEXT %{
        if (yy.useAsterisk) {
-         console.error("FATAL: You can't use dashes for " + $2);
+         console.error("Fatal".red + ": You can't use dashes for " + $2);
          process.exit(1);
        }
 
@@ -359,7 +355,7 @@ argument_description
     }%
   | '**' NAME '{' names_alternation '}' TEXT %{
       if (yy.useDash) {
-         console.error("FATAL: You can't use asterisks for " + $2);
+         console.error("Fatal: You can't use asterisks for " + $2);
          process.exit(1);
       }
 
@@ -399,13 +395,13 @@ return_description
 popen
   : '(' %{
        if (yy.useParenthesis === false || yy.useCurlies === true) {
-          console.error("FATAL: You can't use opening parenthesis for the argument: '" + $0 + "'");
+          console.error("Fatal".red + ": You can't use opening parenthesis for the argument: '" + $0 + "'");
           process.exit(1);
        }
      }%
   | '{' %{
        if (yy.useParenthesis === true || yy.useCurlies === false) {
-          console.error("FATAL: You can't use opening curlies for the argument: '" + $0 + "'");
+          console.error("Fatal".red + ": You can't use opening curlies for the argument: '" + $0 + "'");
           process.exit(1);
        }
      }%
@@ -414,13 +410,13 @@ popen
 pclose
   : '):' %{
        if (yy.useParenthesis === false || yy.useCurlies === true) {
-          console.error("FATAL: You can't use closing parenthesis for the argument: '" + $0 + "'");
+          console.error("Fatal".red + ": You can't use closing parenthesis for the argument: '" + $0 + "'");
           process.exit(1);
        }
      }%
   | '}' %{
        if (yy.useParenthesis === true|| yy.useCurlies === false) {
-          console.error("FATAL: You can't use closing curlies for the argument: '" + $0 + "'");
+          console.error("Fatal".red + ": You can't use closing curlies for the argument: '" + $0 + "'");
           process.exit(1);
        }
      }%
@@ -559,14 +555,14 @@ property
 
   : name '->' returns %{ 
       if (yy.useComma) {
-        console.error("FATAL: You can't use arrows for " + $1.id);
+        console.error("Fatal".red + ": You can't use arrows for " + $1.id);
         process.exit(1);
       }
       $$ = {id: $1, type: 'property', returns: $3} 
     }%
   | name ',' returns %{ 
       if (yy.useArrow) {
-        console.error("FATAL: You can't use commas for " + $1.id);
+        console.error("Fatal".red + ": You can't use commas for " + $1.id);
         process.exit(1);
       }
       $$ = {id: $1, type: 'property', returns: $3} 
@@ -602,7 +598,7 @@ signature
   /* method returning value */
   | method ',' returns %{
       if (yy.useArrow) {
-        console.error("FATAL: You can't use commas for " + $1.id);
+        console.error("Fatal".red + ": You can't use commas for " + $1.id);
         process.exit(1);
       }
       $$.returns = $3 
@@ -610,7 +606,7 @@ signature
 
   | method '->' returns %{
       if (yy.useComma) {
-        console.error("FATAL: You can't use arrows for " + $1.id);
+        console.error("Fatal".red + ": You can't use arrows for " + $1.id);
         process.exit(1);
       }
       $$.returns = $3 
