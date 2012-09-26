@@ -76,7 +76,6 @@ mixin article(obj, parents)
             li
               mixin link(collection[0])
 
-      //-console.log('HERE', obj.id, obj.children.length)
       for selector, title in {'Events': ['event', 'events'], 'Class methods': ['class method', 'class_methods'], 'Class properties': ['class property', 'class_properties'], 'Instance methods': ['instance method', 'instance_methods'], 'Instance properties': ['instance property', 'instance_properties'], 'Constants': ['constant', 'constants']}
         methods = obj.children.filter(function(x){return x.type === selector[0]})
         if methods.length

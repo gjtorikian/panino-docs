@@ -34,6 +34,7 @@ notdef  (?!"class"|"mixin"|"new"|"=="|[$_a-zA-Z][$_a-zA-Z0-9.#]*\s*(?:$|[(=]|"->
 <tags>"cancelable"          return 'CANCELABLE'
 <tags>"read-only"           return 'READONLY'
 <tags>"internal"            return 'INTERNAL'
+<tags>"hide"                return 'HIDE'
 <tags>"private"             return 'PRIVATE'
 <tags>"chainable"           return 'CHAINABLE'
 <tags>"section"             return 'SECTION'
@@ -185,6 +186,7 @@ tag
   | CANCELABLE ':' TEXT { $$ = {cancelable: {description: $3}} }
   | READONLY { $$ = {readonly: true} }
   | INTERNAL { $$ = {internal: true} }
+  | HIDE  { $$ = {hide: true} }
   | PRIVATE  { $$ = {private: true} }
   | CHAINABLE { $$ = {chainable: true} }
   | SECTION ':' TEXT { $$ = {section: $3} }

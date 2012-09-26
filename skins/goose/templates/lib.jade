@@ -204,31 +204,31 @@ mixin article(obj, parents)
 mixin api()
   -pos = 0
   for obj in tree.children
-    .classContent
-      .membersBackground
-
-      div(class=' members pos#{pos}')
-        div(class=' membersContent pos#{pos}')
-            h1.memberHeader
-              -var heading = obj.path
-              span.name #{heading}
-            
-            -if (true || obj.filename.indexOf("index") < 0)
-              ul(class='nav tabs pos#{pos}', data-tabs='tabs')
-                for selector, title in {'Events': ['event', 'events'], 'Constructors': ['constructor', 'constructors'], 'Class methods': ['class method', 'class_methods'], 'Class properties': ['class property', 'class_properties'], 'Instance methods': ['instance method', 'instance_methods'], 'Instance properties': ['instance property', 'instance_properties'], 'Constants': ['constant', 'constants']}
-                  members = obj.children.filter(function(x){return x.type === selector[0]})
-                    li(class="dropdown", data-dropdown="dropdown")
-                      if members.length
-                         a(href="\#", class="dropdown-toggle", data-toggle="dropdown")
-                            != renameMemberTitle(title, members.length)
-                            b.caret
-                        ul.dropdown-menu
-                          for m in members
-                            li(data-id='#{m.id}', class='memberLink')
-                              mixin link(m, [], true)
-       -pos++
-       -methodSection = constructorSection = propertySection = eventSection = false;
-       mixin article(obj, [])
+    -if (obj.private == false)
+      .classContent
+        .membersBackground
+        div(class=' members pos#{pos}')
+          div(class=' membersContent pos#{pos}')
+              h1.memberHeader
+                -var heading = obj.path
+                span.name #{heading}
+              
+              -if (true || obj.filename.indexOf("index") < 0)
+                ul(class='nav tabs pos#{pos}', data-tabs='tabs')
+                  for selector, title in {'Events': ['event', 'events'], 'Constructors': ['constructor', 'constructors'], 'Class methods': ['class method', 'class_methods'], 'Class properties': ['class property', 'class_properties'], 'Instance methods': ['instance method', 'instance_methods'], 'Instance properties': ['instance property', 'instance_properties'], 'Constants': ['constant', 'constants']}
+                    members = obj.children.filter(function(x){return x.type === selector[0]})
+                      li(class="dropdown", data-dropdown="dropdown")
+                        if members.length
+                           a(href="\#", class="dropdown-toggle", data-toggle="dropdown")
+                              != renameMemberTitle(title, members.length)
+                              b.caret
+                          ul.dropdown-menu
+                            for m in members
+                              li(data-id='#{m.id}', class='memberLink')
+                                mixin link(m, [], true)
+         -pos++
+         -methodSection = constructorSection = propertySection = eventSection = false;
+         mixin article(obj, [])
 
 
 mixin short_description_list(collection)

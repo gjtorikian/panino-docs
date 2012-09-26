@@ -19,3 +19,4 @@ nodemanual/
 tests/dump
 tests/test_out
 check_apf.js
+apf/
