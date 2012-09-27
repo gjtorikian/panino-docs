@@ -4,7 +4,7 @@ out/
 playground*
 tests/prototype-doc
 tests/features-doc
-nodejs_ref_guide/
+tests/nodejs_ref_guide
 check_nodejs.js
 nodeParseOptions.json
 .c9revisions
@@ -12,10 +12,13 @@ nodeParseOptions.json
 .settings.xml
 .settings
 out.txt
+out2.txt
+jsddoc_output.txt
 .cache/
 nodemanual/
 tests/dump
-lib/parser.y
-playground*
-tests
-src/
+tests/test_out
+check_apf.js
+apf/
+compile_pdoc.js
+lib/panino/plugins/javascript/pdoc/pdoc.y
