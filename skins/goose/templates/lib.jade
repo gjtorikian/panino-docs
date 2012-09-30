@@ -92,6 +92,11 @@ mixin article(obj, parents)
                       -if (loops == 0)
                         -loops = 1 // ensure that we only print ONE meta info UL per signature (some methods have multiple signatures)
                         ul.metaInfo
+                            if obj.inheritedFrom
+                              li
+                                span.label.inheritedFrom
+                                  | Inherited from:
+                                  != link(obj.inheritedFrom)
                             if obj.readonly
                               li
                                 span.label.read-only Read-Only
