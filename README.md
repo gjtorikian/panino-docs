@@ -2,13 +2,13 @@
 
 Panino is an API documentation generation tool. It can read comments from your source files, or, parse Markdown files and generate the same documentation. Panino runs on [Node.js](http://www.nodejs.org), and uses [Jade](http://jade-lang.com/) as its templating engine.
 
-Panino parses your content following a strict, no-crap-allowed grammar that ensures **correct** and **consistent** documentation, because you've written it following a specific syntax. This means that there is a very specific set of rules and expectations as to how to write your documentation. These rules are not terribly hard or unweildly. Keeping documentation parsed through a grammar ensures thorough and consistent docs, no matter who it's written by. To summarize: 
+Panino parses your content following a strict, no-crap-allowed grammar that ensures **correct** and **consistent** documentation, because you've written it following a specific syntax. This means that there is a very specific set of rules and expectations as to how to write your documentation. These rules are not terribly hard or unweildly. Keeping documentation parsed through a grammar ensures thorough and consistent docs, no matter who it's written by. It can parse your source files in two ways:
 
-> Unlike other inline-doc parsers, [this] does not rely on the JavaScript source code at all; it only parses the comments. This approach, though slightly more verbose, is much better at generating consistent, reliable documentation, and avoids the headaches encountered when documenting highly dynamic languages.
+1. By using the [pdoc](https://github.com/tobie/pdoc)-notation for documentation. [This blog post](http://andrewdupont.net/2008/11/16/pdoc-inline-documentation-for-prototype/) identifies some of the advantages over other commenting-to-documentation systems.  The pdoc system was originally based on [ndoc](https://github.com/nodeca/ndoc).)
+2. By using a JSDoc-like notation for comments. The inspiration and much of the work for this parsing comes from a port of [JSDuck](https://github.com/senchalabs/jsduck). While some of the conventions of JSDuck are kept, this should not be considered a 100% port.
 
-This project is forked from [ndoc](https://github.com/nodeca/ndoc), which itself is based off of [pdoc](https://github.com/tobie/pdoc). [This blog post](http://andrewdupont.net/2008/11/16/pdoc-inline-documentation-for-prototype/) identifies some of the advantages over other commenting-to-documentation systems. 
 
-For more help, including syntax definitions, see [the manual](http://gjtorikian.github.com/panino-docs/).
+For more help, including syntax and tag definitions, see [the wiki](https://github.com/gjtorikian/panino-docs/wiki).
 
 ### Who Uses It?
 
@@ -40,7 +40,7 @@ From the command line, just run
 
     node panino --path [source_files]
 
-Otherwise, you can write a simple build script to do the work for you. Here's how that might look:
+Otherwise, you can write a simple build script to do the work for you. Here's how that might look for a pdoc-like system:
 
 ```javascript
 var options = {
