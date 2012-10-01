@@ -7,7 +7,6 @@ Panino parses your content following a strict, no-crap-allowed grammar that ensu
 1. By using the [pdoc](https://github.com/tobie/pdoc)-notation for documentation. [This blog post](http://andrewdupont.net/2008/11/16/pdoc-inline-documentation-for-prototype/) identifies some of the advantages over other commenting-to-documentation systems.  The pdoc system was originally based on [ndoc](https://github.com/nodeca/ndoc).)
 2. By using a JSDoc-like notation for comments. The inspiration and much of the work for this parsing comes from a port of [JSDuck](https://github.com/senchalabs/jsduck). While some of the conventions of JSDuck are kept, this should not be considered a 100% port.
 
-
 For more help, including syntax and tag definitions, see [the wiki](https://github.com/gjtorikian/panino-docs/wiki).
 
 ### Who Uses It?
