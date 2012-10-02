@@ -87,7 +87,7 @@ Panino has two processes: a parsing phase, and a rendering phase.
 
 # License
 
-This project is distributed under the [GPL](https://github.com/gjtorikian/panino-docs/blob/master/LICENSE) license.
+This project is distributed under the [MIT](https://github.com/gjtorikian/panino-docs/blob/master/LICENSE) license.
 
 # Why the Name?
 
