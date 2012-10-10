@@ -20,5 +20,6 @@ tests/dump
 tests/test_out
 check_apf.js
 apf/
+npm-debug.log
 compile_pdoc.js
 lib/panino/plugins/javascript/pdoc/pdoc.y

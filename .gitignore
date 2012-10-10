@@ -20,3 +20,4 @@ tests/dump
 tests/test_out
 check_apf.js
 apf/
+npm-debug.log
