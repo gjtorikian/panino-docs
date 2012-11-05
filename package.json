@@ -33,7 +33,8 @@
                         "functional-docs": "",
                         "esprima":    "",
                         "StringScanner": "",
-                        "colors": ""
+                        "colors": "",
+                        "function-extractor": ""
                       },
   "devDependencies" : { "jison": "~0.3.0" },
 
