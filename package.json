@@ -34,7 +34,8 @@
                         "esprima":    "",
                         "StringScanner": "",
                         "colors": "",
-                        "function-extractor": ""
+                        "function-extractor": "",
+                        "mocha": ""
                       },
   "devDependencies" : { "jison": "~0.3.0" },
 
