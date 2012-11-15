@@ -85,6 +85,15 @@ Panino has two processes: a parsing phase, and a rendering phase.
 * Build options
 * A final callback to check for `err`
 
+# Reporting
+
+Panino also supports reporting methods that are missing documentation. Currently, this is only supproted for `"jsd"`-style parsing. There are two ways to report missing documentation:
+
+* By passing in `report: true`, Panino will print out a list of missing methods in a class, along with a percentage indicating the overall coverage.
+* By passing in `reportOnly: true`, Panino's `parse()` will return a `reportObject` instead of an `ast`, as the second argument in the callback. You can then take this object and iterate over it any way you choose.
+
+Regardless of whether or not you report them, missing methods are inserted into the final documentation. 
+
 # License
 
 This project is distributed under the [MIT](https://github.com/gjtorikian/panino-docs/blob/master/LICENSE) license.
