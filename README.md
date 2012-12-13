@@ -35,11 +35,7 @@ You'll need `node.js` and `npm` installed. Then, you can can choose to install P
 
     npm install -g panino
 
-From the command line, just run
-
-    node panino --path [source_files]
-
-Otherwise, you can write a simple build script to do the work for you. Here's how that might look for a pdoc-like system:
+I usually write a simple build script to do the work. Here's how that might look for a pdoc-like system:
 
 ```javascript
 var options = {
@@ -69,6 +65,14 @@ panino.parse(files, options, function (err, ast) {
   });
 });
 ```
+
+Otherwise, you can try to call it from the CLI:
+
+```
+node panino [source_files_directory]
+```
+
+# Internals
 
 Panino has two processes: a parsing phase, and a rendering phase. 
 

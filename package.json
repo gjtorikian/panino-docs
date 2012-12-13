@@ -19,7 +19,7 @@
   "repository"      : { "type": "git", "url": "git://github.com/gjtorikian/panino-docs.git" },
 
   "main"            : "./lib/panino.js",
-
+  "bin"             : { "panino": "./bin/panino" },
   "dependencies"    : {
                         "async"       : "",
                         "argparse"    : "",
