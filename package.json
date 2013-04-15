@@ -1,6 +1,6 @@
 {
   "name"            : "panino",
-  "version"         : "2.2.5",
+  "version"         : "2.2.6",
   "description"     : "API documentation generator with a strict grammar and testing tools",
   "keywords"        : [
                         "api", "doc", "apidoc", "documentation", "pdoc", "ndoc", "jsduck", "jsdoc"
@@ -22,7 +22,7 @@
   "bin"             : { "panino": "./bin/panino" },
   "dependencies"    : {
                         "async"       : "",
-                        "argparse"    : "",
+                        "argparse"    : "0.1.10",
                         "minimatch"   : "",
                         "jade"        : "",
                         "namp"        : "",
