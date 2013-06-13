@@ -21,5 +21,3 @@ panino.parse(["./tests/features/new_tags.js"], options, function (err, ast) {
     }
   });
 });
-
-//Panino.build(["./nodejs_ref_guide", "-e", "markdown", "-f", "html", "-d", "-p", "./nodeParseOptions.json", "-a", "./additionalObjs.json", "-o", "./out/", "-t", "Prototype Docs", "--skin", "./skins/goose/", "-s", "-r"]);

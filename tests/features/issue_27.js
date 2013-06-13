@@ -1,7 +1,0 @@
-/**
- *  simpleMethod() -> Void
- **/
-
-/**
- *  simpleProperty -> String
- **/
