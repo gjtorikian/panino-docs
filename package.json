@@ -3,7 +3,7 @@
   "version"         : "3.0.0",
   "description"     : "API documentation generator with a strict grammar and testing tools",
   "keywords"        : [
-                        "api", "doc", "apidoc", "documentation", "jsduck", "jsdoc"
+                        "jsdoc", "api", "doc", "apidoc", "documentation", "jsduck"
                       ],
   "homepage"        : "https://github.com/gjtorikian/panino-docs",
 
@@ -21,25 +21,24 @@
   "main"            : "./lib/panino.js",
   "bin"             : { "panino": "./bin/panino" },
   "dependencies"    : {
-                        "async"       : "",
+                        "async"       : "0.2.9",
                         "argparse"    : "0.1.10",
-                        "minimatch"   : "",
-                        "jade"        : "",
-                        "namp"        : "",
-                        "underscore"  : "",
-                        "fs-tools"    : "",
-                        "wrench"      : "",
-                        "markdown_conrefs": "",
-                        "functional-docs": "",
-                        "esprima":    "",
-                        "StringScanner": "",
-                        "colors": "",
-                        "function-extractor": "",
-                        "mocha": ""
+                        "minimatch"   : "0.2.9",
+                        "jade"        : "0.30.0",
+                        "marked"      : "0.2.9",
+                        "underscore"  : "1.4.4",
+                        "fs-tools"    : "0.2.10",
+                        "wrench"      : "1.5.1",
+                        "markdown_conrefs": "1.2.17",
+                        "functional-docs": "0.1.18",
+                        "esprima":    "1.0.3",
+                        "StringScanner": "0.0.3",
+                        "colors": "0.6.0",
+                        "function-extractor": "0.0.4"
                       },
-  "devDependencies" : { "jison": "~0.3.0" },
+  "devDependencies" : { "mocha": "1.11.0" },
 
-  "engines"         : { "node": ">= 0.6.0" },
+  "engines"         : { "node": ">= 0.10.0" },
 
   "preferGlobal"    : true
 }
