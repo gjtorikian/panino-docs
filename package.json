@@ -1,7 +1,7 @@
 {
   "name"            : "panino",
   "version"         : "3.0.0",
-  "description"     : "API documentation generator with a strict grammar and testing tools",
+  "description"     : "API documentation generation tool with an emphasis on JSDoc-style comment parsing",
   "keywords"        : [
                         "jsdoc", "api", "doc", "apidoc", "documentation", "jsduck"
                       ],
@@ -31,6 +31,7 @@
                         "wrench"      : "1.5.1",
                         "markdown_conrefs": "1.2.17",
                         "functional-docs": "0.1.18",
+                        "render-html-from-ast": "0.0.1",
                         "esprima":    "1.0.3",
                         "StringScanner": "0.0.3",
                         "colors": "0.6.0",
