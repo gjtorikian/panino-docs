@@ -1,9 +1,9 @@
 {
   "name"            : "panino",
-  "version"         : "2.2.6",
+  "version"         : "3.0.0",
   "description"     : "API documentation generator with a strict grammar and testing tools",
   "keywords"        : [
-                        "api", "doc", "apidoc", "documentation", "pdoc", "ndoc", "jsduck", "jsdoc"
+                        "api", "doc", "apidoc", "documentation", "jsduck", "jsdoc"
                       ],
   "homepage"        : "https://github.com/gjtorikian/panino-docs",
 
@@ -14,7 +14,7 @@
                         "Rene Saarsoo https://github.com/nene"
                       ],
 
-  "bugs"            : { "url": "https://github.com/gjtorikian/panino/issues" },
+  "bugs"            : { "url": "https://github.com/gjtorikian/panino-docs/issues" },
   "license"         : { "type": "MIT", "url": "https://github.com/gjtorikian/panino-docs/blob/master/LICENSE" },
   "repository"      : { "type": "git", "url": "git://github.com/gjtorikian/panino-docs.git" },
 
