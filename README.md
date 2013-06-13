@@ -2,12 +2,9 @@
 
 Panino is an API documentation generation tool. It can read comments from your source files, or, parse Markdown files and generate the same documentation. Panino runs on [Node.js](http://www.nodejs.org), and uses [Jade](http://jade-lang.com/) as its templating engine.
 
-Panino parses your content following a strict, no-crap-allowed grammar that ensures **correct** and **consistent** documentation, because you've written it following a specific syntax. This means that there is a very specific set of rules and expectations as to how to write your documentation. These rules are not terribly hard or unweildly. Keeping documentation parsed through a grammar ensures thorough and consistent docs, no matter who it's written by. It can parse your source files in two ways:
+Panino parses your content following a strict, no-crap-allowed grammar that ensures **correct** and **consistent** documentation, because you've written it following a specific syntax. This means that there is a very specific set of rules and expectations as to how to write your documentation. These rules are not terribly hard or unweildly. Keeping documentation parsed through a grammar ensures thorough and consistent docs, no matter who it's written by. 
 
-1. By using the [pdoc](https://github.com/tobie/pdoc)-notation for documentation. [This blog post](http://andrewdupont.net/2008/11/16/pdoc-inline-documentation-for-prototype/) identifies some of the advantages over other commenting-to-documentation systems.  The pdoc system was originally based on [ndoc](https://github.com/nodeca/ndoc).)
-2. By using a JSDoc-like notation for comments. The inspiration and much of the work for this parsing comes from a port of [JSDuck](https://github.com/senchalabs/jsduck). While some of the conventions of JSDuck are kept, this should not be considered a 100% port.
-
-For more help, including syntax and tag definitions, see [the wiki](https://github.com/gjtorikian/panino-docs/wiki).
+It parses your files using a JSDoc-like notation for comments. The inspiration and much of the work for this parsing comes from a port of [JSDuck](https://github.com/senchalabs/jsduck). While some of the conventions of JSDuck are kept, this should not be considered a 100% port.
 
 ### Who Uses It?
 
@@ -16,7 +13,6 @@ For more help, including syntax and tag definitions, see [the wiki](https://gith
 
 # Features
 
-* Support for Markdown files
 * Creating a separate page for every class
 * Support for proper "`[[ ]]`"-notation linking (_e.g. `[[Class.foo]]` renders to a link wrapped in a `<code>` tag)
 * Adding "shortened" descriptions, truncating the full description into a single sentance
@@ -27,7 +23,7 @@ For more help, including syntax and tag definitions, see [the wiki](https://gith
 * Support for arbitrary metadata on classes and members (that can be used in templates)
 * Support for arbitrary Markdown-to-HTML page conversion
 
-Markdown is converted using [namp](https://github.com/gjtorikian/namp).
+Markdown is converted using [marked](https://github.com/chjj/marked).
 
 # Installation
 
