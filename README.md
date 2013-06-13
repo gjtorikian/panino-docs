@@ -80,7 +80,7 @@ Panino has two processes: a parsing phase, and a rendering phase.
 
 `panino.render` takes four arguments:
 
-* The rendering mode; this can be `html` or `json`, or `c9ac` to provide a format compatible with [Cloud9 IDE](http://c9.io)'s auto completion tool. You can also create your own renderers.
+* The rendering mode; this can be `html` or `json`, or `c9ac` to provide a format compatible with [Cloud9 IDE](http://c9.io)'s auto completion tool.
 * The previously created `ast`
 * Build options
 * A final callback to check for `err`
